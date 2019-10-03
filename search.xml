@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>my first article</title>
+      <link href="/2019/10/03/my-first-article/"/>
+      <url>/2019/10/03/my-first-article/</url>
+      
+        <content type="html"><![CDATA[<p>@[toc]</p><h4 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h4><blockquote><p>洪卫的博客：<a href="https://www.cnblogs.com/shwee/p/11421156.html" target="_blank" rel="noopener">https://www.cnblogs.com/shwee/p/11421156.html</a></p><p>叶落阔的博客及3-hexo的模板：<a href="https://yelog.org/" target="_blank" rel="noopener">https://yelog.org/</a></p></blockquote><h4 id="搭建博客过程"><a href="#搭建博客过程" class="headerlink" title="搭建博客过程"></a>搭建博客过程</h4><ul><li>这是我的第一篇博客，为什么用 npm i hexo-deployer-git 不能生成一个放图片的文件夹呢？</li><li>首先生成： <code>hexo g</code>，然后在本地预览 <code>hexo s</code>，最后部署在github上<code>hexo d</code></li></ul><h4 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h4><ul><li>公式的使用在每篇文档开头设置mathjax： $v_i$</li></ul><pre><code class="C++">#include&lt;iostream&gt;using namespace std;int main(){    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 备忘录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> problem </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
