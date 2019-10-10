@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>about | haiki</title>
-  <meta name="keywords" content>
-  <meta name="description" content="about | haiki">
+  <title>IDEA的使用：提升看源码效率 | haiki</title>
+  <meta name="keywords" content=" IDEA , java ">
+  <meta name="description" content="IDEA的使用：提升看源码效率 | haiki">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="个人简介haiki，在读研究生，研究方向为区块链相关。 喜欢运动，喜欢幻想，喜欢笑。 使用博客的目的是想把自己平时看到的，学到的内容整理下来，形成自己的知识库，同时将自己的所学所感所知分享给大家，希望和大家一起进步~">
 <meta name="keywords" content="computer science,blockchain,leetcode,record life">
@@ -360,24 +360,38 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-IDEA常用功能" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">IDEA的使用：提升看源码效率</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="工具">工具</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color5">IDEA</a>
+            
+            <a href="javascript:" class="color5">java</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-03 19:09:31'>2019-10-03 19:05</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-10 19:45:16'>2019-10-09 20:21</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:91</span>
+        <span>字数:1.2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -396,7 +410,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#个人简介"><span class="toc-text">个人简介</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#IntelliJ-IDEA-常见文件类型的图标介绍"><span class="toc-text">IntelliJ IDEA 常见文件类型的图标介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA中配置参数，运行main函数"><span class="toc-text">IDEA中配置参数，运行main函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA中查看类继承关系"><span class="toc-text">IDEA中查看类继承关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数调用关系——SourceInsight"><span class="toc-text">函数调用关系——SourceInsight</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA中-显示函数的用法"><span class="toc-text">IDEA中 显示函数的用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA中-类中的函数及变量等概览"><span class="toc-text">IDEA中 类中的函数及变量等概览</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -412,9 +426,53 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h4><p>haiki，在读研究生，研究方向为区块链相关。</p>
-<p>喜欢运动，喜欢幻想，喜欢笑。</p>
-<p>使用博客的目的是想把自己平时看到的，学到的内容整理下来，形成自己的知识库，同时将自己的所学所感所知分享给大家，希望和大家一起进步~</p>
+        <h3 id="IntelliJ-IDEA-常见文件类型的图标介绍"><a href="#IntelliJ-IDEA-常见文件类型的图标介绍" class="headerlink" title="IntelliJ IDEA 常见文件类型的图标介绍"></a>IntelliJ IDEA 常见文件类型的图标介绍</h3><p>参见博客: <a href="https://blog.csdn.net/qq_35246620/article/details/64157559" target="_blank" rel="noopener">IntelliJ IDEA 常见文件类型的图标介绍</a></p>
+<h3 id="IDEA中配置参数，运行main函数"><a href="#IDEA中配置参数，运行main函数" class="headerlink" title="IDEA中配置参数，运行main函数"></a>IDEA中配置参数，运行main函数</h3><p>对于java程序，编译（build）指令： <code>javac</code>，运行（run）指令： <code>java</code> ，需要安装 JDK（这里又有Oracle JDK 和 OpenJDK，自行百度区别和使用），JRE。</p>
+<p>对于windows 配置 <code>JAVA_HOME</code>，<code>PATH</code>，<code>classpath</code> 的方法见：<a href="https://blog.csdn.net/haiki66/article/details/88758199" target="_blank" rel="noopener">Java中JAVA_HOME, PATH,CLASSPATH的作用和配置值</a></p>
+<p>IDEA下可以有两种运行程序的方法：</p>
+<ol>
+<li>最上方工具栏分别找到 <code>Build</code>  和 <code>Run</code>对程序进行编译，运行。使用这种方法时，如果main函数运行时需要传入参数，参数的配置方法为：鼠标指向最上面工具栏的：<code>Run</code> ，选中左键进入<code>Edit configurations</code>。如下图所示。其中<code>program argument1</code>处依次填入需要的参数。</li>
+</ol>
+<ul>
+<li>这里我们可以留意到的是：<code>Main class</code> 的书写形式， main 函数所在的类，是以包名的形式呈现的。那么对于不同类中的 main 函数，通过修改 类名即可。这样简单的配置之后，我们就可以直接用 <code>Build</code> 和 <code>Run</code> 来处理程序啦~ 很多命令的处理过程，都由IDE进行</li>
+</ul>
+<p><img src="https://i.loli.net/2019/10/09/oLgrNqhYudD5pbT.jpg" alt="IDEA.JPG"></p>
+<ol start="2">
+<li>在终端（terminal）下运行输入 <code>javac</code> 和 <code>java</code> 编译运行程序（也就是IDE帮我们做的一些命令）。<ul>
+<li><code>javac -classpath &lt;lib&gt; -sourcepath &lt;src&gt; -d &lt;bin&gt;</code></li>
+<li><code>java -classpath &lt;lib&gt;&lt;:/;&gt;&lt;bin&gt; &lt;main函数所在类&gt;</code></li>
+<li>其中，凡是用 <code>&lt;&gt;</code>框起来的都是要根据自己的实际情况进行更改的。<ul>
+<li><code>-classpath</code>也可以简写为 <code>-cp</code>，是用来加载外部包的，比如你写的项目里面，用到了一些jar 包，那么需要把这些jar包的路径告诉 javac 这个可执行程序，也就对应于 <code>&lt;lib&gt;</code>，比如我的这个项目，某些 jar 包的路径是 <code>./lib/</code>，表示当前项目的当前文件夹下的lib文件夹下。</li>
+<li><code>-sourcepath</code> 需要输入的是当前项目所在的文件夹，查看当前项目所在路径可以试错，也可以自行百度。示例：<code>./src/</code></li>
+<li><code>-d</code> 是指：编译之后生成的 <code>.class</code> 文件放在哪个文件夹下，这个的文件路径可以自己设置，一般在当前项目下，新建一个文件夹，如  <code>./bin</code> 或者 <code>./out</code> 。我们要知道的是，java 运行的都是 <code>.class</code> 文件。</li>
+<li><code>javac</code> 和 <code>java</code> 中的  <code>&lt;lib&gt;&lt;bin&gt;</code> 都一样。需要注意的是，对于 <code>java</code> 命令中 &lt;&gt;<code>&lt;:/;&gt;</code> 是说，当在unix下使用此命令时，用冒号，在window下使用时，用分号。</li>
+<li><code>&lt;main函数所在类&gt;</code> 就是方法 1 中提到的 以包名形式的包含main函数的类名。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="IDEA中查看类继承关系"><a href="#IDEA中查看类继承关系" class="headerlink" title="IDEA中查看类继承关系"></a>IDEA中查看类继承关系</h3><p>鼠标点在类名上，右键，在复选框中找到 <code>Diagrams</code> —&gt; <code>show diagrams</code> ，则可以查看类的继承关系。</p>
+<p><img src="https://i.loli.net/2019/10/10/EWPbBq7cZnfNDKe.png" alt="IDEA1.png"></p>
+<h3 id="函数调用关系——SourceInsight"><a href="#函数调用关系——SourceInsight" class="headerlink" title="函数调用关系——SourceInsight"></a>函数调用关系——SourceInsight</h3><p>这个有两种方式：</p>
+<ol>
+<li><p>鼠标点击需要查看的函数名，在上方的菜单栏查找一个图标，如下图所示，则会显示这个函数的调用关系。</p>
+<p><img src="https://i.loli.net/2019/10/10/8LRf45onVOvhYju.png" alt="SourceInsight.png"></p>
+</li>
+<li><p>鼠标右键函数名，选择 <code>Show in Relation Window</code>，会出现和 1 一样的结果。</p>
+<ol>
+<li>看下图，左下角会有一些小的选择，按照箭头标注，最左边点击一下，会出现列表形式的函数调用关系，在第一列，是 <code>name</code> ，默认情况下，函数是以字母序排序的，如果想按照函数调用顺序，可以鼠标左键点一下 <code>name</code>，会以英文形式提示你，现在是以什么排序的。类似文件夹下，以创建时间，或者修改日期等排序那种。这个选择好之后，点击第二个箭头指的，显示出的关系图就是按照你选定的函数的出现方式。（升序，降序，出现顺序）</li>
+<li>接着就是调用关系是横着显示还是竖着显示；</li>
+<li>再接着是设置。</li>
+</ol>
+</li>
+</ol>
+<p><img src="https://i.loli.net/2019/10/10/cZkgdznxXUWfowR.png" alt="SourceInsight1.png"></p>
+<p><img src="https://i.loli.net/2019/10/10/ZKvNI78q164dm3H.png" alt="SourceInsight3.png"></p>
+<p>还可以设置要查看的函数调用关系，是查看当前函数调用（calls）了哪些函数，调用关系显示几层。这里主要想提及的是 <code>View Relationship</code> 这里，这个选择直接决定了显示什么关系。可以看到，关系主要是用于 <code>Types（类型）、Functions（函数）、Variables（变量）、class（类）等</code> ， 需要注意的是，类的关系也可以展示，但是我更喜欢用 IDEA 的类继承关系。根据自己的需要，选择想要查看的关系图，如函数调用关系，那么要设置的是 <code>functions</code>，<code>Calls</code>表示查看这个函数开始调用了哪些，<code>calls and callers</code> 则表示此函数的调用 + 对此函数的调用。<code>reference</code> 表示引用。</p>
+<p><img src="https://i.loli.net/2019/10/10/NibgmIKpLftDQcG.png" alt="SourceInsight4.png"></p>
+<h3 id="IDEA中-显示函数的用法"><a href="#IDEA中-显示函数的用法" class="headerlink" title="IDEA中 显示函数的用法"></a>IDEA中 显示函数的用法</h3><p><code>Alt + F7</code>，下面会显示出哪里使用了这个函数。</p>
+<h3 id="IDEA中-类中的函数及变量等概览"><a href="#IDEA中-类中的函数及变量等概览" class="headerlink" title="IDEA中 类中的函数及变量等概览"></a>IDEA中 类中的函数及变量等概览</h3><p><code>Alt + 7</code></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 peiqi66@163.com </span>
@@ -426,6 +484,14 @@
     <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">最后更新:</span>2019-10-10, 19:45:16</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/09/IDEA常用功能/" title="IDEA的使用：提升看源码效率">https://github.com/haiki/haiki.github.io/2019/10/09/IDEA常用功能/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 
