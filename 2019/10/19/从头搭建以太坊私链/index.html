@@ -140,7 +140,7 @@
     
         
             
-            <li><div data-rel="编程语言">编程语言<small>(1)</small></div>
+            <li><div data-rel="leetcode">leetcode<small>(3)</small></div>
                 
             </li>
             
@@ -149,6 +149,14 @@
         
             
             <li><div data-rel="运维">运维<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="编程语言">编程语言<small>(1)</small></div>
                 
             </li>
             
@@ -180,23 +188,15 @@
     
         
             
-            <li><div data-rel="备忘录">备忘录<small>(1)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="leetcode">leetcode<small>(3)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
             <li><div data-rel="读书">读书<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="备忘录">备忘录<small>(1)</small></div>
                 
             </li>
             
@@ -213,7 +213,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="11">
-<input type="hidden" id="yelog_site_word_count" value="29.6k">
+<input type="hidden" id="yelog_site_word_count" value="30.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -247,7 +247,11 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">java</a>
+        <a href="javascript:" class="color1">linkedList</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">easy</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -256,6 +260,10 @@
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color3">命令</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">java</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -291,19 +299,7 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">hexo</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">problem</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">linkedList</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">easy</a>
+        <a href="javascript:" class="color1">stack</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -315,7 +311,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">stack</a>
+        <a href="javascript:" class="color5">hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">problem</a>
     </li>
     
     <div class="clearfix"></div>
@@ -458,12 +458,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-19 20:24:21'>2019-10-19 16:15</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-21 17:31:20'>2019-10-19 16:15</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:429</span>
+        <span>字数:1.3k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -525,18 +525,88 @@
 </li>
 </ol>
 <ol>
-<li><p>创建账户，作为区块链节点的coinbase</p>
+<li><p>创建账户</p>
 <ol>
-<li><p><code>[haiki@localhost ~]$ geth account new</code>，按照提示，输入密码（这里是123456）。这个密码不能忘记，忘记没有找回选项。</p>
+<li><p><code>[haiki@localhost ~]$ geth --datadir /home/haiki/ethereum/pqgeth account new</code>，按照提示，输入密码（这里是123456）。这个密码不能忘记，忘记没有找回选项。</p>
 </li>
-<li><p>按照屏幕显示的结果，即下图，可以知道，得到的地址，密钥文件的存放路径，以及一些安全提示信息。</p>
-<ul>
-<li>地址是 <code>0x0475eA0D：qb7f5D2d676284fe37DE062cA72EA35d6</code></li>
-</ul>
-<p><img src="https://i.loli.net/2019/10/19/OQra2vlzexKj6Fu.jpg" alt="gethAccountNew.JPG"></p>
+<li><p>此时在 <code>pqgeth</code> 下会生成一个 <code>keystore</code>文件，其中保存着生成的以太坊地址及用密码加密的私钥；如果不用 <code>--datadir</code> 参数，默认在用户空间的家目录（如/home/haiki）下生成 <code>.ethereum</code>文件（可以用 <code>ls -al</code> 查看），并在里面生成 <code>keystroe</code>文件。</p>
+</li>
+<li><p>按照屏幕显示的结果，即gethAccountNew图，可以知道，得到的地址，密钥文件的存放路径，以及一些安全提示信息。</p>
+<p><img src="https://i.loli.net/2019/10/21/2bstUBRHALoW6Z1.jpg" alt="gethAccountNew.JPG"></p>
+</li>
+<li><p>可以按照相同的方式生成多个账户地址。</p>
 </li>
 </ol>
 </li>
+<li><p>定制私链的创世区块文件：见<a href="https://github.com/ethereum/go-ethereum/blob/master/README.md">官网</a></p>
+<ol>
+<li><p>编写 <code>genesis.json</code> 文件，其中 <code>alloc</code>字段是预先分配有钱的账户，方便后序测试，例如转账这种。</p>
+<pre><code>{
+&quot;config&quot;: {
+    &quot;chainId&quot;: 17,
+    &quot;homesteadBlock&quot;: 0,
+    &quot;eip150Block&quot;: 0,
+    &quot;eip155Block&quot;: 0,
+    &quot;eip158Block&quot;: 0,
+    &quot;byzantiumBlock&quot;: 0,
+    &quot;constantinopleBlock&quot;: 0,
+    &quot;petersburgBlock&quot;: 0
+  },
+  &quot;alloc&quot;: {
+        &quot;d1f506b11eb311f955a208962905a526268babc6&quot;: {
+                &quot;balance&quot;: &quot;100000000&quot;
+                }
+        },
+  &quot;coinbase&quot;: &quot;0x0000000000000000000000000000000000000000&quot;,
+  &quot;difficulty&quot;: &quot;0x20000&quot;,
+  &quot;extraData&quot;: &quot;&quot;,
+  &quot;gasLimit&quot;: &quot;0x2f</code></pre></li>
+<li><p>启动并初始化 genesis 区块： <code>geth --datadir ~/ethereum/pqgeth/ init genesis.js</code>。如图 genesis1。</p>
+<p><img src="https://i.loli.net/2019/10/21/ygbG7d9CIJY8vo2.jpg" alt="genesis1.JPG"></p>
+<ul>
+<li>此时在 <code>datadir</code>目录下会生成一个 <code>geth</code>文件夹，包含 <code>chaindata</code>，<code>lightchaindata</code></li>
+<li>这时，其实就可以运行 <code>geth</code>啦。但是如果只运行 <code>geth</code>，不加任何参数的情况下，结果如 geth_console1 图、 geth_console2 图，geth_console3 图，此时运行 <code>admin.nodeInfo</code>，可得到 geth_nodeInfo 图，此时的 <code>chainID</code> 和 <code>network</code> 均为1，和我们在 <code>genesis.json</code> 中设置的 <code>chainId:17</code>不一致。？？？</li>
+</ul>
+<p><img src="https://i.loli.net/2019/10/21/VYsRA9S2e7jOnic.jpg" alt="geth_console1.JPG"></p>
+<p><img src="https://i.loli.net/2019/10/21/WIKqwodlz3jkZCn.jpg" alt="geth_console2.JPG"></p>
+<p><img src="https://i.loli.net/2019/10/21/Uqk48FeoMwIt9jL.jpg" alt="geth_console3.JPG"></p>
+<p><img src="https://i.loli.net/2019/10/21/W54UJ1eSxZdjmXq.jpg" alt="geth_console_nodeInfo.JPG"></p>
+</li>
+</ol>
+</li>
+</ol>
+<ol start="3">
+<li><p>启动一个节点实例，可以根据需要写很多参数，参数详见 <a href="https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options">Command Line Options</a>，为了避免每次写很多参数，可以在家目录的 <code>.bashrc</code> 中（就是配置全局环境的那个地方）编写以下命令：<code>alias geth1=&#39;geth --verbosity 6 --identity &quot;haiki&quot; --rpc --rpcport &quot;20000&quot; --rpcaddr 0.0.0.0 --allow-insecure-unlock --etherbase &quot;d1f506b11eb311f955a208962905a526268babc6&quot;  --rpccorsdomain &quot;*&quot; --datadir &quot;/home/haiki/ethereum/pqgeth&quot; --port &quot;40000&quot; --nodiscover   --rpcapi &quot;db,eth,net,web3&quot; --networkid 2000 --nat &quot;any&quot; console 2&gt;&gt; &quot;/home/haiki/ethereum/pqgeth/node1.log&quot;&#39;</code></p>
+<ul>
+<li><p>这样可以使得每次只用 <code>geth1</code> 命令即可相当于后面那一大串命令，而且，执行命令的结果重定向并追加至  <code>&quot;/home/haiki/ethereum/pqgeth/node1.log&quot;</code> 文件中。</p>
+</li>
+<li><p>此时可以直接运行 <code>geth1</code>, 屏幕上会得到 geth1图的输出，再次运行 <code>admin.nodeInfo</code>，可得 geth_nodeInfo1 图，此时的 <code>chainID</code> 和 <code>network</code> 分别为 <code>genesis.json</code> 和 <code>.bashrc</code> 中设置的值。</p>
+</li>
+<li><p>note：<a href="https://blog.csdn.net/wo541075754/article/details/98847308" target="_blank" rel="noopener">以太坊geth新版本error：account unlock with HTTP access is forbidden</a></p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2019/10/21/talkRKxiQDOrAHv.jpg" alt="geth1.JPG"></p>
+<p><img src="https://i.loli.net/2019/10/21/bwFu4fJ5zHXyp1v.jpg" alt="geth_nodeInfo1.JPG"></p>
+</li>
+</ol>
+<ol start="3">
+<li>挖矿</li>
+</ol>
+<ol>
+<li>可以在 <code>geth</code>命令后加选项 <code>--mine --minerthreads 1</code>，这样在启动 <code>geth</code> 时，则就说明会一直挖矿，但这样做使得有很多空块，占用内存，所以为了测试需要，一般用方法2；</li>
+<li><code>geth1</code>，启动节点，控制台下输入 <code>miner.start(1)</code>，默认情况下是 <code>coinbase</code>节点挖矿，也可以用命令设置：<code>&gt;miner.setEtherbase(eth.coinbase)</code>。 不用挖矿时 <code>miner.stop()</code>；没有交易时挖出空块，也可以有奖励，有收入。这里可能遇到的问题：<a href="https://blog.csdn.net/tianlongtc/article/details/80026561" target="_blank" rel="noopener">解决miner.start() 返回null</a></li>
+</ol>
+<ol start="4">
+<li><p>转账</p>
+<ol>
+<li>首先要对发送方账户进行解锁，<code>&gt; ac1 = eth.accounts[0]，&gt; personal.unlockAccount(ac1)</code>，此时要求输入密码。</li>
+<li><code>&gt; eth.sendTransaction({&quot;from&quot;:ac1,&quot;to&quot;:ac2,&quot;value&quot;:10})</code> ，value 对应的单位是 <code>wei</code>， 如果想用 <code>ether</code>，可以用 <code>amount = web3.toWei(3,&#39;ether&#39;)</code>这种，把 <code>value</code> 的参数设置为 <code>amount</code>。这里要注意的是，参数的键值 <code>“from”,&quot;to&quot;,&quot;val&quot;</code> 需要用双引号引起来。</li>
+<li>用 <code>eth.getBalance(ac2)</code> 查看转账是否到账，因为 <code>ac1</code> 一直在挖矿，其资金一直在上涨。当测试完成时，可以停止挖矿。</li>
+</ol>
+</li>
+</ol>
+<ol start="5">
+<li>其他命令的尝试和使用参见 <a href="https://github.com/ethereum/wiki/wiki/JSON-RPC#json-rpc-api">JSON RPC</a></li>
 </ol>
 
       
@@ -551,7 +621,7 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">最后更新:</span>2019-10-19, 20:24:21</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-21, 17:31:20</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/19/从头搭建以太坊私链/" title="从头搭建以太坊私链">https://github.com/haiki/haiki.github.io/2019/10/19/从头搭建以太坊私链/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -634,7 +704,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#java','#linux','#命令','#IDEA','#speedymurmurs','#payment routing','#路由算法','#以太坊','#私链','#geth','#go环境配置','#hexo','#problem','#linkedList','#easy','#工具成长类','#string','#stack',],
+            'data': ['#linkedList','#easy','#linux','#命令','#java','#IDEA','#speedymurmurs','#payment routing','#路由算法','#以太坊','#私链','#geth','#go环境配置','#stack','#工具成长类','#string','#hexo','#problem',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
