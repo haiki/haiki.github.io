@@ -140,7 +140,7 @@
     
         
             
-            <li><div data-rel="leetcode">leetcode<small>(3)</small></div>
+            <li><div data-rel="工具">工具<small>(1)</small></div>
                 
             </li>
             
@@ -156,23 +156,7 @@
     
         
             
-            <li><div data-rel="工具">工具<small>(1)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
             <li><div data-rel="编程语言">编程语言<small>(1)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="区块链">区块链<small>(2)</small></div>
                 
             </li>
             
@@ -188,7 +172,7 @@
     
         
             
-            <li><div data-rel="读书">读书<small>(1)</small></div>
+            <li><div data-rel="leetcode">leetcode<small>(3)</small></div>
                 
             </li>
             
@@ -197,6 +181,22 @@
         
             
             <li><div data-rel="论文相关总结">论文相关总结<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="区块链">区块链<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="读书">读书<small>(1)</small></div>
                 
             </li>
             
@@ -247,11 +247,11 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">linkedList</a>
+        <a href="javascript:" class="color5">IDEA</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">easy</a>
+        <a href="javascript:" class="color5">java</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -263,11 +263,31 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">IDEA</a>
+        <a href="javascript:" class="color5">hexo</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">java</a>
+        <a href="javascript:" class="color3">problem</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">linkedList</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">easy</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">speedymurmurs</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">payment routing</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">路由算法</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -299,31 +319,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">hexo</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">problem</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">工具成长类</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color2">string</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">speedymurmurs</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">payment routing</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">路由算法</a>
+        <a href="javascript:" class="color1">工具成长类</a>
     </li>
     
     <div class="clearfix"></div>
@@ -474,7 +474,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-22 17:23:05'>2019-10-19 16:15</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-22 21:08:46'>2019-10-19 16:15</time>
         
     </div>
     <div class="article-meta">
@@ -591,22 +591,17 @@
 <li><p>启动一个节点实例，可以根据需要写很多参数，参数详见 <a href="https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options">Command Line Options</a>，为了避免每次写很多参数，可以在家目录的 <code>.bashrc</code> 中（就是配置全局环境的那个地方）编写以下命令：</p>
 <pre><code class="bash">alias geth1=&#39;geth --verbosity 6 --identity &quot;haiki&quot; --rpc --rpcport &quot;20000&quot; --rpcaddr 0.0.0.0 --allow-insecure-unlock --etherbase &quot;d1f506b11eb311f955a208962905a526268babc6&quot;  --rpccorsdomain &quot;*&quot; --datadir &quot;/home/haiki/ethereum/pqgeth&quot; --port &quot;40000&quot; --nodiscover   --rpcapi &quot;db,eth,net,web3&quot; --networkid 2000 --nat &quot;any&quot; console 2&gt;&gt; &quot;/home/haiki/ethereum/pqgeth/node1.log&quot;&#39;</code></pre>
 <ul>
-<li><p>这样可以使得每次只用 <code>geth1</code> 命令即可相当于后面那一大串命令，而且，执行命令的结果重定向并追加至  <code>&quot;/home/haiki/ethereum/pqgeth/node1.log&quot;</code> 文件中。</p>
-</li>
-<li><p>此时可以直接运行 <code>geth1</code>, 屏幕上会得到 geth1图的输出，再次运行 <code>admin.nodeInfo</code>，可得 geth_nodeInfo1 图，此时的 <code>chainID</code> 和 <code>network</code> 分别为 <code>genesis.json</code> 和 <code>.bashrc</code> 中设置的值。</p>
-</li>
-<li><p>–allow-insecure-unlock：<a href="https://blog.csdn.net/wo541075754/article/details/98847308" target="_blank" rel="noopener">以太坊geth新版本error：account unlock with HTTP access is forbidden</a></p>
-</li>
+<li>这样可以使得每次只用 <code>geth1</code> 命令即可相当于后面那一大串命令，而且，执行命令的结果重定向并追加至  <code>&quot;/home/haiki/ethereum/pqgeth/node1.log&quot;</code> 文件中。</li>
+<li>此时可以直接运行 <code>geth1</code>, 屏幕上会得到 geth1图的输出，再次运行 <code>admin.nodeInfo</code>，可得 geth_nodeInfo1 图，此时的 <code>chainID</code> 和 <code>network</code> 分别为 <code>genesis.json</code> 和 <code>.bashrc</code> 中设置的值。</li>
+<li>–allow-insecure-unlock：<a href="https://blog.csdn.net/wo541075754/article/details/98847308" target="_blank" rel="noopener">以太坊geth新版本error：account unlock with HTTP access is forbidden</a><br><img src="https://i.loli.net/2019/10/21/talkRKxiQDOrAHv.jpg" alt="geth1.JPG"><br><img src="https://i.loli.net/2019/10/21/bwFu4fJ5zHXyp1v.jpg" alt="geth_nodeInfo1.JPG"></li>
 </ul>
-<p><img src="https://i.loli.net/2019/10/21/talkRKxiQDOrAHv.jpg" alt="geth1.JPG"></p>
-<p><img src="https://i.loli.net/2019/10/21/bwFu4fJ5zHXyp1v.jpg" alt="geth_nodeInfo1.JPG"></p>
 </li>
 </ol>
 </li>
 <li><p>挖矿：从这里开始的部分可以参考：<a href="https://medium.com/coinmonks/ethereum-setting-up-a-private-blockchain-67bbb96cf4f1" target="_blank" rel="noopener">搭建以太坊私链</a></p>
 <ol>
 <li>可以在 <code>geth</code>命令后加选项 <code>--mine --minerthreads 1</code>，这样在启动 <code>geth</code> 时，则就说明会一直挖矿，但这样做使得有很多空块，占用内存，所以为了测试需要，一般用方法2；</li>
-<li><code>geth1</code>，启动节点，控制台下输入 <code>miner.start(1)</code>，默认情况下是 <code>coinbase</code>节点挖矿，也可以用命令设置：<code>&gt;miner.setEtherbase(eth.coinbase)</code>。 不用挖矿时 <code>miner.stop()</code>；没有交易时挖出空块，也可以有奖励，有收入。这里可能遇到的问题：<a href="https://blog.csdn.net/tianlongtc/article/details/80026561" target="_blank" rel="noopener">解决miner.start() 返回null</a></li>
+<li><code>geth1</code>，启动节点，控制台下输入 <code>miner.start(1)</code>，默认情况下是 <code>coinbase</code>节点挖矿，也可以用命令设置：<code>&gt;miner.setEtherbase(eth.coinbase)</code>。 不用挖矿时 <code>miner.stop()</code>；没有交易时挖出空块，也可以有奖励，有收入。这里可能遇到的问题：<a href="https://blog.csdn.net/tianlongtc/article/details/80026561" target="_blank" rel="noopener">解决miner.start() 返回null</a>   </li>
 </ol>
 </li>
 <li><p>转账</p>
@@ -618,17 +613,12 @@
 </li>
 <li><p>再启动一个节点，称作节点2，连接到已经搭建的区块链上</p>
 <ol>
-<li><p>新建一个存储节点信息，区块链信息，账户信息的文件夹，<code>mkdir ~/ethereum/go-ethereum/kkgeth</code></p>
+<li>新建一个存储节点信息，区块链信息，账户信息的文件夹，<code>mkdir ~/ethereum/go-ethereum/kkgeth</code></li>
+<li>需要连接到第一个节点所在的区块链上，他们的创世块是一样的，这个节点也要初始化一下：<code>geth --datadir ~/ethereum/kkgeth/ init genesis.js</code>，注意这时用的 <code>datadir</code>。</li>
+<li>和第一个节点做连接，则需要用到 <code>enode</code>，<code>enode</code> 的信息可以在运行的节点1中输入：<code>admin.nodeInfo.enode</code>得到。  这时候，要把 <code>geth1</code>中的 <code>----nodiscover</code> 去掉，让其他节点能够发现第一个节点。</li>
+<li>和上面一样，开一个 <code>geth</code> 的实例<pre><code class="bash">alias geth2=&#39;geth --bootnodes enode://129265846efde605637ca4dee3e98e95cb466c386c64204bdedc84e98ff1e30d44e7e11e7fa6a561e8a3499acae31797da14749e3dab97af0fea682812f87b7f@127.0.0.1:40000 --verbosity 6 --identity &quot;pq&quot; --rpc --rpcport &quot;20001&quot; --rpcaddr 0.0.0.0  --allow-insecure-unlock --etherbase &quot;23b882359eed499a3b9cd06643c096e9ce048cfa&quot;  --rpccorsdomain &quot;*&quot; --datadir &quot;/home/haiki/ethereum/kkgeth&quot; --port &quot;40001&quot; --rpcapi &quot;db,eth,net,web3&quot; --networkid 2000 --nat &quot;any&quot; console 2&gt;&gt; &quot;/home/haiki/ethereum/kkgeth/node2.log&quot;&#39;</code></pre>
 </li>
-<li><p>需要连接到第一个节点所在的区块链上，他们的创世块是一样的，这个节点也要初始化一下：<code>geth --datadir ~/ethereum/kkgeth/ init genesis.js</code>，注意这时用的 <code>datadir</code>。</p>
-</li>
-<li><p>和第一个节点做连接，则需要用到 <code>enode</code>，<code>enode</code> 的信息可以在运行的节点1中输入：<code>admin.nodeInfo.enode</code>得到。  这时候，要把 <code>geth1</code>中的 <code>----nodiscover</code> 去掉，让其他节点能够发现第一个节点。</p>
-</li>
-<li><p>和上面一样，开一个 <code>geth</code> 的实例</p>
-<pre><code class="bash">alias geth2=&#39;geth --bootnodes enode://129265846efde605637ca4dee3e98e95cb466c386c64204bdedc84e98ff1e30d44e7e11e7fa6a561e8a3499acae31797da14749e3dab97af0fea682812f87b7f@127.0.0.1:40000 --verbosity 6 --identity &quot;pq&quot; --rpc --rpcport &quot;20001&quot; --rpcaddr 0.0.0.0  --allow-insecure-unlock --etherbase &quot;23b882359eed499a3b9cd06643c096e9ce048cfa&quot;  --rpccorsdomain &quot;*&quot; --datadir &quot;/home/haiki/ethereum/kkgeth&quot; --port &quot;40001&quot; --rpcapi &quot;db,eth,net,web3&quot; --networkid 2000 --nat &quot;any&quot; console 2&gt;&gt; &quot;/home/haiki/ethereum/kkgeth/node2.log&quot;&#39;</code></pre>
-</li>
-<li><p>运行 <code>geth2</code>，运行 <code>admin.addPeer(&#39;enode://129265846efde605637ca4dee3e98e95cb466c386c64204bdedc84e                                                 98ff1e30d44e7e11e7fa6a561e8a3499acae31797da14749e3dab97af0fea682812f87b7f@127.0.                                                 0.1:40000&#39;)</code> ，再输入 <code>net.peerCount</code> ，显示1，则表示已经连接到一个节点。可以用 <code>admin.peers</code> 查看当前连接到的节点信息，用 <code>net.peerCount</code> 查看网络中节点连接个数。这里有个奇怪现象，就是作为 bootnode 的那个节点，会连好多个节点。 在命令中只连接了一个节点，但是会显示其他的不知道哪里的节点。其他新增节点的命令可以看 ： <a href="https://www.netkiller.cn/blockchain/ethereum/faq.add.node.html" target="_blank" rel="noopener">新增节点后不生效</a></p>
-</li>
+<li>运行 <code>geth2</code>，运行 <code>admin.addPeer(&#39;enode://129265846efde605637ca4dee3e98e95cb466c386c64204bdedc84e                                                 98ff1e30d44e7e11e7fa6a561e8a3499acae31797da14749e3dab97af0fea682812f87b7f@127.0.                                                 0.1:40000&#39;)</code> ，再输入 <code>net.peerCount</code> ，显示1，则表示已经连接到一个节点。可以用 <code>admin.peers</code> 查看当前连接到的节点信息，用 <code>net.peerCount</code> 查看网络中节点连接个数。这里有个奇怪现象，就是作为 bootnode 的那个节点，会连好多个节点。 在命令中只连接了一个节点，但是会显示其他的不知道哪里的节点。其他新增节点的命令可以看 ： <a href="https://www.netkiller.cn/blockchain/ethereum/faq.add.node.html" target="_blank" rel="noopener">新增节点后不生效</a></li>
 </ol>
 </li>
 </ol>
@@ -647,7 +637,7 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">最后更新:</span>2019-10-22, 17:23:05</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-22, 21:08:46</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/19/从头搭建以太坊私链/" title="从头搭建以太坊私链">https://github.com/haiki/haiki.github.io/2019/10/19/从头搭建以太坊私链/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -730,7 +720,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#linkedList','#easy','#linux','#命令','#IDEA','#java','#stack','#以太坊','#私链','#geth','#go环境配置','#API','#Javascript','#hexo','#problem','#工具成长类','#string','#speedymurmurs','#payment routing','#路由算法',],
+            'data': ['#IDEA','#java','#linux','#命令','#hexo','#problem','#linkedList','#easy','#speedymurmurs','#payment routing','#路由算法','#stack','#以太坊','#私链','#geth','#go环境配置','#API','#Javascript','#string','#工具成长类',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
