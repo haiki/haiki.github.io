@@ -37,3 +37,10 @@ int main(){
 
 
 
+### 将博客原文同步到github
+
+使用hexo，如果换了电脑怎么更新博客？ 
+
+- [直上云霄的回答](https://www.zhihu.com/question/21193762/answer/489124966) - 知乎
+
+
