@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>从头搭建以太坊私链 | haiki</title>
-  <meta name="keywords" content=" 以太坊 , 私链 , geth , go环境配置 ">
-  <meta name="description" content="从头搭建以太坊私链 | haiki">
+  <title>算法与数据结构学习必备 | haiki</title>
+  <meta name="keywords" content=" 算法 ">
+  <meta name="description" content="算法与数据结构学习必备 | haiki">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="个人简介haiki，在读研究生，研究方向为区块链相关。 喜欢运动，喜欢幻想，喜欢笑。 使用博客的目的是想把自己平时看到的，学到的内容整理下来，形成自己的知识库，同时将自己的所学所感所知分享给大家，希望和大家一起进步~">
 <meta name="keywords" content="computer science,blockchain,leetcode,record life">
@@ -500,9 +500,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-从头搭建以太坊私链" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-算法与数据结构学习必备" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">从头搭建以太坊私链</h1>
+        <h1 class="article-title">算法与数据结构学习必备</h1>
     
     <div class="article-meta">
         
@@ -510,32 +510,26 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="区块链">区块链</a>
+                <a href="javascript:" data-rel="leetcode">leetcode</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">以太坊</a>
-            
-            <a href="javascript:" class="color3">私链</a>
-            
-            <a href="javascript:" class="color5">geth</a>
-            
-            <a href="javascript:" class="color2">go环境配置</a>
+            <a href="javascript:" class="color3">算法</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-25 10:04:01'>2019-10-19 16:15</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-03 11:58:07'>2019-11-03 09:34</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:2k</span>
+        <span>字数:565</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -554,7 +548,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#环境准备"><span class="toc-text">环境准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装geth-通过源码编译安装"><span class="toc-text">安装geth -通过源码编译安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#geth的使用"><span class="toc-text">geth的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开启多个节点的脚本"><span class="toc-text">开启多个节点的脚本</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#复杂度分析"><span class="toc-text">复杂度分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#算法分析神器—时间复杂度"><span class="toc-text">算法分析神器—时间复杂度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#佩奇学编程-复杂度分析原来这么简单"><span class="toc-text">佩奇学编程 | 复杂度分析原来这么简单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空间复杂度"><span class="toc-text">空间复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基础数据结构"><span class="toc-text">基础数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#线性表（List）"><span class="toc-text">线性表（List）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#顺序存储结构"><span class="toc-text">顺序存储结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#链式存储结构"><span class="toc-text">链式存储结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基础数据结构：【动画】如何轻松手写链表？"><span class="toc-text">基础数据结构：【动画】如何轻松手写链表？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#跳跃表"><span class="toc-text">跳跃表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#静态链表"><span class="toc-text">静态链表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#并查集"><span class="toc-text">并查集</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#栈与队列"><span class="toc-text">栈与队列</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#栈"><span class="toc-text">栈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#队列"><span class="toc-text">队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优先队列"><span class="toc-text">优先队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#堆"><span class="toc-text">堆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多级反馈队列"><span class="toc-text">多级反馈队列</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -570,149 +564,53 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><h3 id="安装geth-通过源码编译安装"><a href="#安装geth-通过源码编译安装" class="headerlink" title="安装geth -通过源码编译安装"></a>安装geth -通过源码编译安装</h3><p>参考<a href="https://media.consensys.net/how-to-build-a-private-ethereum-blockchain-fbf3904f337" target="_blank" rel="noopener">这个</a>文档</p>
-<ol>
-<li><p><code>[haiki@localhost ~]$ mkdir ethereum</code></p>
-</li>
-<li><p><code>[haiki@localhost ~]$ cd ethereum</code></p>
-</li>
-<li><p><code>[haiki@localhost ethereum]$ git clone https://github.com/ethereum/go-ethereum.git</code></p>
-</li>
-<li><p><code>cd go-ethereum</code></p>
-</li>
-<li><p><code>make geth</code> 进行编译，得到可执行程序，得到编译结尾如下图，则表示编译成功。</p>
-<p><img src="https://i.loli.net/2019/10/19/xMKDnI1kmlCSZNR.jpg" alt="makeGrth.JPG"></p>
-</li>
-<li><p>按照上图提示，需要在执行make的当前目录下执行 <code>./build/bin/geth</code>去安装 geth。此时，我所在的目录是 <code>/home/haiki/ethereum/go-ethereum</code>，如果已经进入到了 <code>/home/haiki/ethereum/go-ethereum/build/bin</code>，可以直接 <code>./geth</code>进行安装。其中，加 <code>./</code> 表示执行当前目录下的 geth 可执行文件。</p>
-</li>
-<li><p>现在，相当于 <code>/home/haiki/ethereum/go-ethereum/build/bin</code>目录下已经有了geth 这个可执行程序，相当于 windows 下的 .exe程序，在这个 bin 目录下，执行 <code>geth version</code>，查看安装是否成功，出现下图，则成功。</p>
-<p><img src="https://i.loli.net/2019/10/19/ZGx3cWEPrCjQnYH.jpg" alt="gethVersion.JPG"></p>
-</li>
-<li><p>如果要使用这个程序，那么需要总是把geth所在的路径包含上，这时候，可以设置一个全局的环境变量，在哪里都可以执行用geth命令。</p>
-<ol>
-<li><code>vim /home/haiki/.bashrc</code></li>
-<li><code>export GETHPATH=/home/haiki/ethereum/go-ethereum/build</code>，在原来的  <code>PATH</code>上加一个 <code>geth</code> 的路径： <code>export PATH=$GOPATH/bin:$GOROOT/bin:$PATH:$GETHPATH/bin</code></li>
-<li>此时，在任何目录下（不必须是 <code>geth</code> 所在的目录下），执行 <code>geth version</code>都可以出现上图的结果。</li>
-</ol>
-</li>
-</ol>
-<h3 id="geth的使用"><a href="#geth的使用" class="headerlink" title="geth的使用"></a>geth的使用</h3><ol>
-<li><p>创建账户</p>
-<ol>
-<li><p><code>[haiki@localhost ~]$ geth --datadir /home/haiki/ethereum/pqgeth account new</code>，按照提示，输入密码（这里是123456）。这个密码不能忘记，忘记没有找回选项。</p>
-</li>
-<li><p>此时在 <code>pqgeth</code> 下会生成一个 <code>keystore</code>文件，其中保存着生成的以太坊地址及用密码加密的私钥；如果不用 <code>--datadir</code> 参数，默认在用户空间的家目录（如/home/haiki）下生成 <code>.ethereum</code>文件（可以用 <code>ls -al</code> 查看），并在里面生成 <code>keystroe</code>文件。</p>
-</li>
-<li><p>按照屏幕显示的结果，即gethAccountNew图，可以知道，得到的地址，密钥文件的存放路径，以及一些安全提示信息。</p>
-<p><img src="https://i.loli.net/2019/10/21/2bstUBRHALoW6Z1.jpg" alt="gethAccountNew.JPG"></p>
-</li>
-<li><p>可以按照相同的方式生成多个账户地址。</p>
-</li>
-</ol>
-</li>
-<li><p>定制私链的创世区块文件：见<a href="https://github.com/ethereum/go-ethereum/blob/master/README.md">官网</a></p>
-<ol>
-<li><p>编写 <code>genesis.json</code> 文件，这条链上的所有的节点都必须知晓这个文件，并达成共识。其中 <code>alloc</code>字段是预先分配有钱的账户，方便后序测试，例如转账这种。其中，chainId用来标识当前是哪条链，可以是任意正整数，network 默认是1，是一个网络。</p>
-<pre><code>{
-&quot;config&quot;: {
-    &quot;chainId&quot;: 17,
-    &quot;homesteadBlock&quot;: 0,
-    &quot;eip150Block&quot;: 0,
-    &quot;eip155Block&quot;: 0,
-    &quot;eip158Block&quot;: 0,
-    &quot;byzantiumBlock&quot;: 0,
-    &quot;constantinopleBlock&quot;: 0,
-    &quot;petersburgBlock&quot;: 0
-  },
-  &quot;alloc&quot;: {
-        &quot;d1f506b11eb311f955a208962905a526268babc6&quot;: {
-                &quot;balance&quot;: &quot;100000000&quot;
-                }
-        },
-  &quot;coinbase&quot;: &quot;0x0000000000000000000000000000000000000000&quot;,
-  &quot;difficulty&quot;: &quot;0x20000&quot;,
-  &quot;extraData&quot;: &quot;&quot;,
-  &quot;gasLimit&quot;: &quot;0x2f</code></pre></li>
-<li><p>启动并初始化每个 <code>geth</code> 节点，确保参数设置正确： <code>geth --datadir ~/ethereum/pqgeth/ init genesis.js</code>。如图 genesis1。</p>
-<p><img src="https://i.loli.net/2019/10/21/ygbG7d9CIJY8vo2.jpg" alt="genesis1.JPG"></p>
-<ul>
-<li>此时在 <code>datadir</code>目录下会生成一个 <code>geth</code>文件夹，包含 <code>chaindata</code>，<code>lightchaindata</code></li>
-<li>这时，其实就可以运行 <code>geth</code>啦。但是如果只运行 <code>geth</code>，不加任何参数的情况下，结果如 geth_console1 图、 geth_console2 图，geth_console3 图，此时运行 <code>admin.nodeInfo</code>，可得到 geth_nodeInfo 图，此时的 <code>chainID</code> 和 <code>network</code> 均为1，和我们在 <code>genesis.json</code> 中设置的 <code>chainId:17</code>不一致。？？？</li>
-</ul>
-<p><img src="https://i.loli.net/2019/10/21/VYsRA9S2e7jOnic.jpg" alt="geth_console1.JPG"></p>
-<p><img src="https://i.loli.net/2019/10/21/WIKqwodlz3jkZCn.jpg" alt="geth_console2.JPG"></p>
-<p><img src="https://i.loli.net/2019/10/21/Uqk48FeoMwIt9jL.jpg" alt="geth_console3.JPG"></p>
-<p><img src="https://i.loli.net/2019/10/21/W54UJ1eSxZdjmXq.jpg" alt="geth_console_nodeInfo.JPG"></p>
-</li>
-<li><p>启动一个节点实例，可以根据需要写很多参数，参数详见 <a href="https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options">Command Line Options</a>，为了避免每次写很多参数，可以在家目录的 <code>.bashrc</code> 中（就是配置全局环境的那个地方）编写以下命令：</p>
-<pre><code class="bash">alias geth1=&#39;geth --verbosity 6 --identity &quot;haiki&quot; --rpc --rpcport &quot;20000&quot; --rpcaddr 0.0.0.0 --allow-insecure-unlock --etherbase &quot;d1f506b11eb311f955a208962905a526268babc6&quot;  --rpccorsdomain &quot;*&quot; --datadir &quot;/home/haiki/ethereum/pqgeth&quot; --port &quot;40000&quot; --nodiscover   --rpcapi &quot;db,eth,net,web3&quot; --networkid 2000 --nat &quot;any&quot; console 2&gt;&gt; &quot;/home/haiki/ethereum/pqgeth/node1.log&quot;&#39;</code></pre>
-<ul>
-<li>这样可以使得每次只用 <code>geth1</code> 命令即可相当于后面那一大串命令，而且，执行命令的结果重定向并追加至  <code>&quot;/home/haiki/ethereum/pqgeth/node1.log&quot;</code> 文件中。</li>
-<li>此时可以直接运行 <code>geth1</code>, 屏幕上会得到 geth1图的输出，再次运行 <code>admin.nodeInfo</code>，可得 geth_nodeInfo1 图，此时的 <code>chainID</code> 和 <code>network</code> 分别为 <code>genesis.json</code> 和 <code>.bashrc</code> 中设置的值。</li>
-<li>–allow-insecure-unlock：<a href="https://blog.csdn.net/wo541075754/article/details/98847308" target="_blank" rel="noopener">以太坊geth新版本error：account unlock with HTTP access is forbidden</a><br><img src="https://i.loli.net/2019/10/21/talkRKxiQDOrAHv.jpg" alt="geth1.JPG"><br><img src="https://i.loli.net/2019/10/21/bwFu4fJ5zHXyp1v.jpg" alt="geth_nodeInfo1.JPG"></li>
+        <p><a href="https://www.cxyxiaowu.com/2917.html" target="_blank" rel="noopener">程序员必须掌握的算法有哪些？谈谈这这几年学过的算法</a></p>
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><h3 id="算法分析神器—时间复杂度"><a href="#算法分析神器—时间复杂度" class="headerlink" title="算法分析神器—时间复杂度"></a><a href="https://mp.weixin.qq.com/s?__biz=MzU1MDE4MzUxNA==&mid=2247483867&idx=1&sn=6270b56b79cb74334eb4faf80de05f0a&scene=21#wechat_redirect" target="_blank" rel="noopener">算法分析神器—时间复杂度</a></h3><ul>
+<li>刻画算法的运行时间 ：程序运行时间和问题规模 N 的函数关系</li>
+<li>时间复杂度 ： 我们一般只关心随着问题规模 n 趋于无穷时函数中对函数结果影响最大的项，也就是最高次项 <ul>
+<li>一般我们会保留最高次项并忽略该项的系数 ， O代表了运行时间函数的一个渐进上界 </li>
+<li>时间复杂度可以表示某个算法的运行时间的趋势，大致地度量算法效率的好坏 </li>
 </ul>
 </li>
-</ol>
-</li>
-<li><p>运行一个矿工：从这里开始的部分可以参考：<a href="https://medium.com/coinmonks/ethereum-setting-up-a-private-blockchain-67bbb96cf4f1" target="_blank" rel="noopener">搭建以太坊私链</a></p>
-<ol>
-<li>可以在 <code>geth</code>命令后加选项 <code>--mine --minerthreads 1</code>，这样在启动 <code>geth</code> 时，则就说明会一直挖矿，但这样做使得有很多空块，占用内存，所以为了测试需要，一般用方法2；</li>
-<li><code>geth1</code>，启动节点，控制台下输入 <code>miner.start(1)</code>，默认情况下是 <code>coinbase</code>节点挖矿，也可以用命令设置：<code>&gt;miner.setEtherbase(eth.coinbase)</code>。 不用挖矿时 <code>miner.stop()</code>；没有交易时挖出空块，也可以有奖励，有收入。这里可能遇到的问题：<a href="https://blog.csdn.net/tianlongtc/article/details/80026561" target="_blank" rel="noopener">解决miner.start() 返回null</a>   </li>
-</ol>
-</li>
-<li><p>转账</p>
-<ul>
-<li>首先要对发送方账户进行解锁，<code>&gt; ac1 = eth.accounts[0]，&gt; personal.unlockAccount(ac1)</code>，此时要求输入密码。</li>
-<li><code>&gt; eth.sendTransaction({&quot;from&quot;:ac1,&quot;to&quot;:ac2,&quot;value&quot;:10})</code> ，<code>value</code> 对应的单位是 <code>wei</code>， 如果想用 <code>ether</code>，可以用 <code>amount = web3.toWei(3,&#39;ether&#39;)</code>这种，把 <code>value</code> 的参数设置为 <code>amount</code>。这里要注意的是，参数的键值 <code>“from”,&quot;to&quot;,&quot;val&quot;</code> 需要用双引号引起来。</li>
-<li>用 <code>eth.getBalance(ac2)</code> 查看转账是否到账，因为 <code>ac1</code> 一直在挖矿，其资金一直在上涨。当测试完成时，可以停止挖矿。其他命令的尝试和使用参见 <a href="https://github.com/ethereum/wiki/wiki/JSON-RPC#json-rpc-api">JSON RPC</a></li>
+<li>时间复杂度的计算 <ul>
+<li>得出运行时间的函数 </li>
+<li>对函数进行简化   </li>
 </ul>
 </li>
-<li><p>再启动一个节点，称作节点2，连接到已经搭建的区块链上</p>
-<ol>
-<li>新建一个存储节点信息，区块链信息，账户信息的文件夹，<code>mkdir ~/ethereum/go-ethereum/kkgeth</code></li>
-<li>需要连接到第一个节点所在的区块链上，他们的创世块是一样的，这个节点也要初始化一下：<code>geth --datadir ~/ethereum/kkgeth/ init genesis.js</code>，注意这时用的 <code>datadir</code>。</li>
-<li>和第一个节点做连接，则需要用到 <code>enode</code>，<code>enode</code> 的信息可以在运行的节点1中输入：<code>admin.nodeInfo.enode</code>得到。  这时候，要把 <code>geth1</code>中的 <code>----nodiscover</code> 去掉，让其他节点能够发现第一个节点。</li>
-<li>和上面一样，开一个 <code>geth</code> 的实例<pre><code class="bash">alias geth2=&#39;geth --bootnodes enode://129265846efde605637ca4dee3e98e95cb466c386c64204bdedc84e98ff1e30d44e7e11e7fa6a561e8a3499acae31797da14749e3dab97af0fea682812f87b7f@127.0.0.1:40000 --verbosity 6 --identity &quot;pq&quot; --rpc --rpcport &quot;20001&quot; --rpcaddr 0.0.0.0  --allow-insecure-unlock --etherbase &quot;23b882359eed499a3b9cd06643c096e9ce048cfa&quot;  --rpccorsdomain &quot;*&quot; --datadir &quot;/home/haiki/ethereum/kkgeth&quot; --port &quot;40001&quot; --rpcapi &quot;db,eth,net,web3&quot; --networkid 2000 --nat &quot;any&quot; console 2&gt;&gt; &quot;/home/haiki/ethereum/kkgeth/node2.log&quot;&#39;</code></pre>
+</ul>
+<h3 id="佩奇学编程-复杂度分析原来这么简单"><a href="#佩奇学编程-复杂度分析原来这么简单" class="headerlink" title="佩奇学编程 | 复杂度分析原来这么简单"></a><a href="https://mp.weixin.qq.com/s?__biz=MzIwODg1OTkzNw==&mid=2247484427&idx=1&sn=0ce7de439699dd3169ed8488cb5cd659&scene=21#wechat_redirect" target="_blank" rel="noopener">佩奇学编程 | 复杂度分析原来这么简单</a></h3><ul>
+<li>空间复杂度那块有一些不妥之处，要辨证看待</li>
+</ul>
+<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><h2 id="基础数据结构"><a href="#基础数据结构" class="headerlink" title="基础数据结构"></a>基础数据结构</h2><h3 id="线性表（List）"><a href="#线性表（List）" class="headerlink" title="线性表（List）"></a>线性表（List）</h3><p>零个或多个数据元素的有限序列。除头尾节点，有且仅有一个前驱，一个后继。</p>
+<h4 id="顺序存储结构"><a href="#顺序存储结构" class="headerlink" title="顺序存储结构"></a>顺序存储结构</h4><p>逻辑上相邻的元素，位置上也相邻，三个重要属性：</p>
+<ul>
+<li>存储空间的起始位置</li>
+<li>线性表的最大存储容量</li>
+<li>线性表的当前长度</li>
+</ul>
+<h4 id="链式存储结构"><a href="#链式存储结构" class="headerlink" title="链式存储结构"></a>链式存储结构</h4><h4 id="基础数据结构：【动画】如何轻松手写链表？"><a href="#基础数据结构：【动画】如何轻松手写链表？" class="headerlink" title="基础数据结构：【动画】如何轻松手写链表？"></a><a href="https://mp.weixin.qq.com/s?__biz=Mzg2NzA4MTkxNQ==&mid=2247486106&idx=2&sn=039eb52871cfe5428c7fcf1e770c8760&scene=21#wechat_redirect" target="_blank" rel="noopener">基础数据结构：【动画】如何轻松手写链表？</a></h4><ul>
+<li>熟悉节点的数据结构、理清思路、边界条件（输入边界（输入参数，为空，在链表中是否存在），特殊边界（头部，尾部））、手写代码（定义节点，增加节点，删除节点）、测试用例（普通测试、边界测试、特殊测试）</li>
+</ul>
+<h4 id="跳跃表"><a href="#跳跃表" class="headerlink" title="跳跃表"></a>跳跃表</h4><ul>
+<li><a href="https://blog.csdn.net/u013709270/article/details/53470428" target="_blank" rel="noopener">跳跃表的原理及实现</a><ul>
+<li>类似排序数组中二分插入，不过有层级的概念</li>
+<li>大致看懂了，但是还没有自己实现！！</li>
+</ul>
 </li>
-<li>运行 <code>geth2</code>，运行 <code>admin.addPeer(&#39;enode://129265846efde605637ca4dee3e98e95cb466c386c64204bdedc84e98ff1e30d44e7e11e7fa6a561e8a3499acae31797da14749e3dab97af0fea682812f87b7f@127.0.0.1:40000&#39;)</code> ，再输入 <code>net.peerCount</code> ，显示1，则表示已经连接到一个节点。可以用 <code>admin.peers</code> 查看当前连接到的节点信息，用 <code>net.peerCount</code> 查看网络中节点连接个数。这里有个奇怪现象，就是作为 bootnode 的那个节点，会连好多个节点。 在命令中只连接了一个节点，但是会显示其他的不知道哪里的节点。其他新增节点的命令可以看 ： <a href="https://www.netkiller.cn/blockchain/ethereum/faq.add.node.html" target="_blank" rel="noopener">新增节点后不生效</a></li>
-</ol>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg2NzA4MTkxNQ==&mid=2247485133&idx=1&sn=5206c44c6ea6416d6c955e6eda29bc38&scene=21#wechat_redirect" target="_blank" rel="noopener">以后有面试官问你「跳跃表」，你就把这篇文章扔给他</a></li>
+</ul>
+<h4 id="静态链表"><a href="#静态链表" class="headerlink" title="静态链表"></a>静态链表</h4><ul>
+<li>用数组描述的链表。——游标实现法</li>
+<li><a href="https://blog.csdn.net/weixin_43340991/article/details/83475643" target="_blank" rel="noopener">线性表-静态链表</a></li>
+</ul>
+<h4 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h4><h3 id="栈与队列"><a href="#栈与队列" class="headerlink" title="栈与队列"></a><strong>栈与队列</strong></h3><h4 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h4><ul>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg2NzA4MTkxNQ==&mid=2247486111&idx=2&sn=c5861252c84f0c1fcd3e51e77f98e377&scene=21#wechat_redirect" target="_blank" rel="noopener">三分钟基础知识：什么是栈？</a><ul>
+<li>数组实现栈</li>
+<li>链式栈</li>
+</ul>
 </li>
-</ol>
-<h3 id="开启多个节点的脚本"><a href="#开启多个节点的脚本" class="headerlink" title="开启多个节点的脚本"></a>开启多个节点的脚本</h3><p>来自 <a href="https://victorjiangxin.github.io/" target="_blank" rel="noopener">姜大佬</a> ，需要修改 端口base，地址什么的。</p>
-<p>用法： <code>sh  startChain.sh  &lt;id&gt;</code> ，自动创建一条链，以及自动创建文件夹。如：<code>sh startChain.sh 1</code>。</p>
-<pre><code class="shell">#!/usr/bin/sh
-
-if [ &quot;&quot; = &quot;$1&quot; ];then
-    id=0
-else
-    id=$1
-fi
-
-rpcport_base=55000
-port_base=50000
-networkid=23333
-
-rpcport=$(($rpcport_base+$id))
-port=$(($port_base+$id))
-GETH_ROOT=&quot;$HOME/jx-eth&quot;
-datadir=&quot;$GETH_ROOT/data$id&quot;
-
-# judge if the chain has been init
-if [ ! -d $datadir ];then
-    if [ ! -f &quot;$GETH_ROOT/genesis.json&quot; ];then
-        echo &quot;Can&#39;t find genesis.json in dir $GETH_ROOT, plz re-create file gensis.json&quot;
-        exit 1
-    else
-        mkdir $datadir
-        geth --datadir $datadir init &quot;$GETH_ROOT/genesis.json&quot;
-    fi
-fi
-
-geth --datadir $datadir --identity &quot;ETH-NODE$id&quot; --rpc --rpcport &quot;$rpcport&quot; --rpcaddr 0.0.0.0 --rpccorsdomain &quot;*&quot; --rpcapi &quot;personal,db,eth,net,web3&quot; --nodiscover --maxpeers 20 --networkid $networkid --port $port console
-</code></pre>
-<p>tmux</p>
-<p><a href="https://blog.csdn.net/Em_dark/article/details/82255248" target="_blank" rel="noopener">linux 下安装npm和node</a></p>
-
+</ul>
+<h4 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h4><h4 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列</h4><h4 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h4><h4 id="多级反馈队列"><a href="#多级反馈队列" class="headerlink" title="多级反馈队列"></a>多级反馈队列</h4>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 peiqi66@163.com </span>
     </div>
@@ -725,8 +623,8 @@ geth --datadir $datadir --identity &quot;ETH-NODE$id&quot; --rpc --rpcport &quot
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">最后更新:</span>2019-10-25, 10:04:01</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/19/从头搭建以太坊私链/" title="从头搭建以太坊私链">https://github.com/haiki/haiki.github.io/2019/10/19/从头搭建以太坊私链/</a>
+    <p><span class="copy-title">最后更新:</span>2019-11-03, 11:58:07</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/03/算法与数据结构学习必备/" title="算法与数据结构学习必备">https://github.com/haiki/haiki.github.io/2019/11/03/算法与数据结构学习必备/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
