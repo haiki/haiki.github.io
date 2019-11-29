@@ -2,7 +2,11 @@
 title: SpeedyMurmurs data 记录
 date: 2019-10-31 10:34:05
 categories:
+- 论文相关总结
 tags:
+- speedymurmurs
+- payment routing
+- 路由算法
 ---
 
 ### ripple-data-nov7-dynamic
