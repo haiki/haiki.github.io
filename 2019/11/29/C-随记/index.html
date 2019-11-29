@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>区块链中的一些常用名词解释 | haiki</title>
-  <meta name="keywords" content=" attack ">
-  <meta name="description" content="区块链中的一些常用名词解释 | haiki">
+  <title>C++随记 | haiki</title>
+  <meta name="keywords" content=" C++ ">
+  <meta name="description" content="C++随记 | haiki">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="个人简介haiki，在读研究生，研究方向为区块链相关。 喜欢运动，喜欢幻想，喜欢笑。 使用博客的目的是想把自己平时看到的，学到的内容整理下来，形成自己的知识库，同时将自己的所学所感所知分享给大家，希望和大家一起进步~">
 <meta name="keywords" content="computer science,blockchain,leetcode,record life">
@@ -524,9 +524,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-区块链中的一些常用名词解释" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-C-随记" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">区块链中的一些常用名词解释</h1>
+        <h1 class="article-title">C++随记</h1>
     
     <div class="article-meta">
         
@@ -534,26 +534,26 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="区块链">区块链</a>
+                <a href="javascript:" data-rel="编程语言">编程语言</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color2">attack</a>
+            <a href="javascript:" class="color4">C++</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-26 18:50:13'>2019-10-26 18:44</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-29 17:26:34'>2019-11-29 09:58</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:120</span>
+        <span>字数:92</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -572,7 +572,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#攻击"><span class="toc-text">攻击</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#以太坊网络中的“DoS”攻击"><span class="toc-text">以太坊网络中的“DoS”攻击</span></a></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -588,11 +588,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h2><h3 id="以太坊网络中的“DoS”攻击"><a href="#以太坊网络中的“DoS”攻击" class="headerlink" title="以太坊网络中的“DoS”攻击"></a>以太坊网络中的“DoS”攻击</h3><blockquote>
-<p> What is a “DoS” of the Ethereum network?</p>
-<p>A denial of service (DoS) incident on the Ethereum network happens when there are consistently full blocks and many pending transactions on the network.  Recall that miners can choose to include transactions based on the transaction fee attached. If there are hundreds of thousands of transaction in queue (or as it is technically termed, the transaction pool) it can cause unusual transaction delays of hours. DDoS incidents can be <strong>malicious</strong> or <strong>non-malicious.</strong></p>
-</blockquote>
-<p>网络中持续存在满的区块和许多待打包交易。交易的不寻常延迟。</p>
+        <ul>
+<li><p>想要随机产生0-100间的整数，从而做排序的操作</p>
+<ul>
+<li><a href="https://www.cnblogs.com/VVingerfly/p/5990714.html" target="_blank" rel="noopener">C++产生随机数</a>             </li>
+<li>通常用 <code>srand((unsigned)time(0))</code>或者<code>srand((unsigned)time(NULL))</code>来 产生种子。如果仍然觉得时间间隔太小。可以在<code>(unsigned)time(0)</code>或者<code>(unsigned)time(NULL)</code>后面乘上某个合适的整数。 例如,<code>srand((unsigned)time(NULL)*10)</code>。</li>
+<li><a href="https://blog.csdn.net/yangziluomu/article/details/102013793" target="_blank" rel="noopener">浮点随机数产生</a></li>
+</ul>
+</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 peiqi66@163.com </span>
@@ -606,8 +610,8 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">最后更新:</span>2019-10-26, 18:50:13</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/26/区块链中的一些常用名词解释/" title="区块链中的一些常用名词解释">https://github.com/haiki/haiki.github.io/2019/10/26/区块链中的一些常用名词解释/</a>
+    <p><span class="copy-title">最后更新:</span>2019-11-29, 17:26:34</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/29/C-随记/" title="C++随记">https://github.com/haiki/haiki.github.io/2019/11/29/C-随记/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
