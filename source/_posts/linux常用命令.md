@@ -22,7 +22,10 @@ tags:
 - [go环境变量配置 (GOROOT和GOPATH)](<https://www.jianshu.com/p/4e699ff478a5>)
   - GOROOT：是go的安装目录
   - GOPATH的值不能与GOROOT相同。用于指定我们的开发工作区(workspace),是存放源代码、测试文件、库静态文件、可执行文件的工作。
-
 - [Linux 修改环境变量 PATH](https://cnbin.github.io/blog/2015/06/22/linux-xiu-gai-huan-jing-bian-liang-path/)
 - [查看linux中某个端口（port）是否被占用](<http://www.findme.wang/blog/detail/id/1.html>)
+- root用户修改其他普通用户的密码（忘记密码情况）
+  - 不记得用户名 `cat/etc/shadow` ，查看用户名
+  - 知道用户名，输入  `  passwd 用户名`
 
+- 以太坊上的交易：https://ethfans.org/posts/the-business-of-sending-transactions-on-ethereum
