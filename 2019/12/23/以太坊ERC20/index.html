@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>about | haiki</title>
-  <meta name="keywords" content>
-  <meta name="description" content="about | haiki">
+  <title>以太坊ERC20 | haiki</title>
+  <meta name="keywords" content=" 以太坊 , 智能合约 , solidity , token ">
+  <meta name="description" content="以太坊ERC20 | haiki">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="个人简介haiki，在读研究生，研究方向为区块链相关。 喜欢运动，喜欢幻想，喜欢笑。 使用博客的目的是想把自己平时看到的，学到的内容整理下来，形成自己的知识库，同时将自己的所学所感所知分享给大家，希望和大家一起进步~">
 <meta name="keywords" content="computer science,blockchain,leetcode,record life">
@@ -572,24 +572,42 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-以太坊ERC20" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">以太坊ERC20</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="区块链">区块链</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">以太坊</a>
+            
+            <a href="javascript:" class="color5">智能合约</a>
+            
+            <a href="javascript:" class="color4">solidity</a>
+            
+            <a href="javascript:" class="color1">token</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-03 19:09:31'>2019-10-03 19:05</time>
+        创建时间:<time class="date" title='更新时间: 2019-12-26 15:01:04'>2019-12-23 10:13</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:91</span>
+        <span>字数:280</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -608,7 +626,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#个人简介"><span class="toc-text">个人简介</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -624,9 +642,51 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h4><p>haiki，在读研究生，研究方向为区块链相关。</p>
-<p>喜欢运动，喜欢幻想，喜欢笑。</p>
-<p>使用博客的目的是想把自己平时看到的，学到的内容整理下来，形成自己的知识库，同时将自己的所学所感所知分享给大家，希望和大家一起进步~</p>
+        <ul>
+<li>译文：<a href="https://mp.weixin.qq.com/s?__biz=MzIwODA3NDI5MA==&mid=2652525287&idx=1&sn=4e8409169abb97a7ba36471cece34ad3&chksm=8ce651babb91d8ac9c6a69f25344981a11d29e799940dbce953b0b43cdb6ea65f64ec508b842&scene=21#wechat_redirect" target="_blank" rel="noopener">2017-理解ERC-20 token合约-以太坊爱好者</a> <ul>
+<li>原文：<a href="https://www.wealdtech.com/articles/understanding-erc20-token-contracts/" target="_blank" rel="noopener">2017-Understanding ERC-20 token contracts-Jim McDonald</a></li>
+</ul>
+</li>
+</ul>
+<p>从这篇文章中可知，ERC20 就是一个记录 &lt;地址，资产&gt; 的键值存储数据库。所有的 存 token、取 token 操作相当于在记录里面的增/删/改一条记录。</p>
+<ul>
+<li><a href="https://www.jianshu.com/p/4002a5212885" target="_blank" rel="noopener">2018-教你如何一步步创建ERC20代币-Pony小马</a></li>
+</ul>
+<p>这篇文章实践为例，构建简单的 ERC20 代币，介绍了ERC20的标准接口并做了实现和部署。</p>
+<ul>
+<li>译文：<a href="https://mp.weixin.qq.com/s/foM1QWvsqGTdHxHTmjczsw" target="_blank" rel="noopener">2017-代币支付的以太坊智能服务-以太坊爱好者</a><ul>
+<li>原文：<a href="https://www.wealdtech.com/articles/ethereum-smart-service-payment-with-tokens/" target="_blank" rel="noopener">2017-Ethereum smart service payment with tokens-Jim McDonald</a></li>
+</ul>
+</li>
+</ul>
+<p>这篇文章主要以伪代码的形式，说明了外部服务如何使用 token 作为一种支付方式。以图文并茂的方式告诉我们几个函数的适用场景。包括 ：<code>approve()</code>，<code>transfer()</code>，<code>transferFrom()</code>，<code>approveAndCall()</code>，<code>receiveApproval()</code>，<code>transferAndCall()</code>，<code>tokenFallback()</code>。</p>
+<ul>
+<li><p><a href="https://dev.to/jklepatch/the-2-ways-to-transfer-erc20-tokens-in-solidity-3h40" target="_blank" rel="noopener">The 2 ways to transfer ERC20 Tokens in Solidity</a></p>
+<ul>
+<li><p>transfer() (simple transfers)</p>
+<ul>
+<li>Import the ERC20 token<ul>
+<li><code>import  &quot;github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol&quot;;</code></li>
+</ul>
+</li>
+<li>Import the address of the token</li>
+</ul>
+</li>
+<li><p>Call transfer()</p>
+</li>
+</ul>
+</li>
+<li><p>transferFrom() (delegated transfer)</p>
+<ul>
+<li>Import the ERC20 token</li>
+<li>Import the address of the token</li>
+<li>Call approve()<ul>
+<li>Call transferFrom()</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 peiqi66@163.com </span>
@@ -638,6 +698,14 @@
     <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">最后更新:</span>2019-12-26, 15:01:04</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/23/以太坊ERC20/" title="以太坊ERC20">https://github.com/haiki/haiki.github.io/2019/12/23/以太坊ERC20/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 

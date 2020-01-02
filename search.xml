@@ -4,6 +4,64 @@
   
     
     <entry>
+      <title>python</title>
+      <link href="/2019/12/24/python/"/>
+      <url>/2019/12/24/python/</url>
+      
+        <content type="html"><![CDATA[<ul><li><a href="https://foofish.net/python-function-args.html" target="_blank" rel="noopener">Python 函数中，参数是传值，还是传引用？</a><ul><li>传的是对象！因为有即时获取验证码的繁琐操作，所以存在印象笔记了</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程语言 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> 语法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>以太坊ERC20</title>
+      <link href="/2019/12/23/%E4%BB%A5%E5%A4%AA%E5%9D%8AERC20/"/>
+      <url>/2019/12/23/%E4%BB%A5%E5%A4%AA%E5%9D%8AERC20/</url>
+      
+        <content type="html"><![CDATA[<ul><li>译文：<a href="https://mp.weixin.qq.com/s?__biz=MzIwODA3NDI5MA==&mid=2652525287&idx=1&sn=4e8409169abb97a7ba36471cece34ad3&chksm=8ce651babb91d8ac9c6a69f25344981a11d29e799940dbce953b0b43cdb6ea65f64ec508b842&scene=21#wechat_redirect" target="_blank" rel="noopener">2017-理解ERC-20 token合约-以太坊爱好者</a> <ul><li>原文：<a href="https://www.wealdtech.com/articles/understanding-erc20-token-contracts/" target="_blank" rel="noopener">2017-Understanding ERC-20 token contracts-Jim McDonald</a></li></ul></li></ul><p>从这篇文章中可知，ERC20 就是一个记录 &lt;地址，资产&gt; 的键值存储数据库。所有的 存 token、取 token 操作相当于在记录里面的增/删/改一条记录。</p><ul><li><a href="https://www.jianshu.com/p/4002a5212885" target="_blank" rel="noopener">2018-教你如何一步步创建ERC20代币-Pony小马</a></li></ul><p>这篇文章实践为例，构建简单的 ERC20 代币，介绍了ERC20的标准接口并做了实现和部署。</p><ul><li>译文：<a href="https://mp.weixin.qq.com/s/foM1QWvsqGTdHxHTmjczsw" target="_blank" rel="noopener">2017-代币支付的以太坊智能服务-以太坊爱好者</a><ul><li>原文：<a href="https://www.wealdtech.com/articles/ethereum-smart-service-payment-with-tokens/" target="_blank" rel="noopener">2017-Ethereum smart service payment with tokens-Jim McDonald</a></li></ul></li></ul><p>这篇文章主要以伪代码的形式，说明了外部服务如何使用 token 作为一种支付方式。以图文并茂的方式告诉我们几个函数的适用场景。包括 ：<code>approve()</code>，<code>transfer()</code>，<code>transferFrom()</code>，<code>approveAndCall()</code>，<code>receiveApproval()</code>，<code>transferAndCall()</code>，<code>tokenFallback()</code>。</p><ul><li><p><a href="https://dev.to/jklepatch/the-2-ways-to-transfer-erc20-tokens-in-solidity-3h40" target="_blank" rel="noopener">The 2 ways to transfer ERC20 Tokens in Solidity</a></p><ul><li><p>transfer() (simple transfers)</p><ul><li>Import the ERC20 token<ul><li><code>import  &quot;github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol&quot;;</code></li></ul></li><li>Import the address of the token</li></ul></li><li><p>Call transfer()</p></li></ul></li><li><p>transferFrom() (delegated transfer)</p><ul><li>Import the ERC20 token</li><li>Import the address of the token</li><li>Call approve()<ul><li>Call transferFrom()</li></ul></li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 区块链 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 以太坊 </tag>
+            
+            <tag> 智能合约 </tag>
+            
+            <tag> solidity </tag>
+            
+            <tag> token </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>以太坊-Transaction</title>
       <link href="/2019/12/22/%E4%BB%A5%E5%A4%AA%E5%9D%8A-Transaction/"/>
       <url>/2019/12/22/%E4%BB%A5%E5%A4%AA%E5%9D%8A-Transaction/</url>
@@ -216,7 +274,7 @@
       <link href="/2019/10/25/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%AE%9E%E8%B7%B5/"/>
       <url>/2019/10/25/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%AE%9E%E8%B7%B5/</url>
       
-        <content type="html"><![CDATA[<p>接着上一节，<a href="[https://haiki.github.io/2019/10/19/%E4%BB%8E%E5%A4%B4%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%81%E9%93%BE/](https://haiki.github.io/2019/10/19/从头搭建以太坊私链/)">从头搭建以太坊私链</a>。试着编写简单的智能合约，并在已经搭建好的链上部署。</p><p>具体参考 <a href="https://www.zhihu.com/people/li-kang-65/posts" target="_blank" rel="noopener">李康</a> 的知乎内容。</p><h3 id="使用-Remix-编译合约"><a href="#使用-Remix-编译合约" class="headerlink" title="使用 Remix 编译合约"></a>使用 <a href="https://remix.ethereum.org/" target="_blank" rel="noopener">Remix</a> 编译合约</h3><p>编写简单的测试合约</p><pre><code class="solidity">pragma solidity ^0.4.8;contract Test{    uint256 public value;    function Test(){        value = 123;    }}</code></pre><p>选择与合约版本对应的编译器，同时可以选择下面的 开启优化（Enable optimization），这个选项针对于比较大型的合约，对gas之类消耗比较大的情况会很有用。</p><p><img src="https://i.loli.net/2019/10/25/Sgdnjp5wZ3mWIR9.jpg" alt="compiler.JPG"></p><p>编译成功之后，向下拉上图，可以看到 compilation details。点击则可以看到一些详细信息。</p><p><img src="https://i.loli.net/2019/10/25/64HYaAMhw8FDpIn.jpg" alt="compilationDetails.JPG"></p><p>geth1 的控制台下操作如下：</p><p><img src="https://i.loli.net/2019/10/25/xOyVQvibYW6zSNm.jpg" alt="deployContract.JPG"></p><blockquote><p><a href="https://zhuanlan.zhihu.com/p/26789825" target="_blank" rel="noopener">李康</a> ：我们在部署智能合约时使用的 data 字段是 Bytecode 而不是 Runtime Bytecode，这是因为以太坊上的节点收到合约部署交易时，运行 data 指定的字节码，执行完毕后返回的代码才是真正的合约代码，即 Runtime Bytecode。</p></blockquote><p>也就是说，红框内的 <code>data</code> 字段，是 Bytecode，黄框内的 <code>data</code>，是 Runtime Bytecode。合约的地址是篮框内的。</p><hr><h5 id="编写-资产聚合与分散合约时遇到的solidity语法问题"><a href="#编写-资产聚合与分散合约时遇到的solidity语法问题" class="headerlink" title="编写 资产聚合与分散合约时遇到的solidity语法问题"></a>编写 资产聚合与分散合约时遇到的solidity语法问题</h5><ul><li><p>字符串的操作库（0.4.x版本）：<a href="https://github.com/Arachnid/solidity-stringutils">https://github.com/Arachnid/solidity-stringutils</a></p><ul><li>（0.5.0版本）：<a href="https://github.com/tokencard/contracts/blob/master/contracts/externals/strings.sol">https://github.com/tokencard/contracts/blob/master/contracts/externals/strings.sol</a></li><li><a href="https://github.com/Arachnid/solidity-stringutils#concatenating-strings">https://github.com/Arachnid/solidity-stringutils#concatenating-strings</a></li></ul></li><li><p>『0016』 - Solidity Types - 玩转 Solidity 数组 （Arrays）：<a href="https://blog.csdn.net/liyuechun520/article/details/78410733" target="_blank" rel="noopener">https://blog.csdn.net/liyuechun520/article/details/78410733</a></p></li><li><p>URL的API ：<a href="https://ropsten.etherscan.io/apis#transactions" target="_blank" rel="noopener">https://ropsten.etherscan.io/apis#transactions</a></p></li><li><p>Solidity的Using for的使用：<a href="https://blog.csdn.net/qq_33764491/article/details/80604887" target="_blank" rel="noopener">https://blog.csdn.net/qq_33764491/article/details/80604887</a></p></li><li><p>library</p></li><li><p>以太坊交易源码分析：<a href="https://blog.csdn.net/TurkeyCock/article/details/80485391" target="_blank" rel="noopener">https://blog.csdn.net/TurkeyCock/article/details/80485391</a></p></li></ul><ul><li>go 和 solidity的类型对应关系 <a href="https://islishude.github.io/blog/2019/06/29/blockchain/使用-Go-进行-Solidity-ABI-编解码/" target="_blank" rel="noopener">https://islishude.github.io/blog/2019/06/29/blockchain/%E4%BD%BF%E7%94%A8-Go-%E8%BF%9B%E8%A1%8C-Solidity-ABI-%E7%BC%96%E8%A7%A3%E7%A0%81/</a></li><li>交易签名的过程：<a href="https://ethereum.iethpay.com/how-to-sign-and-hash-tx.html" target="_blank" rel="noopener">https://ethereum.iethpay.com/how-to-sign-and-hash-tx.html</a></li><li>交易签名以及哈希值的计算：<a href="https://ethereum.iethpay.com/how-to-sign-and-hash-tx.html" target="_blank" rel="noopener">https://ethereum.iethpay.com/how-to-sign-and-hash-tx.html</a></li><li>以太坊上的交易：<a href="https://ethfans.org/posts/the-business-of-sending-transactions-on-ethereum" target="_blank" rel="noopener">https://ethfans.org/posts/the-business-of-sending-transactions-on-ethereum</a></li></ul><ul><li><p><a href="https://andrea.corbellini.name/2015/05/17/elliptic-curve-cryptography-a-gentle-introduction/" target="_blank" rel="noopener">Elliptic Curve Cryptography: a gentle introduction</a><a href="https://andrea.corbellini.name/2015/05/17/elliptic-curve-cryptography-a-gentle-introduction/" target="_blank" rel="noopener">https://andrea.corbellini.name/2015/05/17/elliptic-curve-cryptography-a-gentle-introduction/</a></p></li><li><p><a href="https://ethereum.stackexchange.com/questions/25601/what-is-the-difference-between-web3-eth-sign-web3-eth-accounts-sign-web3-eth-p" target="_blank" rel="noopener">What is the difference between web3.eth.sign, web3.eth.accounts.sign, web3.eth.personal.sign functions?</a></p></li><li><p>以太坊上发送交易的九种办法：<a href="https://ethfans.org/posts/the-business-of-sending-transactions-on-ethereum" target="_blank" rel="noopener">https://ethfans.org/posts/the-business-of-sending-transactions-on-ethereum</a></p></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>接着上一节，<a href="[https://haiki.github.io/2019/10/19/%E4%BB%8E%E5%A4%B4%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%81%E9%93%BE/](https://haiki.github.io/2019/10/19/从头搭建以太坊私链/)">从头搭建以太坊私链</a>。试着编写简单的智能合约，并在已经搭建好的链上部署。</p><p>具体参考 <a href="https://www.zhihu.com/people/li-kang-65/posts" target="_blank" rel="noopener">李康</a> 的知乎内容。</p><h3 id="使用-Remix-编译合约"><a href="#使用-Remix-编译合约" class="headerlink" title="使用 Remix 编译合约"></a>使用 <a href="https://remix.ethereum.org/" target="_blank" rel="noopener">Remix</a> 编译合约</h3><p>编写简单的测试合约</p><pre><code class="solidity">pragma solidity ^0.4.8;contract Test{    uint256 public value;    function Test(){        value = 123;    }}</code></pre><p>选择与合约版本对应的编译器，同时可以选择下面的 开启优化（Enable optimization），这个选项针对于比较大型的合约，对gas之类消耗比较大的情况会很有用。</p><p><img src="https://i.loli.net/2019/10/25/Sgdnjp5wZ3mWIR9.jpg" alt="compiler.JPG"></p><p>编译成功之后，向下拉上图，可以看到 compilation details。点击则可以看到一些详细信息。</p><p><img src="https://i.loli.net/2019/10/25/64HYaAMhw8FDpIn.jpg" alt="compilationDetails.JPG"></p><p>geth1 的控制台下操作如下：</p><p><img src="https://i.loli.net/2019/10/25/xOyVQvibYW6zSNm.jpg" alt="deployContract.JPG"></p><blockquote><p><a href="https://zhuanlan.zhihu.com/p/26789825" target="_blank" rel="noopener">李康</a> ：我们在部署智能合约时使用的 data 字段是 Bytecode 而不是 Runtime Bytecode，这是因为以太坊上的节点收到合约部署交易时，运行 data 指定的字节码，执行完毕后返回的代码才是真正的合约代码，即 Runtime Bytecode。</p></blockquote><p>也就是说，红框内的 <code>data</code> 字段，是 Bytecode，黄框内的 <code>data</code>，是 Runtime Bytecode。合约的地址是蓝框内的。</p><hr><ul><li><p>对于有参数的智能合约，部署时，需要对参数进行填写！</p></li><li><p>对于下次使用合约，首先得到合约本身，然后 用 <code>.at(address)</code>，而不需要用 <code>new</code> ！</p></li><li><p>对于部署上去的合约，比如上图的 <code>test</code>实例，可直接键入 <code>test.address</code>从而查看合约的地址，键入 <code>test</code> 即可用 <code>json</code>  串的形式，返回 <code>ABI</code>，可以更清晰的去看此合约的接口，参数之类的，还有合约的地址，部署合约返回的交易散列。</p></li><li><p>合约调用常用命令：</p></li></ul><pre><code>eth.getTransactionReceipt(txHash)test.Test(para,...,{from:eth.accounts[0],gas:30000,gasPrice:3,value:})</code></pre><h5 id="编写-资产聚合与分散合约时遇到的solidity语法问题"><a href="#编写-资产聚合与分散合约时遇到的solidity语法问题" class="headerlink" title="编写 资产聚合与分散合约时遇到的solidity语法问题"></a>编写 资产聚合与分散合约时遇到的solidity语法问题</h5><ul><li><p>字符串的操作库（0.4.x版本）：<a href="https://github.com/Arachnid/solidity-stringutils">https://github.com/Arachnid/solidity-stringutils</a></p><ul><li>（0.5.0版本）：<a href="https://github.com/tokencard/contracts/blob/master/contracts/externals/strings.sol">https://github.com/tokencard/contracts/blob/master/contracts/externals/strings.sol</a></li><li><a href="https://github.com/Arachnid/solidity-stringutils#concatenating-strings">https://github.com/Arachnid/solidity-stringutils#concatenating-strings</a></li></ul></li><li><p>『0016』 - Solidity Types - 玩转 Solidity 数组 （Arrays）：<a href="https://blog.csdn.net/liyuechun520/article/details/78410733" target="_blank" rel="noopener">https://blog.csdn.net/liyuechun520/article/details/78410733</a></p></li><li><p>URL的API ：<a href="https://ropsten.etherscan.io/apis#transactions" target="_blank" rel="noopener">https://ropsten.etherscan.io/apis#transactions</a></p></li><li><p>Solidity的Using for的使用：<a href="https://blog.csdn.net/qq_33764491/article/details/80604887" target="_blank" rel="noopener">https://blog.csdn.net/qq_33764491/article/details/80604887</a></p></li><li><p>library</p></li><li><p>以太坊交易源码分析：<a href="https://blog.csdn.net/TurkeyCock/article/details/80485391" target="_blank" rel="noopener">https://blog.csdn.net/TurkeyCock/article/details/80485391</a></p></li></ul><ul><li>go 和 solidity的类型对应关系 <a href="https://islishude.github.io/blog/2019/06/29/blockchain/使用-Go-进行-Solidity-ABI-编解码/" target="_blank" rel="noopener">https://islishude.github.io/blog/2019/06/29/blockchain/%E4%BD%BF%E7%94%A8-Go-%E8%BF%9B%E8%A1%8C-Solidity-ABI-%E7%BC%96%E8%A7%A3%E7%A0%81/</a></li><li>交易签名的过程：<a href="https://ethereum.iethpay.com/how-to-sign-and-hash-tx.html" target="_blank" rel="noopener">https://ethereum.iethpay.com/how-to-sign-and-hash-tx.html</a></li><li>交易签名以及哈希值的计算：<a href="https://ethereum.iethpay.com/how-to-sign-and-hash-tx.html" target="_blank" rel="noopener">https://ethereum.iethpay.com/how-to-sign-and-hash-tx.html</a></li><li>以太坊上的交易：<a href="https://ethfans.org/posts/the-business-of-sending-transactions-on-ethereum" target="_blank" rel="noopener">https://ethfans.org/posts/the-business-of-sending-transactions-on-ethereum</a></li></ul><ul><li><p><a href="https://andrea.corbellini.name/2015/05/17/elliptic-curve-cryptography-a-gentle-introduction/" target="_blank" rel="noopener">Elliptic Curve Cryptography: a gentle introduction</a><a href="https://andrea.corbellini.name/2015/05/17/elliptic-curve-cryptography-a-gentle-introduction/" target="_blank" rel="noopener">https://andrea.corbellini.name/2015/05/17/elliptic-curve-cryptography-a-gentle-introduction/</a></p></li><li><p><a href="https://ethereum.stackexchange.com/questions/25601/what-is-the-difference-between-web3-eth-sign-web3-eth-accounts-sign-web3-eth-p" target="_blank" rel="noopener">What is the difference between web3.eth.sign, web3.eth.accounts.sign, web3.eth.personal.sign functions?</a></p></li><li><p>以太坊上发送交易的九种办法：<a href="https://ethfans.org/posts/the-business-of-sending-transactions-on-ethereum" target="_blank" rel="noopener">https://ethfans.org/posts/the-business-of-sending-transactions-on-ethereum</a></p></li><li><p>What are ABI encoding functions in Solidity 0.4.24?：<a href="https://medium.com/@libertylocked/what-are-abi-encoding-functions-in-solidity-0-4-24-c1a90b5ddce8" target="_blank" rel="noopener">https://medium.com/@libertylocked/what-are-abi-encoding-functions-in-solidity-0-4-24-c1a90b5ddce8</a></p><ul><li>abi.encode() returns (bytes)</li><li>abi.encodePacked() returns (bytes)</li></ul></li></ul>]]></content>
       
       
       <categories>
