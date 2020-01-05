@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>git笔记</title>
+      <link href="/2020/01/05/git%E7%AC%94%E8%AE%B0/"/>
+      <url>/2020/01/05/git%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<ul><li><p><a href="https://www.cnblogs.com/XiaomaFighting/p/11509718.html" target="_blank" rel="noopener">关于在GitHub上新建一个库并和本地仓库关联</a></p></li><li><p><a href="https://blog.csdn.net/u012145252/article/details/80628451" target="_blank" rel="noopener">记Git报错-refusing to merge unrelated histories</a></p></li><li><p><a href="https://www.jianshu.com/p/dcde5ab4cfd9" target="_blank" rel="noopener">使用tree生成目录树结构</a></p><ul><li>tree /F “文件路径”</li></ul></li><li><p><a href="https://blog.csdn.net/w958796636/article/details/53611133" target="_blank" rel="noopener">git使用情景2：commit之后，想撤销commit</a></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python</title>
       <link href="/2019/12/24/python/"/>
       <url>/2019/12/24/python/</url>
