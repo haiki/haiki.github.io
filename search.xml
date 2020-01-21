@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>以太坊黄皮书</title>
+      <link href="/2020/01/21/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E9%BB%84%E7%9A%AE%E4%B9%A6/"/>
+      <url>/2020/01/21/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E9%BB%84%E7%9A%AE%E4%B9%A6/</url>
+      
+        <content type="html"><![CDATA[<p>v_20191025</p><ol start="9"><li>执行模型</li></ol><p>以太坊虚拟机是半图灵完备的，因为计算受 <code>gas</code> 的限制。是基于栈的结构。机器的字长是 256-bit，因此栈中元素的大小也是 256-bit。栈中元素个数最多为 1024 个。</p><p>9.1 Basics</p><p>内存（memory）模型是按字寻址（word-addressed）的字节数组（byte array）。存储（storage）模型是按字寻址的字数组（word array）。</p><p>程序代码存储在虚拟 ROM 中，只能用特殊指令交互。</p><p>9.2 Fee Overview</p><p>交易费用 gas 来表示，三种情况下收取：</p><ol><li>操作的计算</li><li>对从属信息调用或者合约创建生成的交易</li><li>对内存使用的增加</li></ol><p>内存的费用</p><p>存储的费用：因为所有节点都要存储，要最小化使用，因此清除某个存储，可以有相应的奖励。 [H] EVM gas cost</p><p>9.3 Execution Environment</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 区块链 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 以太坊 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>git笔记</title>
       <link href="/2020/01/05/git%E7%AC%94%E8%AE%B0/"/>
       <url>/2020/01/05/git%E7%AC%94%E8%AE%B0/</url>
@@ -74,9 +99,9 @@
             
             <tag> 以太坊 </tag>
             
-            <tag> solidity </tag>
-            
             <tag> 智能合约 </tag>
+            
+            <tag> solidity </tag>
             
             <tag> token </tag>
             
@@ -274,7 +299,7 @@
       <link href="/2019/10/26/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"/>
       <url>/2019/10/26/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/</url>
       
-        <content type="html"><![CDATA[<h2 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h2><h3 id="以太坊网络中的“DoS”攻击"><a href="#以太坊网络中的“DoS”攻击" class="headerlink" title="以太坊网络中的“DoS”攻击"></a>以太坊网络中的“DoS”攻击</h3><blockquote><p> What is a “DoS” of the Ethereum network?</p><p>A denial of service (DoS) incident on the Ethereum network happens when there are consistently full blocks and many pending transactions on the network.  Recall that miners can choose to include transactions based on the transaction fee attached. If there are hundreds of thousands of transaction in queue (or as it is technically termed, the transaction pool) it can cause unusual transaction delays of hours. DDoS incidents can be <strong>malicious</strong> or <strong>non-malicious.</strong></p></blockquote><p>网络中持续存在满的区块和许多待打包交易。交易的不寻常延迟。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h2><h3 id="以太坊网络中的“DoS”攻击"><a href="#以太坊网络中的“DoS”攻击" class="headerlink" title="以太坊网络中的“DoS”攻击"></a>以太坊网络中的“DoS”攻击</h3><blockquote><p> What is a “DoS” of the Ethereum network?</p><p>A denial of service (DoS) incident on the Ethereum network happens when there are consistently full blocks and many pending transactions on the network.  Recall that miners can choose to include transactions based on the transaction fee attached. If there are hundreds of thousands of transaction in queue (or as it is technically termed, the transaction pool) it can cause unusual transaction delays of hours. DDoS incidents can be <strong>malicious</strong> or <strong>non-malicious.</strong></p></blockquote><p>网络中持续存在满的区块和许多待打包交易。交易的不寻常延迟。</p><ul><li><a href="https://ethereum.stackexchange.com/questions/6429/normal-transactions-vs-internal-transactions-in-etherscan" target="_blank" rel="noopener">Normal transactions VS. Internal transactions in etherscan</a></li><li><a href="https://ethereum.stackexchange.com/questions/3417/how-to-get-contract-internal-transactions" target="_blank" rel="noopener">How to get contract internal transactions</a><ul><li>Blockchain explorers like etherscan obtain them by running a modified node with an instrumented EVM, which record all the value transfers that took place as part of transaction execution, storing them separately.</li></ul></li></ul>]]></content>
       
       
       <categories>
@@ -313,9 +338,9 @@
             
             <tag> 以太坊 </tag>
             
-            <tag> solidity </tag>
-            
             <tag> 智能合约 </tag>
+            
+            <tag> solidity </tag>
             
         </tags>
       
