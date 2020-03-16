@@ -33,7 +33,7 @@
       <link href="/2020/01/05/git%E7%AC%94%E8%AE%B0/"/>
       <url>/2020/01/05/git%E7%AC%94%E8%AE%B0/</url>
       
-        <content type="html"><![CDATA[<ul><li><p><a href="https://www.cnblogs.com/XiaomaFighting/p/11509718.html" target="_blank" rel="noopener">关于在GitHub上新建一个库并和本地仓库关联</a></p></li><li><p><a href="https://blog.csdn.net/u012145252/article/details/80628451" target="_blank" rel="noopener">记Git报错-refusing to merge unrelated histories</a></p></li><li><p><a href="https://www.jianshu.com/p/dcde5ab4cfd9" target="_blank" rel="noopener">使用tree生成目录树结构</a></p><ul><li>tree /F “文件路径”</li></ul></li><li><p><a href="https://blog.csdn.net/w958796636/article/details/53611133" target="_blank" rel="noopener">git使用情景2：commit之后，想撤销commit</a></p></li></ul>]]></content>
+        <content type="html"><![CDATA[<ul><li><a href="https://www.cnblogs.com/XiaomaFighting/p/11509718.html" target="_blank" rel="noopener">关于在GitHub上新建一个库并和本地仓库关联</a></li><li><a href="https://blog.csdn.net/u012145252/article/details/80628451" target="_blank" rel="noopener">记Git报错-refusing to merge unrelated histories</a></li><li><a href="https://www.jianshu.com/p/dcde5ab4cfd9" target="_blank" rel="noopener">使用tree生成目录树结构</a><ul><li>tree /F “文件路径”</li></ul></li><li><a href="https://blog.csdn.net/w958796636/article/details/53611133" target="_blank" rel="noopener">git使用情景2：commit之后，想撤销commit</a></li><li>linux上有项目，想要传输到github上进行管理，那得先在linux环境下初始化本地仓库，然后生成ssh key，与远程仓库建立连接。最后本地push到远程即可<ul><li><a href="https://blog.csdn.net/weixin_39449466/article/details/87926140" target="_blank" rel="noopener">git」Linux下将文件都上传到github上</a></li><li><a href="[https://git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E7%94%9F%E6%88%90-SSH-%E5%85%AC%E9%92%A5](https://git-scm.com/book/zh/v2/服务器上的-Git-生成-SSH-公钥)">服务器上的 Git - 生成 SSH 公钥</a></li></ul></li></ul>]]></content>
       
       
       <categories>
@@ -99,9 +99,9 @@
             
             <tag> 以太坊 </tag>
             
-            <tag> solidity </tag>
-            
             <tag> 智能合约 </tag>
+            
+            <tag> solidity </tag>
             
             <tag> token </tag>
             
@@ -299,7 +299,7 @@
       <link href="/2019/10/26/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"/>
       <url>/2019/10/26/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/</url>
       
-        <content type="html"><![CDATA[<h2 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h2><h3 id="以太坊网络中的“DoS”攻击"><a href="#以太坊网络中的“DoS”攻击" class="headerlink" title="以太坊网络中的“DoS”攻击"></a>以太坊网络中的“DoS”攻击</h3><blockquote><p> What is a “DoS” of the Ethereum network?</p><p>A denial of service (DoS) incident on the Ethereum network happens when there are consistently full blocks and many pending transactions on the network.  Recall that miners can choose to include transactions based on the transaction fee attached. If there are hundreds of thousands of transaction in queue (or as it is technically termed, the transaction pool) it can cause unusual transaction delays of hours. DDoS incidents can be <strong>malicious</strong> or <strong>non-malicious.</strong></p></blockquote><p>网络中持续存在满的区块和许多待打包交易。交易的不寻常延迟。</p><ul><li><a href="https://ethereum.stackexchange.com/questions/6429/normal-transactions-vs-internal-transactions-in-etherscan" target="_blank" rel="noopener">Normal transactions VS. Internal transactions in etherscan</a></li><li><a href="https://ethereum.stackexchange.com/questions/3417/how-to-get-contract-internal-transactions" target="_blank" rel="noopener">How to get contract internal transactions</a><ul><li>Blockchain explorers like etherscan obtain them by running a modified node with an instrumented EVM, which record all the value transfers that took place as part of transaction execution, storing them separately.</li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<h5 id="以太坊网络中的“DoS”攻击"><a href="#以太坊网络中的“DoS”攻击" class="headerlink" title="以太坊网络中的“DoS”攻击"></a>以太坊网络中的“DoS”攻击</h5><blockquote><p> What is a “DoS” of the Ethereum network?</p><p>A denial of service (DoS) incident on the Ethereum network happens when there are consistently full blocks and many pending transactions on the network.  Recall that miners can choose to include transactions based on the transaction fee attached. If there are hundreds of thousands of transaction in queue (or as it is technically termed, the transaction pool) it can cause unusual transaction delays of hours. DDoS incidents can be <strong>malicious</strong> or <strong>non-malicious.</strong></p></blockquote><p>网络中持续存在满的区块和许多待打包交易。交易的不寻常延迟。</p><h5 id="内部交易和外部交易的区别？"><a href="#内部交易和外部交易的区别？" class="headerlink" title="内部交易和外部交易的区别？"></a>内部交易和外部交易的区别？</h5><ul><li><a href="https://ethereum.stackexchange.com/questions/6429/normal-transactions-vs-internal-transactions-in-etherscan" target="_blank" rel="noopener">Normal transactions VS. Internal transactions in etherscan</a></li><li><a href="https://ethereum.stackexchange.com/questions/3417/how-to-get-contract-internal-transactions" target="_blank" rel="noopener">How to get contract internal transactions</a><ul><li>Blockchain explorers like etherscan obtain them by running a modified node with an instrumented EVM, which record all the value transfers that took place as part of transaction execution, storing them separately.</li></ul></li></ul><h5 id="MPC"><a href="#MPC" class="headerlink" title="MPC"></a>MPC</h5><p>安全多方计算是密码学的一个研究子域，目标是为多个参与方的输入共同计算一个函数但是保持这些输入保密提供一种方法。传统的密码学工作中坏人是在系统之外的参与方（例如接收者和发送方之间的监听者），但此模型中的坏人控制着真实的参与方。这类工作最早开始于1970世纪晚期的，</p><p>MPC对于很多生活中的问题是可行的解决方案（尤其在只需要秘密的线性分享和在其上的本地操作而不需要多参与方的过多交流），例如分布式投票、私有竞标和拍卖、签名的分享或加密函数和个人信息追踪等。</p>]]></content>
       
       
       <categories>
@@ -312,6 +312,8 @@
         <tags>
             
             <tag> attack </tag>
+            
+            <tag> MPC </tag>
             
         </tags>
       
@@ -338,9 +340,9 @@
             
             <tag> 以太坊 </tag>
             
-            <tag> solidity </tag>
-            
             <tag> 智能合约 </tag>
+            
+            <tag> solidity </tag>
             
         </tags>
       
@@ -471,7 +473,7 @@
       <link href="/2019/10/10/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
       <url>/2019/10/10/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
       
-        <content type="html"><![CDATA[<ul><li><p><a href="https://zhuanlan.zhihu.com/p/40133139" target="_blank" rel="noopener">Linux 任务后台运行 —screen常用命令</a></p></li><li><p><a href="https://blog.csdn.net/hejunqing14/article/details/50338161" target="_blank" rel="noopener">用screen 在后台运行程序</a></p><ul><li>Linux使用screen之后terminal就没法往上走看前面的输出内容了，<code>ctrl a+[</code> 然后使用上下                                                         </li></ul></li><li><p><a href="https://blog.csdn.net/stormbjm/article/details/9086163" target="_blank" rel="noopener">linux下添加用户并赋予root权限</a></p><ul><li><a href="http://blog.chinaunix.net/uid-26000296-id-3496103.html" target="_blank" rel="noopener">linux新建用户与权限修改</a></li></ul></li><li><p><a href="https://blog.csdn.net/li_101357/article/details/46778827" target="_blank" rel="noopener">useradd 与adduser的区别</a></p><ul><li>用 addusr 比较好，如果用usradd，加 -m 参数，这样可以生成一个自己用户的目录</li></ul></li><li><p><a href="https://www.biaodianfu.com/linux-configure-make-make-install.html" target="_blank" rel="noopener">Linux软件安装 ./configure,make,make install的作用</a></p></li><li><p><a href="https://cnbin.github.io/blog/2015/06/22/linux-slash-configure-prefix-ming-ling/" target="_blank" rel="noopener">Linux ./configure –prefix 命令</a></p></li><li><p><a href="https://juejin.im/" target="_blank" rel="noopener">Golang环境变量设置详解</a></p></li><li><p><a href="https://www.jianshu.com/p/4e699ff478a5" target="_blank" rel="noopener">go环境变量配置 (GOROOT和GOPATH)</a></p><ul><li>GOROOT：是go的安装目录</li><li>GOPATH的值不能与GOROOT相同。用于指定我们的开发工作区(workspace),是存放源代码、测试文件、库静态文件、可执行文件的工作。</li></ul></li><li><p><a href="https://cnbin.github.io/blog/2015/06/22/linux-xiu-gai-huan-jing-bian-liang-path/" target="_blank" rel="noopener">Linux 修改环境变量 PATH</a></p></li><li><p><a href="http://www.findme.wang/blog/detail/id/1.html" target="_blank" rel="noopener">查看linux中某个端口（port）是否被占用</a></p></li><li><p>root用户修改其他普通用户的密码（忘记密码情况）</p><ul><li>不记得用户名 <code>cat/etc/shadow</code> ，查看用户名</li><li>知道用户名，输入  <code>passwd 用户名</code></li></ul></li><li><p>以太坊上的交易：<a href="https://ethfans.org/posts/the-business-of-sending-transactions-on-ethereum" target="_blank" rel="noopener">https://ethfans.org/posts/the-business-of-sending-transactions-on-ethereum</a></p></li></ul>]]></content>
+        <content type="html"><![CDATA[<ul><li><p><a href="https://zhuanlan.zhihu.com/p/40133139" target="_blank" rel="noopener">Linux 任务后台运行 —screen常用命令</a></p></li><li><p><a href="https://blog.csdn.net/hejunqing14/article/details/50338161" target="_blank" rel="noopener">用screen 在后台运行程序</a></p><ul><li>Linux使用screen之后terminal就没法往上走看前面的输出内容了，<code>ctrl a+[</code> 然后使用上下                                                         </li></ul></li><li><p><a href="https://blog.csdn.net/stormbjm/article/details/9086163" target="_blank" rel="noopener">linux下添加用户并赋予root权限</a></p><ul><li><a href="http://blog.chinaunix.net/uid-26000296-id-3496103.html" target="_blank" rel="noopener">linux新建用户与权限修改</a></li></ul></li><li><p><a href="https://blog.csdn.net/li_101357/article/details/46778827" target="_blank" rel="noopener">useradd 与adduser的区别</a></p><ul><li>用 addusr 比较好，如果用usradd，加 -m 参数，这样可以生成一个自己用户的目录</li></ul></li><li><p><a href="https://www.biaodianfu.com/linux-configure-make-make-install.html" target="_blank" rel="noopener">Linux软件安装 ./configure,make,make install的作用</a></p></li><li><p><a href="https://cnbin.github.io/blog/2015/06/22/linux-slash-configure-prefix-ming-ling/" target="_blank" rel="noopener">Linux ./configure –prefix 命令</a></p></li><li><p><a href="https://juejin.im/" target="_blank" rel="noopener">Golang环境变量设置详解</a></p></li><li><p><a href="https://www.jianshu.com/p/4e699ff478a5" target="_blank" rel="noopener">go环境变量配置 (GOROOT和GOPATH)</a></p><ul><li>GOROOT：是go的安装目录</li><li>GOPATH的值不能与GOROOT相同。用于指定我们的开发工作区(workspace),是存放源代码、测试文件、库静态文件、可执行文件的工作。</li></ul></li><li><p><a href="https://cnbin.github.io/blog/2015/06/22/linux-xiu-gai-huan-jing-bian-liang-path/" target="_blank" rel="noopener">Linux 修改环境变量 PATH</a></p></li><li><p><a href="http://www.findme.wang/blog/detail/id/1.html" target="_blank" rel="noopener">查看linux中某个端口（port）是否被占用</a></p></li><li><p>root用户修改其他普通用户的密码（忘记密码情况）</p><ul><li>不记得用户名 <code>cat/etc/shadow</code> ，查看用户名</li><li>知道用户名，输入  <code>passwd 用户名</code></li></ul></li><li><p>linux 命令的使用：<a href="https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html" target="_blank" rel="noopener">Linux tools quick tutorial</a></p></li><li><p>以太坊上的交易：<a href="https://ethfans.org/posts/the-business-of-sending-transactions-on-ethereum" target="_blank" rel="noopener">https://ethfans.org/posts/the-business-of-sending-transactions-on-ethereum</a></p></li></ul>]]></content>
       
       
       <categories>
@@ -535,9 +537,9 @@
       
         <tags>
             
-            <tag> IDEA </tag>
-            
             <tag> java </tag>
+            
+            <tag> IDEA </tag>
             
         </tags>
       
@@ -641,9 +643,9 @@
       
         <tags>
             
-            <tag> linkedList </tag>
-            
             <tag> easy </tag>
+            
+            <tag> linkedList </tag>
             
         </tags>
       
@@ -668,9 +670,9 @@
       
         <tags>
             
-            <tag> easy </tag>
-            
             <tag> stack </tag>
+            
+            <tag> easy </tag>
             
         </tags>
       
