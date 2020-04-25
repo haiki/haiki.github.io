@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>以太坊-Transaction | haiki</title>
-  <meta name="keywords" content=" 以太坊 , transaction ">
-  <meta name="description" content="以太坊-Transaction | haiki">
+  <title>C++随记 | haiki</title>
+  <meta name="keywords" content=" C++ ">
+  <meta name="description" content="C++随记 | haiki">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="个人简介haiki，在读研究生，研究方向为区块链相关。 喜欢运动，喜欢幻想，喜欢笑。 使用博客的目的是想把自己平时看到的，学到的内容整理下来，形成自己的知识库，同时将自己的所学所感所知分享给大家，希望和大家一起进步~">
 <meta name="keywords" content="computer science,blockchain,leetcode,record life">
@@ -612,9 +612,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-以太坊-Transaction" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-C++-随记" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">以太坊-Transaction</h1>
+        <h1 class="article-title">C++随记</h1>
     
     <div class="article-meta">
         
@@ -622,28 +622,26 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="区块链">区块链</a>
+                <a href="javascript:" data-rel="编程语言">编程语言</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">以太坊</a>
-            
-            <a href="javascript:" class="color2">transaction</a>
+            <a href="javascript:" class="color4">C++</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-12-22 19:19:10'>2019-12-22 10:55</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-29 17:26:34'>2019-11-29 09:58</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:2.2k</span>
+        <span>字数:92</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -662,7 +660,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#交易定义"><span class="toc-text">交易定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#交易基本流程"><span class="toc-text">交易基本流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#交易处理入口函数"><span class="toc-text">交易处理入口函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建交易实例"><span class="toc-text">创建交易实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SendTxArgs-结构"><span class="toc-text">SendTxArgs 结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#transaction类型"><span class="toc-text">transaction类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#txdata-类型"><span class="toc-text">txdata 类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#交易签名"><span class="toc-text">交易签名</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#keystore-SignTx"><span class="toc-text">keystore.SignTx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#全局-types-signTx-完成签名"><span class="toc-text">全局 types.signTx 完成签名</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#交易散列生成"><span class="toc-text">交易散列生成</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#根据hash值和私钥生成签名"><span class="toc-text">根据hash值和私钥生成签名</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#填充签名数据"><span class="toc-text">填充签名数据</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#SignatureValues"><span class="toc-text">SignatureValues</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提交交易"><span class="toc-text">提交交易</span></a></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -679,247 +677,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li>本文主要参考（并根据自己的理解进行思路的梳理）<ul>
-<li><a href="https://blog.csdn.net/TurkeyCock/article/details/80485391" target="_blank" rel="noopener">以太坊交易源码分析</a></li>
-<li><a href="https://blog.csdn.net/yzpbright/article/details/83538362s" target="_blank" rel="noopener">GoLand导入并编译以太坊源码go-ethereum</a></li>
-<li><a href="https://ethereum.iethpay.com/how-to-sign-and-hash-tx.html" target="_blank" rel="noopener">交易签名以及哈希值的计算</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="交易定义"><a href="#交易定义" class="headerlink" title="交易定义"></a>交易定义</h2><ul>
-<li>由 <code>EOA（externally owned account）</code>生成的，签过名的消息</li>
-<li>万事始于交易。交易可触发以太坊（全局的单个状态机）状态的转换，调用智能合约在 <code>EVM</code> 中的执行</li>
-</ul>
-<h2 id="交易基本流程"><a href="#交易基本流程" class="headerlink" title="交易基本流程"></a>交易基本流程</h2><ul>
-<li><p>发起交易：指定目标地址和交易金额，以及需要的 gas/gaslimit，还可以填充 data 字段</p>
-</li>
-<li><p>交易签名：使用账户私钥对交易（实际是交易的 hash）进行签名</p>
-</li>
-<li><p>提交交易：把交易加入到交易缓冲池 txpool 中（会先对交易签名进行验证）</p>
-</li>
-<li><p>广播交易：通知 EVM 执行，同时把交易信息广播给其他结点</p>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2019/12/22/MBHsouZ8PK6AGip.png" alt="transaction-execute.jpg"></p>
-<h3 id="交易处理入口函数"><a href="#交易处理入口函数" class="headerlink" title="交易处理入口函数"></a>交易处理入口函数</h3><p>用户通过 <code>JSON RPC</code> 发起 <code>eth_sendTransaction</code> 请求，最终会调用 <code>PublicTransactionPoolAPI</code> 的实现，代码位于<code>internal/ethapi/api.go</code>。</p>
-<p>首先根据 <code>from</code> 地址查找到对应的 <code>wallet</code>。根据参数值去设置默认值，比如 <code>amount</code> <code>gasPrice</code>  <code>nonce</code> 字段可以没有输入。还会检查 <code>data</code> 和 <code>input</code> 是否重复输入，并且不相等。对参数值进行检查，如果是创建合约，检查 <code>data</code>是否为空。</p>
-<p>接着主要做了以下3件事：</p>
+<li><p>想要随机产生0-100间的整数，从而做排序的操作</p>
 <ul>
-<li><p>通过 <code>SendTxArgs.toTransaction()</code>创建交易</p>
-</li>
-<li><p>通过<code>Wallet.SignTx()</code>对交易进行签名。Wallet是一个接口，具体实现在 keyStoreWallet 中。</p>
-</li>
-<li><p>通过<code>submitTransaction()</code>提交交易</p>
+<li><a href="https://www.cnblogs.com/VVingerfly/p/5990714.html" target="_blank" rel="noopener">C++产生随机数</a>             </li>
+<li>通常用 <code>srand((unsigned)time(0))</code>或者<code>srand((unsigned)time(NULL))</code>来 产生种子。如果仍然觉得时间间隔太小。可以在<code>(unsigned)time(0)</code>或者<code>(unsigned)time(NULL)</code>后面乘上某个合适的整数。 例如,<code>srand((unsigned)time(NULL)*10)</code>。</li>
+<li><a href="https://blog.csdn.net/yangziluomu/article/details/102013793" target="_blank" rel="noopener">浮点随机数产生</a></li>
+</ul>
 </li>
 </ul>
-<pre><code class="go">// SendTransaction creates a transaction for the given argument, sign it and submit it to the
-// transaction pool.
-func (s *PublicTransactionPoolAPI) SendTransaction(ctx context.Context, args SendTxArgs) (common.Hash, error) {
-    // Look up the wallet containing the requested signer
-    account := accounts.Account{Address: args.From}
-
-    wallet, err := s.b.AccountManager().Find(account)
-    if err != nil {
-        return common.Hash{}, err
-    }
-
-    if args.Nonce == nil {
-        // Hold the addresse&#39;s mutex around signing to prevent concurrent assignment of the same nonce to multiple accounts.
-        s.nonceLock.LockAddr(args.From)
-        defer s.nonceLock.UnlockAddr(args.From)
-    }
-
-    // Set some sanity defaults and terminate on failure
-    if err := args.setDefaults(ctx, s.b); err != nil {
-        return common.Hash{}, err
-    }
-    // Assemble the transaction and sign with the wallet
-    tx := args.toTransaction() //*****
-
-    signed, err := wallet.SignTx(account, tx, s.b.ChainConfig().ChainID)//*****
-    if err != nil {
-        return common.Hash{}, err
-    }
-    return SubmitTransaction(ctx, s.b, signed)//*****
-}</code></pre>
-<h3 id="创建交易实例"><a href="#创建交易实例" class="headerlink" title="创建交易实例"></a>创建交易实例</h3><p>首先处理输入参数的 <code>input/data</code> 字段，推荐用 <code>input</code>，<code>data</code> 是为了向后兼容。</p>
-<p>如果目标地址为空的话，表示这是一个创建智能合约的交易，调用 <code>NewContractCreation()</code>。否则说明这是一个普通交易，调用 <code>NewTransaction()</code>。不管调用哪个，最终都会生成一个Transaction实例，处理函数是一样的，只是 <code>to</code> 参数有没有值的区别，transaction 类型字段见下。</p>
-<pre><code class="go">//代码位于internal/ethapi/api.go
-func (args *SendTxArgs) toTransaction() *types.Transaction {
-    var input []byte
-    if args.Input != nil {
-        input = *args.Input
-    } else if args.Data != nil {
-        input = *args.Data
-    }
-    if args.To == nil {
-        return types.NewContractCreation(uint64(*args.Nonce), (*big.Int)(args.Value), uint64(*args.Gas), (*big.Int)(args.GasPrice), input)
-    }
-    return types.NewTransaction(uint64(*args.Nonce), *args.To, (*big.Int)(args.Value), uint64(*args.Gas), (*big.Int)(args.GasPrice), input)
-}</code></pre>
-<h4 id="SendTxArgs-结构"><a href="#SendTxArgs-结构" class="headerlink" title="SendTxArgs 结构"></a>SendTxArgs 结构</h4><p>和 <code>JSON</code> 字段相应的，包括了地址、gas、金额这些交易信息，<code>nonce</code> 是一个随账户交易次数自增的数字，一般会在默认设置中自动获取填充。交易还可以携带一些额外数据，存放在 <code>data</code> <strong>或者</strong> <code>input</code> 字段中。</p>
-<pre><code class="go">//代码位于internal/ethapi/api.go
-// SendTxArgs represents the arguments to sumbit a new transaction into the transaction pool.
-type SendTxArgs struct {
-    From     common.Address  `json:&quot;from&quot;`
-    To       *common.Address `json:&quot;to&quot;`
-    Gas      *hexutil.Uint64 `json:&quot;gas&quot;`
-    GasPrice *hexutil.Big    `json:&quot;gasPrice&quot;`
-    Value    *hexutil.Big    `json:&quot;value&quot;`
-    Nonce    *hexutil.Uint64 `json:&quot;nonce&quot;`
-    // We accept &quot;data&quot; and &quot;input&quot; for backwards-compatibility reasons. &quot;input&quot; is the newer name and should be preferred by clients.
-    Data  *hexutil.Bytes `json:&quot;data&quot;`
-    Input *hexutil.Bytes `json:&quot;input&quot;`
-}</code></pre>
-<h4 id="transaction类型"><a href="#transaction类型" class="headerlink" title="transaction类型"></a>transaction类型</h4><p>主要就是包含了一个 <code>txdata</code> 类型的字段，其他3个都是缓存。</p>
-<pre><code class="go">// 代码位于 core/types/transaction.go
-type Transaction struct {
-    data txdata
-    // caches
-    hash atomic.Value
-    size atomic.Value
-    from atomic.Value
-}</code></pre>
-<h4 id="txdata-类型"><a href="#txdata-类型" class="headerlink" title="txdata 类型"></a>txdata 类型</h4><p>相对于输入参数中的字段，多了 <code>V、R、S</code> 和 <code>hash</code> 4 个字段，少了 <code>from</code> 字段。&lt;v,r,s&gt;是签名后才能得到的，现在生成的交易实例中不包含。</p>
-<p> 其他节点收到交易时，通过 &lt;v,r,s&gt; 及 消息hash 计算出 <code>from</code> 字段，参见 <strong>交易签名</strong> 部分。</p>
-<pre><code class="go">// 代码位于 core/types/transaction.go
-type txdata struct {
-    AccountNonce uint64          `json:&quot;nonce&quot;    gencodec:&quot;required&quot;`
-    Price        *big.Int        `json:&quot;gasPrice&quot; gencodec:&quot;required&quot;`
-    GasLimit     uint64          `json:&quot;gas&quot;      gencodec:&quot;required&quot;`
-    Recipient    *common.Address `json:&quot;to&quot;       rlp:&quot;nil&quot;` // nil means contract creation
-    Amount       *big.Int        `json:&quot;value&quot;    gencodec:&quot;required&quot;`
-    Payload      []byte          `json:&quot;input&quot;    gencodec:&quot;required&quot;`
-
-    // Signature values
-    V *big.Int `json:&quot;v&quot; gencodec:&quot;required&quot;`
-    R *big.Int `json:&quot;r&quot; gencodec:&quot;required&quot;`
-    S *big.Int `json:&quot;s&quot; gencodec:&quot;required&quot;`
-
-    // This is only used when marshaling to JSON.
-    Hash *common.Hash `json:&quot;hash&quot; rlp:&quot;-&quot;`
-}</code></pre>
-<h3 id="交易签名"><a href="#交易签名" class="headerlink" title="交易签名"></a>交易签名</h3><p>先通过 <code>Keccak-256</code> 算法计算交易数据的 has h值，然后结合账户的私钥，通过 ECDSA（Elliptic Curve Digital Signature Algorithm），也就是椭圆曲线数字签名算法生成签名数据。</p>
-<p><img src="https://i.loli.net/2019/12/22/X5xb6N4hMg1yDGW.png" alt="SignTx.jpg"></p>
-<pre><code class="go">//代码位于 accounts/keystore/wallet.go
-/* SignTx implements accounts.Wallet, attempting to sign the given transaction
- with the given account. If the wallet does not wrap this particular account,
- an error is returned to avoid account leakage (even though in theory we may
-/be able to sign via our shared keystore backend).*/
-func (w *keystoreWallet) SignTx(account accounts.Account, tx *types.Transaction, chainID *big.Int) (*types.Transaction, error) {
-    // Make sure the requested account is contained within
-    if !w.Contains(account) {
-        return nil, accounts.ErrUnknownAccount
-    }
-    // Account seems valid, request the keystore to sign
-    return w.keystore.SignTx(account, tx, chainID) //*****
-}</code></pre>
-<p>插播一条：从交易原信息和&lt;v,r,s&gt;生成 <code>from</code> 字段的示意图。TODO：代码示例</p>
-<p><img src="https://i.loli.net/2019/12/22/iaUXbWy45P91R6O.png" alt="txCalFrom.jpg"></p>
-<h4 id="keystore-SignTx"><a href="#keystore-SignTx" class="headerlink" title="keystore.SignTx"></a>keystore.SignTx</h4><p>这里会首先判断账户是否已经解锁，如果已经解锁的话就可以获取它的私钥。</p>
-<p>然后创建签名器，如果要符合 EIP155 规范的话，需要把 chainID 传进去，也就是我们的 “–networkid” 令行参数。</p>
-<p>调用一个全局函数 <strong>SignTx()</strong> 完成签名.</p>
-<pre><code class="go">//代码位于 accounts/keystore/keystore.go
-//SignTx signs the given transaction with the requested account.
-func (ks *KeyStore) SignTx(a accounts.Account, tx *types.Transaction, chainID *big.Int) (*types.Transaction, error) {
-    // Look up the key to sign with and abort if it cannot be found
-    ks.mu.RLock()
-    defer ks.mu.RUnlock()
-
-    unlockedKey, found := ks.unlocked[a.Address]
-    if !found {
-        return nil, ErrLocked
-    }
-    // Depending on the presence of the chain ID, sign with EIP155 or homestead
-    if chainID != nil {
-        return types.SignTx(tx, types.NewEIP155Signer(chainID), unlockedKey.PrivateKey)
-    }
-    return types.SignTx(tx, types.HomesteadSigner{}, unlockedKey.PrivateKey)
-}</code></pre>
-<h4 id="全局-types-signTx-完成签名"><a href="#全局-types-signTx-完成签名" class="headerlink" title="全局 types.signTx 完成签名"></a>全局 types.signTx 完成签名</h4><p>主要分为3个步骤：</p>
-<ul>
-<li>生成交易的hash值</li>
-<li>根据hash值和私钥生成签名</li>
-<li>把签名数据填充到Transaction实例中</li>
-</ul>
-<pre><code class="go">//代码位于 core/types/transaction_signing.go
-// SignTx signs the transaction using the given signer and private key
-func SignTx(tx *Transaction, s Signer, prv *ecdsa.PrivateKey) (*Transaction, error) {
-    h := s.Hash(tx)
-    sig, err := crypto.Sign(h[:], prv)
-    if err != nil {
-        return nil, err
-    }
-    return tx.WithSignature(s, sig)
-}</code></pre>
-<h5 id="交易散列生成"><a href="#交易散列生成" class="headerlink" title="交易散列生成"></a>交易散列生成</h5><pre><code class="go">//代码位于 core/types/transaction_signing.go
-// Hash returns the hash to be signed by the sender.
-// It does not uniquely identify the transaction.
-func (s EIP155Signer) Hash(tx *Transaction) common.Hash {
-    return rlpHash([]interface{}{
-        tx.data.AccountNonce,
-        tx.data.Price,
-        tx.data.GasLimit,
-        tx.data.Recipient,
-        tx.data.Amount,
-        tx.data.Payload,
-        s.chainId, uint(0), uint(0),
-    })
-}</code></pre>
-<p>先进行RLP编码（一种数据序列化方法），然后再用SHA3-256生成hash值。TODO：RLP 编码实现。</p>
-<pre><code class="go">//代码位于 core/types/block.go
-func rlpHash(x interface{}) (h common.Hash) {
-    hw := sha3.NewLegacyKeccak256()
-    rlp.Encode(hw, x)
-    hw.Sum(h[:0])
-    return h
-}</code></pre>
-<h5 id="根据hash值和私钥生成签名"><a href="#根据hash值和私钥生成签名" class="headerlink" title="根据hash值和私钥生成签名"></a>根据hash值和私钥生成签名</h5><p>TODO：签名的过程</p>
-<p>通过 ECDSA 算法生成签名数据，最终会返回的签名是一个字节数组，按R / S / V的顺序排列。</p>
-<pre><code class="go">//代码位于 crypto/signature_cgo.go
-/*Sign calculates an ECDSA signature.
- This function is susceptible to chosen plaintext attacks that can leak
- information about the private key that is used for signing. Callers must
-be aware that the given digest cannot be chosen by an adversery. Common
-solution is to hash any input before calculating the signature.*/
-
-// The produced signature is in the [R || S || V] format where V is 0 or 1.
-func Sign(digestHash []byte, prv *ecdsa.PrivateKey) (sig []byte, err error) {
-    if len(digestHash) != DigestLength {
-        return nil, fmt.Errorf(&quot;hash is required to be exactly %d bytes (%d)&quot;, DigestLength, len(digestHash))
-    }
-    seckey := math.PaddedBigBytes(prv.D, prv.Params().BitSize/8)
-    defer zeroBytes(seckey)
-    return secp256k1.Sign(digestHash, seckey)
-}</code></pre>
-<h5 id="填充签名数据"><a href="#填充签名数据" class="headerlink" title="填充签名数据"></a>填充签名数据</h5><p>把签名数据的这3个值填充到Transaction结构中。</p>
-<pre><code class="go">//代码位于 core/types/transaction.go
-// WithSignature returns a new transaction with the given signature.
-// This signature needs to be in the [R || S || V] format where V is 0 or 1.
-func (tx *Transaction) WithSignature(signer Signer, sig []byte) (*Transaction, error) {
-    r, s, v, err := signer.SignatureValues(tx, sig)
-    if err != nil {
-        return nil, err
-    }
-    cpy := &amp;Transaction{data: tx.data}
-    cpy.data.R, cpy.data.S, cpy.data.V = r, s, v
-    return cpy, nil
-}</code></pre>
-<h6 id="SignatureValues"><a href="#SignatureValues" class="headerlink" title="SignatureValues"></a>SignatureValues</h6><p>生成的签名数据是字节数组类型，需要通过signer.SignatureValues()函数转换成3个big.Int类型的数据，然后填充到Transaction结构的R / S / V字段上。</p>
-<p>TODO：v 到底怎么回事，一会加27，一会加35</p>
-<pre><code class="go">//代码位于 /core/transaction_signing.go
-// SignatureValues returns signature values. This signature
-// needs to be in the [R || S || V] format where V is 0 or 1.
-func (fs FrontierSigner) SignatureValues(tx *Transaction, sig []byte) (r, s, v *big.Int, err error) {
-    if len(sig) != crypto.SignatureLength {
-        panic(fmt.Sprintf(&quot;wrong size for signature: got %d, want %d&quot;, len(sig), crypto.SignatureLength))
-    }
-    r = new(big.Int).SetBytes(sig[:32])
-    s = new(big.Int).SetBytes(sig[32:64])
-    v = new(big.Int).SetBytes([]byte{sig[64] + 27})
-    return r, s, v, nil
-}</code></pre>
-<h3 id="提交交易"><a href="#提交交易" class="headerlink" title="提交交易"></a>提交交易</h3><p>就看我参考的原文吧。主要是前两点和最近做的东西有点关系。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 peiqi66@163.com </span>
@@ -933,8 +698,8 @@ func (fs FrontierSigner) SignatureValues(tx *Transaction, sig []byte) (r, s, v *
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">最后更新:</span>2019-12-22, 19:19:10</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/22/以太坊-Transaction/" title="以太坊-Transaction">https://github.com/haiki/haiki.github.io/2019/12/22/以太坊-Transaction/</a>
+    <p><span class="copy-title">最后更新:</span>2019-11-29, 17:26:34</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/29/C++-随记/" title="C++随记">https://github.com/haiki/haiki.github.io/2019/11/29/C++-随记/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
