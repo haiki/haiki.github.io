@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>LinkedList-problems-easy | haiki</title>
+  <meta name="keywords" content=" linkedList , easy ">
+  <meta name="description" content="LinkedList-problems-easy | haiki">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Oops～，我崩溃了！找不到你想要的页面 :(">
+<meta property="og:type" content="website">
+<meta property="og:title" content="404">
+<meta property="og:url" content="https://github.com/haiki/haiki.github.io/404.html">
+<meta property="og:site_name" content="haiki">
+<meta property="og:description" content="Oops～，我崩溃了！找不到你想要的页面 :(">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-10-03T12:16:10.000Z">
+<meta property="article:modified_time" content="2022-01-03T11:20:49.316Z">
+<meta property="article:author" content="haiki">
+<meta property="article:tag" content="computer science,blockchain,leetcode,record life">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>haiki</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="facebook"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-facebook"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="instagram"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="reddit"
+               href="https://www.reddit.com/user/yelog/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-reddit"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="weibo"
+               href="http://weibo.com/u/2307534817"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/ff56736de7cf"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/jaytp/activities"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="oschina"
+               href="https://my.oschina.net/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-oschina"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:jaytp@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="kugou"
+               href="https://www.kugou.com/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-kugou"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="neteasemusic"
+               href="https://music.163.com/#/user/home?id=88151013"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-neteasemusic"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(23)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="读书">
+                        
+                        读书
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="编程语言">
+                        
+                        编程语言
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="论文相关总结">
+                        
+                        论文相关总结
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="区块链">
+                        
+                        区块链
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="leetcode">
+                        
+                        leetcode
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="23">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>工具成长类</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>零碎</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>路由算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>命令</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>私链</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>以太坊</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>语法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>智能合约</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>API</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>attack</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>C++</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>DApp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>easy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ethereum</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>geth</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>go环境配置</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>IDEA</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Javascript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linkedList</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>payment routing</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>problem</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>solidity</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>speedymurmurs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>stack</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>string</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>token</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>transaction</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="All 工具 "
+           href="/2019/10/03/my-first-article/"
+           data-tag="hexo,problem"
+           data-author="" >
+            <span class="post-title" title="my first article">my first article</span>
+            <span class="post-date" title="2019-10-03 16:03:38">2019/10/03</span>
+        </a>
+        
+        <a  class="All 编程语言 "
+           href="/2019/12/24/python/"
+           data-tag="python,语法"
+           data-author="" >
+            <span class="post-title" title="python">python</span>
+            <span class="post-date" title="2019-12-24 22:10:19">2019/12/24</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/12/23/%E4%BB%A5%E5%A4%AA%E5%9D%8AERC20/"
+           data-tag="以太坊,solidity,智能合约,token"
+           data-author="" >
+            <span class="post-title" title="以太坊ERC20">以太坊ERC20</span>
+            <span class="post-date" title="2019-12-23 10:13:29">2019/12/23</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/12/22/%E4%BB%A5%E5%A4%AA%E5%9D%8A-Transaction/"
+           data-tag="以太坊,transaction"
+           data-author="" >
+            <span class="post-title" title="以太坊-Transaction">以太坊-Transaction</span>
+            <span class="post-date" title="2019-12-22 10:55:27">2019/12/22</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/12/12/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%91%E6%99%AE/"
+           data-tag="ethereum"
+           data-author="" >
+            <span class="post-title" title="以太坊科普">以太坊科普</span>
+            <span class="post-date" title="2019-12-12 09:29:40">2019/12/12</span>
+        </a>
+        
+        <a  class="All 编程语言 "
+           href="/2019/11/29/C-%E9%9A%8F%E8%AE%B0/"
+           data-tag="C++"
+           data-author="" >
+            <span class="post-title" title="C++随记">C++随记</span>
+            <span class="post-date" title="2019-11-29 09:58:19">2019/11/29</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/11/05/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9B%B8%E5%85%B3%E6%8A%80%E6%9C%AF%E5%89%8D%E6%B2%BF%E6%B4%9E%E5%AF%9F/"
+           data-tag="零碎"
+           data-author="" >
+            <span class="post-title" title="区块链相关技术前沿洞察">区块链相关技术前沿洞察</span>
+            <span class="post-date" title="2019-11-05 14:54:48">2019/11/05</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/11/03/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E5%BF%85%E5%A4%87/"
+           data-tag="算法"
+           data-author="" >
+            <span class="post-title" title="算法与数据结构学习必备">算法与数据结构学习必备</span>
+            <span class="post-date" title="2019-11-03 09:34:47">2019/11/03</span>
+        </a>
+        
+        <a  class="All 论文相关总结 "
+           href="/2019/10/31/SpeedyMurmurs-data-%E8%AE%B0%E5%BD%95/"
+           data-tag="speedymurmurs,payment routing,路由算法"
+           data-author="" >
+            <span class="post-title" title="SpeedyMurmurs data 记录">SpeedyMurmurs data 记录</span>
+            <span class="post-date" title="2019-10-31 10:34:05">2019/10/31</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/26/%E4%BB%A5%E5%A4%AA%E5%9D%8ADApp/"
+           data-tag="ethereum,DApp"
+           data-author="" >
+            <span class="post-title" title="以太坊DApp">以太坊DApp</span>
+            <span class="post-date" title="2019-10-26 18:55:09">2019/10/26</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/26/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag="attack"
+           data-author="" >
+            <span class="post-title" title="区块链中的一些常用名词解释">区块链中的一些常用名词解释</span>
+            <span class="post-date" title="2019-10-26 18:44:34">2019/10/26</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/25/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%AE%9E%E8%B7%B5/"
+           data-tag="以太坊,solidity,智能合约"
+           data-author="" >
+            <span class="post-title" title="以太坊智能合约实践">以太坊智能合约实践</span>
+            <span class="post-date" title="2019-10-25 10:15:12">2019/10/25</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/22/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%A6%82%E5%BF%B5%E5%8F%8AAPI%E7%9A%84%E6%95%B4%E5%90%88%E4%B8%8E%E7%90%86%E8%A7%A3/"
+           data-tag="以太坊,API,Javascript"
+           data-author="" >
+            <span class="post-title" title="以太坊概念及API的整合与理解">以太坊概念及API的整合与理解</span>
+            <span class="post-date" title="2019-10-22 17:21:16">2019/10/22</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/19/%E4%BB%8E%E5%A4%B4%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%81%E9%93%BE/"
+           data-tag="以太坊,私链,geth,go环境配置"
+           data-author="" >
+            <span class="post-title" title="从头搭建以太坊私链">从头搭建以太坊私链</span>
+            <span class="post-date" title="2019-10-19 16:15:54">2019/10/19</span>
+        </a>
+        
+        <a  class="All 论文相关总结 "
+           href="/2019/10/16/speedyMurmurs%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90Dynamic%E9%83%A8%E5%88%86/"
+           data-tag="speedymurmurs,payment routing,路由算法"
+           data-author="" >
+            <span class="post-title" title="speedyMurmurs源码分析Dynamic部分">speedyMurmurs源码分析Dynamic部分</span>
+            <span class="post-date" title="2019-10-16 09:27:00">2019/10/16</span>
+        </a>
+        
+        <a  class="All 论文相关总结 "
+           href="/2019/10/11/speedyMurmurs%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"
+           data-tag="speedymurmurs,payment routing,路由算法"
+           data-author="" >
+            <span class="post-title" title="speedyMurmurs源码分析">speedyMurmurs源码分析</span>
+            <span class="post-date" title="2019-10-11 20:12:57">2019/10/11</span>
+        </a>
+        
+        <a  class="All 运维 "
+           href="/2019/10/10/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag="linux,命令"
+           data-author="" >
+            <span class="post-title" title="linux常用命令">linux常用命令</span>
+            <span class="post-date" title="2019-10-10 16:32:59">2019/10/10</span>
+        </a>
+        
+        <a  class="All 编程语言 "
+           href="/2019/10/10/java/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="java">java</span>
+            <span class="post-date" title="2019-10-10 14:04:57">2019/10/10</span>
+        </a>
+        
+        <a  class="All 工具 "
+           href="/2019/10/09/IDEA%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD/"
+           data-tag="IDEA,java"
+           data-author="" >
+            <span class="post-title" title="IDEA的使用：提升看源码效率">IDEA的使用：提升看源码效率</span>
+            <span class="post-date" title="2019-10-09 20:21:52">2019/10/09</span>
+        </a>
+        
+        <a  class="All 读书 "
+           href="/2019/10/06/%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A%E6%91%98%E5%BD%95%E5%8F%8A%E8%A7%82%E5%90%8E%E6%84%9F/"
+           data-tag="工具成长类"
+           data-author="" >
+            <span class="post-title" title="非暴力沟通摘录及观后感">非暴力沟通摘录及观后感</span>
+            <span class="post-date" title="2019-10-06 18:41:57">2019/10/06</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/10/05/string-problems-easy/"
+           data-tag="easy,string"
+           data-author="" >
+            <span class="post-title" title="string-problems-easy">string-problems-easy</span>
+            <span class="post-date" title="2019-10-05 10:30:38">2019/10/05</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/08/28/LinkedList-problems-easy/"
+           data-tag="linkedList,easy"
+           data-author="" >
+            <span class="post-title" title="LinkedList-problems-easy">LinkedList-problems-easy</span>
+            <span class="post-date" title="2019-08-28 21:40:38">2019/08/28</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/08/23/stack-problems-easy/"
+           data-tag="easy,stack"
+           data-author="" >
+            <span class="post-title" title="stack-problems-easy">stack-problems-easy</span>
+            <span class="post-date" title="2019-08-23 21:40:38">2019/08/23</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-LinkedList-problems-easy" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">LinkedList-problems-easy</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">linkedList</a>
+            
+            <a class="color5">easy</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2022-01-03 19:20:49'>2019-08-28 21:40</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#876-Middle-of-the-Linked-List"><span class="toc-text">876.Middle of the Linked List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Solution-1-%E9%81%8D%E5%8E%86"><span class="toc-text">Solution 1-遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Solution-2-%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88"><span class="toc-text">Solution 2-快慢指针</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Solution-3-%E8%BE%85%E5%8A%A9%E6%95%B0%E7%BB%84"><span class="toc-text">Solution 3-辅助数组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#206-Reverse-Linked-List"><span class="toc-text">206. Reverse Linked List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E8%BF%AD%E4%BB%A3"><span class="toc-text">solution1-迭代</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Solution2-%E9%80%92%E5%BD%92"><span class="toc-text">Solution2-递归</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#237-Delete-Node-in-a-Linked-List"><span class="toc-text">237.Delete Node in a Linked List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E5%80%BC%E6%9B%BF%E6%8D%A2"><span class="toc-text">solution-值替换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#21-Merge-Two-Sorted-Lists"><span class="toc-text">21.Merge Two Sorted Lists</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E8%BF%AD%E4%BB%A3-1"><span class="toc-text">solution1-迭代</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E9%80%92%E5%BD%92"><span class="toc-text">solution2-递归</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#83-Remove-Duplicates-from-Sorted-List"><span class="toc-text">83.Remove Duplicates from Sorted List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#141-Linked-List-Cycle"><span class="toc-text">141.Linked List Cycle</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1%E2%80%94%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88"><span class="toc-text">solution1—快慢指针</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E8%BE%85%E5%8A%A9%E9%9B%86%E5%90%88"><span class="toc-text">solution2-辅助集合</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#234-Palindrome-Linked-List"><span class="toc-text">234.Palindrome Linked List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E8%BE%85%E5%8A%A9%E6%A0%88"><span class="toc-text">solution1-辅助栈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E9%80%92%E5%BD%92-1"><span class="toc-text">solution2-递归</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#203-Remove-Linked-List-Elements"><span class="toc-text">203.Remove Linked List Elements</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E9%81%8D%E5%8E%86"><span class="toc-text">solution-遍历</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#160-Intersection-of-Two-Linked-Lists"><span class="toc-text">160.Intersection of Two Linked Lists</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E6%B1%82%E9%95%BF%E5%BA%A6"><span class="toc-text">solution1-求长度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2%E2%80%94%E8%BE%85%E5%8A%A9%E6%A0%88"><span class="toc-text">solution2—辅助栈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution3-%E9%93%BE%E8%A1%A8%E7%B2%98%E5%90%88"><span class="toc-text">solution3-链表粘合</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#707-Design-Linked-List"><span class="toc-text">707. Design Linked List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-1"><span class="toc-text">solution</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>@<div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#876-Middle-of-the-Linked-List"><span class="toc-text">876.Middle of the Linked List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Solution-1-%E9%81%8D%E5%8E%86"><span class="toc-text">Solution 1-遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Solution-2-%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88"><span class="toc-text">Solution 2-快慢指针</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Solution-3-%E8%BE%85%E5%8A%A9%E6%95%B0%E7%BB%84"><span class="toc-text">Solution 3-辅助数组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#206-Reverse-Linked-List"><span class="toc-text">206. Reverse Linked List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E8%BF%AD%E4%BB%A3"><span class="toc-text">solution1-迭代</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Solution2-%E9%80%92%E5%BD%92"><span class="toc-text">Solution2-递归</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#237-Delete-Node-in-a-Linked-List"><span class="toc-text">237.Delete Node in a Linked List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E5%80%BC%E6%9B%BF%E6%8D%A2"><span class="toc-text">solution-值替换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#21-Merge-Two-Sorted-Lists"><span class="toc-text">21.Merge Two Sorted Lists</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E8%BF%AD%E4%BB%A3-1"><span class="toc-text">solution1-迭代</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E9%80%92%E5%BD%92"><span class="toc-text">solution2-递归</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#83-Remove-Duplicates-from-Sorted-List"><span class="toc-text">83.Remove Duplicates from Sorted List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#141-Linked-List-Cycle"><span class="toc-text">141.Linked List Cycle</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1%E2%80%94%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88"><span class="toc-text">solution1—快慢指针</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E8%BE%85%E5%8A%A9%E9%9B%86%E5%90%88"><span class="toc-text">solution2-辅助集合</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#234-Palindrome-Linked-List"><span class="toc-text">234.Palindrome Linked List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E8%BE%85%E5%8A%A9%E6%A0%88"><span class="toc-text">solution1-辅助栈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E9%80%92%E5%BD%92-1"><span class="toc-text">solution2-递归</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#203-Remove-Linked-List-Elements"><span class="toc-text">203.Remove Linked List Elements</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E9%81%8D%E5%8E%86"><span class="toc-text">solution-遍历</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#160-Intersection-of-Two-Linked-Lists"><span class="toc-text">160.Intersection of Two Linked Lists</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E6%B1%82%E9%95%BF%E5%BA%A6"><span class="toc-text">solution1-求长度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2%E2%80%94%E8%BE%85%E5%8A%A9%E6%A0%88"><span class="toc-text">solution2—辅助栈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution3-%E9%93%BE%E8%A1%A8%E7%B2%98%E5%90%88"><span class="toc-text">solution3-链表粘合</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#707-Design-Linked-List"><span class="toc-text">707. Design Linked List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-1"><span class="toc-text">solution</span></a></li></ol></li></ol></div></p>
+<pre><code class="c++">/**
+ * Definition for singly-linked list.
+ * struct ListNode &#123;
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) &#123;&#125;
+ * &#125;;
+ */
+</code></pre>
+<h3 id="876-Middle-of-the-Linked-List"><a href="#876-Middle-of-the-Linked-List" class="headerlink" title="876.Middle of the Linked List"></a>876.Middle of the Linked List</h3><p><strong>题目描述：</strong></p>
+<p>Given a non-empty, singly linked list with head node head, return a middle node of linked list.<br>If there are two middle nodes, return the second middle node.</p>
+<p><strong>Example</strong> :</p>
+<pre><code>Input: [1,2,3,4,5,6]
+Output: Node 4 from this list (Serialization: [4,5,6])
+Since the list has two middle nodes with values 3 and 4, we return the second one.
+</code></pre>
+<h4 id="Solution-1-遍历"><a href="#Solution-1-遍历" class="headerlink" title="Solution 1-遍历"></a>Solution 1-遍历</h4><ul>
+<li>将链表遍历一遍，得到链表的长度，求出中间节点的位置，重新从头开始遍历，输出中间节点。</li>
+</ul>
+<p>时间：O(2n)，空间O(1)？</p>
+<pre><code class="c++">class Solution &#123;
+public:
+    ListNode* middleNode(ListNode* head) &#123;
+        if(head == NULL)
+            return NULL;
+        ListNode* tmp = head;
+        int cnt = 0;
+        while(tmp != NULL)&#123;
+            cnt++;
+            tmp = tmp-&gt;next;
+        &#125;
+        int i = cnt/2;
+        tmp = head;
+        while(i != 0)&#123;
+            tmp = tmp-&gt;next;
+            i--;
+        &#125;
+        return tmp;
+    &#125;
+&#125;;
+</code></pre>
+<h4 id="Solution-2-快慢指针"><a href="#Solution-2-快慢指针" class="headerlink" title="Solution 2-快慢指针"></a>Solution 2-快慢指针</h4><ul>
+<li>这个本来是想到了，但是自己不知道为什么演算错了。。。要考虑奇偶个数的情况；</li>
+</ul>
+<p>时间：O(n/2)，空间O(1)-快慢指针</p>
+<pre><code class="c++">class Solution &#123;
+public:
+    ListNode* middleNode(ListNode* head) &#123;
+        if(head == NULL)
+            return NULL;
+        ListNode* slow = head, *fast = head;
+        
+        //快指针比慢指针快一倍的速度，不是两个。。。
+        while(slow-&gt;next != NULL &amp;&amp; fast-&gt;next != NULL)&#123;
+            //奇数个元素
+            if(fast-&gt;next-&gt;next != NULL)&#123;
+                fast = fast-&gt;next-&gt;next;
+                slow = slow-&gt;next;
+            &#125;else&#123;
+                //返回方法一
+                fast = fast-&gt;next;
+                slow = slow-&gt;next;
+                //return slow-&gt;next;  //返回方法二
+            &#125;
+        &#125;
+        return slow;
+    &#125;
+&#125;;
+</code></pre>
+<h4 id="Solution-3-辅助数组"><a href="#Solution-3-辅助数组" class="headerlink" title="Solution 3-辅助数组"></a>Solution 3-辅助数组</h4><ul>
+<li><p>使用数组把所有元素放进去，按照数组随机存取的特性，直接定位到元素，这样就不是原来链接起来的链表了,用空间换时间。</p>
+</li>
+<li><p>时间O(n)，空间O(n)-vec用的空间</p>
+</li>
+</ul>
+<pre><code class="c++">class Solution &#123;
+public:
+    ListNode* middleNode(ListNode* head) &#123;
+        if(head == NULL)
+            return NULL;
+        vector&lt;ListNode*&gt;vec&#123;head&#125;;//注意初始化是&#123;&#125;，不是[]
+        
+        ListNode* cur = vec.back();
+        while(cur-&gt;next != NULL)&#123;
+            vec.push_back(cur-&gt;next);
+            cur = cur-&gt;next;            
+        &#125;
+        return vec[vec.size()/2];//相对于第一种的优点就是考虑到了数组的随机访问快
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="206-Reverse-Linked-List"><a href="#206-Reverse-Linked-List" class="headerlink" title="206. Reverse Linked List"></a>206. Reverse Linked List</h3><p><strong>题目描述：</strong></p>
+<p>Reverse a singly linked list.</p>
+<p><strong>Example:</strong></p>
+<pre><code>Input: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL
+Output: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL
+</code></pre>
+<h4 id="solution1-迭代"><a href="#solution1-迭代" class="headerlink" title="solution1-迭代"></a>solution1-迭代</h4><ul>
+<li>主要目的是不要让链表断了，用三个指针分别表示当前节点，前一个，后一个.</li>
+<li>时间：O(n)，空间：O(1)</li>
+</ul>
+<pre><code class="c++">class Solution &#123;
+public:
+    ListNode* reverseList(ListNode* head) &#123;
+        if(head == NULL)
+            return NULL;
+        
+        ListNode *cur=NULL,*pre=NULL,*post=NULL;
+        cur=head;
+        while(cur!=NULL)   //要注意判断条件
+        &#123;
+            post=cur-&gt;next;
+            cur-&gt;next=pre;
+            pre=cur;
+            cur=post;
+        &#125;     
+        return pre;        
+    &#125;
+&#125;;
+//这个和上面的差不多，根本不是递归，就是迭代吧
+/*
+class Solution &#123;
+public:
+    ListNode* reverseList(ListNode* head) &#123;
+        if(head == NULL)
+            return NULL;
+        
+        ListNode *cur=NULL,*pre=NULL,*post=NULL;
+        cur=head;
+        return reverse(pre,cur,post);
+    &#125;
+    ListNode* reverse(ListNode* pre, ListNode* cur, ListNode* post)&#123;
+        if(cur == NULL)
+            return pre;
+        post = cur-&gt;next;
+        cur-&gt;next = pre;
+        pre  = cur;
+        return reverse(pre,post,post);
+    &#125;
+&#125;;
+*/
+</code></pre>
+<h4 id="Solution2-递归"><a href="#Solution2-递归" class="headerlink" title="Solution2-递归"></a>Solution2-递归</h4><ul>
+<li>主要是要理解递归。边界条件，cur == NULL则链表是空的，cur-&gt;next == NULL意味着链表已经到最后一个节点了，那么这个节点是新的head，开始返回。</li>
+<li>递归时会为每个参数变量压栈，返回后就是当时的cur，那么cur的next是逆转的节点，这个节点的next就是cur。思路参考<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=MRe3UsRadKw">https://www.youtube.com/watch?v=MRe3UsRadKw</a></li>
+<li>做的时候难点在于：指针的理解，<code>**</code>的理解及传参，以及如何改变head指针。</li>
+<li>时间：O(n)，空间：O(n)-因为递归而使用的栈空间    </li>
+</ul>
+<pre><code class="c++">class Solution &#123;
+public:
+    ListNode* reverseList(ListNode* head) &#123;
+        if(head == NULL)
+            return NULL;
+        
+        ListNode *cur = head;
+        reverse(cur,&amp;head);
+        return head;
+    &#125;
+     void reverse(ListNode* cur,ListNode** head)&#123;
+         if(cur-&gt;next == NULL)&#123;
+             *head = cur;
+             return ;
+         &#125;
+         reverse(cur-&gt;next,head);
+         cur-&gt;next-&gt;next = cur;
+         cur-&gt;next = NULL;
+     &#125;
+&#125;;
+</code></pre>
+<h3 id="237-Delete-Node-in-a-Linked-List"><a href="#237-Delete-Node-in-a-Linked-List" class="headerlink" title="237.Delete Node in a Linked List"></a>237.Delete Node in a Linked List</h3><p><strong>题目描述：</strong></p>
+<p>Write a function to delete a node (except the tail) in a singly linked list, given only access to that node.</p>
+<p>Given linked list – head = [4,5,1,9], which looks like following:</p>
+<p><img src="https://assets.leetcode.com/uploads/2018/12/28/237_example.png" alt="img"></p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: head = [4,5,1,9], node = 5
+Output: [4,1,9]
+Explanation: You are given the second node with value 5, the linked list should become 4 -&gt; 1 -&gt; 9 after calling your function.
+</code></pre>
+<h4 id="solution-值替换"><a href="#solution-值替换" class="headerlink" title="solution-值替换"></a>solution-值替换</h4><ul>
+<li>因为尾节点不为空：所以可以不删除当前节点，而是删除后一个节点。把给定当前节点，想要找到要删除节点的前一个节点，只能从头遍历;</li>
+<li>将后一个节点的值赋值给当前节点，并让当前节点指向下下个节点，从而删除下个节点</li>
+<li>如果要删除尾节点元素，那么就不能这样做，必须给head，从头向后遍历。</li>
+</ul>
+<pre><code class="c++">class Solution &#123;
+public:
+    void deleteNode(ListNode* node) &#123;
+        /*
+        node-&gt;val = node-&gt;next-&gt;val;
+        ListNode* tmp = node-&gt;next;
+        node-&gt;next =  node-&gt;next-&gt;next;
+        delete(tmp);   //还是应该把这个指针释放掉，不然会内存泄漏，但不这样写也能通过
+    */
+        auto next = node-&gt;next;//直接操作指针
+        *node = *next;
+        delete next;   
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="21-Merge-Two-Sorted-Lists"><a href="#21-Merge-Two-Sorted-Lists" class="headerlink" title="21.Merge Two Sorted Lists"></a>21.Merge Two Sorted Lists</h3><p><strong>题目描述：</strong></p>
+<p>Merge two sorted linked lists and return it as a new list. The new  list should be made by splicing together the nodes of the first two  lists.</p>
+<p><strong>Example:</strong> </p>
+<pre><code>Input: 1-&gt;2-&gt;4, 1-&gt;3-&gt;4
+Output: 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4
+</code></pre>
+<h4 id="solution1-迭代-1"><a href="#solution1-迭代-1" class="headerlink" title="solution1-迭代"></a>solution1-迭代</h4><ul>
+<li>面对list的问题，可以尝试一个dummyHead，避免对特殊情况的处理</li>
+</ul>
+<pre><code class="c++">class Solution &#123;
+public:
+    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) &#123;
+        ListNode *pNewHead = NULL; //合并后新的头结点
+        ListNode *pTail = NULL;      //不断连接新节点的尾节点
+        
+        ListNode *pl1 = l1, *pl2 = l2;
+        
+        if(l1 == NULL)   //对于特殊情况：两个链表为空做判断，都为空时这句话就可以捕获到
+            return l2;
+        else if(l2 == NULL)
+            return l1;
+        else&#123;
+            if((l1-&gt;val) &lt; (l2-&gt;val))&#123;
+                pNewHead = l1;
+                l1 = l1-&gt;next;
+            &#125;else&#123;
+                pNewHead = l2;
+                l2 = l2-&gt;next;
+            &#125;    
+        &#125;
+        
+        pTail = pNewHead;
+        while(l1 != NULL &amp;&amp; l2 !=NULL)&#123;
+            if((l1-&gt;val) &lt; (l2-&gt;val))&#123;
+                pTail-&gt;next = l1;
+                pTail = pTail-&gt;next;
+                l1 = l1-&gt;next;
+            &#125;else&#123;
+                pTail-&gt;next = l2;
+                pTail = pTail-&gt;next;
+                l2 = l2-&gt;next;
+            &#125;         
+        &#125;
+        
+        //对于两个链表不一样长的情况做处理 ，因为是直接在链表本身上做连接，不是新创建一条链表，所以这里剩下的节点只需要一个指针指向即可，不需要遍历连接。
+        if(l1 != NULL)&#123;
+            pTail-&gt;next = l1;
+        &#125;
+        if(l2 != NULL)&#123;
+            pTail-&gt;next = l2;
+        &#125;            
+        return pNewHead; 
+    &#125;    
+&#125;;
+</code></pre>
+<h4 id="solution2-递归"><a href="#solution2-递归" class="headerlink" title="solution2-递归"></a>solution2-递归</h4><p>因为在递归调用的过程当中，系统为每一层的返回点、局部量等开辟了栈来存储，因此递归次数过多容易造成栈溢出。所以选择递归时要慎重。思路看代码吧~</p>
+<pre><code class="c++">class Solution &#123;
+public:
+    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) &#123;
+        if(l1 == NULL)
+            return l2;
+        if(l2 == NULL)
+            return l1;
+        
+        if((l1-&gt;val) &lt; (l2-&gt;val))&#123;
+            l1-&gt;next = mergeTwoLists(l1-&gt;next, l2);
+            return l1; //就是cur节点，一直指向当前链表的尾节点
+        &#125;else&#123;
+            l2-&gt;next = mergeTwoLists(l1,l2-&gt;next);
+            return l2;
+        &#125;                    
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="83-Remove-Duplicates-from-Sorted-List"><a href="#83-Remove-Duplicates-from-Sorted-List" class="headerlink" title="83.Remove Duplicates from Sorted List"></a>83.Remove Duplicates from Sorted List</h3><p><strong>题目描述：</strong></p>
+<p>Given a sorted linked list, delete all duplicates such that each element appear only <em>once</em>.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: 1-&gt;1-&gt;2
+Output: 1-&gt;2
+</code></pre>
+<h4 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h4><ul>
+<li>看清楚题目，不要求把重复的所有元素都删除</li>
+<li>cur表示当前节点，依次和下一个节点比较，如果值一样，则与下一个节点比较，并每次删除一个值一样的节点</li>
+<li>时间：O(n)，必须从头遍历到尾，空间：O(1)</li>
+</ul>
+<pre><code class="c++">class Solution &#123;
+public:
+    ListNode* deleteDuplicates(ListNode* head) &#123;
+        if(head == NULL)
+            return NULL;
+        ListNode* cur = head;
+       // ListNode* tmp = NULL;
+
+        while(cur)&#123;
+            while(cur-&gt;next &amp;&amp; cur-&gt;val == cur-&gt;next-&gt;val)&#123;
+               // tmp = cur-&gt;next;
+                cur-&gt;next = cur-&gt;next-&gt;next;
+                //delete(tmp);
+            &#125;
+            cur = cur-&gt;next;
+        &#125;
+        return head;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="141-Linked-List-Cycle"><a href="#141-Linked-List-Cycle" class="headerlink" title="141.Linked List Cycle"></a>141.Linked List Cycle</h3><p><strong>题目描述</strong></p>
+<p>Given a linked list, determine if it has a cycle in it.</p>
+<p>To represent a cycle in the given linked list, we use an integer <code>pos</code> which represents the position (0-indexed) in the linked list where tail connects to. If <code>pos</code> is <code>-1</code>, then there is no cycle in the linked list.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: head = [3,2,0,-4], pos = 1
+Output: true
+Explanation: There is a cycle in the linked list, where tail connects to the second node.
+</code></pre>
+<p><img src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist.png" alt="img"></p>
+<h4 id="solution1—快慢指针"><a href="#solution1—快慢指针" class="headerlink" title="solution1—快慢指针"></a>solution1—快慢指针</h4><ul>
+<li>第一种解法就是快慢指针，而且只需要O(1)空间，O(n)时间，但是奇怪的是，我因为指针指向原因，错了三次？</li>
+</ul>
+<pre><code class="c++">class Solution &#123;
+public:
+    bool hasCycle(ListNode *head) &#123;
+        if(head == NULL || head-&gt;next == NULL)
+            return false;
+        
+        ListNode* slow = head, *fast = head-&gt;next;
+        while(fast != slow)&#123;
+            if(fast == NULL || fast-&gt;next == NULL)&#123;
+                return false;
+            &#125;
+            slow = slow-&gt;next;
+            fast = fast-&gt;next-&gt;next;
+        &#125;
+        return true;
+    &#125;
+</code></pre>
+<h4 id="solution2-辅助集合"><a href="#solution2-辅助集合" class="headerlink" title="solution2-辅助集合"></a>solution2-辅助集合</h4><ul>
+<li>检查某个节点是否被第二次访问，使用hash表，查看当前元素在hash表中是否存在，则需要find函数(set)</li>
+<li>时间：O(n)，空间：O(n)</li>
+</ul>
+<pre><code class="c++">class Solution &#123;
+public:
+    bool hasCycle(ListNode *head) &#123;
+        if(head == NULL || head-&gt;next == NULL)
+            return false;
+        
+        ListNode* tmp = head;
+        set&lt;ListNode*&gt;mySet;
+        mySet.insert(tmp);
+        tmp = tmp-&gt;next;
+        
+        while(tmp != NULL)&#123;
+            if(mySet.find(tmp) == mySet.end())&#123;
+                mySet.insert(tmp);
+                tmp = tmp-&gt;next;
+            &#125;else
+                return true;
+        &#125;
+        return false;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="234-Palindrome-Linked-List"><a href="#234-Palindrome-Linked-List" class="headerlink" title="234.Palindrome Linked List"></a>234.Palindrome Linked List</h3><p><strong>题目描述</strong></p>
+<p>Given a singly linked list, determine if it is a palindrome.</p>
+<p>回文是指：正向和反向读取得到的是一样的</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: 1-&gt;2
+Output: false
+</code></pre>
+<p><strong>Example 2:</strong></p>
+<pre><code>Input: 1-&gt;2-&gt;2-&gt;1
+Output: true
+</code></pre>
+<h4 id="solution1-辅助栈"><a href="#solution1-辅助栈" class="headerlink" title="solution1-辅助栈"></a>solution1-辅助栈</h4><ul>
+<li>遍历链表，使用栈存储，再次遍历链表，和出栈的元素比较</li>
+<li>时间：O(n)，空间：O(n)</li>
+</ul>
+<pre><code class="c++">class Solution &#123;
+public:
+    bool isPalindrome(ListNode* head) &#123;
+        if(head == NULL || head-&gt;next == NULL)
+            return true;
+        
+        stack&lt;int&gt;node;
+        ListNode* tmp = head;
+        while(tmp != NULL)&#123;
+            node.push(tmp-&gt;val);
+            tmp = tmp-&gt;next;
+        &#125;
+        tmp = head;
+        while(tmp != NULL)&#123;
+            int v = node.top();
+            if(tmp-&gt;val != v)
+                return false;
+            node.pop();
+            tmp = tmp-&gt;next;
+        &#125;
+            
+        return true;
+    &#125;
+</code></pre>
+<h4 id="solution2-递归-1"><a href="#solution2-递归-1" class="headerlink" title="solution2-递归"></a>solution2-递归</h4><ul>
+<li>边界条件：cur == NULL，返回true</li>
+<li>用一个指针指在链表头；递归不断执行，到了链表结尾，然后出栈，不断返回，表头指针不断往前走，也是一个后面和前面比较的过程。但是我在想，怎么能让它比较到中间的时候就停止呢？</li>
+<li>时间：O(n)，空间：O(n)</li>
+</ul>
+<pre><code class="c++">class Solution &#123;
+public:
+    ListNode* temp ;
+    
+    bool isPalindrome(ListNode* head) &#123;
+        if(head == NULL || head-&gt;next == NULL)
+            return true;
+        temp = head;
+        return check(head);
+    &#125;
+    bool check(ListNode* p)&#123;
+        if(p == NULL)
+            return true;
+        bool isPal = check(p-&gt;next) &amp; (p-&gt;val == temp-&gt;val);
+        temp = temp-&gt;next;
+        
+        return isPal; 
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="203-Remove-Linked-List-Elements"><a href="#203-Remove-Linked-List-Elements" class="headerlink" title="203.Remove Linked List Elements"></a>203.Remove Linked List Elements</h3><p><strong>题目描述</strong></p>
+<p>Remove all elements from a linked list of integers that have value <strong>val</strong>.</p>
+<p><strong>Example:</strong></p>
+<pre><code>Input:  1-&gt;2-&gt;6-&gt;3-&gt;4-&gt;5-&gt;6, val = 6
+Output: 1-&gt;2-&gt;3-&gt;4-&gt;5
+</code></pre>
+<h4 id="solution-遍历"><a href="#solution-遍历" class="headerlink" title="solution-遍历"></a>solution-遍历</h4><ul>
+<li>删除具有相同值的元素。因为要删除，所以需要记录当前元素的上一个，才能把指针连接到下一个<br>为了处理头结点，引入dummyHead。或者直接，用cur-&gt;next和值做比较</li>
+<li>时间：O(n)，空间：O(1)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    ListNode* removeElements(ListNode* head, int val) &#123;
+        if(head == NULL)
+            return NULL ;
+        ListNode* dummyHead = new ListNode(0);
+        dummyHead-&gt;next = head;
+        ListNode* pre = dummyHead, *cur = head;
+        
+        while(cur != NULL)&#123;
+            if(cur-&gt;val == val)&#123;
+                pre-&gt;next = cur-&gt;next;
+                cur = pre-&gt;next;
+            &#125;else&#123;
+                pre = cur;
+                cur = cur-&gt;next;                
+            &#125;         
+        &#125;
+        return dummyHead-&gt;next;                
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="160-Intersection-of-Two-Linked-Lists"><a href="#160-Intersection-of-Two-Linked-Lists" class="headerlink" title="160.Intersection of Two Linked Lists"></a>160.Intersection of Two Linked Lists</h3><p><strong>题目描述</strong></p>
+<p>Write a program to find the node at which the intersection of two singly linked lists begins.</p>
+<p>For example, the following two linked lists:</p>
+<p><img src="https://assets.leetcode.com/uploads/2018/12/13/160_statement.png" alt="img"></p>
+<p>begin to intersect at node c1.</p>
+<h4 id="solution1-求长度"><a href="#solution1-求长度" class="headerlink" title="solution1-求长度"></a>solution1-求长度</h4><ul>
+<li>求出两个链表的长度，因为两个链表可能不一样长，则让长的那个先走几步，然后两个一起走，去比较是否有一致的节点</li>
+<li>时间：O(n)，空间：O(1)</li>
+</ul>
+<pre><code class="c++">class Solution &#123;
+public:
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) &#123;
+        if(headA == NULL || headB == NULL)
+            return NULL;
+        //查询链表长度
+        ListNode* p1 = headA, *p2 = headB;
+        int lenA = 0, lenB = 0;
+        while(p1 != NULL)&#123;
+            lenA++;
+            p1 = p1-&gt;next;
+        &#125;
+        while(p2 != NULL)&#123;
+            lenB++;
+            p2 = p2-&gt;next;
+        &#125;
+        //将长的那个链表定位到与短链表一样长的地方
+        p1 = headA, p2 = headB;
+        int step = (lenA&gt;lenB)?(lenA-lenB):(lenB-lenA);
+        if(lenA &gt;= lenB)&#123;
+            while(step)&#123;
+                p1 = p1-&gt;next;
+                step--;
+            &#125;
+        &#125;else&#123;
+            while(step)&#123;
+                p2 = p2-&gt;next;
+                step--;
+            &#125;
+        &#125;
+        //开始同时遍历并比较两个链表的节点
+        while(p1 != NULL &amp;&amp; p2 != NULL)&#123;
+            if(p1 != p2)&#123;//判断的是节点是否相同，不是节点的值
+                p1 = p1-&gt;next;
+                p2 = p2-&gt;next;
+            &#125;
+            else
+                return p1;  
+        &#125;
+        return NULL;        
+    &#125;
+&#125;;
+</code></pre>
+<h4 id="solution2—辅助栈"><a href="#solution2—辅助栈" class="headerlink" title="solution2—辅助栈"></a>solution2—辅助栈</h4><ul>
+<li>如果有交集，那么倒着遍历时第一个不一样的节点就是分岔处。</li>
+<li>顺序遍历，将元素分别存储在辅助的栈中。依次从栈中弹出元素比较</li>
+<li>时间：O(n)，空间：O(n)</li>
+<li>没写。。。</li>
+</ul>
+<h4 id="solution3-链表粘合"><a href="#solution3-链表粘合" class="headerlink" title="solution3-链表粘合"></a>solution3-链表粘合</h4><pre><code class="c++">class Solution &#123;
+public:
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) &#123;
+        if(headA == NULL || headB == NULL)
+            return NULL;
+        ListNode *p1 = headA, *p2 = headB;
+        //只有拼接后的两条链都遍历完，才结束
+        while(p1 != NULL &amp;&amp; p2 != NULL &amp;&amp; p1 != p2)&#123;
+            p1 = p1-&gt;next;
+            p2 = p2-&gt;next;
+            if(p1 == p2)
+                return p1;
+            if(p1 == NULL)  p1 = headB;
+            if(p2 == NULL)  p2 = headA;
+        &#125;
+        return p1;//p1 == p2 的情况是两条链的公共节点是第一个的时候，不会执行while里面的语句，否则，在有前缀节点的情况下，一定是在循环内找到交点。如果没有交点，则p1是返回NULL
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="707-Design-Linked-List"><a href="#707-Design-Linked-List" class="headerlink" title="707. Design Linked List"></a>707. Design Linked List</h3><p><strong>题目描述：</strong></p>
+<p>Design your implementation of the linked list. You can choose to use  the singly linked list or the doubly linked list. A node in a  singly linked list should have two attributes: <code>val</code> and <code>next</code>. <code>val</code> is the value of the current node, and <code>next</code> is a pointer/reference to the next node. If you want to use the doubly linked list, you will need one more attribute <code>prev</code> to indicate the previous node in the linked list. Assume all nodes in the linked list are 0-indexed.</p>
+<p>Implement these functions in your linked list class:</p>
+<ul>
+<li>get(index) : Get the value of the <code>index</code>-th node in the linked list. If the index is invalid, return <code>-1</code>.</li>
+<li>addAtHead(val) : Add a node of value <code>val</code> before the first element of the linked list. After the insertion, the new node will be the first node of the linked list.</li>
+<li>addAtTail(val) : Append a node of value <code>val</code> to the last element of the linked list.</li>
+<li>addAtIndex(index, val) : Add a node of value <code>val</code> before the <code>index</code>-th node in the linked list. If <code>index</code> equals to  the length of linked list, the node will be appended to the end of  linked list. If index is greater than the length, the node will not be  inserted. If index is negative, the node will be inserted at the head of  the list.</li>
+<li>deleteAtIndex(index) : Delete the <code>index</code>-th node in the linked list, if the index is valid.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>All values will be in the range of <code>[1, 1000]</code>.</li>
+<li>The number of operations will be in the range of <code>[1, 1000]</code>.</li>
+<li>Please do not use the built-in LinkedList library.</li>
+</ul>
+<h4 id="solution-1"><a href="#solution-1" class="headerlink" title="solution"></a>solution</h4><p>这道题对我来说最大的挑战不是思路，是C++语法的问题。<br>首先是不知道在类里面怎么去声明一个节点的类型，一个是不知道构造函数怎么用了，汗。。。<br>别人的思路的一个亮点：因为题目中要求了使用了头、尾，还有index的合法与不合法，所以设置三个全局变量head,tail,len, 在更新节点数量的时候要记着把len值做改变。</p>
+<pre><code class="c++">class MyLinkedList &#123;
+private:
+    struct ListNode&#123;
+        int val;
+        ListNode* next;
+        ListNode(int v):val(v),next(NULL)&#123;&#125;
+    &#125;;
+    ListNode* head;
+    ListNode* tail;
+    int len ;
+    
+public:
+    /** Initialize your data structure here. */
+    MyLinkedList() &#123;
+        head = NULL;
+        tail = NULL;
+        len = 0;
+    &#125;
+    
+    /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
+    int get(int index) &#123;
+        if(index &gt;= len || index &lt; 0)
+            return -1;
+        ListNode* p  = head;
+    
+        for(int i = 0;i &lt; index; i++)&#123;
+            p = p-&gt;next;
+        &#125;
+        return p-&gt;val;       
+    &#125;
+
+    /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
+    void addAtHead(int val) &#123;
+        ListNode* newHead = new ListNode(val);
+        newHead-&gt;next = head;
+        head = newHead;
+        if(len == 0)
+            tail = newHead;
+        ++len;
+    &#125;    
+    /** Append a node of value val to the last element of the linked list. */
+    void addAtTail(int val) &#123;
+        ListNode* newTail = new ListNode(val);
+        if(len == 0)&#123;
+            head = newTail;
+            tail = newTail;
+        &#125;            
+        tail-&gt;next = newTail;
+        tail = newTail;
+        newTail-&gt;next = NULL;
+        ++len;
+    &#125;
+    
+    /** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
+    void addAtIndex(int index, int val) &#123;
+        if(index == len)
+            addAtTail(val);
+        else if(index &gt; len)
+            return ;
+        else if(index &lt;= 0)
+            addAtHead(val);
+        else&#123;
+            ListNode* p = head;
+            ListNode* newNode = new ListNode(val);
+            //找到要插入index的前一个节点，这样直接操作前一个节点的指向即可，所以是index-1，删除同理
+            for(int i = 0; i &lt; index-1;i++)&#123;
+                p = p-&gt;next;
+            &#125;
+            newNode-&gt;next = p-&gt;next;
+            p-&gt;next = newNode;
+            ++len;
+        &#125;                    
+    &#125;
+    
+    /** Delete the index-th node in the linked list, if the index is valid. */
+    void deleteAtIndex(int index) &#123;
+        if(index &lt; 0 || index &gt;= len)
+            return ;
+        
+        ListNode* tmp = NULL;//用来做delete操作，在OJ中，我发现不用delete也可以，但是为了养成好习惯，建议始终把不要的节点delete掉，以免内存泄漏
+        
+        //如果删除头节点,删除完就可以return了
+        if(index == 0)&#123;
+            tmp = head;
+            head = head-&gt;next;
+            delete tmp;
+            --len;
+            return;
+        &#125;
+
+        ListNode* p = head;
+        for(int i = 0; i &lt; index-1; i++)&#123;
+            p = p-&gt;next;
+        &#125;
+        //删除尾节点
+        if(index == len-1)
+            tail = p;
+        
+        tmp = p-&gt;next;
+        p-&gt;next = p-&gt;next-&gt;next;
+        delete tmp;
+        
+        --len;
+    &#125;
+&#125;;
+
+/**
+ * Your MyLinkedList object will be instantiated and called as such:
+ * MyLinkedList* obj = new MyLinkedList();
+ * int param_1 = obj-&gt;get(index);
+ * obj-&gt;addAtHead(val);
+ * obj-&gt;addAtTail(val);
+ * obj-&gt;addAtIndex(index,val);
+ * obj-&gt;deleteAtIndex(index);
+ */
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

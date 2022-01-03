@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>IDEA的使用：提升看源码效率 | haiki</title>
+  <meta name="keywords" content=" IDEA , java ">
+  <meta name="description" content="IDEA的使用：提升看源码效率 | haiki">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Oops～，我崩溃了！找不到你想要的页面 :(">
+<meta property="og:type" content="website">
+<meta property="og:title" content="404">
+<meta property="og:url" content="https://github.com/haiki/haiki.github.io/404.html">
+<meta property="og:site_name" content="haiki">
+<meta property="og:description" content="Oops～，我崩溃了！找不到你想要的页面 :(">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-10-03T12:16:10.000Z">
+<meta property="article:modified_time" content="2022-01-03T11:20:49.316Z">
+<meta property="article:author" content="haiki">
+<meta property="article:tag" content="computer science,blockchain,leetcode,record life">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>haiki</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="facebook"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-facebook"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="instagram"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="reddit"
+               href="https://www.reddit.com/user/yelog/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-reddit"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="weibo"
+               href="http://weibo.com/u/2307534817"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/ff56736de7cf"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/jaytp/activities"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="oschina"
+               href="https://my.oschina.net/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-oschina"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:jaytp@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="kugou"
+               href="https://www.kugou.com/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-kugou"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="neteasemusic"
+               href="https://music.163.com/#/user/home?id=88151013"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-neteasemusic"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(23)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="读书">
+                        
+                        读书
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="编程语言">
+                        
+                        编程语言
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="论文相关总结">
+                        
+                        论文相关总结
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="区块链">
+                        
+                        区块链
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="leetcode">
+                        
+                        leetcode
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="23">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>工具成长类</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>零碎</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>路由算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>命令</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>私链</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>以太坊</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>语法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>智能合约</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>API</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>attack</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>C++</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>DApp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>easy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ethereum</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>geth</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>go环境配置</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>IDEA</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Javascript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linkedList</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>payment routing</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>problem</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>solidity</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>speedymurmurs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>stack</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>string</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>token</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>transaction</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="All 工具 "
+           href="/2019/10/03/my-first-article/"
+           data-tag="hexo,problem"
+           data-author="" >
+            <span class="post-title" title="my first article">my first article</span>
+            <span class="post-date" title="2019-10-03 16:03:38">2019/10/03</span>
+        </a>
+        
+        <a  class="All 编程语言 "
+           href="/2019/12/24/python/"
+           data-tag="python,语法"
+           data-author="" >
+            <span class="post-title" title="python">python</span>
+            <span class="post-date" title="2019-12-24 22:10:19">2019/12/24</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/12/23/%E4%BB%A5%E5%A4%AA%E5%9D%8AERC20/"
+           data-tag="以太坊,solidity,智能合约,token"
+           data-author="" >
+            <span class="post-title" title="以太坊ERC20">以太坊ERC20</span>
+            <span class="post-date" title="2019-12-23 10:13:29">2019/12/23</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/12/22/%E4%BB%A5%E5%A4%AA%E5%9D%8A-Transaction/"
+           data-tag="以太坊,transaction"
+           data-author="" >
+            <span class="post-title" title="以太坊-Transaction">以太坊-Transaction</span>
+            <span class="post-date" title="2019-12-22 10:55:27">2019/12/22</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/12/12/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%91%E6%99%AE/"
+           data-tag="ethereum"
+           data-author="" >
+            <span class="post-title" title="以太坊科普">以太坊科普</span>
+            <span class="post-date" title="2019-12-12 09:29:40">2019/12/12</span>
+        </a>
+        
+        <a  class="All 编程语言 "
+           href="/2019/11/29/C-%E9%9A%8F%E8%AE%B0/"
+           data-tag="C++"
+           data-author="" >
+            <span class="post-title" title="C++随记">C++随记</span>
+            <span class="post-date" title="2019-11-29 09:58:19">2019/11/29</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/11/05/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9B%B8%E5%85%B3%E6%8A%80%E6%9C%AF%E5%89%8D%E6%B2%BF%E6%B4%9E%E5%AF%9F/"
+           data-tag="零碎"
+           data-author="" >
+            <span class="post-title" title="区块链相关技术前沿洞察">区块链相关技术前沿洞察</span>
+            <span class="post-date" title="2019-11-05 14:54:48">2019/11/05</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/11/03/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E5%BF%85%E5%A4%87/"
+           data-tag="算法"
+           data-author="" >
+            <span class="post-title" title="算法与数据结构学习必备">算法与数据结构学习必备</span>
+            <span class="post-date" title="2019-11-03 09:34:47">2019/11/03</span>
+        </a>
+        
+        <a  class="All 论文相关总结 "
+           href="/2019/10/31/SpeedyMurmurs-data-%E8%AE%B0%E5%BD%95/"
+           data-tag="speedymurmurs,payment routing,路由算法"
+           data-author="" >
+            <span class="post-title" title="SpeedyMurmurs data 记录">SpeedyMurmurs data 记录</span>
+            <span class="post-date" title="2019-10-31 10:34:05">2019/10/31</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/26/%E4%BB%A5%E5%A4%AA%E5%9D%8ADApp/"
+           data-tag="ethereum,DApp"
+           data-author="" >
+            <span class="post-title" title="以太坊DApp">以太坊DApp</span>
+            <span class="post-date" title="2019-10-26 18:55:09">2019/10/26</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/26/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag="attack"
+           data-author="" >
+            <span class="post-title" title="区块链中的一些常用名词解释">区块链中的一些常用名词解释</span>
+            <span class="post-date" title="2019-10-26 18:44:34">2019/10/26</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/25/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%AE%9E%E8%B7%B5/"
+           data-tag="以太坊,solidity,智能合约"
+           data-author="" >
+            <span class="post-title" title="以太坊智能合约实践">以太坊智能合约实践</span>
+            <span class="post-date" title="2019-10-25 10:15:12">2019/10/25</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/22/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%A6%82%E5%BF%B5%E5%8F%8AAPI%E7%9A%84%E6%95%B4%E5%90%88%E4%B8%8E%E7%90%86%E8%A7%A3/"
+           data-tag="以太坊,API,Javascript"
+           data-author="" >
+            <span class="post-title" title="以太坊概念及API的整合与理解">以太坊概念及API的整合与理解</span>
+            <span class="post-date" title="2019-10-22 17:21:16">2019/10/22</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/19/%E4%BB%8E%E5%A4%B4%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%81%E9%93%BE/"
+           data-tag="以太坊,私链,geth,go环境配置"
+           data-author="" >
+            <span class="post-title" title="从头搭建以太坊私链">从头搭建以太坊私链</span>
+            <span class="post-date" title="2019-10-19 16:15:54">2019/10/19</span>
+        </a>
+        
+        <a  class="All 论文相关总结 "
+           href="/2019/10/16/speedyMurmurs%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90Dynamic%E9%83%A8%E5%88%86/"
+           data-tag="speedymurmurs,payment routing,路由算法"
+           data-author="" >
+            <span class="post-title" title="speedyMurmurs源码分析Dynamic部分">speedyMurmurs源码分析Dynamic部分</span>
+            <span class="post-date" title="2019-10-16 09:27:00">2019/10/16</span>
+        </a>
+        
+        <a  class="All 论文相关总结 "
+           href="/2019/10/11/speedyMurmurs%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"
+           data-tag="speedymurmurs,payment routing,路由算法"
+           data-author="" >
+            <span class="post-title" title="speedyMurmurs源码分析">speedyMurmurs源码分析</span>
+            <span class="post-date" title="2019-10-11 20:12:57">2019/10/11</span>
+        </a>
+        
+        <a  class="All 运维 "
+           href="/2019/10/10/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag="linux,命令"
+           data-author="" >
+            <span class="post-title" title="linux常用命令">linux常用命令</span>
+            <span class="post-date" title="2019-10-10 16:32:59">2019/10/10</span>
+        </a>
+        
+        <a  class="All 编程语言 "
+           href="/2019/10/10/java/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="java">java</span>
+            <span class="post-date" title="2019-10-10 14:04:57">2019/10/10</span>
+        </a>
+        
+        <a  class="All 工具 "
+           href="/2019/10/09/IDEA%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD/"
+           data-tag="IDEA,java"
+           data-author="" >
+            <span class="post-title" title="IDEA的使用：提升看源码效率">IDEA的使用：提升看源码效率</span>
+            <span class="post-date" title="2019-10-09 20:21:52">2019/10/09</span>
+        </a>
+        
+        <a  class="All 读书 "
+           href="/2019/10/06/%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A%E6%91%98%E5%BD%95%E5%8F%8A%E8%A7%82%E5%90%8E%E6%84%9F/"
+           data-tag="工具成长类"
+           data-author="" >
+            <span class="post-title" title="非暴力沟通摘录及观后感">非暴力沟通摘录及观后感</span>
+            <span class="post-date" title="2019-10-06 18:41:57">2019/10/06</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/10/05/string-problems-easy/"
+           data-tag="easy,string"
+           data-author="" >
+            <span class="post-title" title="string-problems-easy">string-problems-easy</span>
+            <span class="post-date" title="2019-10-05 10:30:38">2019/10/05</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/08/28/LinkedList-problems-easy/"
+           data-tag="linkedList,easy"
+           data-author="" >
+            <span class="post-title" title="LinkedList-problems-easy">LinkedList-problems-easy</span>
+            <span class="post-date" title="2019-08-28 21:40:38">2019/08/28</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/08/23/stack-problems-easy/"
+           data-tag="easy,stack"
+           data-author="" >
+            <span class="post-title" title="stack-problems-easy">stack-problems-easy</span>
+            <span class="post-date" title="2019-08-23 21:40:38">2019/08/23</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-IDEA常用功能" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">IDEA的使用：提升看源码效率</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="工具">工具</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">IDEA</a>
+            
+            <a class="color5">java</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2022-01-03 19:20:49'>2019-10-09 20:21</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#IntelliJ-IDEA-%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%9B%BE%E6%A0%87%E4%BB%8B%E7%BB%8D"><span class="toc-text">IntelliJ IDEA 常见文件类型的图标介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA%E4%B8%AD%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%EF%BC%8C%E8%BF%90%E8%A1%8Cmain%E5%87%BD%E6%95%B0"><span class="toc-text">IDEA中配置参数，运行main函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA%E4%B8%AD%E6%9F%A5%E7%9C%8B%E7%B1%BB%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB"><span class="toc-text">IDEA中查看类继承关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E5%85%B3%E7%B3%BB%E2%80%94%E2%80%94SourceInsight"><span class="toc-text">函数调用关系——SourceInsight</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA%E4%B8%AD-%E6%98%BE%E7%A4%BA%E5%87%BD%E6%95%B0%E7%9A%84%E7%94%A8%E6%B3%95"><span class="toc-text">IDEA中 显示函数的用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA%E4%B8%AD-%E7%B1%BB%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%8F%8A%E5%8F%98%E9%87%8F%E7%AD%89%E6%A6%82%E8%A7%88"><span class="toc-text">IDEA中 类中的函数及变量等概览</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="IntelliJ-IDEA-常见文件类型的图标介绍"><a href="#IntelliJ-IDEA-常见文件类型的图标介绍" class="headerlink" title="IntelliJ IDEA 常见文件类型的图标介绍"></a>IntelliJ IDEA 常见文件类型的图标介绍</h3><p>参见博客: <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35246620/article/details/64157559">IntelliJ IDEA 常见文件类型的图标介绍</a></p>
+<h3 id="IDEA中配置参数，运行main函数"><a href="#IDEA中配置参数，运行main函数" class="headerlink" title="IDEA中配置参数，运行main函数"></a>IDEA中配置参数，运行main函数</h3><p>对于java程序，编译（build）指令： <code>javac</code>，运行（run）指令： <code>java</code> ，需要安装 JDK（这里又有Oracle JDK 和 OpenJDK，自行百度区别和使用），JRE。</p>
+<p>对于windows 配置 <code>JAVA_HOME</code>，<code>PATH</code>，<code>classpath</code> 的方法见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/haiki66/article/details/88758199">Java中JAVA_HOME, PATH,CLASSPATH的作用和配置值</a></p>
+<p>IDEA下可以有两种运行程序的方法：</p>
+<ol>
+<li>最上方工具栏分别找到 <code>Build</code>  和 <code>Run</code>对程序进行编译，运行。使用这种方法时，如果main函数运行时需要传入参数，参数的配置方法为：鼠标指向最上面工具栏的：<code>Run</code> ，选中左键进入<code>Edit configurations</code>。如下图所示。其中<code>program argument1</code>处依次填入需要的参数。</li>
+</ol>
+<ul>
+<li>这里我们可以留意到的是：<code>Main class</code> 的书写形式， main 函数所在的类，是以包名的形式呈现的。那么对于不同类中的 main 函数，通过修改 类名即可。这样简单的配置之后，我们就可以直接用 <code>Build</code> 和 <code>Run</code> 来处理程序啦~ 很多命令的处理过程，都由IDE进行</li>
+</ul>
+<p><img src="https://i.loli.net/2019/10/09/oLgrNqhYudD5pbT.jpg" alt="IDEA.JPG"></p>
+<ol start="2">
+<li>在终端（terminal）下运行输入 <code>javac</code> 和 <code>java</code> 编译运行程序（也就是IDE帮我们做的一些命令）。<ul>
+<li><code>javac -classpath &lt;lib&gt; -sourcepath &lt;src&gt; -d &lt;bin&gt;</code></li>
+<li><code>java -classpath &lt;lib&gt;&lt;:/;&gt;&lt;bin&gt; &lt;main函数所在类&gt;</code></li>
+<li>其中，凡是用 <code>&lt;&gt;</code>框起来的都是要根据自己的实际情况进行更改的。<ul>
+<li><code>-classpath</code>也可以简写为 <code>-cp</code>，是用来加载外部包的，比如你写的项目里面，用到了一些jar 包，那么需要把这些jar包的路径告诉 javac 这个可执行程序，也就对应于 <code>&lt;lib&gt;</code>，比如我的这个项目，某些 jar 包的路径是 <code>./lib/</code>，表示当前项目的当前文件夹下的lib文件夹下。</li>
+<li><code>-sourcepath</code> 需要输入的是当前项目所在的文件夹，查看当前项目所在路径可以试错，也可以自行百度。示例：<code>./src/</code></li>
+<li><code>-d</code> 是指：编译之后生成的 <code>.class</code> 文件放在哪个文件夹下，这个的文件路径可以自己设置，一般在当前项目下，新建一个文件夹，如  <code>./bin</code> 或者 <code>./out</code> 。我们要知道的是，java 运行的都是 <code>.class</code> 文件。</li>
+<li><code>javac</code> 和 <code>java</code> 中的  <code>&lt;lib&gt;&lt;bin&gt;</code> 都一样。需要注意的是，对于 <code>java</code> 命令中 &lt;&gt;<code>&lt;:/;&gt;</code> 是说，当在unix下使用此命令时，用冒号，在window下使用时，用分号。</li>
+<li><code>&lt;main函数所在类&gt;</code> 就是方法 1 中提到的 以包名形式的包含main函数的类名。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="IDEA中查看类继承关系"><a href="#IDEA中查看类继承关系" class="headerlink" title="IDEA中查看类继承关系"></a>IDEA中查看类继承关系</h3><p>鼠标点在类名上，右键，在复选框中找到 <code>Diagrams</code> —&gt; <code>show diagrams</code> ，则可以查看类的继承关系。</p>
+<p><img src="https://i.loli.net/2019/10/10/EWPbBq7cZnfNDKe.png" alt="IDEA1.png"></p>
+<h3 id="函数调用关系——SourceInsight"><a href="#函数调用关系——SourceInsight" class="headerlink" title="函数调用关系——SourceInsight"></a>函数调用关系——SourceInsight</h3><p>增：10月11在意外中发现了别人写的一篇博客，好仔细！推荐！</p>
+<p>[C 源码阅读之函数(Function/Method)调用树图( Call Graph)及数据结构依赖图][<a target="_blank" rel="noopener" href="http://blog.sina.com.cn/s/blog_6b6ab0890101qd9j.html]">http://blog.sina.com.cn/s/blog_6b6ab0890101qd9j.html]</a></p>
+<p>这个有两种方式：</p>
+<ol>
+<li><p>鼠标点击需要查看的函数名，在上方的菜单栏查找一个图标，如下图所示，则会显示这个函数的调用关系。</p>
+<p><img src="https://i.loli.net/2019/10/10/8LRf45onVOvhYju.png" alt="SourceInsight.png"></p>
+</li>
+<li><p>鼠标右键函数名，选择 <code>Show in Relation Window</code>，会出现和 1 一样的结果。</p>
+<ol>
+<li>看下图，左下角会有一些小的选择，按照箭头标注，最左边点击一下，会出现列表形式的函数调用关系，在第一列，是 <code>name</code> ，默认情况下，函数是以字母序排序的，如果想按照函数调用顺序，可以鼠标左键点一下 <code>name</code>，会以英文形式提示你，现在是以什么排序的。类似文件夹下，以创建时间，或者修改日期等排序那种。这个选择好之后，点击第二个箭头指的，显示出的关系图就是按照你选定的函数的出现方式。（升序，降序，出现顺序）</li>
+<li> 接着就是调用关系是横着显示还是竖着显示；</li>
+<li>再接着是设置。</li>
+</ol>
+</li>
+</ol>
+<p><img src="https://i.loli.net/2019/10/10/cZkgdznxXUWfowR.png" alt="SourceInsight1.png"></p>
+<p><img src="https://i.loli.net/2019/10/10/ZKvNI78q164dm3H.png" alt="SourceInsight3.png"></p>
+<p>还可以设置要查看的函数调用关系，是查看当前函数调用（calls）了哪些函数，调用关系显示几层。这里主要想提及的是 <code>View Relationship</code> 这里，这个选择直接决定了显示什么关系。可以看到，关系主要是用于 <code>Types（类型）、Functions（函数）、Variables（变量）、class（类）等</code> ， 需要注意的是，类的关系也可以展示，但是我更喜欢用 IDEA 的类继承关系。根据自己的需要，选择想要查看的关系图，如函数调用关系，那么要设置的是 <code>functions</code>，<code>Calls</code>表示查看这个函数开始调用了哪些，<code>calls and callers</code> 则表示此函数的调用 + 对此函数的调用。<code>reference </code> 表示引用。</p>
+<p><img src="https://i.loli.net/2019/10/10/NibgmIKpLftDQcG.png" alt="SourceInsight4.png"></p>
+<h3 id="IDEA中-显示函数的用法"><a href="#IDEA中-显示函数的用法" class="headerlink" title="IDEA中 显示函数的用法"></a>IDEA中 显示函数的用法</h3><p><code>Alt + F7</code>，下面会显示出哪里使用了这个函数。</p>
+<h3 id="IDEA中-类中的函数及变量等概览"><a href="#IDEA中-类中的函数及变量等概览" class="headerlink" title="IDEA中 类中的函数及变量等概览"></a>IDEA中 类中的函数及变量等概览</h3><p><code>Alt + 7</code></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

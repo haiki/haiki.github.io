@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>speedyMurmurs源码分析 | haiki</title>
+  <meta name="keywords" content=" speedymurmurs , payment routing , 路由算法 ">
+  <meta name="description" content="speedyMurmurs源码分析 | haiki">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Oops～，我崩溃了！找不到你想要的页面 :(">
+<meta property="og:type" content="website">
+<meta property="og:title" content="404">
+<meta property="og:url" content="https://github.com/haiki/haiki.github.io/404.html">
+<meta property="og:site_name" content="haiki">
+<meta property="og:description" content="Oops～，我崩溃了！找不到你想要的页面 :(">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-10-03T12:16:10.000Z">
+<meta property="article:modified_time" content="2022-01-03T11:20:49.316Z">
+<meta property="article:author" content="haiki">
+<meta property="article:tag" content="computer science,blockchain,leetcode,record life">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>haiki</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="facebook"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-facebook"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="instagram"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="reddit"
+               href="https://www.reddit.com/user/yelog/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-reddit"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="weibo"
+               href="http://weibo.com/u/2307534817"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/ff56736de7cf"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/jaytp/activities"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="oschina"
+               href="https://my.oschina.net/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-oschina"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:jaytp@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="kugou"
+               href="https://www.kugou.com/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-kugou"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="neteasemusic"
+               href="https://music.163.com/#/user/home?id=88151013"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-neteasemusic"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(23)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="读书">
+                        
+                        读书
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="编程语言">
+                        
+                        编程语言
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="论文相关总结">
+                        
+                        论文相关总结
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="区块链">
+                        
+                        区块链
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="leetcode">
+                        
+                        leetcode
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="23">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>工具成长类</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>零碎</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>路由算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>命令</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>私链</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>以太坊</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>语法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>智能合约</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>API</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>attack</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>C++</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>DApp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>easy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ethereum</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>geth</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>go环境配置</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>IDEA</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Javascript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linkedList</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>payment routing</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>problem</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>solidity</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>speedymurmurs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>stack</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>string</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>token</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>transaction</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="All 工具 "
+           href="/2019/10/03/my-first-article/"
+           data-tag="hexo,problem"
+           data-author="" >
+            <span class="post-title" title="my first article">my first article</span>
+            <span class="post-date" title="2019-10-03 16:03:38">2019/10/03</span>
+        </a>
+        
+        <a  class="All 编程语言 "
+           href="/2019/12/24/python/"
+           data-tag="python,语法"
+           data-author="" >
+            <span class="post-title" title="python">python</span>
+            <span class="post-date" title="2019-12-24 22:10:19">2019/12/24</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/12/23/%E4%BB%A5%E5%A4%AA%E5%9D%8AERC20/"
+           data-tag="以太坊,solidity,智能合约,token"
+           data-author="" >
+            <span class="post-title" title="以太坊ERC20">以太坊ERC20</span>
+            <span class="post-date" title="2019-12-23 10:13:29">2019/12/23</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/12/22/%E4%BB%A5%E5%A4%AA%E5%9D%8A-Transaction/"
+           data-tag="以太坊,transaction"
+           data-author="" >
+            <span class="post-title" title="以太坊-Transaction">以太坊-Transaction</span>
+            <span class="post-date" title="2019-12-22 10:55:27">2019/12/22</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/12/12/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%91%E6%99%AE/"
+           data-tag="ethereum"
+           data-author="" >
+            <span class="post-title" title="以太坊科普">以太坊科普</span>
+            <span class="post-date" title="2019-12-12 09:29:40">2019/12/12</span>
+        </a>
+        
+        <a  class="All 编程语言 "
+           href="/2019/11/29/C-%E9%9A%8F%E8%AE%B0/"
+           data-tag="C++"
+           data-author="" >
+            <span class="post-title" title="C++随记">C++随记</span>
+            <span class="post-date" title="2019-11-29 09:58:19">2019/11/29</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/11/05/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9B%B8%E5%85%B3%E6%8A%80%E6%9C%AF%E5%89%8D%E6%B2%BF%E6%B4%9E%E5%AF%9F/"
+           data-tag="零碎"
+           data-author="" >
+            <span class="post-title" title="区块链相关技术前沿洞察">区块链相关技术前沿洞察</span>
+            <span class="post-date" title="2019-11-05 14:54:48">2019/11/05</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/11/03/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E5%BF%85%E5%A4%87/"
+           data-tag="算法"
+           data-author="" >
+            <span class="post-title" title="算法与数据结构学习必备">算法与数据结构学习必备</span>
+            <span class="post-date" title="2019-11-03 09:34:47">2019/11/03</span>
+        </a>
+        
+        <a  class="All 论文相关总结 "
+           href="/2019/10/31/SpeedyMurmurs-data-%E8%AE%B0%E5%BD%95/"
+           data-tag="speedymurmurs,payment routing,路由算法"
+           data-author="" >
+            <span class="post-title" title="SpeedyMurmurs data 记录">SpeedyMurmurs data 记录</span>
+            <span class="post-date" title="2019-10-31 10:34:05">2019/10/31</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/26/%E4%BB%A5%E5%A4%AA%E5%9D%8ADApp/"
+           data-tag="ethereum,DApp"
+           data-author="" >
+            <span class="post-title" title="以太坊DApp">以太坊DApp</span>
+            <span class="post-date" title="2019-10-26 18:55:09">2019/10/26</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/26/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag="attack"
+           data-author="" >
+            <span class="post-title" title="区块链中的一些常用名词解释">区块链中的一些常用名词解释</span>
+            <span class="post-date" title="2019-10-26 18:44:34">2019/10/26</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/25/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%AE%9E%E8%B7%B5/"
+           data-tag="以太坊,solidity,智能合约"
+           data-author="" >
+            <span class="post-title" title="以太坊智能合约实践">以太坊智能合约实践</span>
+            <span class="post-date" title="2019-10-25 10:15:12">2019/10/25</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/22/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%A6%82%E5%BF%B5%E5%8F%8AAPI%E7%9A%84%E6%95%B4%E5%90%88%E4%B8%8E%E7%90%86%E8%A7%A3/"
+           data-tag="以太坊,API,Javascript"
+           data-author="" >
+            <span class="post-title" title="以太坊概念及API的整合与理解">以太坊概念及API的整合与理解</span>
+            <span class="post-date" title="2019-10-22 17:21:16">2019/10/22</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/19/%E4%BB%8E%E5%A4%B4%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%81%E9%93%BE/"
+           data-tag="以太坊,私链,geth,go环境配置"
+           data-author="" >
+            <span class="post-title" title="从头搭建以太坊私链">从头搭建以太坊私链</span>
+            <span class="post-date" title="2019-10-19 16:15:54">2019/10/19</span>
+        </a>
+        
+        <a  class="All 论文相关总结 "
+           href="/2019/10/16/speedyMurmurs%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90Dynamic%E9%83%A8%E5%88%86/"
+           data-tag="speedymurmurs,payment routing,路由算法"
+           data-author="" >
+            <span class="post-title" title="speedyMurmurs源码分析Dynamic部分">speedyMurmurs源码分析Dynamic部分</span>
+            <span class="post-date" title="2019-10-16 09:27:00">2019/10/16</span>
+        </a>
+        
+        <a  class="All 论文相关总结 "
+           href="/2019/10/11/speedyMurmurs%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"
+           data-tag="speedymurmurs,payment routing,路由算法"
+           data-author="" >
+            <span class="post-title" title="speedyMurmurs源码分析">speedyMurmurs源码分析</span>
+            <span class="post-date" title="2019-10-11 20:12:57">2019/10/11</span>
+        </a>
+        
+        <a  class="All 运维 "
+           href="/2019/10/10/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag="linux,命令"
+           data-author="" >
+            <span class="post-title" title="linux常用命令">linux常用命令</span>
+            <span class="post-date" title="2019-10-10 16:32:59">2019/10/10</span>
+        </a>
+        
+        <a  class="All 编程语言 "
+           href="/2019/10/10/java/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="java">java</span>
+            <span class="post-date" title="2019-10-10 14:04:57">2019/10/10</span>
+        </a>
+        
+        <a  class="All 工具 "
+           href="/2019/10/09/IDEA%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD/"
+           data-tag="IDEA,java"
+           data-author="" >
+            <span class="post-title" title="IDEA的使用：提升看源码效率">IDEA的使用：提升看源码效率</span>
+            <span class="post-date" title="2019-10-09 20:21:52">2019/10/09</span>
+        </a>
+        
+        <a  class="All 读书 "
+           href="/2019/10/06/%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A%E6%91%98%E5%BD%95%E5%8F%8A%E8%A7%82%E5%90%8E%E6%84%9F/"
+           data-tag="工具成长类"
+           data-author="" >
+            <span class="post-title" title="非暴力沟通摘录及观后感">非暴力沟通摘录及观后感</span>
+            <span class="post-date" title="2019-10-06 18:41:57">2019/10/06</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/10/05/string-problems-easy/"
+           data-tag="easy,string"
+           data-author="" >
+            <span class="post-title" title="string-problems-easy">string-problems-easy</span>
+            <span class="post-date" title="2019-10-05 10:30:38">2019/10/05</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/08/28/LinkedList-problems-easy/"
+           data-tag="linkedList,easy"
+           data-author="" >
+            <span class="post-title" title="LinkedList-problems-easy">LinkedList-problems-easy</span>
+            <span class="post-date" title="2019-08-28 21:40:38">2019/08/28</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/08/23/stack-problems-easy/"
+           data-tag="easy,stack"
+           data-author="" >
+            <span class="post-title" title="stack-problems-easy">stack-problems-easy</span>
+            <span class="post-date" title="2019-08-23 21:40:38">2019/08/23</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-speedyMurmurs源码分析" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">speedyMurmurs源码分析</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="论文相关总结">论文相关总结</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">speedymurmurs</a>
+            
+            <a class="color1">payment routing</a>
+            
+            <a class="color5">路由算法</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2022-01-03 19:20:49'>2019-10-11 20:12</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Config%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%BB%E5%8F%96"><span class="toc-text">Config文件的读取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0"><span class="toc-text">参数</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Static.main</p>
+<h3 id="Config文件的读取"><a href="#Config文件的读取" class="headerlink" title="Config文件的读取"></a>Config文件的读取</h3><pre><code class="java">String defaultConfigFolder = &quot;./config/&quot;;
+
+Config.overwrite(String key, String value) &lt;speedy\src\gtna\util\Config.java&gt;
+    if properties == null  // Properties extends Hashtable&lt;Object,Object&gt;
+        Config.init() //将./config中的所有.properties文件内容加载到properties中；先得到./config下的文件夹绝对路径
+            Config.initWithFolders    //然后得到各文件夹下的.properties文件绝对路径
+                Config.initWithFiles //读取.properties文件    
+                    Config.addFile    
+                Util.toStringArray(v)    //用来把存储在vector中的文件绝对路径转换成字符数组string[]
+    overwrite.put(key,val);// HashMap&lt;String, String&gt; overwrite;
+</code></pre>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><pre><code class="java">@param args
+ 0: run (integer 0-19)   //对应于20组交易数据，
+ 1: config (0: LM-MUL-PER(SilentWhispers), 1: LM-RAND-PER, 2: LM-MUL-OND, 3:LM-RAND-OND, 4: GE-MUL-PER, 5: GE-RAND-PER, 6: GE-MUL-OND, 7:GE-RAND-OND (SpeedyMurmurs), 8: ONLY-MUL-PER, 9:ONLY-RAND-OND, 10: max flow) 
+ 2: #transaction attempts             //交易重新发送次数，跑的时候使用了2；对比实验是1-10
+ 3: #embeddings/trees (integer &gt; 0)         //用了3；对比实验是1-7
+
+transList = &quot;../data/finalSets/static/sampleTr-&quot; + i + &quot;.txt&quot;; &lt;src,dst,val,time&gt;
+graph = &quot;../data/finalSets/static/ripple-lcc.graph&quot;;//&lt;节点：相邻节点1；相邻节点2...相邻节点n&gt;
+degFile = &quot;../data/finalSets/static/degOrder-bi.txt&quot;;//是排序的，每一行的数代表对应行度数的节点index&lt;度数为i的节点&gt;
+name = &quot;STATIC&quot;;    //实验名称
+epoch = 1000;    //每1000笔交易算一个epoch
+tl = 2 * epoch;    //重试交易的时间间隔
+up = false; //无update
+</code></pre>
+<pre><code class="java">//为不同树上的路径分配路由的资金数
+Partitioner part = new RandomPartitioner();    //实例化Partitioner
+    RandomPartitioner.rand =  new Random();
+    Partitioner.name = &quot;RANDOM_PARTITIONER&quot;;
+</code></pre>
+<pre><code class="java">// 选择生成树的根节点
+// 其中，random表示随机选取root节点，当为false时，使用最大度的方法，即在degFile中选择前trees个节点。
+//如果使用随机，则使用i（当前是第几个run）作为随机种子初始化rand，之后遍历文件得到最大度，以最大度为界，随机出root（rand.nextInt）
+Misc.selectRoots(String file, boolean random, int trees, int seed)    
+    Misc.selectRoots(degFile, random:false, trees, i)
+</code></pre>
+<pre><code class="java">//实例化不同的路由算法RA
+Treeroute sW = new TreerouteSilentW();
+    Metric.key = &quot;TREE_ROUTE_SILENTW&quot;;
+    Metric.parameters = new Parameter[0];
+    Treeroute.rand = new Random();
+    
+Treeroute voute = new TreerouteTDRAP();//TreerouteTDRAP继承TreerouteNH，TreerouteNH继承Treeroute
+    TreerouteNH
+        Metric.key = &quot;TREE_ROUTE_TDRAP&quot;;
+        Metric.parameters = new Parameter[0];
+        Treeroute.rand = new Random();
+            
+Treeroute only = new TreerouteOnly();
+    Metric.key = &quot;TREE_ROUTE_ONLY&quot;;
+    Metric.parameters = new Parameter[0];
+    Treeroute.rand = new Random();
+</code></pre>
+<pre><code class="java">// 各种路由的参数组合实例化
+//vary dynRepair, multi, routing algo -&gt; 8 poss + 2 treeonly versions
+// String[] com = &#123; &quot;SW-PER-MUL&quot;, &quot;SW-PER&quot;, &quot;SW-DYN-MUL&quot;, &quot;SW-DYN&quot;, &quot;V-PER-MUL&quot;, &quot;V-PER&quot;, &quot;V-DYN-MUL&quot;, &quot;V-DYN&quot;, &quot;TREE-ONLY1&quot;, &quot;TREE-ONLY1&quot; &#125;;
+//三种不同的路由算法，使用不同的组合，实例化CreditNetwork    
+CreditNetwork silentW = new CreditNetwork(transList, name, epoch, sW, false, true, tl, part, roots, tries, up); 
+    public CreditNetwork(String file, String name, double epoch, Treeroute ra, boolean dynRep, 
+            boolean multi, double requeueInt, Partitioner part, int[] roots, int max, boolean up)&#123;
+        this(file,name,epoch,ra,dynRep, multi, requeueInt, part, roots, max, null,up);//调用本类中的重载函数
+    &#125;    
+        public CreditNetwork(String file, String name, double epoch, Treeroute ra, boolean dynRep, 
+                boolean multi, double requeueInt, Partitioner part, int[] roots, int max, String links, boolean up)
+            Metric
+                ParameterList.key = &quot;CREDIT_NETWORK&quot;；
+                ParameterList.parameters = new Parameter[]&#123;
+                        new StringParameter(&quot;NAME&quot;, name), 
+                        new DoubleParameter(&quot;EPOCH&quot;, epoch),
+                        new StringParameter(&quot;RA&quot;, ra.getKey()), 
+                        new BooleanParameter(&quot;DYN_REPAIR&quot;, dynRep), 
+                        new BooleanParameter(&quot;MULTI&quot;, multi), 
+                        new IntParameter(&quot;TREES&quot;, roots.length),
+                        new DoubleParameter(&quot;REQUEUE_INTERVAL&quot;, requeueInt), 
+                        new StringParameter(&quot;PARTITIONER&quot;, part.getName()),
+                        new IntParameter(&quot;MAX_TRIES&quot;,max)&#125;);
+</code></pre>
+<pre><code class="java">//network实例化，加载图数据，节点个数，文件夹
+//Config.overwrite(&quot;READABLE_FILE_&quot; + folder + &quot;_NAME_SHORT&quot;, name); 初始化当前网络的名称
+// String[] com = &#123; &quot;SW-PER-MUL&quot;, &quot;SW-PER&quot;, &quot;SW-DYN-MUL&quot;, &quot;SW-DYN&quot;, &quot;V-PER-MUL&quot;, &quot;V-PER&quot;, &quot;V-DYN-MUL&quot;, &quot;V-DYN&quot;, &quot;TREE-ONLY1&quot;, &quot;TREE-ONLY1&quot; &#125;;
+Network network = new ReadableFile(com[config], com[config], graph, t:null);    
+public ReadableFile(String name, String folder, String filename,Transformation[] t)    
+    this(name, folder, filename, new Parameter[0], t);
+        ReadableFile(String name, String folder, String filename, Parameter[] parameters, Transformation[] t)
+            ParameterList.key = &quot;READABLE_FILE_&quot; + folder;
+            ParameterList.parameters = new IntParameter(&quot;NODES&quot;, nodes);//这个nodes数是从graph中的第二行得到的67149
+            Network.nodes = nodes;
+            Network.transformations = transformations;//null
+</code></pre>
+<pre><code class="java">//这里是整个程序真正的关键执行入口处，series的实例化
+//Metric[] m = new Metric[] &#123; silentW, silentWnoMul, silentWdyn, silentWdynNoMul, vouteMulnoDyn, voutenoDyn, vouteMul,voutenoMul, treeonly1, treeonly2 &#125;;
+Series.generate(network, new Metric[] &#123; m[config] &#125;, i, i);
+Series generate(Network nw, Metric[] metrics, int startRun,int endRun)    
+    Series s = new Series(nw, metrics);
+        s.network = network;
+        s.metrics = metrics;
+        s.mainDataFolder = Config.get(&quot;MAIN_DATA_FOLDER&quot;);//生成数据的文件夹，./data/static/，这个在config文件中是./data，但是程序运行一开始就overwrite成./data/static了
+    folder.mkdirs();    //older = new File(s.getFolder());生成 ./data/static/READABLE_FILE_SW-PER-MUL-67149/，用的是network对象
+    folder.mkdirs();    //folder = new File(s.getFolder(m)); 由metric对象，得到文件名称 &quot;CREDIT_NETWORK-9个参数&quot;，见CreditNetwork
+    
+    Series.generateRun(s, run);
+</code></pre>
+<pre><code class="java">//创建文件夹，图数据读取
+Series.generateRun(s, run);    
+    System.out.println(&quot;\n&quot; + run + &quot;:&quot;);
+    ArrayList&lt;Single&gt; runtimes = new ArrayList&lt;Single&gt;();
+    ArrayList&lt;Single&gt; etc = new ArrayList&lt;Single&gt;();
+    File folder = new File(s.getSeriesFolderRun(run));//这里得到的folder应该是./data/static/READABLE_XXX_/0...19
+    输出：G: SW-PER-MUL(N = 67149)//使用timer输出的一段话，记录图生成时间，意指graph or generate
+    Graph g = s.getNetwork().generate();//ReadableFile,生成图，ripple-lcc.graph中有节点和边的信息了，这里需要用ripple-lcc-CREDIT_LINKS.graph加载权重信息，即添加图的properties
+        ReadableFile.generate();
+            Graph graph = new GtnaGraphReader().readWithProperties(this.filename);//filename是graph的绝对路径，这里是读取creditlinks的权值信息
+                readWithProperties(filename, properties);//GraphReader.java; properties是ripple-lcc-CREDIT_LINKS.graph的绝对路径
+                    GraphProperty property = (GraphProperty) ClassLoader.getSystemClassLoader().loadClass(className).newInstance();//感觉是CreditLink类的实例化
+                    String key = property.read(prop);// CreditLinks.read(filename);//将所有的权值信息保存在CreditLink.weights中，并返回key值CREDIT_LINKS
+                    graph.addProperty(key, property);//key = REDIT_LINKS，即ripple-lcc-CREDIT_LINKS.graph中的key
+            graph.setName(this.getDescription());
+                Graph.name = ???
+    runtimes.add(new Single(&quot;G_RUNTIME&quot;, timer.getRuntime()));//./data/static/READABLE_V-ROUTE_67149/0...19/runtime.txt：G_RUNTIME=0.54
+    输出：P: CREDIT_LINKS//意指 properties
+    folder = new File(s.getMetricFolder(run, m));//folder.mkdirs();//CREDIT_NETWORK-STATIC-1000.0-TREE_ROUTE_SILENTW-false-true-3-2000.0-RANDOM_PARTITIONER-2
+    输出：M：CNET(name=STATIC,epoch=1000,ra-Tree=XXX,dr=XX,mul=XX,trees=X,ri=XX,part=XXX,mt=XX)
+    m.computeData(g, s.getNetwork(), metrics);
+    runtimes.add(new Single(m.getRuntimeSingleName(), timer.getRuntime()));//runtime.txt:CREDIT_NETWORK-STATIC-1000.0-TREE_ROUTE_SILENTW-false-true-1-2000.0-RANDOM_PARTITIONER-2_RUNTIME=86.41
+    m.writeData(s.getMetricFolder(run, m));//CreditNetwork.java;把生成的结果数据写入文件夹；folder是CREDIT_NETWORK-STATIC-1000.0-TREE_ROUTE_SILENTW-false-true-3-2000.0-RANDOM_PARTITIONER-2下的各个.txt文件
+    SingleList singleList = new SingleList(m, m.getSingles());//this.metric = metric; this.singles = singles;this.map = new HashMap&lt;String, Single&gt;();
+        m.getSingles()；//得到每个single
+            return new Single[]&#123;m_av, m_Re_av, m_S_av, m_F_av,p_av, p_Re_av, p_S_av, p_F_av, reL_av, ls_av, s_av, s1, s, pP_av, pPF_av, pPNF_av, rt,d1,d2,d3&#125;;
+    singleList.write(s.getSinglesFilenameRun(run, m));//写入_singles.txt文件
+    SingleList rt = new SingleList(null, runtimes);
+    rt.write(s.getRuntimesFilenameRun(run));// runtimes.txt 文件写入
+    //etc文件写入
+    int mb = 1024 * 1024;
+    Runtime runtime = Runtime.getRuntime();
+    double used = (runtime.totalMemory() - runtime.freeMemory()) / mb;
+    etc.add(new Single(&quot;MEMORY_USED&quot;, used));
+    SingleList etcSl = new SingleList(null, etc);
+    etcSl.write(s.getEtcFilename(run));
+</code></pre>
+<pre><code class="java">//路由，执行交易，统计各项数据
+m.computeData(g, s.getNetwork(), metrics);
+    Treeembedding embed = new Treeembedding(&quot;T&quot;,60,roots, MultipleSpanningTree.Direct.TWOPHASE);&#123;
+        this(name,pad,roots.length,turnSelector(roots),1,false, dir);
+    &#125;    
+    Treeembedding(String name, int pad, int k, String rootSelector, double p, boolean depth, MultipleSpanningTree.Direct dir)    
+        ParameterList.key = &quot;TREE_EMBEDDING&quot;;
+        ParameterList.parameters = new Parameter[]&#123;
+                    new StringParameter(&quot;NAME&quot;, name), //&quot;T&quot;
+                    new IntParameter(&quot;PAD&quot;, pad), 
+                    new IntParameter(&quot;TREES&quot;,k), 
+                    new StringParameter(&quot;ROOT&quot;,rootSelector),//就是把root的索引拼接起来，1-2-3这样
+                    new DoubleParameter(&quot;P&quot;,p), //1
+                    new BooleanParameter(&quot;DEPTH&quot;, depth), //false
+                    new StringParameter(&quot;PARENT_DIR&quot;,dir.name())&#125;//TWOPHASE
+        Transformation.times = 1;
+        Treeembedding.padding = pad;
+        Treeembedding.trees = k;
+        rand = new Random();
+        Treeembedding.rootSelector = rootSelector;
+        Treeembedding.p = p;
+        Treeembedding.depth = depth;
+        Treeembedding.dir = dir;
+    if (!g.hasProperty(&quot;SPANNINGTREE_0&quot;))&#123;  
+          g = embed.transform(g); //给这个图生成规定的生成树，先进入Treeembedding.java，生成生成树。之后又进入spanningtree.java，给生成树的每个节点生成坐标
+        &#125;
+    //读取交易列表，0: decide which is next transaction: previous one or new one? and add new links if any
+    //1: check if and how many spanning tree re-construction took place since last transaction
+        //do 1 (!) re-computation if there was any &amp; set stabilization cost
+        //如果不是实时动态修复，那么就是periodical的，SilentWhispers为代表，需要每过一个epoch计算生成树，和坐标,需要记录生成树的稳定开销。
+        //这里对于SM是没有开销的，因为它在静态情况下是没有新边的加入，生成树是不需要变化的
+        //计算开销的方法:
+            for (int j = epoch_old +1; j &lt;= epoch_cur; j++)&#123;
+                stabMes.add(this.roots.length*2*this.computeNonZeroEdges(g, edgeweights));//树的个数*2*非零的边数
+            &#125;
+            //有些度量的计算方法完全看不懂啊。。。。
+    //2: execute the transaction，分为 Multi 和 Adhoc
+    if (this.multi)&#123;
+        results = this.routeMulti(cur, g, nodes, exclude, edgeweights);
+    &#125; else &#123;
+        results = this.routeAdhoc(cur, g, nodes, exclude, edgeweights);
+    &#125;
+    //re-queue if necessary
+    
+    //3 update metrics accordingly
+        path = this.inc(path, results[1]); //results[1]应该是一个比较大的数吧，在这里可以做Index？？？
+        reLand = this.inc(reLand, results[2]);//receiver-land
+        landSen = this.inc(landSen, results[3]);// land - sender
+        mes = this.inc(mes, results[4]);
+        del = this.inc(del, results[5]);
+        //成功情况下
+        mesAll = this.inc(mesAll, cur.mes);
+        pathAll = this.inc(pathAll, cur.path);
+        pathSucc = this.inc(pathSucc, results[1]);
+        mesSucc = this.inc(mesSucc, results[4]);
+        delSucc = this.inc(delSucc, results[5]); //delay
+        
+        pathSF = this.inc(pathSF, val);
+        pathSsF[j-6] = this.inc(pathSsF[j-6], val);
+    //4 post-processing: remove edges set to 0, update spanning tree if dynRapir
+    if (this.dynRepair &amp;&amp; zeroEdges != null) 
+        // 找到zeroEdges，对于边的src，dest，在生成树中是孩子节点的那个，做为repair的subroot
+        cur_stab = cur_stab + this.repairTree(nodes, sp, coords, cut, (CreditLinks) g.getProperty(&quot;CREDIT_LINKS&quot;));//开销就是边的改动    
+    if (!this.update)&#123;
+                this.weightUpdate(edgeweights, originalWeight);//因为是静态的，这里就不会对原CreditLink中的值做改变
+            &#125;
+    /SM是所有的交易都执行完，执行这个
+        if (this.dynRepair)&#123;
+            stabMes.add(cur_stab);
+        &#125;        
+    //compute metrics，使用Distribution
+</code></pre>
+<pre><code class="java">//生成树的生成和坐标的生成
+g = embed.transform(g);
+public Graph transform(Graph g)//这些参数可以直接参见Treeembedding
+    Transformation tbfs = new MultipleSpanningTree(this.rootSelector,this.trees, rand,this.p,this.depth, this.dir);
+        ParameterList.key = &quot;SPANNINGTREE_BFS&quot;;
+        ParameterList.parameters = new Parameter[] &#123; 
+                    new StringParameter(&quot;ROOT_SELECTOR&quot;, rootSelector), 
+                    new BooleanParameter(&quot;RANDOM_ORDER&quot;,true), 
+                    new StringParameter(&quot;ONED&quot;,oneD.name())&#125;);
+        Transformation.times = 1;
+        MultipleSpanningTree.rootSelector = rootSelector;
+        randomorder = true;
+        MultipleSpanningTree.rand = rand;
+        MultipleSpanningTree.trees = k;
+        MultipleSpanningTree.p = p;
+        MultipleSpanningTree.d = depth;
+        MultipleSpanningTree.oneDSel = oneD;//TWOPHASE
+    g = tbfs.transform(g);//MultipleSpanningTree.transform(g) //多个生成树，确定根节点，孩子父亲节点
+        CreditLinks: Map&lt;Edge, double[]&gt; weights;//graph-lcc-CREDIT_LINKS
+        int[] r = this.selectRoot(graph, rootSelector);//又把1-2-3这种形式给分成了｛1，2，3｝
+        //对于所有的节点
+        if (this.oneDSel ==  Direct.TWOPHASE)&#123;
+            l = potParents(graph, nodes[i], Direct.NONE, edgeweights).length;//得到的是当前节点的无重复的相邻节点的个数，不对边做剔除
+                case NONE: return potChildren(g, n, Direct.NONE, ew);
+                    ew.getPot(in[j], n.getIndex()) &gt; 0
+        &#125;
+        //对于不同的生成树
+        //分别得到根节点的入边，出边，筛选出容量大于0的节点，统计出与此节点双向的合法节点：即出和入相同的节点
+        int[] out = potChildren(graph, nodes[roots[i]], this.oneDSel, edgeweights);// this.oneDSel ==  Direct.TWOPHASE
+        
+    //给生成树赋值坐标，根节点是空，其他节点的坐标是&lt;其父节点的坐标+随机数&gt;
+        //pad coordinates
+            //coordinate 是二维数组，第一维的长度就是节点数，第二维的长度取决于当前节点在生成树中的的层数
+            // 对于根节点，二维长度为0，对于第一层的节点，二维长度为1...对于 padding 则是将所有的第二维数组，填充为一样长度
+</code></pre>
+<pre><code class="java">/**
+     * routing using a multi-part computation: costs are
+     * i) finding path (one-way, but 3x path length as each neighbor needs to sign its predecessor and successors)
+     * ii) sending shares to all landmarks/roots from receiver 
+     * iii) sending results to sender from all landmarks/roots
+     * iv) testing paths (two-way)
+     * v) updating credit (one-way)
+     * @return &#123;success?0:-1, sum(pathlength), receiver-landmark, landmarks-sender,overall message count, delay, p1, p2,...&#125;
+     */    
+results = this.routeMulti(cur, g, nodes, exclude, edgeweights);
+int[] routeMulti(Transaction cur, Graph g, Node[] nodes, boolean[] exclude, CreditLinks edgeweights)    
+    //对于不同的三棵树，在每颗树上找路径
+    paths[j] = ra.getRoute(src, dest, j, g, nodes, exclude);
+        initRoute(); //对于SW，置 up 为true，up是向上（到根）找路的意思；对于TreerouteOnly，无代码
+        int next = this.nextHop(src, nodes,destC,dest,exclude,pre);
+            //首先计算src 到 root 的路径
+            index = sp.getParent(cur);
+            //再计算 root 到 dst 的路径，找出最近的；父亲只有一个，但是孩子有很多个，要选最好的那个
+            int[] out = sp.getChildren(cur);
+            int dbest = this.getCPL(dest, this.coords[cur]);//计算src和dest坐标的相同位数，再在孩子节点中找比离 dest 更近的节点    
+        //返回从 src 到 dest 的路径，有可能找不到路，即没有下一跳，此时需要判断，path的最后一个值是否为dest
+    //compute the  minimum credit along the paths，计算找到的每个树的路径上的最小值
+    double w = edgeweights.getPot(l,k);//对路径上的所有边，求最小
+    //partition transaction value，将一笔交易要转移的val，拆分成每个路径上合适的金额
+    vals = part.partition(g, src,dest,cur.val,mins);
+        //首先将一个 val， 随机的分成 trees 份，然后再根据每条路上的最小值进行调整
+        //对于某棵树上没有找到路，那么其最小值就是0，这样以来，就是在其他树的路径上去平分了
+    //check if transaction works：
+    //如果这棵树上有路，检查更新后的边权重是否满足原来的Creditlinks的最大最小要求，进行更新creditlinks的wt[1]
+    //如果所有的路径上都成功，将更新后，那些容量为0的边记录一下
+        CreditNetwork.zeroEdges.add(new Edge(src,dst));
+    
+    //compute metrics
+    int[] res = new int[6+this.roots.length];//前6个是固定的要统计的值，后roots.length个值分别是各个树上的路
+    res[0] = success?0:-1;
+    res[1] = 统计总的路径长度;res[6+j] = paths[j].length-1;/-(paths[j].length-2);
+    
+    //receiver-landmarks
+    //the sender and receiver both send only one message to each landmark forwarded by all nodes on the shortest path to the landmark.
+    int d = sp.getDepth(dest);
+    res[2] = res[2]+d*paths.length; //统计paths.length个值分别是各个树上的路；
+        
+    //landmarks-sender
+    int d = sp.getDepth(src);
+    res[3] = res[3]+d;
+    
+    //overall message count
+    res[4] = res[1]+res[2]+res[3];
+    res[4] = res[4]+2*(paths[j].length-1);//累加
+    
+    //delay 与src，dest 的depth 有关，具体怎么算的实在是看不明白
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

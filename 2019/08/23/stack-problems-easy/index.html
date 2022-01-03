@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>stack-problems-easy | haiki</title>
+  <meta name="keywords" content=" easy , stack ">
+  <meta name="description" content="stack-problems-easy | haiki">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Oops～，我崩溃了！找不到你想要的页面 :(">
+<meta property="og:type" content="website">
+<meta property="og:title" content="404">
+<meta property="og:url" content="https://github.com/haiki/haiki.github.io/404.html">
+<meta property="og:site_name" content="haiki">
+<meta property="og:description" content="Oops～，我崩溃了！找不到你想要的页面 :(">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-10-03T12:16:10.000Z">
+<meta property="article:modified_time" content="2022-01-03T11:20:49.316Z">
+<meta property="article:author" content="haiki">
+<meta property="article:tag" content="computer science,blockchain,leetcode,record life">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>haiki</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="facebook"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-facebook"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="instagram"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="reddit"
+               href="https://www.reddit.com/user/yelog/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-reddit"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="weibo"
+               href="http://weibo.com/u/2307534817"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/ff56736de7cf"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/jaytp/activities"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="oschina"
+               href="https://my.oschina.net/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-oschina"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:jaytp@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="kugou"
+               href="https://www.kugou.com/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-kugou"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="neteasemusic"
+               href="https://music.163.com/#/user/home?id=88151013"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-neteasemusic"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(23)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="读书">
+                        
+                        读书
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="编程语言">
+                        
+                        编程语言
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="论文相关总结">
+                        
+                        论文相关总结
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="区块链">
+                        
+                        区块链
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="leetcode">
+                        
+                        leetcode
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="23">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>工具成长类</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>零碎</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>路由算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>命令</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>私链</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>以太坊</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>语法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>智能合约</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>API</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>attack</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>C++</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>DApp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>easy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ethereum</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>geth</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>go环境配置</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>IDEA</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Javascript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linkedList</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>payment routing</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>problem</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>solidity</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>speedymurmurs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>stack</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>string</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>token</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>transaction</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="All 工具 "
+           href="/2019/10/03/my-first-article/"
+           data-tag="hexo,problem"
+           data-author="" >
+            <span class="post-title" title="my first article">my first article</span>
+            <span class="post-date" title="2019-10-03 16:03:38">2019/10/03</span>
+        </a>
+        
+        <a  class="All 编程语言 "
+           href="/2019/12/24/python/"
+           data-tag="python,语法"
+           data-author="" >
+            <span class="post-title" title="python">python</span>
+            <span class="post-date" title="2019-12-24 22:10:19">2019/12/24</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/12/23/%E4%BB%A5%E5%A4%AA%E5%9D%8AERC20/"
+           data-tag="以太坊,solidity,智能合约,token"
+           data-author="" >
+            <span class="post-title" title="以太坊ERC20">以太坊ERC20</span>
+            <span class="post-date" title="2019-12-23 10:13:29">2019/12/23</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/12/22/%E4%BB%A5%E5%A4%AA%E5%9D%8A-Transaction/"
+           data-tag="以太坊,transaction"
+           data-author="" >
+            <span class="post-title" title="以太坊-Transaction">以太坊-Transaction</span>
+            <span class="post-date" title="2019-12-22 10:55:27">2019/12/22</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/12/12/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%91%E6%99%AE/"
+           data-tag="ethereum"
+           data-author="" >
+            <span class="post-title" title="以太坊科普">以太坊科普</span>
+            <span class="post-date" title="2019-12-12 09:29:40">2019/12/12</span>
+        </a>
+        
+        <a  class="All 编程语言 "
+           href="/2019/11/29/C-%E9%9A%8F%E8%AE%B0/"
+           data-tag="C++"
+           data-author="" >
+            <span class="post-title" title="C++随记">C++随记</span>
+            <span class="post-date" title="2019-11-29 09:58:19">2019/11/29</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/11/05/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9B%B8%E5%85%B3%E6%8A%80%E6%9C%AF%E5%89%8D%E6%B2%BF%E6%B4%9E%E5%AF%9F/"
+           data-tag="零碎"
+           data-author="" >
+            <span class="post-title" title="区块链相关技术前沿洞察">区块链相关技术前沿洞察</span>
+            <span class="post-date" title="2019-11-05 14:54:48">2019/11/05</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/11/03/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E5%BF%85%E5%A4%87/"
+           data-tag="算法"
+           data-author="" >
+            <span class="post-title" title="算法与数据结构学习必备">算法与数据结构学习必备</span>
+            <span class="post-date" title="2019-11-03 09:34:47">2019/11/03</span>
+        </a>
+        
+        <a  class="All 论文相关总结 "
+           href="/2019/10/31/SpeedyMurmurs-data-%E8%AE%B0%E5%BD%95/"
+           data-tag="speedymurmurs,payment routing,路由算法"
+           data-author="" >
+            <span class="post-title" title="SpeedyMurmurs data 记录">SpeedyMurmurs data 记录</span>
+            <span class="post-date" title="2019-10-31 10:34:05">2019/10/31</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/26/%E4%BB%A5%E5%A4%AA%E5%9D%8ADApp/"
+           data-tag="ethereum,DApp"
+           data-author="" >
+            <span class="post-title" title="以太坊DApp">以太坊DApp</span>
+            <span class="post-date" title="2019-10-26 18:55:09">2019/10/26</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/26/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag="attack"
+           data-author="" >
+            <span class="post-title" title="区块链中的一些常用名词解释">区块链中的一些常用名词解释</span>
+            <span class="post-date" title="2019-10-26 18:44:34">2019/10/26</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/25/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%AE%9E%E8%B7%B5/"
+           data-tag="以太坊,solidity,智能合约"
+           data-author="" >
+            <span class="post-title" title="以太坊智能合约实践">以太坊智能合约实践</span>
+            <span class="post-date" title="2019-10-25 10:15:12">2019/10/25</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/22/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%A6%82%E5%BF%B5%E5%8F%8AAPI%E7%9A%84%E6%95%B4%E5%90%88%E4%B8%8E%E7%90%86%E8%A7%A3/"
+           data-tag="以太坊,API,Javascript"
+           data-author="" >
+            <span class="post-title" title="以太坊概念及API的整合与理解">以太坊概念及API的整合与理解</span>
+            <span class="post-date" title="2019-10-22 17:21:16">2019/10/22</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/19/%E4%BB%8E%E5%A4%B4%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%81%E9%93%BE/"
+           data-tag="以太坊,私链,geth,go环境配置"
+           data-author="" >
+            <span class="post-title" title="从头搭建以太坊私链">从头搭建以太坊私链</span>
+            <span class="post-date" title="2019-10-19 16:15:54">2019/10/19</span>
+        </a>
+        
+        <a  class="All 论文相关总结 "
+           href="/2019/10/16/speedyMurmurs%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90Dynamic%E9%83%A8%E5%88%86/"
+           data-tag="speedymurmurs,payment routing,路由算法"
+           data-author="" >
+            <span class="post-title" title="speedyMurmurs源码分析Dynamic部分">speedyMurmurs源码分析Dynamic部分</span>
+            <span class="post-date" title="2019-10-16 09:27:00">2019/10/16</span>
+        </a>
+        
+        <a  class="All 论文相关总结 "
+           href="/2019/10/11/speedyMurmurs%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"
+           data-tag="speedymurmurs,payment routing,路由算法"
+           data-author="" >
+            <span class="post-title" title="speedyMurmurs源码分析">speedyMurmurs源码分析</span>
+            <span class="post-date" title="2019-10-11 20:12:57">2019/10/11</span>
+        </a>
+        
+        <a  class="All 运维 "
+           href="/2019/10/10/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag="linux,命令"
+           data-author="" >
+            <span class="post-title" title="linux常用命令">linux常用命令</span>
+            <span class="post-date" title="2019-10-10 16:32:59">2019/10/10</span>
+        </a>
+        
+        <a  class="All 编程语言 "
+           href="/2019/10/10/java/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="java">java</span>
+            <span class="post-date" title="2019-10-10 14:04:57">2019/10/10</span>
+        </a>
+        
+        <a  class="All 工具 "
+           href="/2019/10/09/IDEA%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD/"
+           data-tag="IDEA,java"
+           data-author="" >
+            <span class="post-title" title="IDEA的使用：提升看源码效率">IDEA的使用：提升看源码效率</span>
+            <span class="post-date" title="2019-10-09 20:21:52">2019/10/09</span>
+        </a>
+        
+        <a  class="All 读书 "
+           href="/2019/10/06/%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A%E6%91%98%E5%BD%95%E5%8F%8A%E8%A7%82%E5%90%8E%E6%84%9F/"
+           data-tag="工具成长类"
+           data-author="" >
+            <span class="post-title" title="非暴力沟通摘录及观后感">非暴力沟通摘录及观后感</span>
+            <span class="post-date" title="2019-10-06 18:41:57">2019/10/06</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/10/05/string-problems-easy/"
+           data-tag="easy,string"
+           data-author="" >
+            <span class="post-title" title="string-problems-easy">string-problems-easy</span>
+            <span class="post-date" title="2019-10-05 10:30:38">2019/10/05</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/08/28/LinkedList-problems-easy/"
+           data-tag="linkedList,easy"
+           data-author="" >
+            <span class="post-title" title="LinkedList-problems-easy">LinkedList-problems-easy</span>
+            <span class="post-date" title="2019-08-28 21:40:38">2019/08/28</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/08/23/stack-problems-easy/"
+           data-tag="easy,stack"
+           data-author="" >
+            <span class="post-title" title="stack-problems-easy">stack-problems-easy</span>
+            <span class="post-date" title="2019-08-23 21:40:38">2019/08/23</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-stack-problems-easy" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">stack-problems-easy</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">easy</a>
+            
+            <a class="color1">stack</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2022-01-03 19:20:49'>2019-08-23 21:40</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1021-Remove-Outermost-Parentheses"><span class="toc-text">1021.Remove Outermost Parentheses</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E8%AE%B0%E5%BD%95%E5%B7%A6%E6%8B%AC%E5%8F%B7%E4%B8%AA%E6%95%B0%EF%BC%8C%E5%88%86%E5%89%B2primitive%E4%B8%B2"><span class="toc-text">solution1-记录左括号个数，分割primitive串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2"><span class="toc-text">solution2-</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1047-Remove-All-Adjacent-Duplicates-In-String"><span class="toc-text">1047.Remove All Adjacent Duplicates In String</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E5%8F%8D%E5%90%91%E9%81%8D%E5%8E%86%EF%BC%8C%E6%A0%88"><span class="toc-text">solution1-反向遍历，栈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E7%94%A8string%E5%8F%98%E7%9B%B8%E4%BD%9C%E4%B8%BA%E6%A0%88"><span class="toc-text">solution2-用string变相作为栈</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#682-Baseball-Game"><span class="toc-text">682.Baseball Game</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E8%BE%85%E5%8A%A9%E6%A0%88%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86"><span class="toc-text">solution-辅助栈，字符串处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-vector"><span class="toc-text">solution2-vector</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#844-Backspace-String-Compare"><span class="toc-text">844.Backspace String Compare</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E8%BE%85%E5%8A%A9%E6%A0%88"><span class="toc-text">solution1-辅助栈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E5%8F%8C%E6%8C%87%E9%92%88"><span class="toc-text">solution2-双指针</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#232-Implement-Queue-using-Stacks"><span class="toc-text">232.Implement Queue using Stacks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#225-Implement-Stack-using-Queues"><span class="toc-text">225.Implement Stack using Queues</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#155-Min-Stack"><span class="toc-text">155.Min Stack</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-Valid-Parentheses"><span class="toc-text">20.Valid Parentheses</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%99%EF%BC%81solution1-cnt%E7%BB%9F%E8%AE%A1%E5%B7%A6%E6%8B%AC%E5%8F%B7%E4%B8%AA%E6%95%B0"><span class="toc-text">错！solution1-cnt统计左括号个数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E8%BE%85%E5%8A%A9%E6%A0%88"><span class="toc-text">solution2-辅助栈</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>@<div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1021-Remove-Outermost-Parentheses"><span class="toc-text">1021.Remove Outermost Parentheses</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E8%AE%B0%E5%BD%95%E5%B7%A6%E6%8B%AC%E5%8F%B7%E4%B8%AA%E6%95%B0%EF%BC%8C%E5%88%86%E5%89%B2primitive%E4%B8%B2"><span class="toc-text">solution1-记录左括号个数，分割primitive串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2"><span class="toc-text">solution2-</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1047-Remove-All-Adjacent-Duplicates-In-String"><span class="toc-text">1047.Remove All Adjacent Duplicates In String</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E5%8F%8D%E5%90%91%E9%81%8D%E5%8E%86%EF%BC%8C%E6%A0%88"><span class="toc-text">solution1-反向遍历，栈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E7%94%A8string%E5%8F%98%E7%9B%B8%E4%BD%9C%E4%B8%BA%E6%A0%88"><span class="toc-text">solution2-用string变相作为栈</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#682-Baseball-Game"><span class="toc-text">682.Baseball Game</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E8%BE%85%E5%8A%A9%E6%A0%88%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86"><span class="toc-text">solution-辅助栈，字符串处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-vector"><span class="toc-text">solution2-vector</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#844-Backspace-String-Compare"><span class="toc-text">844.Backspace String Compare</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E8%BE%85%E5%8A%A9%E6%A0%88"><span class="toc-text">solution1-辅助栈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E5%8F%8C%E6%8C%87%E9%92%88"><span class="toc-text">solution2-双指针</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#232-Implement-Queue-using-Stacks"><span class="toc-text">232.Implement Queue using Stacks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#225-Implement-Stack-using-Queues"><span class="toc-text">225.Implement Stack using Queues</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#155-Min-Stack"><span class="toc-text">155.Min Stack</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-Valid-Parentheses"><span class="toc-text">20.Valid Parentheses</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%99%EF%BC%81solution1-cnt%E7%BB%9F%E8%AE%A1%E5%B7%A6%E6%8B%AC%E5%8F%B7%E4%B8%AA%E6%95%B0"><span class="toc-text">错！solution1-cnt统计左括号个数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E8%BE%85%E5%8A%A9%E6%A0%88"><span class="toc-text">solution2-辅助栈</span></a></li></ol></li></ol></div></p>
+<h3 id="1021-Remove-Outermost-Parentheses"><a href="#1021-Remove-Outermost-Parentheses" class="headerlink" title="1021.Remove Outermost Parentheses"></a>1021.Remove Outermost Parentheses</h3><p>题目描述太复杂的情况下看看给的case就大概知道题意了</p>
+<p><strong>Example 2:</strong></p>
+<pre><code>Input: &quot;(()())(())(()(()))&quot;
+Output: &quot;()()()()(())&quot;
+Explanation: 
+The input string is &quot;(()())(())(()(()))&quot;, with primitive decomposition &quot;(()())&quot; + &quot;(())&quot; + &quot;(()(()))&quot;.
+After removing outer parentheses of each part, this is &quot;()()&quot; + &quot;()&quot; + &quot;()(())&quot; = &quot;()()()()(())&quot;.
+</code></pre>
+<h4 id="solution1-记录左括号个数，分割primitive串"><a href="#solution1-记录左括号个数，分割primitive串" class="headerlink" title="solution1-记录左括号个数，分割primitive串"></a>solution1-记录左括号个数，分割primitive串</h4><ul>
+<li>因为是一道和栈相关的题目，所以第一反应就是使用栈，比如”(()())(())”，设定一个全局遍历s0(“()”)；遇到”(“进栈，遇到”)”时，栈顶的匹配”(“出栈；如果此时栈为空，那么说明最后出栈的那对是外层括号，不计入最终的结果，直接开始遍历下一个元素。否则，res+=s0; 这种方法很闹心的一个地方是，对于”(()(()))”没法做。</li>
+<li>另一种解法就是现在的解法，抛开stack，用string的知识来做。为的是找到最外层的括号，那么就从左向右遍历字符串，并用cnt记录当前左括号的个数，如果有匹配的右括号，则cnt–，有左括号时cnt++，当cnt==0时，即表示当前的右括号是外层括号，那么就把这个外层括号剥去，中间的加入res，那么此时有了待加入字符串的结束为止，还需要一个起始位置，则用start来表示，相当于字符串的截取。每次有了新的子串，start则初始化为新的起始位置。</li>
+<li>时间O(n)，空间：O(n)——存储结果</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    string removeOuterParentheses(string S) &#123;
+        int len = S.size();
+        string res = &quot;&quot;;     
+        int cnt = 1;//记录左括号的个数，当有右括号与左括号匹配时，减一
+        int start = 0;//整个串被分为多个primative的串，记录每次新primative串的开始位置      
+        for(int i = 1; i &lt; len;i++)&#123;
+            if(S[i] == &#39;(&#39;)&#123;
+                cnt++;
+            &#125;else&#123;
+                cnt--;
+            &#125;             
+            if(cnt == 0)&#123;
+                if(i - start &gt;1)&#123;
+                    string tmp(S.begin()+start+1,S.begin()+i);
+                    res += tmp;
+                &#125;
+                start = i+1;
+            &#125;
+        &#125;
+        return res;      
+    &#125;
+&#125;;
+</code></pre>
+<h4 id="solution2"><a href="#solution2" class="headerlink" title="solution2-"></a>solution2-</h4><ul>
+<li>别人的解法，和上面的思路差不多，但是只用open去记录当前的字符是否是结果的一部分。<br>（我的比这个看起来复杂，主要是被题目给的example引导着做复杂了。即先找出整个大括号包含的字符串，再去除外面的那层，看这个解法，完全可以边走边判断）</li>
+<li>open的数值意义：当前没有匹配的左括号的个数，左括号时加，右括号时减</li>
+<li>如果open&gt;0 &amp;&amp; c == ‘(‘，那么加入res，open++</li>
+<li>如果c == ‘)’ &amp;&amp; open &gt;1，那么加入res，open–；大于1的目的是把最外层的去掉</li>
+<li>时间：O(n)，空间：O(n)——存储结果</li>
+</ul>
+<pre><code class="c++">class Solution &#123;
+public:
+    string removeOuterParentheses(string S) &#123;
+        int open = 0;
+        string res = &quot;&quot;;
+        for(char c:S)&#123;
+            if(c == &#39;(&#39; &amp;&amp; open++ &gt; 0) res += c; //最外面的左括号跳过
+            if(c == &#39;)&#39; &amp;&amp; open-- &gt; 1 ) res += c;           
+        &#125;
+        return res;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="1047-Remove-All-Adjacent-Duplicates-In-String"><a href="#1047-Remove-All-Adjacent-Duplicates-In-String" class="headerlink" title="1047.Remove All Adjacent Duplicates In String"></a>1047.Remove All Adjacent Duplicates In String</h3><p><strong>题目描述</strong></p>
+<p>Given a string <code>S</code> of lowercase letters, a <em>duplicate removal</em> consists of choosing two adjacent and equal letters, and removing them.</p>
+<p>We repeatedly make duplicate removals on S until we no longer can.</p>
+<p>Return the final string after all such duplicate removals have been made.  It is guaranteed the answer is unique.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: &quot;abbaca&quot;
+Output: &quot;ca&quot;
+Explanation: 
+For example, in &quot;abbaca&quot; we could remove &quot;bb&quot; since the letters are adjacent and equal, and this is the only possible move.  The result of this move is that the string is &quot;aaca&quot;, of which only &quot;aa&quot; is possible, so the final string is &quot;ca&quot;.
+</code></pre>
+<h4 id="solution1-反向遍历，栈"><a href="#solution1-反向遍历，栈" class="headerlink" title="solution1-反向遍历，栈"></a>solution1-反向遍历，栈</h4><ul>
+<li>每次将压入的元素和栈顶元素比较，如果一致就是重复，则新元素不入栈，栈顶元素出栈，这样可以很好的把中间有其他相同元素隔开的多个相同元素找出来。</li>
+<li>反向遍历只是为了正向输出结果</li>
+<li>时间：O(n)，空间：O(n)</li>
+</ul>
+<pre><code class="c++">class Solution &#123;
+public:
+    string removeDuplicates(string S) &#123;
+        stack&lt;char&gt;s;
+        int len = S.size();
+        string res = &quot;&quot;;
+        
+        for(int i = len-1; i &gt;= 0 ; i--)&#123;
+            if(!s.empty())&#123;
+                if(s.top() == S[i])&#123;
+                    s.pop();
+                &#125;else&#123;
+                    s.push(S[i]);
+                &#125;
+            &#125;else&#123;
+                s.push(S[i]);
+            &#125;     
+        &#125;
+        while(!s.empty())&#123;
+            res += s.top();
+            s.pop();
+        &#125;
+           return res;   
+    &#125;
+</code></pre>
+<h4 id="solution2-用string变相作为栈"><a href="#solution2-用string变相作为栈" class="headerlink" title="solution2-用string变相作为栈"></a>solution2-用string变相作为栈</h4><ul>
+<li>这种写法，应该对string中的方法有充足的了解</li>
+<li>时间：O(n)，空间：O(1)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    string removeDuplicates(string S) &#123;
+        string res = &quot;&quot;;
+        for(char c : S)&#123;
+            if(res.size() &amp;&amp; res.back() == c) 
+                res.pop_back();//凡是涉及到删除元素的操作，都要首先判断是否有元素
+            else
+                res.push_back(c);   
+        &#125;
+        return res;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="682-Baseball-Game"><a href="#682-Baseball-Game" class="headerlink" title="682.Baseball Game"></a>682.Baseball Game</h3><ul>
+<li>“C”表示无效前一轮分数，“D”表示将前一轮有效分数乘2作为本轮分数，“+”表示将前两轮的分数之和作为本轮分数。</li>
+</ul>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: [&quot;5&quot;,&quot;2&quot;,&quot;C&quot;,&quot;D&quot;,&quot;+&quot;]
+Output: 30
+Explanation: 
+Round 1: You could get 5 points. The sum is: 5.
+Round 2: You could get 2 points. The sum is: 7.
+Operation 1: The round 2&#39;s data was invalid. The sum is: 5.  
+Round 3: You could get 10 points (the round 2&#39;s data has been removed). The sum is: 15.
+Round 4: You could get 5 + 10 = 15 points. The sum is: 30.
+</code></pre>
+<h4 id="solution-辅助栈，字符串处理"><a href="#solution-辅助栈，字符串处理" class="headerlink" title="solution-辅助栈，字符串处理"></a>solution-辅助栈，字符串处理</h4><ul>
+<li>完全按照人脑思维，对每个字符可能的情况进行判断</li>
+<li>需要注意的就是，输入是一个字符串的数组，即数组中每个元素为字符串，当score为整数，且位数多于两位，则需要一个个遍历，算出字符串对应的整数。手动的算了。这里要注意有负数的情况。</li>
+<li>时间：O(n)，空间：O(2)——一个辅助栈</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    int calPoints(vector&lt;string&gt;&amp; ops) &#123;
+        stack&lt;int&gt;score;
+        
+        for(string s : ops)&#123;
+            char c = s[0];
+            
+            if(c == &#39;C&#39;)&#123;
+                score.pop();
+            &#125;else if(c == &#39;D&#39;)&#123;
+                int tmp = score.top();
+                score.push(tmp*2);
+            &#125;else if(c == &#39;+&#39;)&#123;
+                int tmp1 = score.top();
+                score.pop();
+                int cur = tmp1 + score.top();
+                score.push(tmp1);
+                score.push(cur);
+            &#125;else&#123;
+                int num = 0;
+                bool flag = false;//是否为负数
+                for(char c : s)&#123;
+                    if(c == &#39;-&#39;)&#123;
+                        flag = true;
+                        continue;
+                    &#125;
+                    int val = c - &#39;0&#39;;
+                    num = num*10 + val;
+                &#125;
+                if(flag)
+                    score.push(-num);
+                else 
+                    score.push(num);
+            &#125; 
+        &#125;
+        int sum = 0;
+        while(!score.empty())&#123;
+            sum += score.top();
+            score.pop();
+        &#125;
+        return sum;
+    &#125;
+</code></pre>
+<h4 id="solution2-vector"><a href="#solution2-vector" class="headerlink" title="solution2-vector"></a>solution2-vector</h4><ul>
+<li>我简直就是一个被残害的少年，为什么想不开总是用stack，既不能随机访问，还得控制顺序</li>
+<li>语法：STL 算法求和<ul>
+<li>int sum = accumulate(score.begin(),score.end(),10);//以10为基础开始加</li>
+<li>string sum = accumulate(v.begin() , v.end() , string(“ “));将字符串连接起来</li>
+</ul>
+</li>
+<li>找到了一个C++11里面字符串转整数的操作stoi(s,0,10)——将s从第0位开始，转换成10进制数。</li>
+<li>判断是否为数字：isdigit()</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    int calPoints(vector&lt;string&gt;&amp; ops) &#123;
+        vector&lt;int&gt;score;
+        int index = 0;
+        for(string s : ops)&#123;
+            if(isdigit(s[0]) || s[0] == &#39;-&#39;)&#123;
+               score.push_back(stoi(s));                
+            &#125;else if(s == &quot;+&quot;)&#123;
+                score.push_back(score[index]+score[index-1]);
+            &#125;else if(s == &quot;D&quot;)&#123;
+                score.push_back(score[index]*2);
+            &#125;else&#123;
+                score.pop_back();
+            &#125;
+        index = score.size()-1;
+        &#125;
+        return accumulate(score.begin(),score.end(),0);        
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="844-Backspace-String-Compare"><a href="#844-Backspace-String-Compare" class="headerlink" title="844.Backspace String Compare"></a>844.Backspace String Compare</h3><p><strong>题目描述</strong></p>
+<p>Given two strings <code>S</code> and <code>T</code>, return if they are equal when both are typed into empty text editors. <code>#</code> means a backspace character.</p>
+<p><strong>Example :</strong></p>
+<pre><code>Input: S = &quot;ab##&quot;, T = &quot;c#d#&quot;
+Output: true
+Explanation: Both S and T become &quot;&quot;.
+
+Input: S = &quot;a#c&quot;, T = &quot;b&quot;
+Output: false
+Explanation: S becomes &quot;c&quot; while T becomes &quot;b&quot;.
+</code></pre>
+<h4 id="solution1-辅助栈"><a href="#solution1-辅助栈" class="headerlink" title="solution1-辅助栈"></a>solution1-辅助栈</h4><ul>
+<li>想先比较一下两个字符串的大小，但是不行，因为如果一个比另一个多个#，也返回true；比如”ab##””c#d##”;</li>
+<li>最朴素的做法就是用两个辅助栈,当遇到’#’且栈不为空时就pop，否则入栈，然后从栈中依次弹出元素，比较是否相等，最后还要判断栈内有没有剩余元素 。</li>
+<li>时间O(n)，空间O(n)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    bool backspaceCompare(string S, string T) &#123;
+        stack&lt;char&gt; s;
+        stack&lt;char&gt; t;
+        
+        for(int i = 0; i &lt; S.size(); i++)&#123;
+            if(S[i] == &#39;#&#39;)&#123;
+                if(!s.empty())&#123;
+                    s.pop();
+                &#125;
+            &#125;else
+                s.push(S[i]);                  
+        &#125;
+        
+        for(int j = 0; j&lt; T.size(); j++)&#123;
+            if(T[j] == &#39;#&#39;)&#123;
+                if(!t.empty())
+                    t.pop();
+            &#125;else
+                t.push(T[j]);                
+        &#125;
+        while(!s.empty() &amp;&amp; !t.empty())&#123;
+            if(s.top() != t.top())
+                return false;
+            s.pop();
+            t.pop();
+        &#125;
+        if(!s.empty() || !t.empty())
+            return false;//一个栈内元素比另一个的多
+        return true;
+    &#125;
+</code></pre>
+<h4 id="solution2-双指针"><a href="#solution2-双指针" class="headerlink" title="solution2-双指针"></a>solution2-双指针</h4><ul>
+<li>从后向前遍历，用count记录出现过的‘#’</li>
+<li>如果count &gt; 0 &amp;&amp; 当前是一个非‘#’，说明可以对这个进行删除，count–；</li>
+<li>如果当前是 ‘#’，则count++</li>
+<li>否则比较两个元素，如果不相等，则false</li>
+<li>测试用例需要考虑‘#’对的位置，最开头，中间，结尾，两个字符串长度不一样。能想出这种做法，并且把边界条件控制的很好的人，也是绝了。</li>
+<li>时间：O(n)，空间：O(1)</li>
+</ul>
+<pre><code class="C++">/*
+class Solution &#123;
+public:
+    bool backspaceCompare(string S, string T) &#123;
+        stack&lt;char&gt; s;
+        stack&lt;char&gt; t;
+        int lens = S.size();
+        int lent = T.size();
+        for(int i = 0; i &lt; lens; i++)&#123;
+            if(S[i] == &#39;#&#39;)&#123;
+                if(!s.empty())&#123;
+                    s.pop();
+                &#125;
+            &#125;else
+                s.push(S[i]);                  
+        &#125;
+        
+        for(int j = 0; j&lt; lent; j++)&#123;
+            if(T[j] == &#39;#&#39;)&#123;
+                if(!t.empty())
+                    t.pop();
+            &#125;else
+                t.push(T[j]);                
+        &#125;
+        while(!s.empty() &amp;&amp; !t.empty())&#123;
+            if(s.top() != t.top())
+                return false;
+            s.pop();
+            t.pop();
+        &#125;
+        if(!s.empty() || !t.empty())
+            return false;//一个栈内元素比另一个的多
+        return true;
+
+    &#125;
+&#125;;*/
+
+class Solution &#123;
+public:
+    bool backspaceCompare(string S, string T) &#123;
+        int i = S.size()-1;
+        int j = T.size()-1;
+        int countS = 0,countT = 0;
+        
+        //存在两个字符串不一样长的情况
+        while(i &gt;= 0 || j &gt;= 0)&#123;
+            while(i &gt;= 0 &amp;&amp; (S[i] == &#39;#&#39; || countS &gt; 0))&#123;
+                if(S[i] == &#39;#&#39;)&#123;
+                    countS++;
+                &#125;else&#123;
+                    countS--;
+                &#125;
+                i--;
+            &#125;
+            while(j &gt;=0 &amp;&amp; (T[j] == &#39;#&#39; || countT &gt; 0))&#123;
+                if(T[j] == &#39;#&#39;)&#123;
+                    countT++;
+                &#125;else&#123;
+                    countT--;
+                &#125;
+                j--;
+            &#125;
+            
+            if(i &lt; 0 || j &lt; 0)
+                return i == j;
+                
+            if(S[i] != T[j])
+                return false;
+            else&#123;
+                 i--;
+                 j--;
+            &#125;           
+        &#125;       
+        return i == j;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="232-Implement-Queue-using-Stacks"><a href="#232-Implement-Queue-using-Stacks" class="headerlink" title="232.Implement Queue using Stacks"></a>232.Implement Queue using Stacks</h3><pre><code class="C++">class MyQueue &#123;
+public:
+    stack&lt;int&gt;s1;
+    stack&lt;int&gt;s2;
+        
+    /** Initialize your data structure here. */
+    MyQueue() &#123;&#125;
+    
+    /** Push element x to the back of queue. */
+    void push(int x) &#123;
+        s1.push(x);
+    &#125;
+    
+    /** Removes the element from in front of queue and returns that element. */
+    int pop() &#123;
+        while(!s1.empty())&#123;
+            s2.push(s1.top());
+            s1.pop(); 
+        &#125;
+        int res = s2.top();
+        s2.pop();
+        while(!s2.empty())&#123;
+            s1.push(s2.top());
+            s2.pop();
+        &#125;  
+        return res;   
+    &#125;
+    
+    /** Get the front element. */
+    int peek() &#123;
+        while(!s1.empty())&#123;
+            s2.push(s1.top());
+            s1.pop(); 
+        &#125;
+        int res = s2.top();
+        while(!s2.empty())&#123;
+            s1.push(s2.top());
+            s2.pop();
+        &#125;  
+        return res;   
+    &#125;
+    
+    /** Returns whether the queue is empty. */
+    bool empty() &#123;
+        if(s1.empty())
+            return true;
+        else
+            return false;
+    &#125;
+&#125;;
+
+/**
+ * Your MyQueue object will be instantiated and called as such:
+ * MyQueue* obj = new MyQueue();
+ * obj-&gt;push(x);
+ * int param_2 = obj-&gt;pop();
+ * int param_3 = obj-&gt;peek();
+ * bool param_4 = obj-&gt;empty();
+ */
+</code></pre>
+<h3 id="225-Implement-Stack-using-Queues"><a href="#225-Implement-Stack-using-Queues" class="headerlink" title="225.Implement Stack using Queues"></a>225.Implement Stack using Queues</h3><pre><code class="C++">class MyStack &#123;
+public:
+    queue&lt;int&gt;q;
+    /** Initialize your data structure here. */
+    MyStack() &#123;&#125;
+    
+    /** Push element x onto stack. */
+    void push(int x) &#123;
+        q.push(x);
+    &#125;
+    
+    /** Removes the element on top of the stack and returns that element. */
+    int pop() &#123;
+        int res = q.back();
+        int len = q.size();
+        queue&lt;int&gt;tmp;
+        while(len &gt; 1)&#123;
+            tmp.push(q.front());
+            q.pop();
+            len--;
+        &#125;
+        q.pop();
+        while(!tmp.empty())&#123;
+            q.push(tmp.front());
+            tmp.pop();
+        &#125;
+        return res;
+    &#125;
+    
+    /** Get the top element. */
+    int top() &#123;
+        return q.back();
+    &#125;
+    
+    /** Returns whether the stack is empty. */
+    bool empty() &#123;
+        return q.empty();
+    &#125;
+&#125;;
+
+/**
+ * Your MyStack object will be instantiated and called as such:
+ * MyStack* obj = new MyStack();
+ * obj-&gt;push(x);
+ * int param_2 = obj-&gt;pop();
+ * int param_3 = obj-&gt;top();
+ * bool param_4 = obj-&gt;empty();
+ */
+</code></pre>
+<h3 id="155-Min-Stack"><a href="#155-Min-Stack" class="headerlink" title="155.Min Stack"></a>155.Min Stack</h3><pre><code class="c++">/*
+solution
+- 用一个全局变量来保存最小值，这样可以在常数时间内返回最小值
+- 在push(),pop()时，更新minElenm
+*/
+class MinStack &#123;
+public:
+    int minElem = 0x7fffffff;
+    stack&lt;int&gt; s;
+    /** initialize your data structure here. */
+    MinStack() &#123;
+    &#125;
+    
+    void push(int x) &#123;
+        s.push(x);
+        if(x &lt; minElem)
+            minElem = x;
+    &#125;
+    
+    void pop() &#123;
+        int x = s.top();
+        s.pop();
+        if(x == minElem)&#123;
+            minElem = 0x7fffffff;
+            stack&lt;int&gt; tmp;
+            while(!s.empty())&#123;
+                int t = s.top();
+                s.pop();
+                tmp.push(t);
+                
+                if(t &lt; minElem)&#123;
+                    minElem = t;
+                &#125;
+            &#125;
+            while(!tmp.empty())&#123;
+                s.push(tmp.top());
+                tmp.pop();
+            &#125;            
+        &#125;        
+    &#125;
+    
+    int top() &#123;
+        return s.top();
+    &#125;
+    
+    int getMin() &#123;
+        return minElem;
+    &#125;
+&#125;;
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * MinStack* obj = new MinStack();
+ * obj-&gt;push(x);
+ * obj-&gt;pop();
+ * int param_3 = obj-&gt;top();
+ * int param_4 = obj-&gt;getMin();
+ */
+</code></pre>
+<h3 id="20-Valid-Parentheses"><a href="#20-Valid-Parentheses" class="headerlink" title="20.Valid Parentheses"></a>20.Valid Parentheses</h3><p><strong>题目描述</strong></p>
+<p>Given a string containing just the characters <code>&#39;(&#39;</code>, <code>&#39;)&#39;</code>, <code>&#39;&#123;&#39;</code>, <code>&#39;&#125;&#39;</code>, <code>&#39;[&#39;</code> and <code>&#39;]&#39;</code>, determine if the input string is valid.</p>
+<p>An input string is valid if:</p>
+<ol>
+<li>Open brackets must be closed by the same type of brackets.</li>
+<li>Open brackets must be closed in the correct order.</li>
+</ol>
+<p>Note that an empty string is also considered valid.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: &quot;([)]&quot;
+Output: false
+</code></pre>
+<h4 id="错！solution1-cnt统计左括号个数"><a href="#错！solution1-cnt统计左括号个数" class="headerlink" title="错！solution1-cnt统计左括号个数"></a>错！solution1-cnt统计左括号个数</h4><ul>
+<li>用cnt计数，分别表示三种括号的左括号个数，当有右括号时，cnt–，左括号时，cnt++。但是”({)”这种，无法正确判断。——只能用于只有一种括号的情况</li>
+<li>时间：O(n)，空间：O(1)</li>
+</ul>
+<h4 id="solution2-辅助栈"><a href="#solution2-辅助栈" class="headerlink" title="solution2-辅助栈"></a>solution2-辅助栈</h4><ul>
+<li>如果是左括号，进栈，如果是右括号，匹配栈顶是否为对应的左括号</li>
+<li>时间：O(n)，空间：O(n)-辅助栈</li>
+</ul>
+<pre><code class="c++">class Solution &#123;
+public:
+    bool isValid(string s) &#123;
+
+        stack&lt;char&gt;ch;
+        for(int i = 0; i &lt; s.size(); i++)&#123;
+            if(s[i] == &#39;(&#39; || s[i] == &#39;&#123;&#39; || s[i] == &#39;[&#39;)
+                ch.push(s[i]);
+            else&#123;
+                if(ch.empty()) return false;//这个很重要，要弹出，首先就要判断栈是否为空
+                if(s[i] == &#39;)&#39; &amp;&amp; ch.top() != &#39;(&#39;)
+                    return false;
+                if(s[i] == &#39;&#125;&#39; &amp;&amp; ch.top() != &#39;&#123;&#39;)
+                    return false;
+                if(s[i] == &#39;]&#39; &amp;&amp; ch.top() != &#39;[&#39;)
+                    return false;
+                
+                ch.pop();
+            &#125;       
+        &#125;
+        return ch.empty();         
+    &#125;
+&#125;;
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

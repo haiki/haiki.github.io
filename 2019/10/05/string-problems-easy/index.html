@@ -1,0 +1,2815 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>string-problems-easy | haiki</title>
+  <meta name="keywords" content=" easy , string ">
+  <meta name="description" content="string-problems-easy | haiki">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Oops～，我崩溃了！找不到你想要的页面 :(">
+<meta property="og:type" content="website">
+<meta property="og:title" content="404">
+<meta property="og:url" content="https://github.com/haiki/haiki.github.io/404.html">
+<meta property="og:site_name" content="haiki">
+<meta property="og:description" content="Oops～，我崩溃了！找不到你想要的页面 :(">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-10-03T12:16:10.000Z">
+<meta property="article:modified_time" content="2022-01-03T11:20:49.316Z">
+<meta property="article:author" content="haiki">
+<meta property="article:tag" content="computer science,blockchain,leetcode,record life">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>haiki</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="facebook"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-facebook"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="instagram"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="reddit"
+               href="https://www.reddit.com/user/yelog/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-reddit"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="weibo"
+               href="http://weibo.com/u/2307534817"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/ff56736de7cf"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/jaytp/activities"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="oschina"
+               href="https://my.oschina.net/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-oschina"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:jaytp@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="kugou"
+               href="https://www.kugou.com/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-kugou"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="neteasemusic"
+               href="https://music.163.com/#/user/home?id=88151013"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-neteasemusic"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(23)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="读书">
+                        
+                        读书
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="编程语言">
+                        
+                        编程语言
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="论文相关总结">
+                        
+                        论文相关总结
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="区块链">
+                        
+                        区块链
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="leetcode">
+                        
+                        leetcode
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="23">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>工具成长类</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>零碎</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>路由算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>命令</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>私链</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>以太坊</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>语法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>智能合约</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>API</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>attack</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>C++</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>DApp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>easy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ethereum</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>geth</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>go环境配置</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>IDEA</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Javascript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linkedList</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>payment routing</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>problem</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>solidity</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>speedymurmurs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>stack</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>string</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>token</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>transaction</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="All 工具 "
+           href="/2019/10/03/my-first-article/"
+           data-tag="hexo,problem"
+           data-author="" >
+            <span class="post-title" title="my first article">my first article</span>
+            <span class="post-date" title="2019-10-03 16:03:38">2019/10/03</span>
+        </a>
+        
+        <a  class="All 编程语言 "
+           href="/2019/12/24/python/"
+           data-tag="python,语法"
+           data-author="" >
+            <span class="post-title" title="python">python</span>
+            <span class="post-date" title="2019-12-24 22:10:19">2019/12/24</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/12/23/%E4%BB%A5%E5%A4%AA%E5%9D%8AERC20/"
+           data-tag="以太坊,solidity,智能合约,token"
+           data-author="" >
+            <span class="post-title" title="以太坊ERC20">以太坊ERC20</span>
+            <span class="post-date" title="2019-12-23 10:13:29">2019/12/23</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/12/22/%E4%BB%A5%E5%A4%AA%E5%9D%8A-Transaction/"
+           data-tag="以太坊,transaction"
+           data-author="" >
+            <span class="post-title" title="以太坊-Transaction">以太坊-Transaction</span>
+            <span class="post-date" title="2019-12-22 10:55:27">2019/12/22</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/12/12/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%91%E6%99%AE/"
+           data-tag="ethereum"
+           data-author="" >
+            <span class="post-title" title="以太坊科普">以太坊科普</span>
+            <span class="post-date" title="2019-12-12 09:29:40">2019/12/12</span>
+        </a>
+        
+        <a  class="All 编程语言 "
+           href="/2019/11/29/C-%E9%9A%8F%E8%AE%B0/"
+           data-tag="C++"
+           data-author="" >
+            <span class="post-title" title="C++随记">C++随记</span>
+            <span class="post-date" title="2019-11-29 09:58:19">2019/11/29</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/11/05/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9B%B8%E5%85%B3%E6%8A%80%E6%9C%AF%E5%89%8D%E6%B2%BF%E6%B4%9E%E5%AF%9F/"
+           data-tag="零碎"
+           data-author="" >
+            <span class="post-title" title="区块链相关技术前沿洞察">区块链相关技术前沿洞察</span>
+            <span class="post-date" title="2019-11-05 14:54:48">2019/11/05</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/11/03/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E5%BF%85%E5%A4%87/"
+           data-tag="算法"
+           data-author="" >
+            <span class="post-title" title="算法与数据结构学习必备">算法与数据结构学习必备</span>
+            <span class="post-date" title="2019-11-03 09:34:47">2019/11/03</span>
+        </a>
+        
+        <a  class="All 论文相关总结 "
+           href="/2019/10/31/SpeedyMurmurs-data-%E8%AE%B0%E5%BD%95/"
+           data-tag="speedymurmurs,payment routing,路由算法"
+           data-author="" >
+            <span class="post-title" title="SpeedyMurmurs data 记录">SpeedyMurmurs data 记录</span>
+            <span class="post-date" title="2019-10-31 10:34:05">2019/10/31</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/26/%E4%BB%A5%E5%A4%AA%E5%9D%8ADApp/"
+           data-tag="ethereum,DApp"
+           data-author="" >
+            <span class="post-title" title="以太坊DApp">以太坊DApp</span>
+            <span class="post-date" title="2019-10-26 18:55:09">2019/10/26</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/26/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"
+           data-tag="attack"
+           data-author="" >
+            <span class="post-title" title="区块链中的一些常用名词解释">区块链中的一些常用名词解释</span>
+            <span class="post-date" title="2019-10-26 18:44:34">2019/10/26</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/25/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%AE%9E%E8%B7%B5/"
+           data-tag="以太坊,solidity,智能合约"
+           data-author="" >
+            <span class="post-title" title="以太坊智能合约实践">以太坊智能合约实践</span>
+            <span class="post-date" title="2019-10-25 10:15:12">2019/10/25</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/22/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%A6%82%E5%BF%B5%E5%8F%8AAPI%E7%9A%84%E6%95%B4%E5%90%88%E4%B8%8E%E7%90%86%E8%A7%A3/"
+           data-tag="以太坊,API,Javascript"
+           data-author="" >
+            <span class="post-title" title="以太坊概念及API的整合与理解">以太坊概念及API的整合与理解</span>
+            <span class="post-date" title="2019-10-22 17:21:16">2019/10/22</span>
+        </a>
+        
+        <a  class="All 区块链 "
+           href="/2019/10/19/%E4%BB%8E%E5%A4%B4%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%81%E9%93%BE/"
+           data-tag="以太坊,私链,geth,go环境配置"
+           data-author="" >
+            <span class="post-title" title="从头搭建以太坊私链">从头搭建以太坊私链</span>
+            <span class="post-date" title="2019-10-19 16:15:54">2019/10/19</span>
+        </a>
+        
+        <a  class="All 论文相关总结 "
+           href="/2019/10/16/speedyMurmurs%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90Dynamic%E9%83%A8%E5%88%86/"
+           data-tag="speedymurmurs,payment routing,路由算法"
+           data-author="" >
+            <span class="post-title" title="speedyMurmurs源码分析Dynamic部分">speedyMurmurs源码分析Dynamic部分</span>
+            <span class="post-date" title="2019-10-16 09:27:00">2019/10/16</span>
+        </a>
+        
+        <a  class="All 论文相关总结 "
+           href="/2019/10/11/speedyMurmurs%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"
+           data-tag="speedymurmurs,payment routing,路由算法"
+           data-author="" >
+            <span class="post-title" title="speedyMurmurs源码分析">speedyMurmurs源码分析</span>
+            <span class="post-date" title="2019-10-11 20:12:57">2019/10/11</span>
+        </a>
+        
+        <a  class="All 运维 "
+           href="/2019/10/10/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag="linux,命令"
+           data-author="" >
+            <span class="post-title" title="linux常用命令">linux常用命令</span>
+            <span class="post-date" title="2019-10-10 16:32:59">2019/10/10</span>
+        </a>
+        
+        <a  class="All 编程语言 "
+           href="/2019/10/10/java/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="java">java</span>
+            <span class="post-date" title="2019-10-10 14:04:57">2019/10/10</span>
+        </a>
+        
+        <a  class="All 工具 "
+           href="/2019/10/09/IDEA%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD/"
+           data-tag="IDEA,java"
+           data-author="" >
+            <span class="post-title" title="IDEA的使用：提升看源码效率">IDEA的使用：提升看源码效率</span>
+            <span class="post-date" title="2019-10-09 20:21:52">2019/10/09</span>
+        </a>
+        
+        <a  class="All 读书 "
+           href="/2019/10/06/%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A%E6%91%98%E5%BD%95%E5%8F%8A%E8%A7%82%E5%90%8E%E6%84%9F/"
+           data-tag="工具成长类"
+           data-author="" >
+            <span class="post-title" title="非暴力沟通摘录及观后感">非暴力沟通摘录及观后感</span>
+            <span class="post-date" title="2019-10-06 18:41:57">2019/10/06</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/10/05/string-problems-easy/"
+           data-tag="easy,string"
+           data-author="" >
+            <span class="post-title" title="string-problems-easy">string-problems-easy</span>
+            <span class="post-date" title="2019-10-05 10:30:38">2019/10/05</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/08/28/LinkedList-problems-easy/"
+           data-tag="linkedList,easy"
+           data-author="" >
+            <span class="post-title" title="LinkedList-problems-easy">LinkedList-problems-easy</span>
+            <span class="post-date" title="2019-08-28 21:40:38">2019/08/28</span>
+        </a>
+        
+        <a  class="All leetcode "
+           href="/2019/08/23/stack-problems-easy/"
+           data-tag="easy,stack"
+           data-author="" >
+            <span class="post-title" title="stack-problems-easy">stack-problems-easy</span>
+            <span class="post-date" title="2019-08-23 21:40:38">2019/08/23</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-string-problems-easy" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">string-problems-easy</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">easy</a>
+            
+            <a class="color2">string</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2022-01-03 19:20:49'>2019-10-05 10:30</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1108-Defanging-an-IP-Address"><span class="toc-text">1108.Defanging an IP Address</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E9%81%8D%E5%8E%86"><span class="toc-text">solution1-遍历</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#709-To-Lower-Case"><span class="toc-text">709. To Lower Case</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#804-Unique-Morse-Code-Words"><span class="toc-text">804. Unique Morse Code Words</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E9%9B%86%E5%90%88set%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">solution-集合set的使用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#657-Robot-Return-to-Origin"><span class="toc-text">657. Robot Return to Origin</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-1"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#929-Unique-Email-Addresses"><span class="toc-text">929. Unique Email Addresses</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E9%81%8D%E5%8E%86"><span class="toc-text">solution-遍历</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#557-Reverse-Words-in-a-String-III"><span class="toc-text">557. Reverse Words in a String III</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-2"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#344-Reverse-String"><span class="toc-text">344. Reverse String</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E6%8C%89%E5%BC%82%E6%88%96%E6%93%8D%E4%BD%9C%E7%AC%A6%E5%AE%9E%E7%8E%B0%E5%85%83%E7%B4%A0%E4%BA%A4%E6%8D%A2"><span class="toc-text">solution1-按异或操作符实现元素交换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E7%94%A8string%E7%9A%84%E5%BA%93%E5%87%BD%E6%95%B0-reverse"><span class="toc-text">solution2-用string的库函数.reverse</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1170-Compare-Strings-by-Frequency-of-the-Smallest-Character"><span class="toc-text">1170. Compare Strings by Frequency of the Smallest Character</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-sort"><span class="toc-text">solution-sort</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E6%AF%94%E8%BE%83%E7%B2%BE%E5%B7%A7%EF%BC%8C%E4%BD%86%E6%98%AF%E5%BE%97%E4%BB%94%E7%BB%86%E7%90%86%E8%A7%A3"><span class="toc-text">solution2-比较精巧，但是得仔细理解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#824-Goat-Latin"><span class="toc-text">824. Goat Latin</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-string%E5%BA%93%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%EF%BC%8C%E4%B8%8B%E6%A0%87%E7%A7%BB%E5%8A%A8"><span class="toc-text">solution-string库函数使用，下标移动</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#521-Longest-Uncommon-Subsequence-I"><span class="toc-text">521. Longest Uncommon Subsequence I</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-3"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#917-Reverse-Only-Letters"><span class="toc-text">917. Reverse Only Letters</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E5%8F%8C%E6%8C%87%E9%92%88%E9%81%8D%E5%8E%86%EF%BC%8C%E4%BA%A4%E6%8D%A2"><span class="toc-text">solution1-双指针遍历，交换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-stack"><span class="toc-text">solution2-stack</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#788-Rotated-Digits"><span class="toc-text">788. Rotated Digits</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-dp%E8%AE%B0%E5%BD%95%E8%A1%A8"><span class="toc-text">solution-dp记录表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#696-Count-Binary-Substrings"><span class="toc-text">696. Count Binary Substrings</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E7%BA%BF%E6%80%A7%E6%89%AB%E6%8F%8F"><span class="toc-text">solution-线性扫描</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#937-Reorder-Data-in-Log-Files"><span class="toc-text">937. Reorder Data in Log Files</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-stable-sort"><span class="toc-text">solution-stable_sort</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1071-Greatest-Common-Divisor-of-Strings"><span class="toc-text">1071. Greatest Common Divisor of Strings</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-gcd"><span class="toc-text">solution-gcd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-gcd-1"><span class="toc-text">solution-gcd</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-Roman-to-Integer"><span class="toc-text">13. Roman to Integer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution1-hash-map"><span class="toc-text">solution1-hash_map</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution2"><span class="toc-text">solution2-</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#520-Detect-Capital"><span class="toc-text">520. Detect Capital</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-4"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#606-Construct-String-from-Binary-Tree"><span class="toc-text">606. Construct String from Binary Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E9%80%92%E5%BD%92%EF%BC%8C%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="toc-text">solution1-递归，先序遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-stack-1"><span class="toc-text">solution2-stack</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#383-Ransom-Note"><span class="toc-text">383. Ransom Note</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E5%BA%93%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-text">solution1-库函数调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-map-%E6%95%B0%E7%BB%84"><span class="toc-text">solution2-map\数组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#387-First-Unique-Character-in-a-String"><span class="toc-text">387. First Unique Character in a String</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-map"><span class="toc-text">solution-map</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#541-Reverse-String-II"><span class="toc-text">541. Reverse String II</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-5"><span class="toc-text">solution</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-1"><span class="toc-text">solution2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#345-Reverse-Vowels-of-a-String"><span class="toc-text">345. Reverse Vowels of a String</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E5%8F%8C%E6%8C%87%E9%92%88"><span class="toc-text">solution- 双指针</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#551-Student-Attendance-Record-I"><span class="toc-text">551. Student Attendance Record I</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E7%BB%9F%E8%AE%A1"><span class="toc-text">solution-统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-if-else"><span class="toc-text">solution2-if-else</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#415-Add-Strings"><span class="toc-text">415. Add Strings</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-6"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#67-Add-Binary"><span class="toc-text">67. Add Binary</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E7%B1%BB%E4%BC%BCstring%E7%9A%84%E5%8A%A0%E6%B3%95"><span class="toc-text">solution-类似string的加法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#925-Long-Pressed-Name"><span class="toc-text">925. Long Pressed Name</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-7"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#819-Most-Common-Word"><span class="toc-text">819. Most Common Word</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-8"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#443-String-Compression"><span class="toc-text">443. String Compression</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-9"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-Valid-Parentheses"><span class="toc-text">20. Valid Parentheses</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E8%BE%85%E5%8A%A9%E6%A0%88"><span class="toc-text">solution2-辅助栈</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#434-Number-of-Segments-in-a-String"><span class="toc-text">434. Number of Segments in a String</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E6%9F%A5%E6%89%BE%E7%A9%BA%E6%A0%BC-%E9%94%99%E8%AF%AF"><span class="toc-text">solution-查找空格-错误</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#125-Valid-Palindrome"><span class="toc-text">125. Valid Palindrome</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1"><span class="toc-text">solution1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-2"><span class="toc-text">solution2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#680-Valid-Palindrome-II"><span class="toc-text">680. Valid Palindrome II</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-10"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#28-Implement-strStr"><span class="toc-text">28. Implement strStr()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-Longest-Common-Prefix"><span class="toc-text">14. Longest Common Prefix</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-11"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#58-Length-of-Last-Word"><span class="toc-text">58. Length of Last Word</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-12"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#686-Repeated-String-Match"><span class="toc-text">686. Repeated String Match</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-13"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#859-Buddy-Strings"><span class="toc-text">859. Buddy Strings</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E9%81%8D%E5%8E%86-1"><span class="toc-text">solution1-遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E5%88%A9%E7%94%A8%E9%A2%9D%E5%A4%96%E7%A9%BA%E9%97%B4"><span class="toc-text">solution2-利用额外空间</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>@<div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1108-Defanging-an-IP-Address"><span class="toc-text">1108.Defanging an IP Address</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E9%81%8D%E5%8E%86"><span class="toc-text">solution1-遍历</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#709-To-Lower-Case"><span class="toc-text">709. To Lower Case</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#804-Unique-Morse-Code-Words"><span class="toc-text">804. Unique Morse Code Words</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E9%9B%86%E5%90%88set%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">solution-集合set的使用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#657-Robot-Return-to-Origin"><span class="toc-text">657. Robot Return to Origin</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-1"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#929-Unique-Email-Addresses"><span class="toc-text">929. Unique Email Addresses</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E9%81%8D%E5%8E%86"><span class="toc-text">solution-遍历</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#557-Reverse-Words-in-a-String-III"><span class="toc-text">557. Reverse Words in a String III</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-2"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#344-Reverse-String"><span class="toc-text">344. Reverse String</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E6%8C%89%E5%BC%82%E6%88%96%E6%93%8D%E4%BD%9C%E7%AC%A6%E5%AE%9E%E7%8E%B0%E5%85%83%E7%B4%A0%E4%BA%A4%E6%8D%A2"><span class="toc-text">solution1-按异或操作符实现元素交换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E7%94%A8string%E7%9A%84%E5%BA%93%E5%87%BD%E6%95%B0-reverse"><span class="toc-text">solution2-用string的库函数.reverse</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1170-Compare-Strings-by-Frequency-of-the-Smallest-Character"><span class="toc-text">1170. Compare Strings by Frequency of the Smallest Character</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-sort"><span class="toc-text">solution-sort</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E6%AF%94%E8%BE%83%E7%B2%BE%E5%B7%A7%EF%BC%8C%E4%BD%86%E6%98%AF%E5%BE%97%E4%BB%94%E7%BB%86%E7%90%86%E8%A7%A3"><span class="toc-text">solution2-比较精巧，但是得仔细理解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#824-Goat-Latin"><span class="toc-text">824. Goat Latin</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-string%E5%BA%93%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%EF%BC%8C%E4%B8%8B%E6%A0%87%E7%A7%BB%E5%8A%A8"><span class="toc-text">solution-string库函数使用，下标移动</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#521-Longest-Uncommon-Subsequence-I"><span class="toc-text">521. Longest Uncommon Subsequence I</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-3"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#917-Reverse-Only-Letters"><span class="toc-text">917. Reverse Only Letters</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E5%8F%8C%E6%8C%87%E9%92%88%E9%81%8D%E5%8E%86%EF%BC%8C%E4%BA%A4%E6%8D%A2"><span class="toc-text">solution1-双指针遍历，交换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-stack"><span class="toc-text">solution2-stack</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#788-Rotated-Digits"><span class="toc-text">788. Rotated Digits</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-dp%E8%AE%B0%E5%BD%95%E8%A1%A8"><span class="toc-text">solution-dp记录表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#696-Count-Binary-Substrings"><span class="toc-text">696. Count Binary Substrings</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E7%BA%BF%E6%80%A7%E6%89%AB%E6%8F%8F"><span class="toc-text">solution-线性扫描</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#937-Reorder-Data-in-Log-Files"><span class="toc-text">937. Reorder Data in Log Files</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-stable-sort"><span class="toc-text">solution-stable_sort</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1071-Greatest-Common-Divisor-of-Strings"><span class="toc-text">1071. Greatest Common Divisor of Strings</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-gcd"><span class="toc-text">solution-gcd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-gcd-1"><span class="toc-text">solution-gcd</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-Roman-to-Integer"><span class="toc-text">13. Roman to Integer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution1-hash-map"><span class="toc-text">solution1-hash_map</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solution2"><span class="toc-text">solution2-</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#520-Detect-Capital"><span class="toc-text">520. Detect Capital</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-4"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#606-Construct-String-from-Binary-Tree"><span class="toc-text">606. Construct String from Binary Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E9%80%92%E5%BD%92%EF%BC%8C%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="toc-text">solution1-递归，先序遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-stack-1"><span class="toc-text">solution2-stack</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#383-Ransom-Note"><span class="toc-text">383. Ransom Note</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E5%BA%93%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-text">solution1-库函数调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-map-%E6%95%B0%E7%BB%84"><span class="toc-text">solution2-map\数组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#387-First-Unique-Character-in-a-String"><span class="toc-text">387. First Unique Character in a String</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-map"><span class="toc-text">solution-map</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#541-Reverse-String-II"><span class="toc-text">541. Reverse String II</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-5"><span class="toc-text">solution</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-1"><span class="toc-text">solution2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#345-Reverse-Vowels-of-a-String"><span class="toc-text">345. Reverse Vowels of a String</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E5%8F%8C%E6%8C%87%E9%92%88"><span class="toc-text">solution- 双指针</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#551-Student-Attendance-Record-I"><span class="toc-text">551. Student Attendance Record I</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E7%BB%9F%E8%AE%A1"><span class="toc-text">solution-统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-if-else"><span class="toc-text">solution2-if-else</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#415-Add-Strings"><span class="toc-text">415. Add Strings</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-6"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#67-Add-Binary"><span class="toc-text">67. Add Binary</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E7%B1%BB%E4%BC%BCstring%E7%9A%84%E5%8A%A0%E6%B3%95"><span class="toc-text">solution-类似string的加法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#925-Long-Pressed-Name"><span class="toc-text">925. Long Pressed Name</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-7"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#819-Most-Common-Word"><span class="toc-text">819. Most Common Word</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-8"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#443-String-Compression"><span class="toc-text">443. String Compression</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-9"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-Valid-Parentheses"><span class="toc-text">20. Valid Parentheses</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E8%BE%85%E5%8A%A9%E6%A0%88"><span class="toc-text">solution2-辅助栈</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#434-Number-of-Segments-in-a-String"><span class="toc-text">434. Number of Segments in a String</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-%E6%9F%A5%E6%89%BE%E7%A9%BA%E6%A0%BC-%E9%94%99%E8%AF%AF"><span class="toc-text">solution-查找空格-错误</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#125-Valid-Palindrome"><span class="toc-text">125. Valid Palindrome</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1"><span class="toc-text">solution1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-2"><span class="toc-text">solution2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#680-Valid-Palindrome-II"><span class="toc-text">680. Valid Palindrome II</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-10"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#28-Implement-strStr"><span class="toc-text">28. Implement strStr()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-Longest-Common-Prefix"><span class="toc-text">14. Longest Common Prefix</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-11"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#58-Length-of-Last-Word"><span class="toc-text">58. Length of Last Word</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-12"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#686-Repeated-String-Match"><span class="toc-text">686. Repeated String Match</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution-13"><span class="toc-text">solution</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#859-Buddy-Strings"><span class="toc-text">859. Buddy Strings</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#solution1-%E9%81%8D%E5%8E%86-1"><span class="toc-text">solution1-遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solution2-%E5%88%A9%E7%94%A8%E9%A2%9D%E5%A4%96%E7%A9%BA%E9%97%B4"><span class="toc-text">solution2-利用额外空间</span></a></li></ol></li></ol></div></p>
+<h3 id="1108-Defanging-an-IP-Address"><a href="#1108-Defanging-an-IP-Address" class="headerlink" title="1108.Defanging an IP Address"></a>1108.Defanging an IP Address</h3><p><strong>题目描述：</strong></p>
+<p>Given a valid (IPv4) IP <code>address</code>, return a defanged version of that IP address.</p>
+<p>A <em>defanged IP address</em> replaces every period <code>&quot;.&quot;</code> with <code>&quot;[.]&quot;</code>.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: address = &quot;1.1.1.1&quot;
+Output: &quot;1[.]1[.]1[.]1&quot;
+</code></pre>
+<h4 id="solution1-遍历"><a href="#solution1-遍历" class="headerlink" title="solution1-遍历"></a>solution1-遍历</h4><ul>
+<li>用一个新的串来记录结果，遍历原串，当遇到’.’时，结果串用”[.]”替代，否则用原串字符</li>
+<li>时间：O(n),空间：O(n)</li>
+<li>本来是想用string的库做，但是对于插入定位这件事就难倒我了。<ul>
+<li>用iterator，用for循环去判断是否到结尾，但是只要插入元素，add.end()的iterator变了</li>
+<li>用replace，也不行，insert 和 find 结合，编译总是显示 out of range，在codeblock上是没错的。</li>
+</ul>
+</li>
+</ul>
+<pre><code class="c++">class Solution &#123;
+public:
+    string defangIPaddr(string address) &#123;
+        string res = &quot;&quot;, str = &quot;[.]&quot;;
+        string::iterator it;
+        for(it = address.begin(); it != address.end(); it++)&#123;
+            if(*it == &#39;.&#39;)
+                res += str;
+            else
+                res += *it;
+        &#125;
+        return res;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="709-To-Lower-Case"><a href="#709-To-Lower-Case" class="headerlink" title="709. To Lower Case"></a>709. To Lower Case</h3><p><strong>题目描述</strong>：</p>
+<p>Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: &quot;Hello&quot;
+Output: &quot;hello&quot;
+</code></pre>
+<h4 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h4><ul>
+<li>ascii码表：大写字母 ：65-90，小写字母：97-122</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    string toLowerCase(string str) &#123;
+        int len = str.size();
+        for(int i = 0; i&lt; len; i++)&#123;
+            if(str[i] &lt;= 90 &amp;&amp; str[i] &gt;= 65)
+                str[i] += 32;
+        &#125;
+        return str;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="804-Unique-Morse-Code-Words"><a href="#804-Unique-Morse-Code-Words" class="headerlink" title="804. Unique Morse Code Words"></a>804. Unique Morse Code Words</h3><p><strong>问题描述</strong></p>
+<p>将字符串转换为摩尔斯电码表示，就是一种映射，返回的是结果中摩尔斯电码的不同的个数</p>
+<p><strong>Example:</strong></p>
+<pre><code>Input: words = [&quot;gin&quot;, &quot;zen&quot;, &quot;gig&quot;, &quot;msg&quot;]
+Output: 2
+Explanation: 
+The transformation of each word is:
+&quot;gin&quot; -&gt; &quot;--...-.&quot;
+&quot;zen&quot; -&gt; &quot;--...-.&quot;
+&quot;gig&quot; -&gt; &quot;--...--.&quot;
+&quot;msg&quot; -&gt; &quot;--...--.&quot;
+
+There are 2 different transformations, &quot;--...-.&quot; and &quot;--...--.&quot;.
+</code></pre>
+<h4 id="solution-集合set的使用"><a href="#solution-集合set的使用" class="headerlink" title="solution-集合set的使用"></a>solution-集合set的使用</h4><ul>
+<li>看到那么长的映射，以为是考智力，找规律，直接放弃，看了别人的解法，不得不钦佩</li>
+<li>每遍历一个单词，依次遍历其字符，并记录对应的国际摩尔斯电码，当一个单词遍历完，则拼接出单词对应的结果。把结果放入集合set中，因为unordered_set是无序的，比set快，且其中元素无重复。最后返回set集合的大小，就是不同的转换。</li>
+<li>时间：O(n)，空间：O(2n)；n是单词个数</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    int uniqueMorseRepresentations(vector&lt;string&gt;&amp; words) &#123;
+        vector&lt;string&gt;code&#123;&quot;.-&quot;,&quot;-...&quot;,&quot;-.-.&quot;,&quot;-..&quot;,&quot;.&quot;,&quot;..-.&quot;,&quot;--.&quot;,&quot;....&quot;,&quot;..&quot;,&quot;.---&quot;,&quot;-.-&quot;,&quot;.-..&quot;,&quot;--&quot;,&quot;-.&quot;,&quot;---&quot;,&quot;.--.&quot;,&quot;--.-&quot;,&quot;.-.&quot;,&quot;...&quot;,&quot;-&quot;,&quot;..-&quot;,&quot;...-&quot;,&quot;.--&quot;,&quot;-..-&quot;,&quot;-.--&quot;,&quot;--..&quot;&#125;;
+        unordered_set&lt;string&gt;ret;//一提到找不同，首当其冲的就是集合
+            
+        for(string str : words)&#123;
+            string res = &quot;&quot;;
+            for(char c : str)&#123;
+                res += code[c - &#39;a&#39;];//这点很厉害，直接定位到数组中对应的元素
+            &#125;
+            ret.insert(res);
+        &#125;
+        return ret.size();
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="657-Robot-Return-to-Origin"><a href="#657-Robot-Return-to-Origin" class="headerlink" title="657. Robot Return to Origin"></a>657. Robot Return to Origin</h3><p><strong>题目描述：</strong></p>
+<p>Valid moves are R (right), L (left), U (up), and D (down). If the robot  returns to the origin after it finishes all of its moves, return true.  Otherwise, return false.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: &quot;UD&quot;
+Output: true 
+Explanation: The robot moves up once, and then down once. All moves have the same magnitude, so it ended up at the origin where it started. Therefore, we return true.
+</code></pre>
+<h4 id="solution-1"><a href="#solution-1" class="headerlink" title="solution"></a>solution</h4><ul>
+<li>想要返回true，需要左右移动，上下移动的次数一样多</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    bool judgeCircle(string moves) &#123;
+        int l = 0, u = 0;
+        for(char c : moves)&#123;
+            switch(c)&#123;
+                case &#39;L&#39;:l++;break;
+                case &#39;R&#39;:l--;break;
+                case &#39;U&#39;:u++;break;
+                case &#39;D&#39;:u--;break;
+            &#125;   
+        &#125;
+        return l == u &amp;&amp; l == 0;        
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="929-Unique-Email-Addresses"><a href="#929-Unique-Email-Addresses" class="headerlink" title="929. Unique Email Addresses"></a>929. Unique Email Addresses</h3><p><strong>题目描述</strong>：</p>
+<p>For example, in <code>alice@leetcode.com</code>, <code>alice</code> is the local name, and <code>leetcode.com</code> is the domain name.</p>
+<p>local name：如果有”.”，忽略，如果有”+”，第一个加号之后的都忽略，可用来过滤邮件（这两条规则对于domain name不适用）</p>
+<p>返回能够收到邮件的不同地址个数。</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: [&quot;test.email+alex@leetcode.com&quot;,&quot;test.e.mail+bob.cathy@leetcode.com&quot;,&quot;testemail+david@lee.tcode.com&quot;]
+Output: 2
+Explanation: &quot;testemail@leetcode.com&quot; and &quot;testemail@lee.tcode.com&quot; actually receive mails
+</code></pre>
+<h4 id="solution-遍历"><a href="#solution-遍历" class="headerlink" title="solution-遍历"></a>solution-遍历</h4><ul>
+<li><p>将email地址分为local和doamin两部分处理，只有两部分都满足题目要求时，将处理的结果拼接成合法的地址，insert到set中，最后返回set中的地址个数。</p>
+</li>
+<li><p>时间：O(n)，n是email的个数；空间：O(n)</p>
+</li>
+<li><p>看别人比较快的代码，似乎domain部分不需要做判断</p>
+</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    int numUniqueEmails(vector&lt;string&gt;&amp; emails) &#123;
+        unordered_set&lt;string&gt;res; //用set存储唯一的地址
+        
+        for(string email : emails)&#123;
+            int pos = email.find(&quot;@&quot;),len = email.size();
+            string ret1 = &quot;&quot;;
+            
+            string local(email,0,pos);
+            string domain(email,pos+1,len-pos);
+            
+            bool isLocal = checkLocal(local,ret1);
+            //bool isDomain = checkDomain(domain);
+            
+// &amp;&amp; isDomain
+            if(isLocal)&#123;
+                //cout&lt;&lt;ret1+&quot;@&quot;+domain&lt;&lt;endl;
+                 res.insert(ret1+&quot;@&quot;+domain);
+            &#125;               
+        &#125;
+        return res.size();
+        
+    &#125;
+    bool checkLocal(string local, string &amp;ret1)&#123;
+        for(char c : local)&#123;
+            if(c == &#39;.&#39;)//点则跳过，
+                continue;
+            else if(c == &#39;+&#39;)//之后的都忽略
+                break;
+            else
+                ret1+=c;
+        &#125;
+        return true;
+    &#125;
+    //没看懂题目，domain里面原来可以有多个&#39;.&#39;
+    /*bool checkDomain(string domain)&#123;
+        for(char c : domain)&#123;
+            if((c &gt;= &#39;a&#39; &amp;&amp; c &lt;= &#39;z&#39;) || c == &#39;.&#39;)//记得加等号！！！
+                continue;
+            else
+                return false;
+        &#125;
+        return true;
+
+    &#125;*/
+&#125;;
+</code></pre>
+<h3 id="557-Reverse-Words-in-a-String-III"><a href="#557-Reverse-Words-in-a-String-III" class="headerlink" title="557. Reverse Words in a String III"></a>557. Reverse Words in a String III</h3><p><strong>题目描述</strong>：</p>
+<p>Given a string, you need to reverse the order of characters in each  word within a sentence while still preserving whitespace and initial  word order.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: &quot;Let&#39;s take LeetCode contest&quot;
+Output: &quot;s&#39;teL ekat edoCteeL tsetnoc&quot;
+</code></pre>
+<h4 id="solution-2"><a href="#solution-2" class="headerlink" title="solution"></a>solution</h4><pre><code class="C++">class Solution &#123;
+public:
+    string reverseWords(string s) &#123;
+        int len = s.size();
+        int beg = 0;
+        int pos = s.find(&quot; &quot;,0);//老年人的劝告，少用这种find空格的方式
+        while(pos != std::string::npos)&#123;
+            reverseWord(s,beg,pos-1);
+            beg = pos+1;
+            pos = s.find(&quot; &quot;,beg);
+        &#125;
+        reverseWord(s,beg,len-1);
+        return s;
+        
+    &#125;
+    void reverseWord(string&amp; str,int beg, int en)&#123;
+        for(int i = beg,j = en; i &lt; j; i++,j--)&#123;
+            str[i] ^= str[j];
+            str[j] ^= str[i];
+            str[i] ^= str[j];
+        &#125;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="344-Reverse-String"><a href="#344-Reverse-String" class="headerlink" title="344. Reverse String"></a>344. Reverse String</h3><p>题目描述：</p>
+<p>Write a function that reverses a string. The input string is given as an array of characters <code>char[]</code>.</p>
+<p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array in-place</strong> with O(1) extra memory.</p>
+<p>You may assume all the characters consist of <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/ASCII#Printable_characters">printable ascii characters</a>.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: [&quot;h&quot;,&quot;e&quot;,&quot;l&quot;,&quot;l&quot;,&quot;o&quot;]
+Output: [&quot;o&quot;,&quot;l&quot;,&quot;l&quot;,&quot;e&quot;,&quot;h&quot;]
+</code></pre>
+<h4 id="solution1-按异或操作符实现元素交换"><a href="#solution1-按异或操作符实现元素交换" class="headerlink" title="solution1-按异或操作符实现元素交换"></a>solution1-按异或操作符实现元素交换</h4><ul>
+<li>看运行时间，似乎也不是很有效</li>
+<li>时间O(n)，空间O(1)</li>
+<li>swap：和1的做法差不多，但是时间会少一些</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    void reverseString(vector&lt;char&gt;&amp; s) &#123;
+        char tmp;
+        int len = s.size();
+        for(int i = 0; i &lt; len/2; i++)&#123;
+            tmp = s.at(i) ;
+            s.at(i) = s.at(len - i - 1);
+            s.at(len - i - 1) = tmp;
+        &#125;
+    &#125;
+&#125;;
+</code></pre>
+<h4 id="solution2-用string的库函数-reverse"><a href="#solution2-用string的库函数-reverse" class="headerlink" title="solution2-用string的库函数.reverse"></a>solution2-用string的库函数.reverse</h4><pre><code class="C++">class Solution &#123;
+public:
+    void reverseString(vector&lt;char&gt;&amp; s) &#123;
+        reverse(s.begin(),s.end());
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="1170-Compare-Strings-by-Frequency-of-the-Smallest-Character"><a href="#1170-Compare-Strings-by-Frequency-of-the-Smallest-Character" class="headerlink" title="1170. Compare Strings by Frequency of the Smallest Character"></a>1170. Compare Strings by Frequency of the Smallest Character</h3><p><strong>题目描述</strong></p>
+<p>Let’s define a function <code>f(s)</code> over a non-empty string <code>s</code>, which <strong>calculates the frequency of the smallest character</strong> in <code>s</code>. For example, if <code>s = &quot;dcce&quot;</code> then <code>f(s) = 2</code> because the smallest character is <code>&quot;c&quot;</code> and its frequency is 2.</p>
+<p>Now, given string arrays <code>queries</code> and <code>words</code>, return an integer array <code>answer</code>, where each <code>answer[i]</code> is the number of words such that <code>f(queries[i])</code> &lt; <code>f(W)</code>, where <code>W</code> is a word in <code>words</code>.</p>
+<p>answer的个数和queries的个数一样，值的范围是[0,w.size()];</p>
+<p><strong>Example 2:</strong></p>
+<pre><code>Input: queries = [&quot;bbb&quot;,&quot;cc&quot;], words = [&quot;a&quot;,&quot;aa&quot;,&quot;aaa&quot;,&quot;aaaa&quot;]
+Output: [1,2]
+Explanation: On the first query only f(&quot;bbb&quot;) &lt; f(&quot;aaaa&quot;). On the second query both f(&quot;aaa&quot;) and f(&quot;aaaa&quot;) are both &gt; f(&quot;cc&quot;).
+</code></pre>
+<h4 id="solution-sort"><a href="#solution-sort" class="headerlink" title="solution-sort"></a>solution-sort</h4><ul>
+<li>没有任何技术含量的，一步步按照人脑实现</li>
+<li>先分别统计最小字符的个数，然后进行比较</li>
+<li>时间：O(n^2)，n是字符的个数，空间：O(3n)，包括存储次数，以及结果的vector</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    //计算每个字符串内最小的字符出现的次数
+        int numbers(string query)&#123;
+            int num1 = 1;
+            char tmp = query[0];
+
+            for(int i = 1; i&lt; query.size();i++)&#123;
+                if(query[i] == tmp)&#123;
+                    num1++;
+                &#125;else
+                    break;
+            &#125;
+            return num1;
+    &#125;
+    
+    vector&lt;int&gt; numSmallerByFrequency(vector&lt;string&gt;&amp; queries, vector&lt;string&gt;&amp; words) &#123;
+        
+        vector&lt;int&gt; q,w;
+        
+    //分别计算queries和words中字符串的最小字符个数
+        for(string query:queries)&#123;
+            sort(query.begin(),query.end()); 
+            int numq = numbers(query);
+            q.push_back(numq);
+            
+        &#125;
+            
+        for(string word:words)&#123;
+            sort(word.begin(),word.end());            
+            int numw = numbers(word); 
+            w.push_back(numw);
+        &#125;
+       
+        //统计结果
+        //sort(q.begin(),q.end());//输出时不能改变原来的顺序
+        sort(w.begin(),w.end());
+    
+        vector&lt;int&gt;res;
+        int lenw = w.size();
+        for(int numq : q)&#123;
+            int ret = 0;
+            for(int i = 0; i &lt; lenw; i++)&#123;
+                if(numq &lt; w[i])&#123;
+                    ret = lenw-i;
+                    break;
+                &#125;                    
+            &#125;
+            res.push_back(ret);
+        &#125;
+        return res;
+    &#125;
+&#125;;
+</code></pre>
+<h4 id="solution2-比较精巧，但是得仔细理解"><a href="#solution2-比较精巧，但是得仔细理解" class="headerlink" title="solution2-比较精巧，但是得仔细理解"></a>solution2-比较精巧，但是得仔细理解</h4><pre><code>class Solution &#123;
+public:
+    //用hash表的形式获取字符串的最小字符出现频率，这样就不需要对原串进行排序了
+    int getF(string s)&#123;
+        int f[26] = &#123;0,&#125;;
+        for(char c:s)&#123;
+            f[c-&#39;a&#39;]++;
+        &#125;
+        for(int i: f)&#123;
+            if(i &gt; 0)
+                return i;
+        &#125;
+        return 0;
+    &#125;
+    
+    vector&lt;int&gt; numSmallerByFrequency(vector&lt;string&gt;&amp; queries, vector&lt;string&gt;&amp; words) &#123;
+        vector&lt;int&gt;fr(12,0);//用来统计words中，最小字符串的长度在1-10之间的个数
+        for(string word:words)&#123;
+            int f = getF(word);
+            fr[f]++;
+        &#125;
+        //从后向前统计，大于当前个数的最小字符串是多少个
+        for(int i = 9; i &gt;=0; i--)&#123;
+            fr[i] += fr[i+1];
+        &#125;
+        
+        vector&lt;int&gt;res;
+        for(string query:queries)&#123;
+            int f = getF(query);
+            res.push_back(fr[f+1]);//fr必须是12，如果是11，当这里的f是10，那么访问fr[11]，需要的就是12个元素大小的空间
+        &#125;
+        return res;
+        
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="824-Goat-Latin"><a href="#824-Goat-Latin" class="headerlink" title="824. Goat Latin"></a>824. Goat Latin</h3><p><strong>题目描述</strong></p>
+<p>The rules of Goat Latin are as follows:</p>
+<ul>
+<li>If a word begins with a vowel (a, e, i, o, or u), append <code>&quot;ma&quot;</code> to the end of the word.<pre><code> For example, the word &#39;apple&#39; becomes &#39;applema&#39;.
+</code></pre>
+</li>
+<li>If a word begins with a consonant (i.e. not a vowel), remove the first letter and append it to the end, then add <code>&quot;ma&quot;</code>.<pre><code> For example, the word `&quot;goat&quot;` becomes `&quot;oatgma&quot;`.
+</code></pre>
+</li>
+<li>Add one letter <code>&#39;a&#39;</code> to the end of each word per its word index in the sentence, starting with 1.<pre><code> For example, the first word gets `&quot;a&quot;` added to the end, the second word gets `&quot;aa&quot;` added to the end and so on.
+</code></pre>
+</li>
+</ul>
+<p>Return the final sentence representing the conversion from <code>S</code> to Goat Latin. </p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: &quot;I speak Goat Latin&quot;
+Output: &quot;Imaa peaksmaaa oatGmaaaa atinLmaaaaa&quot;
+</code></pre>
+<h4 id="solution-string库函数使用，下标移动"><a href="#solution-string库函数使用，下标移动" class="headerlink" title="solution-string库函数使用，下标移动"></a>solution-string库函数使用，下标移动</h4><ul>
+<li>主要思路：按照第一个字符是否为元音，分为两种处理方法<ul>
+<li>是元音，直接在结尾添加ma</li>
+<li>不是元音，将子串开头字符添加到结尾，删除开头字符，添加ma</li>
+</ul>
+</li>
+<li>对于拼接好的单词，还需要根据这是第几个单词，在单词最后加入几个a，这个用cnt来记录当前处理的是第几个元素，生成cnt长度的新子串，添加在单词后即可。</li>
+<li>时间：O(n)，n是单词的个数，空间：O(C)，C是a的个数</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    void convert(string&amp; S,int beg, int pos)&#123;
+        switch(S[beg])&#123;
+                case &#39;a&#39;: case &#39;A&#39;:
+                case &#39;e&#39;: case &#39;E&#39;:
+                case &#39;i&#39;: case &#39;I&#39;:
+                case &#39;o&#39;: case &#39;O&#39;:
+                case &#39;u&#39;: case &#39;U&#39;:
+                    S.insert(pos,&quot;ma&quot;);
+                    break;
+                default:
+                    S.insert(pos,1,S[beg]);
+                    S.erase(beg,1);
+                    S.insert(pos,&quot;ma&quot;);
+                    break;            
+            &#125;
+    &#125;
+    
+    string toGoatLatin(string S) &#123;
+        int pos = S.find(&quot; &quot;,0);
+        int beg = 0;
+        int cnt = 0;
+        
+        while(pos!=std::string::npos )&#123;
+            cnt++;
+            convert(S,beg,pos);
+
+            pos = S.find(&quot; &quot;,pos);
+            string tmp(cnt,&#39;a&#39;);
+            S.insert(pos,tmp);
+                    
+            beg = pos+cnt+1;
+            pos = S.find(&quot; &quot;,beg);
+        &#125;
+        
+        cnt++;//处理最后一个元素
+        
+        convert(S,beg,S.size());
+        
+        int len = S.size();
+        string tmp(cnt,&#39;a&#39;);
+        S.insert(len,tmp);
+        return S;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="521-Longest-Uncommon-Subsequence-I"><a href="#521-Longest-Uncommon-Subsequence-I" class="headerlink" title="521. Longest Uncommon Subsequence I"></a>521. Longest Uncommon Subsequence I</h3><p><strong>题目描述</strong></p>
+<p>Given a group of two strings, you need to find the longest uncommon  subsequence of this group of two strings.<br>The longest uncommon subsequence is defined as the longest subsequence  of one of these strings and this subsequence should not be <strong>any</strong> subsequence of the other strings.</p>
+<p>A <strong>subsequence</strong> is a sequence that can be derived from one sequence by deleting some characters without changing the order of the remaining elements. Trivially, any string is a subsequence of itself and an empty<br>string is a subsequence of any string.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: &quot;aba&quot;, &quot;cdc&quot;
+Output: 3
+Explanation: The longest uncommon subsequence is &quot;aba&quot; (or &quot;cdc&quot;), 
+because &quot;aba&quot; is a subsequence of &quot;aba&quot;, 
+but not a subsequence of any other strings in the group of two strings. 
+</code></pre>
+<h4 id="solution-3"><a href="#solution-3" class="headerlink" title="solution"></a>solution</h4><ul>
+<li>看solution，完全是脑筋急转弯</li>
+<li>按道理，要把两个串的所有子序列求出来，对比看有没有子序列才对吧？但是这种情况是指，有公共子序列。对于没有的情况，就是长度最长的串本身。</li>
+<li>时间：O(1)，空间：O(1)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    int findLUSlength(string a, string b) &#123;
+        if(a == b)
+            return -1;
+        int len1 = a.size(),len2 = b.size();
+        return len1&gt;=len2?len1:len2;        
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="917-Reverse-Only-Letters"><a href="#917-Reverse-Only-Letters" class="headerlink" title="917. Reverse Only Letters"></a>917. Reverse Only Letters</h3><p><strong>题目描述</strong></p>
+<p>Given a string <code>S</code>, return the “reversed” string where all  characters that are not a letter stay in the same place, and all letters reverse their positions.</p>
+<p><strong>Example 2:</strong></p>
+<pre><code>Input: &quot;a-bC-dEf-ghIj&quot;
+Output: &quot;j-Ih-gfE-dCba&quot;
+</code></pre>
+<h4 id="solution1-双指针遍历，交换"><a href="#solution1-双指针遍历，交换" class="headerlink" title="solution1-双指针遍历，交换"></a>solution1-双指针遍历，交换</h4><ul>
+<li>最左，最右双指针遍历<ul>
+<li>遇到非字母的，则跳过</li>
+<li>只有当两个都是字母时交换；</li>
+</ul>
+</li>
+<li>时间：O(n)，空间：O(1)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    string reverseOnlyLetters(string S) &#123;
+        int len = S.size();
+        int left = 0, right = len-1;
+        while(left &lt; right)&#123;
+            char l = S[left] ,r = S[right];
+            if(isLetter(l)  &amp;&amp; isLetter(r))&#123;
+                char tmp = S[left];
+                S[left] = S[right];
+                S[right] = tmp;
+                left++;
+                right--;
+            &#125;else if(!isLetter(l) &amp;&amp; !isLetter(r))&#123;
+                left++;
+                right--;
+            &#125;else if(!isLetter(l))
+                left++;
+            else
+                right--;
+        &#125;
+        return S;
+        
+    &#125;
+    bool isLetter(char s)&#123;
+        if((s &gt;= &#39;a&#39; &amp;&amp; s &lt;= &#39;z&#39;) || (s &gt;=&#39;A&#39; &amp;&amp; s &lt;= &#39;Z&#39;) )
+            return true;
+        else 
+            return false;
+    &#125;
+&#125;;
+</code></pre>
+<h4 id="solution2-stack"><a href="#solution2-stack" class="headerlink" title="solution2-stack"></a>solution2-stack</h4><ul>
+<li>看解答，发现还是很有意思的一个思路，因为需要逆序字符串，因此可以用栈，这道题目就是将字符串逆序输出，其他字符保持在原位置不变。</li>
+<li>时间：O(2n),需要扫描两边原字符串，空间：O(n)，额外的stack及返回字符串</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    bool isLetter(char s)&#123;
+        if((s &gt;= &#39;a&#39; &amp;&amp; s &lt;= &#39;z&#39;) || (s &gt;=&#39;A&#39; &amp;&amp; s &lt;= &#39;Z&#39;) )
+            return true;
+        else 
+            return false;
+    &#125;
+    
+    string reverseOnlyLetters(string S) &#123;
+        stack&lt;char&gt; tmp;
+        for(char c:S)&#123;
+            if(isLetter(c))
+                tmp.push(c);
+        &#125;
+        string res;
+        for(char c:S)&#123;
+            if(isLetter(c))&#123;
+                res.append(1,tmp.top());
+                tmp.pop();
+            &#125;else
+                res.append(1,c);      
+        &#125;
+        return res;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="788-Rotated-Digits"><a href="#788-Rotated-Digits" class="headerlink" title="788. Rotated Digits"></a>788. Rotated Digits</h3><p><strong>题目描述</strong></p>
+<p>A number is valid if each digit remains a digit after rotation. 0, 1,  and 8 rotate to themselves; 2 and 5 rotate to each other; 6 and 9  rotate to each other, and the rest of the numbers do not rotate to any  other number and become invalid.</p>
+<p>Now given a positive number <code>N</code>, how many numbers X from <code>1</code> to <code>N</code> are good?</p>
+<p><strong>Example</strong>:</p>
+<pre><code>Input: 10
+Output: 4
+Explanation: 
+There are four good numbers in the range [1, 10] : 2, 5, 6, 9.
+Note that 1 and 10 are not good numbers, since they remain unchanged after rotating.
+</code></pre>
+<h4 id="solution-dp记录表"><a href="#solution-dp记录表" class="headerlink" title="solution-dp记录表"></a>solution-dp记录表</h4><ul>
+<li>本以为代码越敲，就会渐入佳境，结果却是：连题目都读不懂了呜呜呜</li>
+<li>这道题乍得一看有点难，看了别人的解法才知道题目想表达的意思。</li>
+<li>越来越大的数字都是由小数字组成的，那么通过读小数字是否为good num就可以判断大数是否为good</li>
+<li>当数字为good时，必须包含2||5||6||9，同时可以包含0，1，8</li>
+<li>只包含0，1，8 时只能说是valid的，不能是good的</li>
+<li>当数字包含 3，4，7时，一定是invalid的</li>
+<li>时间：O(n)，n是数字的个数，空间，O(n)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    int rotatedDigits(int N) &#123;
+        int dp[N+1] = &#123;0,&#125; ;
+        int cnt = 0;
+        for(int i = 0; i &lt;= N;i++)&#123;
+        if(i &lt; 10)&#123;
+            if(i == 0 || i == 1 || i == 8)
+                dp[i] = 1;
+            else if(i == 2 || i == 5 || i == 6 || i == 9)&#123;       
+                dp[i] = 2; 
+                cnt++;
+            &#125;
+        &#125;else&#123;
+            int a = dp[i/10], b = dp[i%10];
+            if(a == 1 &amp;&amp; b == 1)
+                dp[i] = 1;
+            else if(a &gt;= 1 &amp;&amp; b &gt;= 1)&#123;
+                dp[i] = 2;//说明这个数的组成是2，5，6，9，0，1，8
+                cnt++;               
+                &#125;      
+            &#125;
+        &#125;
+        return cnt;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="696-Count-Binary-Substrings"><a href="#696-Count-Binary-Substrings" class="headerlink" title="696. Count Binary Substrings"></a>696. Count Binary Substrings</h3><p><strong>题目描述</strong></p>
+<p>Give a string <code>s</code>, count the number of non-empty  (contiguous) substrings that have the same number of 0’s and 1’s, and  all the 0’s and all the 1’s in these substrings are grouped  consecutively.  </p>
+<p>Substrings that occur multiple times are counted the number of times they occur.</p>
+<p><strong>Example 2:</strong></p>
+<pre><code>Input: &quot;10101&quot;
+Output: 4
+Explanation: There are 4 substrings: &quot;10&quot;, &quot;01&quot;, &quot;10&quot;, &quot;01&quot; that have equal number of consecutive 1&#39;s and 0&#39;s.
+</code></pre>
+<h4 id="solution-线性扫描"><a href="#solution-线性扫描" class="headerlink" title="solution-线性扫描"></a>solution-线性扫描</h4><ul>
+<li>遇到相同的就加，遇到不同的就开始统计，看这种连续性是几个</li>
+<li>相当于把1和0分成group</li>
+<li>时间：O(n),空间：O(1)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    int countBinarySubstrings(string s) &#123;
+        int len = s.size();
+        int pre = 0,cur = 1, sum = 0;//pre是上一个group中相同元素的个数，cur是当前的，这就是相当于对0和1分组
+
+        for(int i = 1; i &lt; len; i++)&#123;
+            if(s[i] == s[i-1])&#123;
+                cur++;
+            &#125;else&#123;
+                sum += min(cur,pre);
+                pre = cur;
+                cur = 1;
+            &#125;            
+        &#125;
+        sum += min(cur,pre);
+        return sum;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="937-Reorder-Data-in-Log-Files"><a href="#937-Reorder-Data-in-Log-Files" class="headerlink" title="937. Reorder Data in Log Files"></a>937. Reorder Data in Log Files</h3><p><strong>题目描述</strong></p>
+<p>Reorder the logs so that all of the letter-logs come before any  digit-log.  The letter-logs are ordered lexicographically ignoring  identifier, with the identifier used in case of ties.  The digit-logs  should be put in their original order.</p>
+<p>Return the final order of the logs.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: logs = [&quot;dig1 8 1 5 1&quot;,&quot;let1 art can&quot;,&quot;dig2 3 6&quot;,&quot;let2 own kit dig&quot;,&quot;let3 art zero&quot;]
+Output: [&quot;let1 art can&quot;,&quot;let3 art zero&quot;,&quot;let2 own kit dig&quot;,&quot;dig1 8 1 5 1&quot;,&quot;dig2 3 6&quot;]
+</code></pre>
+<h4 id="solution-stable-sort"><a href="#solution-stable-sort" class="headerlink" title="solution-stable_sort"></a>solution-stable_sort</h4><ul>
+<li>通过对标识符后的第一个字符进行比较，得出是isalpha or isdigit</li>
+<li>isalpha,则进入结果vector，否则，进入临时vector<ul>
+<li>这样分开装的原因是，两者的排序要求不同，对于前者，则需要对标识符之外的串进行比较，而对于后者，则简单的排在前者后面就可以。</li>
+</ul>
+</li>
+<li>比较花时间的地方就是：如何对vector中的字符串，去掉某部分后进行大小比较，用comparator，要注意的是：cmp函数写在类内需要用static关键字修饰，类外则可以不用。</li>
+<li>时间：O(n)，n是字符串的个数，空间：O(n)，两部分用于存储字符串的vector</li>
+</ul>
+<pre><code>bool cmp(string str1, string str2)&#123;
+        int pos1 = str1.find(&#39; &#39;);
+        int pos2 = str2.find(&#39; &#39;);
+        string sa = str1.substr(pos1+1);
+        string sb = str2.substr(pos2+1);
+        if(sa.compare(sb) == 0)//如果除了标识符之外的地方相等，那么就要对标识符也做判断进行排序了
+            return str1 &lt; str2;
+        else
+            return sa &lt; sb;
+    &#125;
+
+class Solution &#123;
+public:
+    //很迷，就一个static搞了我半个小时,如果放在类内作为比较函数，则必须要加static
+    /*
+    static bool cmp(string str1, string str2)&#123;
+        int pos1 = str1.find(&#39; &#39;);
+        int pos2 = str2.find(&#39; &#39;);
+        return str1.substr(pos1+1) &lt; str2.substr(pos2+1);
+    &#125;
+    */
+    vector&lt;string&gt; reorderLogFiles(vector&lt;string&gt;&amp; logs) &#123;
+        vector&lt;string&gt;res;
+        vector&lt;string&gt;tmp;
+        
+        for(string str:logs)&#123;
+            int pos = str.find(&#39; &#39;);//find还可以用来查找某个完整的单词呢·就是string了
+            if(isdigit(str[pos+1]))
+                tmp.push_back(str);
+            else
+                res.push_back(str);
+        &#125;
+        stable_sort(res.begin(),res.end(),cmp);//不仅要比较，对于后面都相等的，还需要保持原来的顺序 
+        for(string s:tmp)&#123;
+            res.push_back(s);
+        &#125;
+        return res;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="1071-Greatest-Common-Divisor-of-Strings"><a href="#1071-Greatest-Common-Divisor-of-Strings" class="headerlink" title="1071. Greatest Common Divisor of Strings"></a>1071. Greatest Common Divisor of Strings</h3><p>For strings <code>S</code> and <code>T</code>, we say “<code>T</code> divides <code>S</code>“ if and only if <code>S = T + ... + T</code>  (<code>T</code> concatenated with itself 1 or more times)</p>
+<p>Return the largest string <code>X</code> such that <code>X</code> divides str1 and <code>X</code> divides str2.</p>
+<h4 id="solution-gcd"><a href="#solution-gcd" class="headerlink" title="solution-gcd"></a>solution-gcd</h4><ul>
+<li>就是两个整数的最大公约数的变形，还做了一个多小时。。。。蠢啊</li>
+<li>自己写的代码也一眼难尽，丑陋！</li>
+<li>时间：O(n)，空间：O(1)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    string gcdOfStrings(string str1, string str2) &#123;
+        //使得较长串始终为第一个串,这tm都能写错，这谁顶得住？？
+        if(str1.size() &lt; str2.size())&#123;
+            string tmp = str2;
+            str2 = str1;
+            str1 = tmp;
+        &#125;
+        int len2 = str2.size();
+        //==0，表示两个字符串相等
+        //&gt;0，表示被比较字符串小
+        if(str1.compare(0,len2,str2) != 0)
+            return &quot;&quot;;
+        
+        if(str2.empty())
+            return str1;
+        
+        return gcdOfStrings(str2,str1.substr(len2));
+    &#125;
+&#125;;
+</code></pre>
+<h4 id="solution-gcd-1"><a href="#solution-gcd-1" class="headerlink" title="solution-gcd"></a>solution-gcd</h4><ul>
+<li>别人的解释，对于两个串，S1 = nT，S2 = mT，n&gt;m，S3 = (n-m)T = xT; S1 = xT, S2 = mT,…,直到S2为空，返回S1，因为S1始终是长一点的那个。</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    string gcdOfStrings(string str1, string str2) &#123;
+        int len2 = str2.size();
+        if(str1.size() &lt; len2)
+            return gcdOfStrings(str2,str1);
+        if(str2.empty())
+            return str1;
+        if(str1.compare(0,len2,str2) != 0)
+            return &quot;&quot;;
+        return gcdOfStrings(str1.substr(len2),str2);//str2始终是短的那个，所以一直在后面
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="13-Roman-to-Integer"><a href="#13-Roman-to-Integer" class="headerlink" title="13. Roman to Integer"></a>13. Roman to Integer</h3><p>Roman numerals are represented by seven different symbols: <code>I</code>, <code>V</code>, <code>X</code>, <code>L</code>, <code>C</code>, <code>D</code> and <code>M</code>.</p>
+<pre><code>Symbol       Value
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000
+</code></pre>
+<p>For example, two is written as <code>II</code> in Roman numeral, just two one’s added together. Twelve is written as, <code>XII</code>, which is simply <code>X</code> + <code>II</code>. The number twenty seven is written as <code>XXVII</code>, which is <code>XX</code> + <code>V</code> + <code>II</code>.</p>
+<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <code>IIII</code>. Instead, the number four is written as <code>IV</code>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <code>IX</code>. There are six instances where subtraction is used:</p>
+<ul>
+<li><code>I</code> can be placed before <code>V</code> (5) and <code>X</code> (10) to make 4 and 9. </li>
+<li><code>X</code> can be placed before <code>L</code> (50) and <code>C</code> (100) to make 40 and 90. </li>
+<li><code>C</code> can be placed before <code>D</code> (500) and <code>M</code> (1000) to make 400 and 900.</li>
+</ul>
+<p>Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.</p>
+<p><strong>Example 5:</strong></p>
+<pre><code>Input: &quot;MCMXCIV&quot;
+Output: 1994
+Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+</code></pre>
+<ul>
+<li>总的来说，解题思路是，结果是每一位的和，但是存在加完了前面的需要减去的情况，比如IV，对于这种特例，两种解决方案。</li>
+</ul>
+<h3 id="solution1-hash-map"><a href="#solution1-hash-map" class="headerlink" title="solution1-hash_map"></a>solution1-hash_map</h3><ul>
+<li>从后向前遍历，如果s[i] &lt; s[i+1]，那么需要减去s[i]，否则加上就行。</li>
+<li>时间：O(n)，空间：O(1)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    int romanToInt(string s)&#123;
+        unordered_map&lt;char,int&gt; M = &#123;&#123;'I',1&#125;,
+                                     &#123;'V',5&#125;,
+                                     &#123;'X',10&#125;,
+                                     &#123;'L',50&#125;,
+                                     &#123;'C',100&#125;,
+                                     &#123;'D',500&#125;,
+                                     &#123;'M',1000&#125;&#125;;
+        int sum = M[s.back()];
+        for(int i = s.size() - 2; i &gt;= 0; i--)&#123;
+            if(M[s[i]] &lt; M[s[i+1]])
+                sum -= M[s[i]];
+            else 
+                sum += M[s[i]];
+        &#125;
+        return sum;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="solution2"><a href="#solution2" class="headerlink" title="solution2-"></a>solution2-</h3><ul>
+<li>先搜索字符串内有没有这类组合，有的话分别减去2，20，200，接着从前向后遍历，依次相加即可；因为加的过程中会多加</li>
+<li>时间：O(n)，空间：O(2n)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    int romanToInt(string s) &#123;
+        int sum = 0;
+        if(s.find(&quot;IV&quot;,0) != string::npos) sum-=2;//原本是加4，但是后面遍历加的时候是先加了1，又加了5，就是多加了2
+        if(s.find(&quot;IX&quot;,0) != string::npos) sum-=2;
+        if(s.find(&quot;XL&quot;,0) != string::npos) sum-=20;
+        if(s.find(&quot;XC&quot;,0) != string::npos) sum-=20;
+        if(s.find(&quot;CD&quot;,0) != string::npos) sum-=200;
+        if(s.find(&quot;CM&quot;,0) != string::npos) sum-=200;
+        
+        for(char c: s)&#123;
+            switch(c)&#123;
+                case &#39;I&#39;:sum+=1;break;
+                case &#39;V&#39;:sum+=5;break;
+                case &#39;X&#39;:sum+=10;break;
+                case &#39;L&#39;:sum+=50;break;
+                case &#39;C&#39;:sum+=100;break;
+                case &#39;D&#39;:sum+=500;break;
+                case &#39;M&#39;:sum+=1000;break;                    
+            &#125;
+        &#125;
+        return sum;
+        
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="520-Detect-Capital"><a href="#520-Detect-Capital" class="headerlink" title="520. Detect Capital"></a>520. Detect Capital</h3><p><strong>题目描述</strong></p>
+<p>Given a word, you need to judge whether the usage of capitals in it is right or not.</p>
+<p>We define the usage of capitals in a word to be right when one of the following cases holds:</p>
+<ol>
+<li>All letters in this word are capitals, like “USA”.</li>
+<li>All letters in this word are not capitals, like “leetcode”.</li>
+<li>Only the first letter in this word is capital, like “Google”.</li>
+</ol>
+<p> Otherwise, we define that this word doesn’t use capitals in a right way.  </p>
+<h4 id="solution-4"><a href="#solution-4" class="headerlink" title="solution"></a>solution</h4><ul>
+<li>字符串的前两位决定了接下来的字符串需要是大写还是小写才能合法，如果是大写，那么转入判断大写的函数，一旦发现小写就返回false，反之亦然。</li>
+<li>注意要判断 word 只有一个字符的特例</li>
+<li>时间：O(n)，空间：(1)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    bool detectCapitalUse(string word) &#123;
+        if(word.size() == 1)
+            return true;
+        if(word[0] &gt;= &#39;A&#39; &amp;&amp; word[0] &lt;= &#39;Z&#39;)&#123;
+            if(word[1] &gt;= &#39;A&#39; &amp;&amp; word[1] &lt;= &#39;Z&#39;)
+                return isUpper(word.substr(2));
+            else 
+                return isLower(word.substr(2));
+        &#125;
+        else 
+            return isLower(word.substr(1));        
+    &#125;
+    bool isUpper(string str)&#123;
+        for(char c:str)&#123;
+            if(c &lt; &#39;A&#39; || c &gt; &#39;Z&#39;)
+                return false;
+        &#125;
+        return true;
+    &#125;
+    bool isLower(string str)&#123;
+        for(char c:str)&#123;
+            if(c &lt; &#39;a&#39; || c &gt; &#39;z&#39;)
+                return false;
+        &#125;
+        return true;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="606-Construct-String-from-Binary-Tree"><a href="#606-Construct-String-from-Binary-Tree" class="headerlink" title="606. Construct String from Binary Tree"></a>606. Construct String from Binary Tree</h3><p>You need to construct a string consists of parenthesis and integers from a binary tree with the preorder traversing way.</p>
+<p><strong>Example 2:</strong></p>
+<pre><code>Input: Binary tree: [1,2,3,null,4]
+       1
+     /   \
+    2     3
+     \  
+      4 
+
+Output: &quot;1(2()(4))(3)&quot;
+</code></pre>
+<ul>
+<li>需要注意的是，对于字符串使用“+”,则连续拼接的不能是两个常字符串，需要把整数转换为字符串<ul>
+<li>在整数后面+””强制类型转换为字符串</li>
+<li>to_string(整数)</li>
+<li>ostringstre</li>
+<li>sprintf等</li>
+</ul>
+</li>
+</ul>
+<h4 id="solution1-递归，先序遍历"><a href="#solution1-递归，先序遍历" class="headerlink" title="solution1-递归，先序遍历"></a>solution1-递归，先序遍历</h4><ul>
+<li>每到一个节点，只考虑以这个节点为根的子树</li>
+<li>三种情况<ul>
+<li>左右孩子都没有，则返回当前值即可</li>
+<li>有左孩子，但是没有右孩子，给左孩子加上括号，遍历左孩子即可</li>
+<li>有左右孩子，给左孩子及右孩子加括号，分别遍历</li>
+</ul>
+</li>
+<li>值得注意的是，没有单独考虑有右孩子，没左孩子的情况，这是因为，左孩子不管有没有，都不需要特殊处理，是需要加括号的，而右孩子没有的情况下，是没有括号的。</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    string tree2str(TreeNode* t) &#123;
+        if(t == NULL)
+            return &quot;&quot;;
+        string str = to_string(t-&gt;val);//拼接的时候一直有问题，必须转成字符串？？？？？fuck，我的一个小时。。。
+        
+        if((t-&gt;left) == NULL &amp;&amp; (t-&gt;right) == NULL)
+            return  str; 
+        if((t-&gt;right) == NULL)
+            return str + &quot;(&quot; + tree2str(t-&gt;left) + &quot;)&quot;;
+        return str + &quot;(&quot; + tree2str(t-&gt;left) + &quot;)(&quot; + tree2str(t-&gt;right) + &quot;)&quot;;
+    &#125;
+&#125;;
+</code></pre>
+<h4 id="solution2-stack-1"><a href="#solution2-stack-1" class="headerlink" title="solution2-stack"></a>solution2-stack</h4><ul>
+<li>先序遍历，顺序为根，左，右</li>
+<li>对每一个未访问的当前节点，设置为已访问，res+=”(“ + to_string(val)</li>
+<li>对当前节点的左右孩子进行判断，还是三种情况：<ul>
+<li>如果是有右孩子但是没左孩子，那么结果中直接加上”()”，不需要将元素入栈</li>
+<li>如果有右孩子，右孩子入栈</li>
+<li>如果有左孩子，左孩子入栈，这样的先后顺序使得左孩子可以先被访问</li>
+</ul>
+</li>
+<li>每一步只处理一个节点，当前栈顶节点，被访问过则弹出，没被访问过则访问</li>
+<li>时间：O(n)，空间：O(n)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    string tree2str(TreeNode* t) &#123;
+        if(t == NULL)
+            return &quot;&quot;;
+        stack&lt;TreeNode*&gt; s;
+        set&lt;TreeNode*&gt; visited;
+        string res = &quot;&quot;;
+        s.push(t);
+        
+        while(!s.empty())&#123;
+            t = s.top();
+            if(visited.find(t) != visited.end())&#123;
+                s.pop();
+                res+= &quot;)&quot;;
+                //cout&lt;&lt;res&lt;&lt;endl;
+            &#125;else&#123;
+                visited.insert(t);
+                res+=&quot;(&quot; + to_string(t-&gt;val);
+                if(t-&gt;left == NULL &amp;&amp; t-&gt;right != NULL)
+                    res+=&quot;()&quot;;
+                if(t-&gt;right != NULL)//先push右边，再push左边，这样就可以先访问左边，后右边
+                    s.push(t-&gt;right);
+                if(t-&gt;left != NULL)
+                    s.push(t-&gt;left);
+            &#125;
+        &#125;
+        return res.substr(1,res.size()-2);//为了通用性，给第一个元素也是加了左右括号，最后要去掉
+    &#125;
+            
+&#125;;
+</code></pre>
+<h3 id="383-Ransom-Note"><a href="#383-Ransom-Note" class="headerlink" title="383. Ransom Note"></a>383. Ransom Note</h3><p><strong>题目描述</strong></p>
+<p>ransom note 可以被magazine 构造，就是看 magazine中拥有的字符，是否足够形成ransome note，不用管字母顺序</p>
+<p><strong>example</strong></p>
+<pre><code>canConstruct(&quot;a&quot;, &quot;b&quot;) -&gt; false
+canConstruct(&quot;aa&quot;, &quot;ab&quot;) -&gt; false
+canConstruct(&quot;aa&quot;, &quot;aab&quot;) -&gt; true
+</code></pre>
+<h4 id="solution1-库函数调用"><a href="#solution1-库函数调用" class="headerlink" title="solution1-库函数调用"></a>solution1-库函数调用</h4><ul>
+<li>有点类似原串中找子序列的感觉，依次比较就完事了，结果却是理解错题目了。。</li>
+<li>不用管字母出现的次序</li>
+<li>时间：O(n)，空间：O(1)，效率非常低</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    bool canConstruct(string ransomNote, string magazine) &#123;   
+        for(char c : ransomNote)&#123;
+            int pos = magazine.find(c);
+            if(pos != string::npos)
+                magazine.erase(pos,1);
+            else
+                return false;
+        &#125;
+        return true;
+    &#125;
+&#125;;
+</code></pre>
+<h4 id="solution2-map-数组"><a href="#solution2-map-数组" class="headerlink" title="solution2-map\数组"></a>solution2-map\数组</h4><ul>
+<li>对原串中有的字符进行映射，依次累加对应字符的次数</li>
+<li>对匹配串中的字符进行映射，一旦字符对应次数小于=0，则说明没法匹配了，返回false</li>
+</ul>
+<pre><code class="C++">/*
+class Solution &#123;
+public:
+    bool canConstruct(string ransomNote, string magazine) &#123;
+        unordered_map&lt;char,int&gt; maga(26);
+        for(char c: magazine)&#123;
+            maga[c]++;
+        &#125;
+        for(char c : ransomNote)&#123;
+            if(maga[c] &lt;= 0 )
+                return false;
+            maga[c]--;
+        &#125;
+        return true;
+    &#125;
+&#125;;*/
+class Solution &#123;
+public:
+    bool canConstruct(string ransomNote, string magazine) &#123;
+        int maga[26] = &#123;0,&#125;;
+        for(char c: magazine)&#123;
+            maga[c-&#39;a&#39;]++;
+        &#125;
+        for(char c : ransomNote)&#123;
+            if(maga[c-&#39;a&#39;] &lt;= 0 )
+                return false;
+            maga[c-&#39;a&#39;]--;
+        &#125;
+        return true;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="387-First-Unique-Character-in-a-String"><a href="#387-First-Unique-Character-in-a-String" class="headerlink" title="387. First Unique Character in a String"></a>387. First Unique Character in a String</h3><p><strong>题目描述</strong></p>
+<p>Given a string, find the first non-repeating character in it and return it’s index. If it doesn’t exist, return -1.</p>
+<p><strong>example</strong></p>
+<pre><code>s = &quot;loveleetcode&quot;,
+return 2.
+</code></pre>
+<h4 id="solution-map"><a href="#solution-map" class="headerlink" title="solution-map"></a>solution-map</h4><ul>
+<li>时间：O(n)，空间：O(n)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    int firstUniqChar(string s) &#123;
+        int len = s.size();
+        int cnt[26] = &#123;0,&#125;;
+        for(char c:s)
+            cnt[c-&#39;a&#39;]++;
+        //因为要找出第一个单独出现的字符，那么遍历原串就可以是原来的顺序啊 ~~~你怎么这么笨，map仅仅作为一个查询的东西
+        for(int i = 0 ; i &lt; len; i++)&#123;
+            if(cnt[s[i]-&#39;a&#39;] == 1)
+                return i;
+        &#125;
+        return -1;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="541-Reverse-String-II"><a href="#541-Reverse-String-II" class="headerlink" title="541. Reverse String II"></a>541. Reverse String II</h3><p><strong>题目描述</strong></p>
+<p>Given a string and an integer k, you need to reverse the first k  characters for every 2k characters counting from the start of the string. </p>
+<p>If there are less than k characters left, reverse all of them. </p>
+<p>If there are less than 2k but greater than or equal to k characters,  then reverse the first k characters and left the other as original.</p>
+<p><strong>Example:</strong></p>
+<pre><code>Input: s = &quot;abcdefg&quot;, k = 2
+Output: &quot;bacdfeg&quot;
+</code></pre>
+<h4 id="solution-5"><a href="#solution-5" class="headerlink" title="solution"></a>solution</h4><ul>
+<li>将字符串按照2K分组（可能有余数，可能没有），对每个组内的前k个做逆转</li>
+<li>对于最后一个不足2k的，单独处理<ul>
+<li>有k个，逆转</li>
+<li>不够k个，全逆转！！！仔细读题目谢谢！</li>
+</ul>
+</li>
+<li>时间：O(n)，空间：O(1)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    string reverseStr(string s, int k) &#123;
+        int len = s.size();
+        if(len &lt; k)&#123;
+            reverse(s,0,len-1);//对于结束的点要注意
+            return s;
+        &#125;
+
+        //这种情况很容易忽略,都是不看题目的锅
+        if(len &lt; 2*k)&#123;
+            reverse(s,0,k-1);
+        &#125;
+            
+        //len至少是大于2k的
+        int cnt = len/(2*k);
+        
+        int start = 0;
+        for(int i = 0; i &lt; cnt; i++)&#123;
+            start = 2*i*k;
+            reverse(s,start,start+k-1);
+        &#125;
+        start += 2*k;
+        if(len - start &gt;= k)
+            reverse(s,start,start+k-1);
+        if(len - start &lt; k)
+            reverse(s,start,len -1);
+        
+        return s;
+    &#125;
+    
+    void reverse(string&amp; s, int start, int en)&#123;
+        for(int i = start, j = en; i &lt; j; i++,j--)&#123;
+            s[i] ^= s[j];
+            s[j] ^= s[i];
+            s[i] ^= s[j];
+        &#125;
+    &#125;
+&#125;;
+</code></pre>
+<h4 id="solution2-1"><a href="#solution2-1" class="headerlink" title="solution2"></a>solution2</h4><pre><code class="C++">class Solution &#123;
+public:
+    string reverseStr(string s, int k) &#123;
+        int start = 0;
+        int len = s.size();
+        while(start &lt; len)&#123;
+            if(start + k &lt; len)
+                reverse(s.begin()+start, s.begin()+start+k );
+            else
+                reverse(s.begin()+start,s.end());
+            start += k + k; 
+        &#125;
+        return s;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="345-Reverse-Vowels-of-a-String"><a href="#345-Reverse-Vowels-of-a-String" class="headerlink" title="345. Reverse Vowels of a String"></a>345. Reverse Vowels of a String</h3><p><strong>Example 1:</strong></p>
+<pre><code>Input: &quot;hello&quot;
+Output: &quot;holle&quot;
+</code></pre>
+<h4 id="solution-双指针"><a href="#solution-双指针" class="headerlink" title="solution- 双指针"></a>solution- 双指针</h4><ul>
+<li>分别向前，向后扫描，交换元音字母</li>
+<li>时间：O(n)，空间：O(1)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    bool isVowel(char c)&#123;
+        if(c == &#39;a&#39; || c == &#39;A&#39;|| c == &#39;e&#39;|| c == &#39;E&#39;|| c == &#39;i&#39;|| c == &#39;I&#39;|| c == &#39;o&#39;|| c == &#39;O&#39; || c == &#39;u&#39; || c == &#39;U&#39;)
+            return true;
+        else
+            return false;
+    &#125;
+    string reverseVowels(string s) &#123;
+        
+        int len = s.size();
+        int i = 0, j = len-1;
+        while(i &lt; j)&#123;
+            while(i &lt; j &amp;&amp; !isVowel(s[i]))&#123;
+                    i++;
+            &#125;
+             while(i &lt; j &amp;&amp; !isVowel(s[j]))&#123;              
+                    j--;
+            &#125;
+            if(i &lt; j)&#123;
+                cout&lt;&lt;s[i]&lt;&lt;&quot;:&quot;&lt;&lt;s[j]&lt;&lt;endl;
+                char tmp = s[i];
+                s[i] = s[j];
+                s[j] = tmp;                
+            &#125;
+            i++;
+            j--;        
+        &#125;
+        return s;
+    &#125;  
+&#125;;
+</code></pre>
+<h3 id="551-Student-Attendance-Record-I"><a href="#551-Student-Attendance-Record-I" class="headerlink" title="551. Student Attendance Record I"></a>551. Student Attendance Record I</h3><p><strong>题目描述</strong></p>
+<p>You are given a string representing an attendance record for a student. The record only contains the following three characters:  </p>
+<ol>
+<li><strong>‘A’</strong> : Absent. </li>
+<li><strong>‘L’</strong> : Late.</li>
+<li> <strong>‘P’</strong> : Present. </li>
+</ol>
+<p> A student could be rewarded if his attendance record doesn’t contain <strong>more than one ‘A’ (absent)</strong> or <strong>more than two continuous ‘L’ (late)</strong>.    </p>
+<h4 id="solution-统计"><a href="#solution-统计" class="headerlink" title="solution-统计"></a>solution-统计</h4><ul>
+<li> 时间：O(n)，空间：O(1)</li>
+<li>题目得仔细看，一不小心就写错了</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    bool checkRecord(string s) &#123;
+        int len = s.size();
+        int cntA = 0;
+        for(int i = 0; i &lt; len; i++)&#123;
+            if(s[i] == &#39;A&#39;)
+                cntA++;
+        &#125;
+        if(cntA &gt; 1 || s.find(&quot;LLL&quot;) != string::npos)
+            return false;
+        else
+            return true;    
+    &#125;
+&#125;;
+</code></pre>
+<h4 id="solution2-if-else"><a href="#solution2-if-else" class="headerlink" title="solution2-if-else"></a>solution2-if-else</h4><ul>
+<li>别人写的，还没有理解其妙处</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    bool checkRecord(string s) &#123;
+        int l = 0, a = 0;
+        for(char c:s)&#123;
+            if(c == &#39;A&#39;)
+                a++;
+            
+            if(c == &#39;L&#39;)//为啥这里不可以用if else？c不是只能等于一个数？我知道了，对于连续的L，会一直计数，然后下面的if会判断是否已经到了不合格的时候，一旦不连续，则直接被置0，从头开始
+                l++;
+            else
+                l = 0;
+            if(a &gt; 1 || l &gt; 2)
+                return false;
+        &#125;
+        return true;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="415-Add-Strings"><a href="#415-Add-Strings" class="headerlink" title="415. Add Strings"></a>415. Add Strings</h3><p><strong>题目描述</strong></p>
+<p>Given two non-negative integers <code>num1</code> and <code>num2</code> represented as string, return the sum of <code>num1</code> and <code>num2</code></p>
+<h4 id="solution-6"><a href="#solution-6" class="headerlink" title="solution"></a>solution</h4><ul>
+<li>就是小学生加法，一步步加，比如 A+B，需要考虑A长度，B长度，以及进位</li>
+<li>这么简单的题，也能耗个几天才做完，自己写的代码里有一半都有点冗余，所以直接放参考别人写的了</li>
+<li>每次只需要考虑当前位的A[i],B[j],carry</li>
+<li>时间：O(n)，空间：O(n)，n表示相加的数最长长度</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    string addStrings(string num1, string num2) &#123;
+        string res = &quot;&quot;;    
+        int sum = 0;
+        int i = num1.size()-1, j = num2.size()-1,carry = 0;
+        while(i &gt;= 0 || j &gt;= 0 || carry == 1)&#123;
+            int x = i&lt;0?0:num1[i]-&#39;0&#39;;
+            int y = j&lt;0?0:num2[j]-&#39;0&#39;;
+            sum = x+y+carry;
+            carry = sum/10;
+            res+=to_string(sum%10);
+            i--;
+            j--;
+        &#125;
+        reverse(res.begin(),res.end());
+        return res;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="67-Add-Binary"><a href="#67-Add-Binary" class="headerlink" title="67. Add Binary"></a>67. Add Binary</h3><p><strong>题目描述</strong></p>
+<p>Given two binary strings, return their sum (also a binary string).</p>
+<p><strong>Example 2:</strong></p>
+<pre><code>Input: a = &quot;1010&quot;, b = &quot;1011&quot;
+Output: &quot;10101&quot;
+</code></pre>
+<h4 id="solution-类似string的加法"><a href="#solution-类似string的加法" class="headerlink" title="solution-类似string的加法"></a>solution-类似string的加法</h4><ul>
+<li>需要考虑的就是a[i]，b[j]，carry</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    string addBinary(string a, string b) &#123;
+        int i = a.size()-1,j = b.size()-1;
+        int carry = 0;
+        string res = &quot;&quot;;
+        while(i &gt;= 0 || j &gt;= 0 || carry == 1 )&#123;
+            int sum = carry;
+            if(i &gt;= 0)&#123;
+                sum += a[i]-&#39;0&#39;;
+                i--;
+            &#125;
+            if(j &gt;=0 )&#123;
+                sum += b[j]-&#39;0&#39;;
+                j--;
+            &#125;
+            res += to_string(sum%2);
+            carry = sum/2; 
+        &#125;
+        reverse(res.begin(),res.end());
+        return res;       
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="925-Long-Pressed-Name"><a href="#925-Long-Pressed-Name" class="headerlink" title="925. Long Pressed Name"></a>925. Long Pressed Name</h3><p><strong>题目描述</strong></p>
+<p>name是真名字，typed是不小心有多打的，typed是不是真的多打的</p>
+<h4 id="solution-7"><a href="#solution-7" class="headerlink" title="solution"></a>solution</h4><ul>
+<li>因为typed中有长重复输入，那么如果它是name的长输入，长度一定是大于等于name的，如果两者是相等的，直接返回成功。</li>
+<li>遍历typed，将typed中的连续相同字符用cnt表示为一个group</li>
+<li>遍历name，依次探测typed中 group 的元素个数以及元素本身是否匹配</li>
+<li>时间：O(n)，空间：O(1)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    bool isLongPressedName(string name, string typed) &#123;
+        if(name == typed)
+            return true;
+        
+        int len1= name.size(),len2 = typed.size();
+        if(len1 &gt; len2)
+            return false;
+        
+        int i = 0, j = 0;
+        while(i &lt; len1 &amp;&amp; j &lt; len2)&#123;
+            if(name[i] != typed[j])
+                return false;
+            i++;
+            j++;
+            int cnt = 0;
+            int typeTmp = typed[j-1],nameTmp = name[i-1];
+            while((typed[j] == typeTmp ) &amp;&amp; (j &lt; len2))&#123;
+                cnt++;
+                j++;
+            &#125;
+            while((name[i] == nameTmp) &amp;&amp; (i &lt; len1))&#123;
+                if(cnt &gt; 0)&#123;
+                    cnt--;
+                    i++;
+                &#125;else
+                    return false;
+            &#125;
+        &#125;
+        return i == len1 &amp;&amp; j == len2;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="819-Most-Common-Word"><a href="#819-Most-Common-Word" class="headerlink" title="819. Most Common Word"></a>819. Most Common Word</h3><p><strong>题目描述</strong></p>
+<p>Given a paragraph and a list of banned words, return the most frequent word that is not in the list of banned words. </p>
+<p>Words in the list of banned words are given in lowercase, and free of  punctuation.  Words in the paragraph are not case sensitive.  The answer is in lowercase.</p>
+<p><strong>Example:</strong></p>
+<pre><code>Input: 
+paragraph = &quot;Bob hit a ball, the hit BALL flew far after it was hit.&quot;
+banned = [&quot;hit&quot;]
+Output: &quot;ball&quot;
+</code></pre>
+<h4 id="solution-8"><a href="#solution-8" class="headerlink" title="solution"></a>solution</h4><ul>
+<li>做题之前先想清楚再做，每次都是，要不做一半，发现理解错题意了，要不就是做到最后，越做越乱</li>
+<li>新语法：sstringstream，map的make_pair</li>
+<li>思路就是：<ul>
+<li>首先把paragraph做处理，把其他punctuation都变为“ ”，在这个过程中，把大写都转换为小写。因为在banned中的单词都是小写。这里要注意的是，把逗号之类的转换为空格，加上本来就存在的空格，会出现两个空格的清空，用string的find空格，会出错！！！</li>
+<li>遍历段落中的单词，记录出现次数最多并且不再banned中的<ul>
+<li>这里的一个技巧点，并不是总需要一步一步向下走，像这种一边查看是否在banned中，一边就可以去比较出现次数，出现次数一旦是最多的，就可以记录，而不是先将所有的单词出现次数记录一遍，然后再去遍历这个次数，找出最多</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>因为用到了在banned中find的操作，因此将vector转换为set了</li>
+<li>要返回的是string，这个string的次数还要出现最多，因此选用map作为存储中间结果的数据结构</li>
+<li>时间：O(n+m),空间：O(n+m)，n和m分别为para和banned的大小</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    string mostCommonWord(string para, vector&lt;string&gt;&amp; banned) &#123;
+        unordered_set&lt;string&gt;s(banned.begin(),banned.end());
+        unordered_map&lt;string,int&gt;mymap;
+        int len = para.size();
+
+        for(char &amp;c : para)
+            c = isalpha(c)?tolower(c):&#39; &#39;;
+       
+        pair&lt;string,int&gt; res(&quot;&quot;,0);
+        istringstream iss(para);
+        string word;
+       while(iss &gt;&gt; word)&#123;
+            if((s.find(word) == s.end()) &amp;&amp; (++mymap[word] &gt; res.second))
+                res = make_pair(word,mymap[word]);
+        &#125;       
+        return res.first;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="443-String-Compression"><a href="#443-String-Compression" class="headerlink" title="443. String Compression"></a>443. String Compression</h3><p><strong>Example 1:</strong></p>
+<pre><code>Input:
+[&quot;a&quot;,&quot;a&quot;,&quot;b&quot;,&quot;b&quot;,&quot;c&quot;,&quot;c&quot;,&quot;c&quot;]
+
+Output:
+Return 6, and the first 6 characters of the input array should be: [&quot;a&quot;,&quot;2&quot;,&quot;b&quot;,&quot;2&quot;,&quot;c&quot;,&quot;3&quot;]
+
+Explanation:
+&quot;aa&quot; is replaced by &quot;a2&quot;. &quot;bb&quot; is replaced by &quot;b2&quot;. &quot;ccc&quot; is replaced by &quot;c3&quot;.
+</code></pre>
+<h4 id="solution-9"><a href="#solution-9" class="headerlink" title="solution"></a>solution</h4><ul>
+<li>思路比较简单，但是有点难写</li>
+<li>考虑两种情况<ul>
+<li>连续出现的字符，首先定位一个字符，接着一直向后扫描</li>
+<li>相邻两个字符不一致（这里比较时用的是：当前字符和下一个字符）/已经到了字符末尾<ul>
+<li>记录当前字符，记录当前字符出现的次数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>时间：O(n)，空间：O(1)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    int compress(vector&lt;char&gt;&amp; chars) &#123;
+        int len = chars.size();
+        
+        int cur = 0, newIndex = 0;//cur：当前比较的字符，newIndex：是新记录的vector，因为新的结果大小 &lt;= 原vector，因此可以一边遍历重复使用，最后返回index
+        for(int i = 0; i&lt; len; i++)&#123;
+            if(i+1 == len || chars[i] != chars[i+1])&#123;
+                chars[newIndex++] = chars[i];
+                
+                 //记录当前重复字符出现的次数，对于只出现一次的，则没有这步
+                if(cur &lt; i)&#123;
+                    string cnt = to_string(i-cur+1);
+                    for(char c: cnt)
+                        chars[newIndex++] = c;
+                &#125;              
+                cur = i+1;
+            &#125;
+        &#125;
+        return newIndex;     
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="20-Valid-Parentheses"><a href="#20-Valid-Parentheses" class="headerlink" title="20. Valid Parentheses"></a>20. Valid Parentheses</h3><p><strong>题目描述</strong></p>
+<p>Given a string containing just the characters <code>&#39;(&#39;</code>, <code>&#39;)&#39;</code>, <code>&#39;&#123;&#39;</code>, <code>&#39;&#125;&#39;</code>, <code>&#39;[&#39;</code> and <code>&#39;]&#39;</code>, determine if the input string is valid.</p>
+<p>An input string is valid if:</p>
+<ol>
+<li>Open brackets must be closed by the same type of brackets.</li>
+<li>Open brackets must be closed in the correct order.</li>
+</ol>
+<p>Note that an empty string is also considered valid.</p>
+<h4 id="solution2-辅助栈"><a href="#solution2-辅助栈" class="headerlink" title="solution2-辅助栈"></a>solution2-辅助栈</h4><ul>
+<li>如果是左括号，进栈，如果是右括号，匹配栈顶是否为对应的左括号</li>
+<li>时间：O(n)，空间：O(n)-辅助栈</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    bool isValid(string s) &#123;
+
+        stack&lt;char&gt;ch;
+        for(int i = 0; i &lt; s.size(); i++)&#123;
+            if(s[i] == &#39;(&#39; || s[i] == &#39;&#123;&#39; || s[i] == &#39;[&#39;)
+                ch.push(s[i]);
+            else&#123;
+                if(ch.empty()) return false;//这个很重要，要弹出，首先就要判断栈是否为空
+                if(s[i] == &#39;)&#39; &amp;&amp; ch.top() != &#39;(&#39;)
+                    return false;
+                if(s[i] == &#39;&#125;&#39; &amp;&amp; ch.top() != &#39;&#123;&#39;)
+                    return false;
+                if(s[i] == &#39;]&#39; &amp;&amp; ch.top() != &#39;[&#39;)
+                    return false;
+                
+                ch.pop();
+            &#125;       
+        &#125;
+        return ch.empty();         
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="434-Number-of-Segments-in-a-String"><a href="#434-Number-of-Segments-in-a-String" class="headerlink" title="434. Number of Segments in a String"></a>434. Number of Segments in a String</h3><p><strong>题目描述</strong></p>
+<p>Count the number of segments in a string, where a segment is defined to be a contiguous sequence of non-space characters.</p>
+<p><strong>Example:</strong></p>
+<pre><code>Input: &quot;Hello, my name is John&quot;
+Output: 5
+</code></pre>
+<h4 id="solution-查找空格-错误"><a href="#solution-查找空格-错误" class="headerlink" title="solution-查找空格-错误"></a>solution-查找空格-错误</h4><ul>
+<li>这道题就是在考察各种特殊情况<ul>
+<li>结尾有没有空格</li>
+<li>字符串为空</li>
+<li>只有一个字符串</li>
+</ul>
+</li>
+<li>事实证明我写的这个不行，突然想到了前几天用到的istringstream</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    int countSegments(string s) &#123;
+        if(s.empty())
+            return 0;
+        int cnt = 0;
+        istringstream ss(s);
+        string w;
+        while(ss&gt;&gt;w)&#123;
+            cnt++;
+        &#125;
+        return cnt;  
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="125-Valid-Palindrome"><a href="#125-Valid-Palindrome" class="headerlink" title="125. Valid Palindrome"></a>125. Valid Palindrome</h3><p><strong>题目描述</strong></p>
+<p>Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: &quot;A man, a plan, a canal: Panama&quot;
+Output: true
+</code></pre>
+<h4 id="solution1"><a href="#solution1" class="headerlink" title="solution1"></a>solution1</h4><ul>
+<li>对原字符串进行处理，注意题目的意思包括字符和数字</li>
+<li>判断是否为回文</li>
+<li>时间：O(n),空间：O(1)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    bool isPalindrome(string s) &#123;
+        if(s.empty())
+            return true;
+        
+        int len = s.size();
+        for(int i = 0; i &lt; len; i++)&#123;
+            char c = s[i];
+            //s[i] = isalpha(c)?tolower(s[i]):&#39;&#39;;//&#39; &#39;不知道为啥不能在这里放
+            
+            if(isalpha(c))
+                s[i] = tolower(c);
+            else if(isdigit(c))&#123;
+                continue;
+            &#125;
+            else
+                s[i] = &#39; &#39;;                  
+        &#125; 
+        
+        int k = 0, j = len-1; 
+        
+        while(k &lt; j)&#123;
+            while(s[k] == &#39; &#39; &amp;&amp; k &lt; j)  k++;              
+            while(s[j] == &#39; &#39; &amp;&amp; k &lt; j)  j--;
+                
+            if(s[k] != s[j])
+                return false;
+            k++;
+            j--;//一定要记得在这里更新循环值
+        &#125;
+       return true;
+        
+    &#125;
+&#125;;
+</code></pre>
+<h4 id="solution2-2"><a href="#solution2-2" class="headerlink" title="solution2"></a>solution2</h4><ul>
+<li>isnumalp()：既可以判断是否为数字，又可以判断是否为字母</li>
+<li>transform()：对大小写的转换</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    bool isPalindrome(string s) &#123;
+        if(s.empty())
+            return true;
+        transform(s.begin(),s.end(),s.begin(),::tolower);
+        
+        int i = 0, j = s.size()-1;
+        while(i &lt; j)&#123;
+            bool flag1 = isAlphaNumeric(s[i]), flag2 = isAlphaNumeric(s[j]);
+            
+            if(flag1 &amp;&amp; flag2)&#123;
+                if(s[i] == s[j])&#123;
+                    i++;
+                    j--;
+                &#125;else
+                    return false;                    
+            &#125;else if(flag1)&#123;
+                j--;
+            &#125;else if(flag2)&#123;
+                i++;
+            &#125;else&#123;
+                i++;
+                j--;
+            &#125;
+        &#125;
+        return true;       
+    &#125;
+    bool isAlphaNumeric(char c)&#123;
+        if((c &gt;= &#39;0&#39; &amp;&amp; c &lt;= &#39;9&#39;) ||(c &gt;= &#39;a&#39; &amp;&amp; c &lt;= &#39;z&#39;))
+            return true;
+        else
+            return false;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="680-Valid-Palindrome-II"><a href="#680-Valid-Palindrome-II" class="headerlink" title="680. Valid Palindrome II"></a>680. Valid Palindrome II</h3><p> <strong>题目描述</strong></p>
+<p>Given a non-empty string <code>s</code>, you may delete <strong>at most</strong> one character.  Judge whether you can make it a palindrome. </p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: &quot;abca&quot;
+Output: True
+</code></pre>
+<h4 id="solution-10"><a href="#solution-10" class="headerlink" title="solution"></a>solution</h4><ul>
+<li><p>回文就是正着反着读出来都一样</p>
+</li>
+<li><p>出栈读取和原字符串一样，这里的区别是，可以有一次机会，某个字符可以不是回文</p>
+</li>
+<li><p>这里有个问题就是，在遍历过程中，当两个字符不一致的时候，到达是哪一个字符向前走一个，因此，想到了递归</p>
+</li>
+<li><p>不断地缩小问题，双指针，一个从前往后，一个从后往前，每次比较两个字符   - 如果相等，则缩小范围</p>
+<ul>
+<li>如果不相等，则向左或者向右缩小范围 </li>
+</ul>
+</li>
+<li><p>时间：O(n)，空间：O(n)</p>
+</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    bool isEqual(string s, int beg, int en)&#123;
+         //cout&lt;&lt;s.substr(beg,en-beg+1)&lt;&lt;endl;
+        /* // 内存超了
+        if(beg &gt; en)
+            return true;
+        if(s[beg] == s[en])
+            return isEqual(s, beg+1, en-1);
+        else
+            return false;               
+       */ 
+        for(int i = beg, j = en; i &lt; j ; i++, j--)&#123;
+            if(s[i] != s[j])
+                return false;
+        &#125;
+        return true;                 
+    &#125;
+    
+    bool validPalindrome(string s) &#123;
+        int len = s.size();
+        int beg = 0, en = len-1;
+        
+        while(beg &lt;= en)&#123;
+            if(s[beg] != s[en])&#123;
+                return (isEqual(s,beg+1,en)) || (isEqual(s,beg,en-1));
+            &#125;    
+            beg++;
+            en--;
+        &#125;        
+        return true;       
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="28-Implement-strStr"><a href="#28-Implement-strStr" class="headerlink" title="28. Implement strStr()"></a>28. Implement strStr()</h3><p><strong>题目描述</strong></p>
+<p>Return the index of the first occurrence of needle in haystack, or <strong>-1</strong> if needle is not part of haystack.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: haystack = &quot;hello&quot;, needle = &quot;ll&quot;
+Output: 2
+</code></pre>
+<p><strong>solution</strong></p>
+<pre><code class="C++">
+class Solution &#123;
+public:
+    int strStr(string haystack, string needle) &#123;
+        if(needle.empty() || haystack == needle)
+            return 0;
+
+        int len1 = haystack.size(),len2= needle.size();
+        if( len1 &lt; len2 )
+            return -1;
+        int pos = haystack.find(needle,0);
+        if(pos != string::npos)
+            return pos;
+        else
+            return -1;    
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="14-Longest-Common-Prefix"><a href="#14-Longest-Common-Prefix" class="headerlink" title="14. Longest Common Prefix"></a>14. Longest Common Prefix</h3><p><strong>题目描述</strong></p>
+<p>Write a function to find the longest common prefix string amongst an array of strings.</p>
+<p>If there is no common prefix, return an empty string <code>&quot;&quot;</code>.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: [&quot;flower&quot;,&quot;flow&quot;,&quot;flight&quot;]
+Output: &quot;fl&quot;
+</code></pre>
+<h4 id="solution-11"><a href="#solution-11" class="headerlink" title="solution"></a>solution</h4><ul>
+<li>依次遍历vector，依次比较每个单词对应的元素,用set中元素是unique的特性来存储相同元素</li>
+<li>时间：有一个排序的过程，O(Nlog(N))?，双层循环：O(n*N)，n是最短字符串的长度，N是vector的大小</li>
+<li>空间：O(1)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    static bool cmp(const string&amp; s1, const string&amp; s2)&#123;
+        return s1.size() &lt; s2.size();
+    &#125;
+    string longestCommonPrefix(vector&lt;string&gt;&amp; strs) &#123;
+        int vLen = strs.size();
+        if(strs.empty())
+            return &quot;&quot;;
+        
+        if( vLen == 1)
+            return strs[0];
+        
+        sort(strs.begin(),strs.end(),cmp);//表示最长公共前缀是最短的那个字符串,直接用sort是对字符本身的排序，而这里需要的是对字符串的长度进行排序
+        int sLen = strs[0].size();
+        //cout&lt;&lt;sLen&lt;&lt;endl;
+                
+        for(int i = 0; i&lt; sLen; i++)&#123;
+            char tmp = strs[0][i];
+            for(int j = 1; j &lt; vLen; j++)&#123;
+                if(strs[j][i] != tmp)
+                    return strs[0].substr(0,i);;
+            &#125; 
+        &#125;        
+        return strs[0];        
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="58-Length-of-Last-Word"><a href="#58-Length-of-Last-Word" class="headerlink" title="58. Length of Last Word"></a>58. Length of Last Word</h3><p><strong>题目描述</strong></p>
+<p>Given a string <em>s</em> consists of upper/lower-case alphabets and empty space characters <code>&#39; &#39;</code>, return the length of last word in the string.</p>
+<h4 id="solution-12"><a href="#solution-12" class="headerlink" title="solution"></a>solution</h4><ul>
+<li>看别人的代码，总有一种胜读十年书的感觉</li>
+<li>时间：O(n)，空间：O(1)</li>
+<li>note:isblank()</li>
+<li>让别人的智慧来熏陶一下自己，自己的代码就放在后面来激励一下自己吧</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    int lengthOfLastWord(string s) &#123;
+        if(s.empty())
+            return 0;
+        int i = s.size()-1;
+        while(i &gt;= 0 &amp;&amp; isblank(s[i]))
+            i--;
+        int len = 0;
+        while(i &gt;= 0 &amp;&amp; !isblank(s[i]))&#123;
+            len++;
+            i--;
+        &#125;
+        return len;
+    &#125;
+&#125;;
+</code></pre>
+<pre><code class="c++">class Solution &#123;
+public:
+    int lengthOfLastWord(string s) &#123;
+        if(s.empty())
+            return 0;
+        int len = s.size();
+        int i = len-1;
+        while(i &gt;= 0 &amp;&amp; s[i] == &#39; &#39;) i--;
+        if(i &lt; 0)
+            return 0;
+        
+        int start = i;
+        while(i &gt;= 0)&#123;
+            if(s[i] == &#39; &#39;)//这里是统计最后一个单词的停止地方
+                return start - i;
+        &#125;            i--;
+
+        return start - i;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="686-Repeated-String-Match"><a href="#686-Repeated-String-Match" class="headerlink" title="686. Repeated String Match"></a>686. Repeated String Match</h3><p><strong>题目描述</strong></p>
+<p>Given two strings A and B, find the minimum number of times A has to  be repeated such that B is a substring of it. If no such solution,  return -1.</p>
+<p>For example, with A = “abcd” and B = “cdabcdab”.</p>
+<p>Return 3, because by repeating A three times (“abcdabcdabcd”), B is a  substring of it; and B is not a substring of A repeated two times  (“abcdabcd”).</p>
+<h4 id="solution-13"><a href="#solution-13" class="headerlink" title="solution"></a>solution</h4><ul>
+<li>B是A*k的子串，求最小的k</li>
+<li>首先肯定需要A的长度大于等于B，之后比较B是否包含在A内</li>
+<li>当长度是k时不包含，则再加一个A如果还不包含，那指定不包含了</li>
+<li>时间：O(n)，空间：O(n)：n是字符的个数</li>
+</ul>
+<pre><code class="c++">class Solution &#123;
+public:
+    int repeatedStringMatch(string A, string B) &#123;
+        if(A.find(B) != string::npos)
+            return 1;
+        
+        int time = 1;
+        string resA = A;
+        while(resA.size() &lt; B.size())&#123;
+            resA += A;//这里不能是A的自加，因为A变化后，下次加的是其新值
+            time++;
+        &#125;
+        int pos1 = resA.find(B);
+        if(pos1 != string::npos)
+            return time;
+        
+        resA += A;
+        int pos2 = resA.find(B);
+        if(pos2 != string::npos)
+            return time+1;
+        
+        return -1;
+    &#125;
+&#125;;
+</code></pre>
+<h3 id="859-Buddy-Strings"><a href="#859-Buddy-Strings" class="headerlink" title="859. Buddy Strings"></a>859. Buddy Strings</h3><p><strong>题目描述</strong></p>
+<p>Given two strings <code>A</code> and <code>B</code> of lowercase letters, return <code>true</code> if and only if we can swap two letters in <code>A</code> so that the result equals <code>B</code>.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: A = &quot;ab&quot;, B = &quot;ba&quot;
+Output: true
+
+Input: A = &quot;aa&quot;, B = &quot;aa&quot;
+Output: true
+</code></pre>
+<h4 id="solution1-遍历-1"><a href="#solution1-遍历-1" class="headerlink" title="solution1-遍历"></a>solution1-遍历</h4><ul>
+<li>A、B的长度不等，那么一定不可能相等</li>
+<li>A、B长度为2，A[1] == B[0] &amp;&amp; A[0] == B[1]</li>
+<li>如果两者都相等，除非有个元素是重复出现过，否则也不可以。</li>
+<li>主要思路是：依次比较A和B的每个元素，如果第一次不相等，则记录位置，等到第二次不相等的时候，看A，B不相等的元素是否和第一次不相等位置的元素正好匹配</li>
+<li>时间：O(n)，空间：O(1)</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    bool buddyStrings(string A, string B) &#123;
+        int lenA = A.size(), lenB = B.size();
+        if(lenA != lenB)
+            return false;
+        if(lenA == 2)
+            return (A[1] == B[0]) &amp;&amp; (A[0] == B[1]);
+        if(A == B)
+            return hasDup(A);//对于相等的A和B，当且仅当A有重复元素时，可以交换相同元素，否则，不可以
+            
+        int i = 0,first = 0;//first记录第一次不一致的位置
+        bool flag = false,flag1 = false;//flag为true时表示已经有过不一致,flag1为true表示有过第二次不一致，而且已经有过一次交换的机会了，不能再有不一致了
+        while(i &lt; lenA)&#123;
+            if(A[i] == B[i])&#123;
+                i++;
+            &#125;else if(flag)&#123;
+                if(!flag1  &amp;&amp; A[first] == B[i] &amp;&amp; B[first] == A[i])&#123;
+                     i++;
+                     flag1 = true;
+                &#125;else
+                    return false;
+            &#125;else&#123;
+                flag = true;
+                first = i;
+                i++;
+            &#125;
+        &#125;
+        return true;;   
+    &#125;
+    
+    bool hasDup(string s)&#123;
+        int len = s.size();
+        for(int i = 0; i &lt; len-1; i++)&#123;
+            if(s.find(s[i],i+1) != string::npos)
+                return true;
+        &#125;
+        return false;
+    &#125;   
+&#125;;
+</code></pre>
+<h4 id="solution2-利用额外空间"><a href="#solution2-利用额外空间" class="headerlink" title="solution2-利用额外空间"></a>solution2-利用额外空间</h4><ul>
+<li>主要的不同就是<ul>
+<li>对于相同的两个字符串，判断是否有重复元素，用了set</li>
+<li>对于不同的元素位置的记录，使用了vector</li>
+</ul>
+</li>
+<li>时间：O(n)，都是一遍扫描，空间：O(n)：用到了set，vector</li>
+</ul>
+<pre><code class="C++">class Solution &#123;
+public:
+    bool buddyStrings(string A, string B) &#123;
+        int lenA = A.size(), lenB = B.size();
+        if(lenA != lenB)
+            return false;
+        //这里我第一个想到的就是set，但是不知道怎么用，看了别人写的，简直太机智了
+        if(A == B)&#123;
+            if(set&lt;char&gt;(A.begin(), A.end()).size() &lt; A.size()) 
+                return true;//这里只判断了有重复元素的情况
+        &#125;
+        vector&lt;int&gt; index;
+        int i = 0; 
+        while(i &lt; lenA)&#123;
+            if(A[i] != B[i])
+                index.push_back(i);
+            i++;
+        &#125;
+        //size == 2这点是判断没有重复元素的情况
+        return (index.size()==2) &amp;&amp; (A[index[0]] == B[index[1]]) &amp;&amp; (A[index[1]] == B[index[0]]);
+    &#125;
+&#125;;
+ 
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
