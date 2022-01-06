@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>SpeedyMurmurs data 记录 | haiki</title>
-  <meta name="keywords" content=" speedymurmurs , payment routing , 路由算法 ">
-  <meta name="description" content="SpeedyMurmurs data 记录 | haiki">
+  <title>grep | haiki</title>
+  <meta name="keywords" content=" linux , shell ">
+  <meta name="description" content="grep | haiki">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Oops～，我崩溃了！找不到你想要的页面 :(">
 <meta property="og:type" content="website">
@@ -675,9 +675,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-SpeedyMurmurs-data-记录" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-grep" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">SpeedyMurmurs data 记录</h1>
+        <h1 class="article-title">grep</h1>
     
     <div class="article-meta">
         
@@ -687,7 +687,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="论文相关总结">论文相关总结</a>
+            <a  data-rel="工具">工具</a>
             
         </span>
         
@@ -695,23 +695,21 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color4">speedymurmurs</a>
+            <a class="color1">linux</a>
             
-            <a class="color1">payment routing</a>
-            
-            <a class="color5">路由算法</a>
+            <a class="color1">shell</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2022-01-03 19:20:49'>2019-10-31 10:34</time>
+            发布时间 : <time class="date" title='最后更新: 2022-01-06 19:43:12'>2022-01-06 09:22</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:713</span>
+        <span>字数:781</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -741,7 +739,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ripple-data-nov7-dynamic"><span class="toc-text">ripple-data-nov7-dynamic</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ripple-data-jan29"><span class="toc-text">ripple-data-jan29</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#grep%EF%BC%9A%E8%BE%93%E5%87%BA%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%BC%8F%E7%9A%84%E8%A1%8C"><span class="toc-text">grep：输出匹配模式的行</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#options"><span class="toc-text">options</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#grep-%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="toc-text">grep 程序的信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%B9%E9%85%8D%E6%8E%A7%E5%88%B6"><span class="toc-text">匹配控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%8E%A7%E5%88%B6"><span class="toc-text">输出控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E8%A1%8C%E5%89%8D%E7%BC%80%E6%8E%A7%E5%88%B6"><span class="toc-text">输出行前缀控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E8%A1%8C%E7%9A%84%E6%8E%A7%E5%88%B6"><span class="toc-text">上下文行的控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -757,82 +755,69 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="ripple-data-nov7-dynamic"><a href="#ripple-data-nov7-dynamic" class="headerlink" title="ripple-data-nov7-dynamic"></a>ripple-data-nov7-dynamic</h3><ul>
-<li>raw-trust-lines-2016-nov-7.txt: All trust lines as obtained from the Ripple server</li>
-</ul>
-<pre><code class="json">&#123;&quot;result&quot;:&#123;&quot;account&quot;:&quot;r11zZZu6MvoCohwoQ2VrK9JXsw1Y3hVKa&quot;,&quot;lines&quot;:                [&#123;&quot;account&quot;:&quot;rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q&quot;,&quot;balance&quot;:&quot;0.005473328356624965&quot;,&quot;currency&quot;:&quot;BTC&quot;,&quot;limit&quot;:&quot;1000000000&quot;,&quot;limit_peer&quot;:&quot;0&quot;,&quot;no_ripple&quot;:true,&quot;quality_in&quot;:0,&quot;quality_out&quot;:0&#125;,&#123;&quot;account&quot;:&quot;r3ADD8kXSUKHd6zTCKfnKT3zV9EZHjzp1S&quot;,&quot;balance&quot;:&quot;3.1119669487193&quot;,&quot;currency&quot;:&quot;CAD&quot;,&quot;limit&quot;:&quot;1000&quot;,&quot;limit_peer&quot;:&quot;0&quot;,&quot;quality_in&quot;:0,&quot;quality_out&quot;:0&#125;,&#123;&quot;account&quot;:&quot;rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q&quot;,&quot;balance&quot;:&quot;2.451995558&quot;,&quot;currency&quot;:&quot;EUR&quot;,&quot;limit&quot;:&quot;5000&quot;,&quot;limit_peer&quot;:&quot;0&quot;,&quot;quality_in&quot;:0,&quot;quality_out&quot;:0&#125;,&#123;&quot;account&quot;:&quot;rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q&quot;,&quot;balance&quot;:&quot;19.99944999900283&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;limit&quot;:&quot;0&quot;,&quot;limit_peer&quot;:&quot;0&quot;,&quot;quality_in&quot;:0,&quot;quality_out&quot;:0&#125;
-]&#125;,
-&quot;status&quot;:&quot;success&quot;,&quot;type&quot;:&quot;response&quot;&#125;
-</code></pre>
-<pre><code class="json">&#123;&quot;result&quot;:&#123;&quot;account&quot;:&quot;r12Fd6ffBipWZg9Ynt6AS6Y1G4ZnsaH6k&quot;,&quot;lines&quot;:[]&#125;,
-&quot;status&quot;:&quot;success&quot;,&quot;type&quot;:&quot;response&quot;&#125;
-</code></pre>
+        <h1 id="grep：输出匹配模式的行"><a href="#grep：输出匹配模式的行" class="headerlink" title="grep：输出匹配模式的行"></a>grep：输出匹配模式的行</h1><p>grep 命令的命令行格式如下： <code>grep [option...] [patterns] [file...]</code></p>
 <ul>
-<li>complete-parsed-trust-lines-2016-nov-7.txt（all-in-USD-trust-lines-2016-nov-7-cleaned.txt）<ul>
-<li>(src, dst, lower bound, balance, currency, upper bound)</li>
+<li>grep 命令会在<strong>输入</strong>或<strong>指定的文件中</strong>查找包含匹配<u>指定模式</u>的字符的行。grep 的输出就是包含了匹配模式的行。无法在文本中匹配 newline 字符。</li>
+<li>option 和 file 参数可以有 0/多个。patterns 参数包含 1/多个以新行分割的模式，当 options 是 <code>-e patterns</code> 或 <code>-f file</code>时，新行被忽略。</li>
+<li>file 为 - 时，表示标准输出；如果没有指定 input，grep 搜索这个工作目录。</li>
 </ul>
-</li>
-</ul>
-<pre><code>r11VNrqQzivyJqou5ZNrQ9Wfz6j3esVfE rB3gZey7VWHYRqJHLoHDEJXJ2pEPNieKiS 0 0.4554764488341 JPY 10000000000
-r11VNrqQzivyJqou5ZNrQ9Wfz6j3esVfE rB3gZey7VWHYRqJHLoHDEJXJ2pEPNieKiS 0 0.0000423661606 BTC 10000000000
-r29mNgvpvRBJNEark7LLHpHaoEhDAMWJD rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B 0 0.007608519971505 BTC 10
-</code></pre>
+<p>默认情况下，grep 命令用基本的Unix风格正则表达式来匹配模式。Unix风格正则表达式采用特殊字符来定义怎样查找匹配的模式。</p>
+<p>常用下面四个，具体见 options 部分</p>
 <ul>
-<li><p>currency-exchanges-2016-nov-7.txt: Exchange rates from each currency to USD. The exchange rates have been obtained on Nov 9th from google (fiat currencies) and coinmarketcap.com (cryptocurrencies)</p>
-</li>
-<li><p>all-in-USD-trust-lines-2016-nov-7.txt</p>
+<li><code>-v</code></li>
+<li><code>-n</code></li>
+<li><code>-c</code></li>
+<li><code>-e</code></li>
+</ul>
+<h2 id="options"><a href="#options" class="headerlink" title="options"></a>options</h2><h3 id="grep-程序的信息"><a href="#grep-程序的信息" class="headerlink" title="grep 程序的信息"></a>grep 程序的信息</h3><ul>
+<li><code>--help</code></li>
+<li><code>-V</code> / <code>--version</code></li>
+</ul>
+<h3 id="匹配控制"><a href="#匹配控制" class="headerlink" title="匹配控制"></a>匹配控制</h3><ul>
+<li><code>-e patterns</code> / <code>--regexp=patterns</code> ：匹配某些模式中的一个或多个</li>
+<li><code>-f file</code> / <code>--file=file</code>：匹配文件中的模式</li>
+<li><code>-i</code> / <code>-y</code> \ <code>--ignore-case</code>：忽略文件和匹配中的大小写</li>
+<li><code>--no-ignore-case</code>：不忽略大小写</li>
+<li><code>-v</code> / <code>--invert-match</code>：不匹配的行</li>
+<li><code>-w</code> / <code>--word-regexp</code>：匹配包含整个单词的行</li>
+<li><code>-x</code> / <code>--line-regexp</code>：匹配包含整个行的行</li>
+</ul>
+<h3 id="输出控制"><a href="#输出控制" class="headerlink" title="输出控制"></a>输出控制</h3><ul>
+<li><code>-c</code> / <code>--count</code>：不输出具体行，输出行数</li>
+<li><code>--color[=WHEN]</code> / <code>--colour[=WHEN]</code>：对选中的数据高亮</li>
+<li><code>-L</code> / <code>--files-without-match</code>：输出匹配行所在文件的名字，匹配到第一次出现就返回</li>
+<li><code>-m num</code> / <code>--max-count=num</code>：只搜索前 m 行</li>
+<li><code>-o</code> / <code>--only-matching</code>：只输出匹配行的匹配的部分，每个匹配一行输出</li>
+<li><code>-q</code> / <code>--quiet / --silent</code>：不向标准输出输出。如果搜索到匹配，马上返回 0 状态码，如果有错误，也马上返回。同 -s / –no-messages。</li>
+</ul>
+<h3 id="输出行前缀控制"><a href="#输出行前缀控制" class="headerlink" title="输出行前缀控制"></a>输出行前缀控制</h3><ul>
+<li><code>-b</code> / <code>--byte-offset</code></li>
+<li><code>-H</code> / <code>--with-filename</code>：输出匹配时，前缀输出文件名</li>
+<li><code>-h</code> / <code>--no-filename</code>：当输入只有一个文件时，不输出文件名</li>
+<li><code>--label=LABEL</code> </li>
+<li><code>-n</code> / <code>--line-number</code>：输出匹配所在的行数</li>
+<li><code>-T</code> / <code>--initial-tab</code>：输出前缀时，以tab形式展示</li>
+<li><code> -Z</code> / <code>--null</code></li>
+</ul>
+<h3 id="上下文行的控制"><a href="#上下文行的控制" class="headerlink" title="上下文行的控制"></a>上下文行的控制</h3><p>Context lines 是接近匹配行的非匹配行。</p>
 <ul>
-<li>(src, dst, lower bound, balance, upper bound) </li>
+<li><code>-A num</code> \ <code>--after-context=num</code>：输出匹配行后 num 行</li>
+<li><code>-B num</code> \ <code>--before-context=num</code>：输出匹配行前 num 行</li>
+<li><code>-C num</code> \ <code>-num \ --context=num</code>：输出匹配行前，后 num 行</li>
+<li><code>--group-separator=string</code></li>
+<li><code> --no-group-separator</code></li>
 </ul>
-</li>
-</ul>
-<pre><code>r11VNrqQzivyJqou5ZNrQ9Wfz6j3esVfE rB3gZey7VWHYRqJHLoHDEJXJ2pEPNieKiS 0.0 0.00437257390881 96000000.0
-r11VNrqQzivyJqou5ZNrQ9Wfz6j3esVfE rB3gZey7VWHYRqJHLoHDEJXJ2pEPNieKiS 0.0 0.0306404783307 7.2323e+12
-</code></pre>
+<p>“alias grep=’grep –color=auto”</p>
+<p>有四种 grep 的变种，通过 options 控制：</p>
 <ul>
-<li>ripple-transactions-jan-2013-aug-2016.txt<ul>
-<li>(tx_hash, sdr, rev, currency, amount1, amount2, ledger, tag1, tag2, crawl_id, unix_timestamp)</li>
+<li><code>-G</code> / <code>--basic-regexp</code>：默认的（BRE：basic regular expressions）</li>
+<li><code>-E</code> / <code>--extended-regexp</code>：支持POSI，将匹配模式解释为扩展的正则匹配表达式 （EREs）</li>
+<li><code>-F</code> / <code>--fixed-strings</code>：egrep 命令支持POSIX扩展正则表达式。POSIX扩展正则表达式含有更多的可以用来指定匹配模式的字符。</li>
+<li><code>-P</code> / <code>--prel-regexp</code> ：fgrep 支持将匹配模式指定为用换行符分隔的一列固定长度的字符串。这样就可以把这列字符串放到一个文件中，然后在fgrep 命令中用其在一个大型文件中搜索字符串了。</li>
 </ul>
-</li>
-</ul>
-<pre><code>5C0504B229CD8EE803B01D78868B8F4B595D8B1D03636BEEBDBD750B6E5171AE,rfe8yiZUymRPx35BEwGjhfkaLmgNsTytxT,rsdbFqwyGYX5fSvAmMEXBH2hRyBT8QfcUS,XRP,0,100,7227428,&quot;&quot;,&quot;&quot;,1,1402920660
-5234065EB0115DFE0D1A71D7C2640EE798254A25E302D038D23BD44D1911834D,rGaRDdFcp1gZSrfuifZWiVLKq2SbaVRnuJ,rfTMcYDpWXhgcpYK27qxzx4cT3qDEpzgfs,XRP,12127,82200000,10438455,&quot;&quot;,&quot;&quot;,1,1418233370
-</code></pre>
-<ul>
-<li>transactions-in-USD-jan-2013-aug-2016.txt: Transactions performed in Ripple with known currencies.<ul>
-<li>(tx_hash, sdr, rcv, USD_amount, unix_timestamp) </li>
-</ul>
-</li>
-</ul>
-<pre><code>176FCFC0A4607B82DDC0847BA0C101858296238226F94DE4F7DF5DB4DD7C0C08 r5ymZSvtdNgbKVc8ay1Jhmq5f9QgnvEtj rGaRDdFcp1gZSrfuifZWiVLKq2SbaVRnuJ 353.6667023 1418016770
-</code></pre>
-<h3 id="ripple-data-jan29"><a href="#ripple-data-jan29" class="headerlink" title="ripple-data-jan29"></a>ripple-data-jan29</h3><ul>
-<li>all-in-USD-trust-lines-2013-jan.txt:<ul>
-<li> It contains the credit links between nodes that existed in the Ripple network in Jan 2013. Only credit links in a currency described in the file currency-exchanges-2016-nov-7.txt have been considered.</li>
-<li>(acc1 acc2 lower_bound current_balance upper_bound)   (all values are in USD)</li>
-</ul>
-</li>
-</ul>
-<pre><code>rM1oqKtfh1zgjdAgbFmaRm3btfGBX25xVo rnziParaNb8nsU4aruQdwYE3j5jUcqjzFm 723.23 0.0 0.0
-rwpRq4gQrb58N7PRJwYEQaoSui6Xd3FC7j rhxbkK9jGqPVLZSWPvCEmmf15xHBfJfCEy 0.0 0.0 23866.59
-</code></pre>
-<ul>
-<li>links-created-in-USD-jan-2013-dec-2016.txt: <ul>
-<li>It cointains the credit links created from January 2013 until December 2013.</li>
-<li>(acc1 acc2 value date) —— It means that there is a link from acc1 to acc2 with an upper limit of value (in USD) and it was created in date.</li>
-</ul>
-</li>
-</ul>
-<pre><code>rhub8VRN55s94qWKDv6jmDy1pUykJzF3wq rLiCWKQNUs8CQ81m2rBoFjshuVJviSRoaJ 1100000000.0 2016-09-15T16:19:01+00:00
-rM1oqKtfh1zgjdAgbFmaRm3btfGBX25xVo r9Gps6fB9YLuZ87rWx7M9TgLAGK2zsz5s6 7.2323e+11 2016-10-10T02:43:41+00:00
-</code></pre>
-<ul>
-<li>ripple-graph-jan-2013.txt: Crawled Ripple graph</li>
-</ul>
-<pre><code>&#123;&quot;result&quot;:&#123;&quot;account&quot;:&quot;rBKPS4oLSaV2KVVuHH8EpQqMGgGefGFQs7&quot;,&quot;ledger_hash&quot;:&quot;EA814084C248A6D4D5AADC82897810D819DC936C187366E127162FE15E60D834&quot;,&quot;ledger_index&quot;:91211,&quot;lines&quot;:[&#123;&quot;account&quot;:&quot;rJRyob8LPaA3twGEQDPU2gXevWhpSgD8S6&quot;,&quot;balance&quot;:&quot;-6&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;limit&quot;:&quot;0&quot;,&quot;limit_peer&quot;:&quot;7&quot;,&quot;quality_in&quot;:0,&quot;quality_out&quot;:0&#125;,&#123;&quot;account&quot;:&quot;rnGTwRTacmqZZBwPB6rh3H1W4GoTZCQtNA&quot;,&quot;balance&quot;:&quot;-7&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;limit&quot;:&quot;0&quot;,&quot;limit_peer&quot;:&quot;3&quot;,&quot;quality_in&quot;:0,&quot;quality_out&quot;:0&#125;],&quot;validated&quot;:true&#125;,&quot;status&quot;:&quot;success&quot;,&quot;type&quot;:&quot;response&quot;&#125;
-</code></pre>
-<ul>
-<li>trust-set-transactions.txt: Crawled create link transactions from Jan 2013 until Dec 2016</li>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>部分摘录来自: [美] Richard Blum. “Linux命令行与shell脚本编程大全（第3版）。” Apple Books.</li>
+<li>部分翻译自 <code>info grep</code></li>
 </ul>
 
       
