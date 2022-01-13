@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>python | haiki</title>
-  <meta name="keywords" content=" python , 语法 ">
-  <meta name="description" content="python | haiki">
+  <title>sed | haiki</title>
+  <meta name="keywords" content=" linux , sed ">
+  <meta name="description" content="sed | haiki">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Oops～，我崩溃了！找不到你想要的页面 :(">
 <meta property="og:type" content="website">
@@ -699,9 +699,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-python" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-sed" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">python</h1>
+        <h1 class="article-title">sed</h1>
     
     <div class="article-meta">
         
@@ -711,7 +711,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="编程语言">编程语言</a>
+            <a  data-rel="工具">工具</a>
             
         </span>
         
@@ -719,21 +719,21 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color2">python</a>
+            <a class="color1">linux</a>
             
-            <a class="color3">语法</a>
+            <a class="color4">sed</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2022-01-03 19:20:49'>2019-12-24 22:10</time>
+            发布时间 : <time class="date" title='最后更新: 2022-01-13 19:33:15'>2022-01-10 09:44</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:43</span>
+        <span>字数:3k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -763,7 +763,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#sed-%E7%BC%96%E8%BE%91%E5%99%A8%E7%AE%80%E4%BB%8B"><span class="toc-text">sed 编辑器简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#sed-%E5%91%BD%E4%BB%A4"><span class="toc-text">sed 命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#script"><span class="toc-text">script</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#s-%EF%BC%88substitute%EF%BC%89%E5%91%BD%E4%BB%A4"><span class="toc-text">s （substitute）命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%BF%E6%8D%A2%E6%A0%87%E8%AE%B0"><span class="toc-text">替换标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6"><span class="toc-text">替换字符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%B0%E5%9D%80"><span class="toc-text">使用地址</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A5%E6%95%B0%E5%AD%97%E5%BD%A2%E5%BC%8F%E8%A1%A8%E7%A4%BA%E8%A1%8C%E5%8C%BA%E9%97%B4"><span class="toc-text">以数字形式表示行区间</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%96%87%E6%9C%AC%E6%A8%A1%E5%BC%8F%E6%9D%A5%E8%BF%87%E6%BB%A4%E5%87%BA%E8%A1%8C"><span class="toc-text">用文本模式来过滤出行</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%A1%8C"><span class="toc-text">删除行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E5%92%8C%E9%99%84%E5%8A%A0%E6%96%87%E6%9C%AC"><span class="toc-text">插入和附加文本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%A1%8C"><span class="toc-text">修改行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2"><span class="toc-text">转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA"><span class="toc-text">打印输出</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#p-%E5%91%BD%E4%BB%A4"><span class="toc-text">p 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%EF%BC%9A%E6%89%93%E5%8D%B0%E8%A1%8C%E5%8F%B7"><span class="toc-text">&#x3D; 命令：打印行号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E5%87%BA%EF%BC%88list-%EF%BC%89%E5%91%BD%E4%BB%A4%EF%BC%88l-%EF%BC%89"><span class="toc-text">列出（list ）命令（l ）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8sed%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6"><span class="toc-text">使用sed处理文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#w-%E5%91%BD%E4%BB%A4%EF%BC%9A%E5%90%91%E6%96%87%E4%BB%B6%E4%B8%AD%E5%86%99%E5%85%A5%E8%A1%8C"><span class="toc-text">w 命令：向文件中写入行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#r%E5%91%BD%E4%BB%A4%EF%BC%9A%E4%BB%8E%E6%96%87%E4%BB%B6%E4%B8%AD%E8%AF%BB%E5%8F%96%E8%A1%8C"><span class="toc-text">r命令：从文件中读取行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83-%E5%BC%95%E7%94%A8"><span class="toc-text">参考&#x2F;引用</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -779,12 +779,193 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><a target="_blank" rel="noopener" href="https://foofish.net/python-function-args.html">Python 函数中，参数是传值，还是传引用？</a><ul>
-<li>传的是对象！因为有即时获取验证码的繁琐操作，所以存在印象笔记了</li>
+        <p>shell脚本最常见的一个用途就是<strong>处理文本文件。检查日志文件、读取配置文件、处理数据元素</strong>，shell脚本可以帮助我们将文本文件中各种数据的日常处理任务自动化。但仅靠shell脚本命令来处理文本文件的内容有点勉为其难。</p>
+<p>如果<u>想在shell脚本中处理任何类型的数据</u>，你得熟悉Linux中的sed和gawk工具。这两个工具能够极大简化需要进行的数据处理任务。</p>
+<h1 id="sed-编辑器简介"><a href="#sed-编辑器简介" class="headerlink" title="sed 编辑器简介"></a>sed 编辑器简介</h1><ul>
+<li><strong>sed编辑器</strong>被称作流编辑器 （stream editor），流编辑器会在编辑器处理数据之前基于预先提供的一组规则来编辑数据流。</li>
+<li>在交互式文本编辑器中（比如vim），你可以用键盘命令来交互式地插入、删除或替换数据中的文本。</li>
+</ul>
+<p>sed编辑器可以<strong>根据命令来处理数据流中的数据</strong>，这些命令要么从命令行中输入，要么存储在一个命令文本文件中。在流编辑器<strong>将所有命令与一行数据匹配完毕后，它会读取下一行数据并重复这个过程。</strong>在流编辑器处理完流中的所有数据行后，它就会终止。</p>
+<p>sed编辑器会执行下列操作：</p>
+<ol>
+<li>一次从输入中读取一行数据。</li>
+<li>根据所提供的编辑器命令匹配数据。</li>
+<li>按照命令修改流中的数据。</li>
+<li>将新的数据输出到STDOUT 。</li>
+</ol>
+<h2 id="sed-命令"><a href="#sed-命令" class="headerlink" title="sed 命令"></a>sed 命令</h2><p>格式：<code>sed options script file</code></p>
+<ul>
+<li>options 选项允许你修改sed 命令的行为<ul>
+<li><code>-e script</code>：在处理输入时，将script 中指定的命令添加到已有的命令中</li>
+<li><code>-f file</code>：在处理输入时，将file 中指定的命令添加到已有的命令中</li>
+<li><code>-n</code>：不产生命令输出，使用print 命令来完成输出</li>
+<li><code>-i</code>：就地修改</li>
 </ul>
 </li>
+<li>script 参数指定了应用于流数据上的单个命令。如果需要用多个命令，要么使用 <code>-e</code> 选项在命令行中指定，要么使用 <code>-f</code> 选项在单独的文件中指定。</li>
+<li>file 参数表示要处理的数据文件？</li>
 </ul>
+<ol>
+<li><p>在命令行定义编辑器命令：<code>$ echo &quot;This is a test&quot; | sed &#39;s/test/big test/&#39;</code></p>
+<ul>
+<li>默认情况下，sed编辑器会将指定的命令应用到STDIN 输入流上。这样你可以直接将数据通过管道输入sed编辑器处理。</li>
+<li>sed编辑器并不会修改文本文件的数据。它只会将修改后的数据发送到STDOUT。</li>
+</ul>
+</li>
+<li><p>在命令行使用多个编辑器命令：<code>$ sed -e &#39;s/brown/green/; s/dog/cat/&#39; data1.txt</code></p>
+<ul>
+<li>命令之间必须用分号隔开，并且在命令末尾和分号之间不能有空格。</li>
+<li>也可以用bash shell中的次提示符来分隔命令。只要输入第一个<strong>单引号标示出sed程序脚本的起始</strong>（sed编辑器命令列表），bash会继续提示你输入更多命令，直到输入了标示结束的单引号。要在封尾单引号所在行结束命令。bash shell一旦发现了封尾的单引号，就会执行命令。<pre><code>$ sed -e &#39;
+&gt; s/brown/green/
+&gt; s/fox/elephant/
+&gt; s/dog/cat/&#39; data1.txt
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>从文件中读取编辑器命令：<code>$ sed -f script1.sed data1.txt</code></p>
+</li>
+</ol>
+<h1 id="script"><a href="#script" class="headerlink" title="script"></a>script</h1><h2 id="s-（substitute）命令"><a href="#s-（substitute）命令" class="headerlink" title="s （substitute）命令"></a><code>s （substitute）命令</code></h2><p>用斜线间指定的第二个文本字符串来替换第一个文本字符串模式。</p>
+<h3 id="替换标记"><a href="#替换标记" class="headerlink" title="替换标记"></a>替换标记</h3><ul>
+<li>默认情况下它只替换每行中出现的第一处。要让替换命令能够替换一行中不同地方出现的文本必须使用替换标记 （substitution flag）。替换标记会在替换命令字符串之后设置。<code>s/pattern/replacement/flags</code></li>
+<li>数字，表明新文本将替换第几处模式匹配的地方；</li>
+<li>g ，表明新文本将会替换所有匹配的文本；</li>
+<li>p ，表明匹配所在行的内容要打印出来；和 -n 搭配使用，只输出被替换命令修改过的行。</li>
+<li>w file ，将替换的结果写到文件中。<code>sed &#39;s/test/trial/w test.txt&#39; data5.txt</code></li>
+</ul>
+<h3 id="替换字符"><a href="#替换字符" class="headerlink" title="替换字符"></a>替换字符</h3><ul>
+<li>正斜线通常用作字符串分隔符，因而如果它出现在了模式文本中的话，必须用反斜线来转义。<code>$ sed &#39;s/\/bin\/bash/\/bin\/csh/&#39; /etc/passwd</code></li>
+<li>要解决这个问题，sed编辑器允许选择其他字符来作为替换命令中的字符串分隔符：<code>$ sed &#39;s!/bin/bash!/bin/csh!&#39; /etc/passwd</code>。感叹号被用作字符串分隔符，这样路径名就更容易阅读和理解了。</li>
+</ul>
+<h2 id="使用地址"><a href="#使用地址" class="headerlink" title="使用地址"></a>使用地址</h2><p>默认情况下，在sed编辑器中使用的命令会作用于文本数据的所有行。如果只想将命令作用于特定行或某些行，则必须用行寻址 （line addressing）。</p>
+<h3 id="以数字形式表示行区间"><a href="#以数字形式表示行区间" class="headerlink" title="以数字形式表示行区间"></a>以数字形式表示行区间</h3><ol>
+<li><p>在命令中指定的地址可以是单个行号：<code>$ sed &#39;2s/dog/cat/&#39; data1.txt</code></p>
+</li>
+<li><p>用起始行号、逗号以及结尾行号指定的一定区间范围内的行：<code>$ sed &#39;2,3s/dog/cat/&#39; data1.txt</code></p>
+<ul>
+<li>如果想将命令作用到文本中从某行开始的所有行，可以用特殊地址——<strong>美元符</strong>。</li>
+</ul>
+</li>
+</ol>
+<p><strong>在单行上执行多条命令，可以用花括号将多条命令组合在一起</strong>。sed编辑器会处理地址行处列出的每条命令。也可以置地址区间。</p>
+<pre><code>$ sed &#39;2&#123;
+&gt; s/fox/elephant/
+&gt; s/dog/cat/
+&gt; &#125;&#39; data1.txt
+</code></pre>
+<h4 id="用文本模式来过滤出行"><a href="#用文本模式来过滤出行" class="headerlink" title="用文本模式来过滤出行"></a>用文本模式来过滤出行</h4><p>sed编辑器允许指定文本模式来过滤出命令要作用的行。<code>/pattern/command</code>，例如 <code>$ sed &#39;/Samantha/s/bash/csh/&#39; /etc/passwd</code></p>
+<h2 id="删除行"><a href="#删除行" class="headerlink" title="删除行"></a>删除行</h2><p>与替换命令使用方式类似，它会删除匹配指定寻址模式的所有行。使用该命令时要特别小心，如果你忘记加入寻址模式的话，流中的所有文本行都会被删除。</p>
+<pre><code>$ sed &#39;d&#39; data1.txt  // 删除所有行
+$ sed &#39;3d&#39; data1.txt  // 删除指定的第二行
+$ sed &#39;2,3d&#39; data1.txt  // 删除区间 2-3 行
+$ sed &#39;/pattern/d&#39; data1.txt // 删除匹配pattern的所有行
+$ sed &#39;/pattern1/,/pattern2/d&#39; data1.txt // 删除指定行之间的所有行，包括指定行。你指定的第一个模式会“打开”行删除功能，第二个模式会“关闭”行删除功能。
+- 如果 pattern1 在 pattern2 之后再次出现，则删除功能会再次打开，删除后面的所有行。
+- 如果 pattern2 不存在，同理，也会删除 pattern1 后的所有行
+</code></pre>
+<h2 id="插入和附加文本"><a href="#插入和附加文本" class="headerlink" title="插入和附加文本"></a>插入和附加文本</h2><ul>
+<li><code>插入（insert ）命令（i ）</code>会在指定行前增加一个新行；</li>
+<li><code>附加（append ）命令（a ）</code>会在指定行后增加一个新行。</li>
+</ul>
+<p>它们不能在单个命令行上使用，比如只插入一行时，可以在一条命令行上操作；但是当插入两行时，就得以两行的形式表示，且新行最后用反斜线。</p>
+<pre><code>sed &#39;[address]command\
+new line\
+new line\
+new line&#39; 
+</code></pre>
+<p>你必须指定是要将行插入还是附加到另一行。可以匹配一个数字行号或文本模式，但不能用地址区间。这合乎逻辑，因为你只能将文本插入或附加到单个行的前面或后面，而不是行区间的前面或后面。<br>如果你有一个多行数据流，想要将新行附加到数据流的末尾，只要用代表数据最后一行的美元符就可以了：<code>$ sed &#39;$a\line&#39; data.txt</code></p>
+<h2 id="修改行"><a href="#修改行" class="headerlink" title="修改行"></a>修改行</h2><p>与插入和附加文本类似</p>
+<pre><code>$ sed &#39;3c\
+&gt; This is a changed line of text.&#39; data6.txt
+
+// 用 pattern
+$ sed &#39;/pattern/c\
+&gt; This is a changed line of text.&#39; data6.txt
+
+// 用区间寻址会替换这两行
+$ sed &#39;2,3c\
+&gt; This is a new line of text.&#39; data6.txt
+</code></pre>
+<h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><p><code>[address]y/inchars/outchars/</code></p>
+<ul>
+<li>转换（transform ）命令（y ）对inchars 和outchars 值进行一对一的映射。inchars 中的第一个字符会被转换为outchars 中的第一个字符，第二个字符会被转换成outchars 中的第二个字符。这个映射过程会一直持续到处理完指定字符。如果inchars 和outchars 的长度不同，则sed编辑器会产生一条错误消息。</li>
+<li>转换命令是一个全局命令，也就是说，它会文本行中找到的所有指定字符自动进行转换，而不会考虑它们出现的位置。同理，你无法限定只转换在特定地方出现的字符。<pre><code>$ echo &quot;This 1 is 2 is 3 hah&quot; | sed &#39;y/123/456/&#39;
+This 4 is 5 is 6 hah
+$
+</code></pre>
+</li>
+</ul>
+<h2 id="打印输出"><a href="#打印输出" class="headerlink" title="打印输出"></a>打印输出</h2><h3 id="p-命令"><a href="#p-命令" class="headerlink" title="p 命令"></a>p 命令</h3><pre><code>$ echo &quot;this is a test&quot; | sed &#39;p‘ // 单纯打印文本
+$ sed -n &#39;/number 3/p&#39; data6.txt // 打印匹配到 number 3 的行，txt文本内容全部都会打印，但是匹配行会出现两次
+$ sed -n &#39;2,3p&#39; data6.txt // 区间行打印多次
+</code></pre>
+<h3 id="命令：打印行号"><a href="#命令：打印行号" class="headerlink" title="= 命令：打印行号"></a>= 命令：打印行号</h3><pre><code>$ sed -n &#39;/number 4/&#123;
+&gt; =
+&gt; p
+&gt; &#125;&#39; data6.txt
+4
+This is line number 4.
+</code></pre>
+<h3 id="列出（list-）命令（l-）"><a href="#列出（list-）命令（l-）" class="headerlink" title="列出（list ）命令（l ）"></a>列出（list ）命令（l ）</h3><p>打印数据流中的文本和不可打印的ASCII字符。“任何不可打印字符要么在其八进制值前加一个反斜线，要么使用标准C风格的命名法（用于常见的不可打印字符），比如\t ，来代表制表符。</p>
+<pre><code>$ cat data9.txt
+This    line    contains        tabs.
+$
+$ sed -n &#39;l&#39; data9.txt
+This\tline\tcontains\ttabs.$
+$
+</code></pre>
+<h2 id="使用sed处理文件"><a href="#使用sed处理文件" class="headerlink" title="使用sed处理文件"></a>使用sed处理文件</h2><h3 id="w-命令：向文件中写入行"><a href="#w-命令：向文件中写入行" class="headerlink" title="w 命令：向文件中写入行"></a>w 命令：向文件中写入行</h3><p><code>[address]w filename</code></p>
+<ul>
+<li>filename 可以使用相对路径或绝对路径，但不管是哪种，运行sed编辑器的用户都必须有文件的写权限。</li>
+<li>地址可以是sed中支持的任意类型的寻址方式，例如单个行号、文本模式、行区间或文本模式。</li>
+<li>src 是命令之外的file，dst 是 filename，即把 file 的内容写入 filename。命令里指定的行和位置针对的是 src 源文件。</li>
+</ul>
+<p>如果要根据一些公用的文本值从主文件中创建一份数据文件，比如下面的邮件列表中的，那么w 命令会非常好用。</p>
+<pre><code>$ cat data11.txt
+Blum, R       Browncoat
+McGuiness, A  Alliance
+Bresnahan, C  Browncoat
+Harken, C     Alliance
+$
+$ sed -n &#39;/Browncoat/w Browncoats.txt&#39; data11.txt // sed编辑器会只将包含文本模式的数据行写入目标文件。
+
+$
+$ cat Browncoats.txt
+Blum, R       Browncoat
+Bresnahan, C  Browncoat
+$
+</code></pre>
+<h3 id="r命令：从文件中读取行"><a href="#r命令：从文件中读取行" class="headerlink" title="r命令：从文件中读取行"></a>r命令：从文件中读取行</h3><p>读取（read ）命令（r ）允许你将一个独立文件中的数据插入到数据流中。</p>
+<p>读取命令的格式如下：<code>[address]r filename</code></p>
+<ul>
+<li>filename 参数指定了数据文件的绝对路径或相对路径。你在<strong>读取命令中使用地址区间，只能指定单独一个行号或文本模式地址。</strong></li>
+<li>sed编辑器会将文件中的所有文本行插入到指定地址后。</li>
+<li>要在数据流的末尾添加文本，只需用美元符地址符就行了。</li>
+<li>从filename中读取行，写入外面的 f。</li>
+</ul>
+<p>读命令和删除命令配合使用：利用另一个文件中的数据来替换文件中的占位文本。<br>举例来说，假定你有一份套用信件保存在文本文件中：</p>
+<pre><code>$ cat notice.std
+Would the following people:
+LIST
+please report to the ship&#39;s captain.
+$
+</code></pre>
+<p>套用信件将<strong>通用占位文本LIST 放在人物名单的位置</strong>。要在占位文本后插入名单，只需读取命令就行了。但这样的话，占位文本仍然会留在输出中。要删除占位文本的话，你可以用删除命令。结果如下：</p>
+<pre><code>$ sed &#39;/LIST/&#123;
+&gt; r data11.txt
+&gt; d
+&gt; &#125;&#39; notice.std
+Would the following people:
+Blum, R       Browncoat
+McGuiness, A  Alliance
+Bresnahan, C  Browncoat
+Harken, C     Alliance
+please report to the ship&#39;s captain.
+$
+</code></pre>
+<p>r 命令是：读别人，写入我；w 命令是：读我，写别人。</p>
+<h2 id="参考-引用"><a href="#参考-引用" class="headerlink" title="参考/引用"></a>参考/引用</h2><p>摘录来自: [美] Richard Blum. “Linux命令行与shell脚本编程大全（第3版）。” Apple Books. </p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 peiqi66@163.com </span>
