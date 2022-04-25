@@ -2,7 +2,7 @@
 title: gccVSg++
 date: 2022-02-14 19:44:47
 categories:
-- C++
+- CPP
 tags:
 - 编译
 - 基础

@@ -55,9 +55,9 @@ tags:
 
 - 尾置返回类型
   - 其他普通函数中，当返回类型比较复杂（如数组的指针or引用时也使用）auto f() -> int(*)[10] {}
-- 必须包含：[capture list] 和 { function body }
-  - auto f = [] {return 42;} 只有 return 语句，返回类型从返回的表达式推断而来，
-    - { function body } 中包含任何其他语句，且未指定返回类型时，则默认返回 void
+- 必须包含：`[capture list]` 和 `{ function body }`
+  - `auto f = [] {return 42;}` 只有 return 语句，返回类型从返回的表达式推断而来，
+    - `{ function body }` 中包含任何其他语句，且未指定返回类型时，则默认返回 void
 
 ## lambda 是函数对象
 当定义 lambda 时，编辑器会生成一个与 lambda 对应的新的（未命名）的新类型。
