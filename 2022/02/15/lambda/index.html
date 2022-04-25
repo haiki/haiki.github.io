@@ -153,7 +153,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(33)</small>
+                <small>(35)</small>
             
         </div>
     </li>
@@ -164,7 +164,7 @@
                     <div data-rel="编程语言">
                         
                         编程语言
-                        <small>(3)</small>
+                        <small>(2)</small>
                         
                     </div>
                     
@@ -192,7 +192,7 @@
                     <div data-rel="工具">
                         
                         工具
-                        <small>(6)</small>
+                        <small>(8)</small>
                         
                     </div>
                     
@@ -245,24 +245,10 @@
         
             
                 <li>
-                    <div data-rel="C++">
-                        
-                        C++
-                        <small>(1)</small>
-                        
-                    </div>
-                    
-                </li>
-            
-        
-    
-        
-            
-                <li>
                     <div data-rel="CPP">
                         
                         CPP
-                        <small>(2)</small>
+                        <small>(4)</small>
                         
                     </div>
                     
@@ -304,8 +290,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="33">
-<input type="hidden" id="yelog_site_word_count" value="53.3k">
+<input type="hidden" id="yelog_site_posts_number" value="35">
+<input type="hidden" id="yelog_site_word_count" value="55.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -403,7 +389,7 @@
             </li>
         
             <li class="article-tag-list-item">
-                <i class="iconfont icon-tag"></i><a>C++</a>
+                <i class="iconfont icon-tag"></i><a>bash</a>
             </li>
         
             <li class="article-tag-list-item">
@@ -509,6 +495,22 @@
             <span class="post-date" title="2019-10-03 16:03:38">2019/10/03</span>
         </a>
         
+        <a  class="全部文章 工具 "
+           href="/2022/04/23/bash-function/"
+           data-tag="bash"
+           data-author="" >
+            <span class="post-title" title="bash_function">bash_function</span>
+            <span class="post-date" title="2022-04-23 22:21:56">2022/04/23</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/04/23/bash-if/"
+           data-tag="bash"
+           data-author="" >
+            <span class="post-title" title="bash_if">bash_if</span>
+            <span class="post-date" title="2022-04-23 21:06:06">2022/04/23</span>
+        </a>
+        
         <a  class="全部文章 CPP "
            href="/2022/02/19/generic-algorithm/"
            data-tag=""
@@ -541,7 +543,7 @@
             <span class="post-date" title="2022-02-15 10:06:25">2022/02/15</span>
         </a>
         
-        <a  class="全部文章 C++ "
+        <a  class="全部文章 CPP "
            href="/2022/02/14/gccVSg/"
            data-tag="编译,基础"
            data-author="" >
@@ -621,11 +623,11 @@
             <span class="post-date" title="2019-12-12 09:29:40">2019/12/12</span>
         </a>
         
-        <a  class="全部文章 编程语言 "
+        <a  class="全部文章 CPP "
            href="/2019/11/29/C-%E9%9A%8F%E8%AE%B0/"
-           data-tag="C++"
+           data-tag=""
            data-author="" >
-            <span class="post-title" title="C++随记">C++随记</span>
+            <span class="post-title" title="Cpp debug">Cpp debug</span>
             <span class="post-date" title="2019-11-29 09:58:19">2019/11/29</span>
         </a>
         
@@ -803,7 +805,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2022-02-19 21:05:08'>2022-02-15 10:07</time>
+            发布时间 : <time class="date" title='最后更新: 2022-02-19 21:12:18'>2022-02-15 10:07</time>
         
     </div>
     <div class="article-meta">
@@ -914,9 +916,9 @@
 <li>其他普通函数中，当返回类型比较复杂（如数组的指针or引用时也使用）auto f() -&gt; int(*)[10] {}</li>
 </ul>
 </li>
-<li>必须包含：[capture list] 和 { function body }<ul>
-<li>auto f = [] {return 42;} 只有 return 语句，返回类型从返回的表达式推断而来，<ul>
-<li>{ function body } 中包含任何其他语句，且未指定返回类型时，则默认返回 void</li>
+<li>必须包含：<code>[capture list]</code> 和 <code>&#123; function body &#125;</code><ul>
+<li><code>auto f = [] &#123;return 42;&#125;</code> 只有 return 语句，返回类型从返回的表达式推断而来，<ul>
+<li><code>&#123; function body &#125;</code> 中包含任何其他语句，且未指定返回类型时，则默认返回 void</li>
 </ul>
 </li>
 </ul>

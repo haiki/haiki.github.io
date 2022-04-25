@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>bash_function</title>
+      <link href="/2022/04/23/bash-function/"/>
+      <url>/2022/04/23/bash-function/</url>
+      
+        <content type="html"><![CDATA[<h1 id="创建函数"><a href="#创建函数" class="headerlink" title="创建函数"></a>创建函数</h1><pre><code class="bash">function func &#123;    cmds&#125;#func() &#123;    cmds&#125;</code></pre><ol><li>函数使用必须在定义后</li><li>函数名是唯一的</li><li>函数执行退出后，用标准变量 <code>$?</code> 确定函数的退出状态码（只看最后一条语句，所以无法判断中间是否执行成功）</li><li>使用 return 命令 退出函数并返回特定的退出状态码，return 命令中可指定一个整数值（范围：0-255，返回后必须要马上取返回值。<ul><li>或者使用 exit n</li></ul></li><li>使用函数输出：函数用 <code>echo</code> 语句显示计算的结果，调用方可获取到此结果。如：</li></ol><pre><code class="bash">function fun1 &#123;    echo $[ $val * 2 ]&#125;result=$(fun1) # `fun1` 也可以，叫做命令替换</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bash </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>bash_if</title>
+      <link href="/2022/04/23/bash-if/"/>
+      <url>/2022/04/23/bash-if/</url>
+      
+        <content type="html"><![CDATA[<h1 id="if-判断是普通命令"><a href="#if-判断是普通命令" class="headerlink" title="if 判断是普通命令"></a>if 判断是普通命令</h1><h2 id="if-then-语句"><a href="#if-then-语句" class="headerlink" title="if-then 语句"></a>if-then 语句</h2><pre><code class="bash">if cmd then    cmdsfi###if cmd; then    cmdsfi</code></pre><ol><li>根据 cmd 命令退出状态码确定是否执行then</li><li>这里的 cmd 就是 pwd，grep 之类的命令</li></ol><h2 id="if-then-else-语句"><a href="#if-then-else-语句" class="headerlink" title="if-then_else 语句"></a>if-then_else 语句</h2><pre><code class="bash">if cmd then    cmdselse    cmdsfi</code></pre><h2 id="嵌套-if"><a href="#嵌套-if" class="headerlink" title="嵌套 if"></a>嵌套 if</h2><pre><code class="bash">if cmd1then    cmdselif cmd2then    cmdsfi</code></pre><h1 id="test-命令"><a href="#test-命令" class="headerlink" title="test 命令"></a>test 命令</h1><p>if-then 语句不能测试命令退出状态码之外的条件。</p><pre><code class="bash">if test conditionsthen    cmdsfi</code></pre><ol><li>test 会测试不同的条件，如果成立，则推出并返回退出状态码0</li><li>conditions 是test 命令要测试的一系列参数和值，当为空时，test 返回非0。可以用来测试某个变量是否有值</li></ol><h1 id=""><a href="#" class="headerlink" title="[]"></a>[]</h1><p>[] 类似 test 命令，可以判断三类条件：</p><ol><li>数值比较：使用文本比较，用数学符号可能被解析为字符串从而得到错误的结果。（很神奇，执行数学运算，又是直接用 <code>$[ $val + $val2 ]</code> 等数学符号<ul><li>bash 只能处理整数，如果只用 echo 显示结果没限制 <code>if [ $val1 -eq $val2 ]</code></li></ul></li><li>字符串比较：使用标准的数学比较符号，如 &lt;， &gt;， = 等<ul><li>比较字符串的相等性，测试会将所有的标点和大小写考虑在内 <code>if [ $val1 != $val2 ]</code></li><li>字符串顺序<ul><li>大于小于号必须转义，否则会被当作转义符 <code>if [ $val1 \&lt; $val2 ]</code></li><li>使用 ascii 顺序：大写字母比小写字母小，而 bash 的 sort 命令是按照系统本地化语言定义的排序顺序，即小写在大写前面</li></ul></li><li>字符串大小<ul><li><code>if [ -z $val ]</code> 判断 $val 的长度是否为 0，从而判断字符串是否为空，为空返回 true</li><li><code>if [ -n $val ]</code> 字符串不为空则返回 true，未被定义过的也为空</li><li>使用未定义/未初始化的变量不好，所以在用于数值/字符串比较之前，需要用 -n/-z 先测试下变量是否有值</li></ul></li></ul></li><li>文件比较：测试 Linux 文件系统上文件和目录的状态<ul><li><code>-d</code>：file 是否存在并且是目录</li><li><code>-e</code>：file 是否存在</li><li><code>-f</code>：file 存在 &amp; 是文件</li><li><code>-r</code>：存在 &amp; 可读</li><li><code>-s</code>：存在 &amp; 非空</li><li><code>-w</code>：存在 &amp; 可写</li><li><code>-x</code>：存在 &amp; 可执行</li><li><code>-O</code>：存在 &amp; 属当前用户所有</li><li><code>-G</code>：存在 &amp; 默认组与当前用户相同</li><li><code>file1 nt file2</code>：检查 1 是否比 2 新</li><li><code>file1 ot file2</code>：verse</li></ul></li></ol><h1 id="复合条件测试"><a href="#复合条件测试" class="headerlink" title="复合条件测试"></a>复合条件测试</h1><ol><li>[ condation1 ] &amp;&amp; [ condation2 ]</li><li>[ condation1 ] || [ condation2 ]</li></ol><h1 id="用于数学表达式"><a href="#用于数学表达式" class="headerlink" title="(()) 用于数学表达式"></a>(()) 用于数学表达式</h1><p>(( expression ))：exp 可以是任意的数学赋值或表达式，不需要将表达式计算符号（&gt;, &lt; 之类的做转义，相比 test 命令更高级）</p><ul><li>val++, val–, ++val, –val, </li><li>! 逻辑去反</li><li>~ 位取反</li><li>** 幂运算</li><li>&lt;&lt; , &gt;&gt;： 位移</li><li>&amp;, |：位布尔和/或</li><li>&amp;&amp;, ||：逻辑和/或</li></ul><h1 id="用于高级字符串处理"><a href="#用于高级字符串处理" class="headerlink" title="[[]] 用于高级字符串处理"></a>[[]] 用于高级字符串处理</h1><p>[[ expression ]]</p><ul><li>除了 test 中支持的功能外，还支持模式匹配</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bash </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>generic_algorithm</title>
       <link href="/2022/02/19/generic-algorithm/"/>
       <url>/2022/02/19/generic-algorithm/</url>
@@ -27,7 +77,7 @@
       <link href="/2022/02/15/lambda/"/>
       <url>/2022/02/15/lambda/</url>
       
-        <content type="html"><![CDATA[<h1 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h1><p>算法可接受一元谓词/二元谓词，传递给算法的函数必须只有1/2个参数。局限性：算法只支持1个/2参数，而需要传入2/3+个参数。需要其他特性满足需求。</p><p>可向算法传递任何类别的可调用对象。</p><ul><li>可调用对象（callable object）：对于一个对象或者表达式，如果可以<strong>对其使用调用运算符</strong>，即()，则称为可调用的。<ul><li>谓词是可调用表达式</li><li>函数</li><li>函数指针</li><li>重载了函数调用运算符的类</li><li>lambda 表达式<ul><li>表示可调用的代码单元，可理解为未命名的内联函数</li><li>与函数类似，不同在于：可能定义在函数内部</li></ul></li></ul></li></ul><h1 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a>lambda</h1><p>格式 <code>[capture list] (parameter list) -&gt; return type &#123; function body &#125;</code></p><ul><li>[capture list] lambda 所在函数中定义的局部变量的列表<ul><li>lambda 将局部变量包含在其捕获列表中明确表示将会使用这些变量。</li><li>只有捕获了函数的局部变量，才能在lambda 的函数体中使用该变量。</li><li>lambda 可以直接使用局部 static 变量和他它在函数之外声明的名字。</li><li>值捕获：<ul><li>捕获的变量必须可拷贝。</li><li>函数传值参数类似，区别在于：被捕获的变量是在 lambda 创建时拷贝的，而不是调用时。<pre><code class="cpp">void fcn1 &#123;  size_t v1 = 42;  auto f = [v1] &#123;return v1;&#125;;  v1 = 0;  audo j = f(); // j = 42，保存了创建 lambda 时 v1 的拷贝&#125;</code></pre></li><li>值被拷贝的变量，lambda 不会改变其值，如果希望改变捕获的变量，必须在参数列表首加上关键字 <code>mutable</code>。因此可变 lambda 可省略参数列表。</li></ul></li><li>引用捕获<ul><li>与返回引用的限制和问题一致：需要确保 lambda 执行时所引用（指针/迭代器指向）的对象确实存在。因为 lambda 捕获的都是局部变量，如果在函数外使用此 lambda，引用捕获原函数的局部变量已经消失了，所以有问题。</li><li>函数可直接返回可调用对象，或者返回一个类对象，该类含有可调用对象的数据成员。如果函数返回了 lambda，与函数不能返回一个局部变量的引用类似，此lambda 不可以包含引用的捕获。</li><li>如果可能，应该避免捕获指指针/引用。</li><li>引用的变量是否可变取决于此引用指向的是否为 const 类型。</li></ul></li><li>显示捕获<ul><li>明确写出要捕获哪个变量。</li></ul></li><li>隐式捕获<ul><li>由编译器根据 lambda 体中的代码推断我们要使用哪些变量。</li><li>&amp; ： 引用捕获， = ：值捕获。</li></ul></li><li>显示和隐式捕获可以同时使用，此时隐式捕获 &amp;/= 作为捕获列表的第一个元素，后面的显示捕获必须使用和隐式捕获不同的方式。</li></ul></li></ul><ul><li>尾置返回类型<ul><li>其他普通函数中，当返回类型比较复杂（如数组的指针or引用时也使用）auto f() -&gt; int(*)[10] {}</li></ul></li><li>必须包含：[capture list] 和 { function body }<ul><li>auto f = [] {return 42;} 只有 return 语句，返回类型从返回的表达式推断而来，<ul><li>{ function body } 中包含任何其他语句，且未指定返回类型时，则默认返回 void</li></ul></li></ul></li></ul><h2 id="lambda-是函数对象"><a href="#lambda-是函数对象" class="headerlink" title="lambda 是函数对象"></a>lambda 是函数对象</h2><p>当定义 lambda 时，编辑器会生成一个与 lambda 对应的新的（未命名）的新类型。</p><ul><li>该类中有重载的函数调用运算符</li><li>该类中必须为每个值捕获的变量建立数据成员，并作为构造函数的参数初始化</li><li>对于 lambda 通过引用捕获的变化，程序负责确保 lambda 执行时所引用的对象确实存在，因此编译器可以直接使用该引用而无需存储为数据成员</li><li>此类中不包含默认构造函数，赋值运算符及默认的析构函数，是否包含拷贝/移动构造函数通常需要视捕获的数据成员类型而定</li></ul><p>向一个函数传递 lambda 时，同时定义了一个新类型和该类型的一个对象，传递的参数就是此编译器生成的类类型的未命名对象。</p><p>使用 auto 定义用 lambda 初始化的变量时，定义了一个从 lambda 生成的类型的对象。</p><h1 id="参数绑定"><a href="#参数绑定" class="headerlink" title="参数绑定"></a>参数绑定</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>当算法只支持一元谓词，而功能必须用 2 个参数时，可以将有2个参数的可调用对象适配为1个参数的可调用对象。</p><p>如果 lambda 的捕获列表为空，通常可以使用函数来替代它。</p><ol><li>如果需要很多地方使用相同的操作，应该定义为函数。</li><li>如果一个操作要访问很多语句才能完成，使用函数更好</li></ol><p>可将 bind 看作是通用的<strong>函数适配器</strong>，它接受一个可调用对象，生成一个新的可调用对象来“适应”原对象的参数列表。</p><ul><li><strong>适配器</strong>是标准库中的通用概念，本质上是一种机制，能使某种事物的行为看起来像另一种事物一样。<ul><li>容器适配器：接受一种已有的容器类型，使其行为看起来像一种不同的类型</li><li>顺序容器适配器：stack，queue，priority_queue</li></ul></li></ul><h2 id="bind-使用"><a href="#bind-使用" class="headerlink" title="bind 使用"></a>bind 使用</h2><p>头文件：<code>functional</code></p><p>一般形式：<code>auto newCallable = bind(callable, arg_list);</code></p><p>arg_list 是 callable 的参数。当调用 newCallable 时，newCallable 会调用 callable，并传递给 arg_list 的参数。</p><p>arg_list 中的参数可能包含形如 <code>_n</code> 的参数，<code>_n</code> 是一个参数，表示“占位符（placeholder）”，是 newCallable 的参数，n 表示在 newCallable 中参数的位置。如 <code>_1/_2</code> 是 newCallable 的第一/二个参数，依次类推。</p><p>使用占位符(<code>_n</code>)时需要引入命名空间：<code>using namespace std::placeholders;</code>。头文件 <code>functiondal</code>。</p><h2 id="bind-的参数"><a href="#bind-的参数" class="headerlink" title="bind 的参数"></a>bind 的参数</h2><p>可以用 bind 重排参数顺序：</p><ul><li>传给 g 的参数按位置绑定到占位符，即：第一个参数绑定到 _1，第二个参数绑定到 _2。当调用f时，按照 f 中的顺序放置。<pre><code class="cpp">auto g = bind(f, a, b, _2, c, _1);g(X, Y);f(a, b, Y, c, X);</code></pre></li></ul><p>绑定引用参数：</p><ul><li><p>默认情况下，bind 中非占位符的参数被拷贝到 callable 中，但是，与 lambda 类似，有些参数 1）希望以引用的方式传递；2）要绑定的类型无法拷贝。</p><pre><code class="cpp">for_each(words.begin(), words.end(),  [&amp;os,c](const string&amp; s) &#123; os &lt;&lt; s &lt;&lt; c;&#125;);========&gt;ostream &amp;print(ostream &amp;os, const string&amp; s, char c) &#123;    os &lt;&lt;s &lt;&lt; c;&#125;for_each(words.begin(), words.end(), bind(print, os, _1, &#39; &#39;)); // 有误， ostream 是可不拷贝的====&gt; for_each(words.begin(), words.end(), bind(print, std::ref(os), _1, &#39; &#39;));</code></pre></li></ul><p>如果我们希望传递给 bind 一个对象而又不拷贝它，必须使用标准库 ref 函数。</p><ul><li>ref 函数返回一个对象，包含给定的引用，此对象是可拷贝的。</li><li>cref 函数生成保存 const 引用的类。</li><li>ref，cref 定义在头文件 <code>functional</code> 中。</li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h1><p>算法可接受一元谓词/二元谓词，传递给算法的函数必须只有1/2个参数。局限性：算法只支持1个/2参数，而需要传入2/3+个参数。需要其他特性满足需求。</p><p>可向算法传递任何类别的可调用对象。</p><ul><li>可调用对象（callable object）：对于一个对象或者表达式，如果可以<strong>对其使用调用运算符</strong>，即()，则称为可调用的。<ul><li>谓词是可调用表达式</li><li>函数</li><li>函数指针</li><li>重载了函数调用运算符的类</li><li>lambda 表达式<ul><li>表示可调用的代码单元，可理解为未命名的内联函数</li><li>与函数类似，不同在于：可能定义在函数内部</li></ul></li></ul></li></ul><h1 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a>lambda</h1><p>格式 <code>[capture list] (parameter list) -&gt; return type &#123; function body &#125;</code></p><ul><li>[capture list] lambda 所在函数中定义的局部变量的列表<ul><li>lambda 将局部变量包含在其捕获列表中明确表示将会使用这些变量。</li><li>只有捕获了函数的局部变量，才能在lambda 的函数体中使用该变量。</li><li>lambda 可以直接使用局部 static 变量和他它在函数之外声明的名字。</li><li>值捕获：<ul><li>捕获的变量必须可拷贝。</li><li>函数传值参数类似，区别在于：被捕获的变量是在 lambda 创建时拷贝的，而不是调用时。<pre><code class="cpp">void fcn1 &#123;  size_t v1 = 42;  auto f = [v1] &#123;return v1;&#125;;  v1 = 0;  audo j = f(); // j = 42，保存了创建 lambda 时 v1 的拷贝&#125;</code></pre></li><li>值被拷贝的变量，lambda 不会改变其值，如果希望改变捕获的变量，必须在参数列表首加上关键字 <code>mutable</code>。因此可变 lambda 可省略参数列表。</li></ul></li><li>引用捕获<ul><li>与返回引用的限制和问题一致：需要确保 lambda 执行时所引用（指针/迭代器指向）的对象确实存在。因为 lambda 捕获的都是局部变量，如果在函数外使用此 lambda，引用捕获原函数的局部变量已经消失了，所以有问题。</li><li>函数可直接返回可调用对象，或者返回一个类对象，该类含有可调用对象的数据成员。如果函数返回了 lambda，与函数不能返回一个局部变量的引用类似，此lambda 不可以包含引用的捕获。</li><li>如果可能，应该避免捕获指指针/引用。</li><li>引用的变量是否可变取决于此引用指向的是否为 const 类型。</li></ul></li><li>显示捕获<ul><li>明确写出要捕获哪个变量。</li></ul></li><li>隐式捕获<ul><li>由编译器根据 lambda 体中的代码推断我们要使用哪些变量。</li><li>&amp; ： 引用捕获， = ：值捕获。</li></ul></li><li>显示和隐式捕获可以同时使用，此时隐式捕获 &amp;/= 作为捕获列表的第一个元素，后面的显示捕获必须使用和隐式捕获不同的方式。</li></ul></li></ul><ul><li>尾置返回类型<ul><li>其他普通函数中，当返回类型比较复杂（如数组的指针or引用时也使用）auto f() -&gt; int(*)[10] {}</li></ul></li><li>必须包含：<code>[capture list]</code> 和 <code>&#123; function body &#125;</code><ul><li><code>auto f = [] &#123;return 42;&#125;</code> 只有 return 语句，返回类型从返回的表达式推断而来，<ul><li><code>&#123; function body &#125;</code> 中包含任何其他语句，且未指定返回类型时，则默认返回 void</li></ul></li></ul></li></ul><h2 id="lambda-是函数对象"><a href="#lambda-是函数对象" class="headerlink" title="lambda 是函数对象"></a>lambda 是函数对象</h2><p>当定义 lambda 时，编辑器会生成一个与 lambda 对应的新的（未命名）的新类型。</p><ul><li>该类中有重载的函数调用运算符</li><li>该类中必须为每个值捕获的变量建立数据成员，并作为构造函数的参数初始化</li><li>对于 lambda 通过引用捕获的变化，程序负责确保 lambda 执行时所引用的对象确实存在，因此编译器可以直接使用该引用而无需存储为数据成员</li><li>此类中不包含默认构造函数，赋值运算符及默认的析构函数，是否包含拷贝/移动构造函数通常需要视捕获的数据成员类型而定</li></ul><p>向一个函数传递 lambda 时，同时定义了一个新类型和该类型的一个对象，传递的参数就是此编译器生成的类类型的未命名对象。</p><p>使用 auto 定义用 lambda 初始化的变量时，定义了一个从 lambda 生成的类型的对象。</p><h1 id="参数绑定"><a href="#参数绑定" class="headerlink" title="参数绑定"></a>参数绑定</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>当算法只支持一元谓词，而功能必须用 2 个参数时，可以将有2个参数的可调用对象适配为1个参数的可调用对象。</p><p>如果 lambda 的捕获列表为空，通常可以使用函数来替代它。</p><ol><li>如果需要很多地方使用相同的操作，应该定义为函数。</li><li>如果一个操作要访问很多语句才能完成，使用函数更好</li></ol><p>可将 bind 看作是通用的<strong>函数适配器</strong>，它接受一个可调用对象，生成一个新的可调用对象来“适应”原对象的参数列表。</p><ul><li><strong>适配器</strong>是标准库中的通用概念，本质上是一种机制，能使某种事物的行为看起来像另一种事物一样。<ul><li>容器适配器：接受一种已有的容器类型，使其行为看起来像一种不同的类型</li><li>顺序容器适配器：stack，queue，priority_queue</li></ul></li></ul><h2 id="bind-使用"><a href="#bind-使用" class="headerlink" title="bind 使用"></a>bind 使用</h2><p>头文件：<code>functional</code></p><p>一般形式：<code>auto newCallable = bind(callable, arg_list);</code></p><p>arg_list 是 callable 的参数。当调用 newCallable 时，newCallable 会调用 callable，并传递给 arg_list 的参数。</p><p>arg_list 中的参数可能包含形如 <code>_n</code> 的参数，<code>_n</code> 是一个参数，表示“占位符（placeholder）”，是 newCallable 的参数，n 表示在 newCallable 中参数的位置。如 <code>_1/_2</code> 是 newCallable 的第一/二个参数，依次类推。</p><p>使用占位符(<code>_n</code>)时需要引入命名空间：<code>using namespace std::placeholders;</code>。头文件 <code>functiondal</code>。</p><h2 id="bind-的参数"><a href="#bind-的参数" class="headerlink" title="bind 的参数"></a>bind 的参数</h2><p>可以用 bind 重排参数顺序：</p><ul><li>传给 g 的参数按位置绑定到占位符，即：第一个参数绑定到 _1，第二个参数绑定到 _2。当调用f时，按照 f 中的顺序放置。<pre><code class="cpp">auto g = bind(f, a, b, _2, c, _1);g(X, Y);f(a, b, Y, c, X);</code></pre></li></ul><p>绑定引用参数：</p><ul><li><p>默认情况下，bind 中非占位符的参数被拷贝到 callable 中，但是，与 lambda 类似，有些参数 1）希望以引用的方式传递；2）要绑定的类型无法拷贝。</p><pre><code class="cpp">for_each(words.begin(), words.end(),  [&amp;os,c](const string&amp; s) &#123; os &lt;&lt; s &lt;&lt; c;&#125;);========&gt;ostream &amp;print(ostream &amp;os, const string&amp; s, char c) &#123;    os &lt;&lt;s &lt;&lt; c;&#125;for_each(words.begin(), words.end(), bind(print, os, _1, &#39; &#39;)); // 有误， ostream 是可不拷贝的====&gt; for_each(words.begin(), words.end(), bind(print, std::ref(os), _1, &#39; &#39;));</code></pre></li></ul><p>如果我们希望传递给 bind 一个对象而又不拷贝它，必须使用标准库 ref 函数。</p><ul><li>ref 函数返回一个对象，包含给定的引用，此对象是可拷贝的。</li><li>cref 函数生成保存 const 引用的类。</li><li>ref，cref 定义在头文件 <code>functional</code> 中。</li></ul>]]></content>
       
       
       <categories>
@@ -77,7 +127,7 @@
       
       <categories>
           
-          <category> C++ </category>
+          <category> CPP </category>
           
       </categories>
       
@@ -326,25 +376,19 @@
     
     
     <entry>
-      <title>C++随记</title>
+      <title>Cpp debug</title>
       <link href="/2019/11/29/C-%E9%9A%8F%E8%AE%B0/"/>
       <url>/2019/11/29/C-%E9%9A%8F%E8%AE%B0/</url>
       
-        <content type="html"><![CDATA[<ul><li><p>想要随机产生0-100间的整数，从而做排序的操作</p><ul><li><a href="https://www.cnblogs.com/VVingerfly/p/5990714.html">C++产生随机数</a>             </li><li>通常用 <code>srand((unsigned)time(0)) </code>或者<code>srand((unsigned)time(NULL))</code>来 产生种子。如果仍然觉得时间间隔太小。可以在<code>(unsigned)time(0)</code>或者<code>(unsigned)time(NULL)</code>后面乘上某个合适的整数。 例如,<code>srand((unsigned)time(NULL)*10)</code>。</li><li><a href="https://blog.csdn.net/yangziluomu/article/details/102013793">浮点随机数产生</a></li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="bazel"><a href="#bazel" class="headerlink" title="bazel"></a>bazel</h1><ol><li>.bazelrc 中关闭 copt</li><li>bazel build –copt=”-g” –strip=”never” …</li></ol><p>build –cxxopt=”–std=c++17”<br>#build –copt=-O2<br>build –incompatible_no_support_tools_in_action_inputs=false</p><p><a href="https://blog.csdn.net/shaomingliang499/article/details/50536796">https://blog.csdn.net/shaomingliang499/article/details/50536796</a></p><ul><li><p>想要随机产生0-100间的整数，从而做排序的操作</p><ul><li><a href="https://www.cnblogs.com/VVingerfly/p/5990714.html">C++产生随机数</a>             </li><li>通常用 <code>srand((unsigned)time(0)) </code>或者<code>srand((unsigned)time(NULL))</code>来 产生种子。如果仍然觉得时间间隔太小。可以在<code>(unsigned)time(0)</code>或者<code>(unsigned)time(NULL)</code>后面乘上某个合适的整数。 例如,<code>srand((unsigned)time(NULL)*10)</code>。</li><li><a href="https://blog.csdn.net/yangziluomu/article/details/102013793">浮点随机数产生</a></li></ul></li></ul><h1 id="C-类访问控制（public-protected-private）"><a href="#C-类访问控制（public-protected-private）" class="headerlink" title="C++ 类访问控制（public/protected/private）"></a>C++ 类访问控制（public/protected/private）</h1><p>C++中 public，protected， private 访问标号小结<br>第一：private, public, protected 访问标号的访问范围。<br>private：只能由1.该类中的函数、2.其友元函数访问。<br>不能被任何其他访问，该类的对象也不能访问。<br>protected：可以被1.该类中的函数、2.子类的函数、以及3.其友元函数访问。<br>但不能被该类的对象访问。<br>public：可以被1.该类中的函数、2.子类的函数、3.其友元函数访问，也可以由4.该类的对象访问。<br>注：友元函数包括3种：设为友元的普通的非成员函数；设为友元的其他类的成员函数；设为友元类中的所有成员函数。<br>————————————————<br>版权声明：本文为CSDN博主「sppg1949」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/sppg1949/article/details/6716561">https://blog.csdn.net/sppg1949/article/details/6716561</a></p><p>// const, inline, this, 引用, 列表初始化 </p><p>声明是用户可以看到的部分，客户非常信任地使用这个特性，希望得到一定的结果，但是你在实现里使用了不同的缺省值，那么将是灾难性的。因此编译器禁止声明和定义时同时定义缺省参数值。</p><p>类的成员函数的参数表在声明时默认参数位于参数表右部，如int fn(int a,int b=0,int c=5)之类的，但在它定义的时候则不能加默认参数，只能写int fn(int a,int b,int c);</p><p>若声明时没有定义缺省参数值，那么在定义成员函数时可以定义缺省参数值。但这种情况通常用户是看不见的，因此应避免。</p><p>对于非类中的函数，在函数声明中定义默认参数的另外一个好处时，可以利用声明来随意更改默认参数的值。<br>————————————————<br>版权声明：本文为CSDN博主「abraham_li」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/abraham_li/article/details/49611719">https://blog.csdn.net/abraham_li/article/details/49611719</a></p><p>5、char test[4]={‘t’,’e’,’s’,’t’}或char test[]={‘t’,’e’,’s’,’t’}  这种情况下因为不管是数字长度缺省还是刚好填充字符个数，编译器都不会添加结尾符，所以这两种情况得到的结果不确定！<br>其他和 char 相关的都会自动在后面加 ‘\0’</p><ul><li><p>关键字inline 必须与函数定义体放在一起才能使函数成为内联，仅将inline 放在函数声明前面不起任何作用。</p><ul><li>所以说，inline 是一种“用于实现的关键字”，而不是一种“用于声明的关键字”。一般地，用户可以阅读函数的声明，但是看不到函数的定义。尽管在大多数教科书中内联函数的声明、定义体前面都加了inline 关键字，但我认为inline 不应该出现在函数的声明中。这个细节虽然不会影响函数的功能，但是体现了高质量C++/C 程序设计风格的一个基本原则：声明与定义不可混为一谈，用户没有必要、也不应该知道函数是否需要内联。</li></ul></li><li><p>定义在类声明之中的成员函数将自动地成为内联函数</p></li><li><p>慎用内联</p><ul><li>内联能提高函数的执行效率，为什么不把所有的函数都定义成内联函数？如果所有的函数都是内联函数，还用得着“内联”这个关键字吗？内联是以代码膨胀（复制）为代价，仅仅省去了函数调用的开销，从而提高函数的执行效率。如果执行函数体内代码的时间，相比于函数调用的开销较大，那么效率的收获会很少。另一方面，每一处内联函数的调用都要复制代码，将使程序的总代码量增大，消耗更多的内存空间。</li><li>以下情况不宜使用内联：<ul><li>（1）如果函数体内的代码比较长，使用内联将导致内存消耗代价较高。</li><li>（2）如果函数体内出现循环，那么执行函数体内代码的时间要比函数调用的开销大。类的构造函数和析构函数容易让人误解成使用内联更有效。要当心构造函数和析构函数可能会隐藏一些行为，如“偷偷地”执行了基类或成员对象的构造函数和析构函数。所以不要随便地将构造函数和析构函数的定义体放在类声明中。一个好的编译器将会根据函数的定义体，自动地取消不值得的内联（这进一步说明了 inline 不应该出现在函数的声明中）。</li></ul></li></ul></li><li><p>如果inline函数出现的话，其定义必须相同。建议把inline函数的定义放到头文件中。在每个调用该inline函数的文件中包含该头文件。这种方法保证对每个inline函数只有一个定义，且程序员无需复制代码，并且不可能在程序的生命期中引起无意的不匹配的事情。<br><a href="https://blog.csdn.net/nanhaizhixin/article/details/7564084">https://blog.csdn.net/nanhaizhixin/article/details/7564084</a></p></li></ul>]]></content>
       
       
       <categories>
           
-          <category> 编程语言 </category>
+          <category> CPP </category>
           
       </categories>
       
-      
-        <tags>
-            
-            <tag> C++ </tag>
-            
-        </tags>
       
     </entry>
     
