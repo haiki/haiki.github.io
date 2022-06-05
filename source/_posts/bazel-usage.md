@@ -36,8 +36,6 @@ tags:
 
 ## 如何用 Bazel
 
-
-
 - 下载 Bazel
   - 推荐用 Bazelisk 在 Ubuntu，Windows，MacOs 安装 Bazel，官方团队维护。
     - MacOs：brew install bazelisk。
@@ -75,7 +73,7 @@ Bazel 会将之前的构建工作缓存，只构建/测试修改了的内容。�
 
 
 # Bazel 基础
-Bazel 构建 workspace 中以目录树组织的源文件。workspace 中的源文件由嵌套层级的 packages 组织，每个 packag 是一个目录，包含相关的源文件和一个BUILD 文件。BUILD 文件说明了可以从源文件编译出的输出。
+Bazel 构建 workspace 中以目录树组织的源文件。workspace 中的源文件由嵌套层级的 packages 组织，每个 packag 是一个目录，包含相关的源文件和一个BUILD 文件。BUILD 文件定义了可以从源文件编译出的输出。
 
 
 
@@ -103,52 +101,17 @@ Bazel 构建 workspace 中以目录树组织的源文件。workspace 中的源�
 
 
 
-#### [Wrokspace Rules](https://bazel.build/reference/be/workspace)。xxxx
-
-当你使用bazel build xxxx命令进行编译时，bazel 会以 WORKSPACE 文件所在目录作为根目录（寻找输入和BUILD文件）进行编译，并存储编译结果。
-WORKAPCE 文件里定义了bazel项目的一些基本信息，和项目需要的外部依赖（比如当前项目依赖外部项目中的目标，或者从网上下载项目）
-● 主项目的BUILD文件可以使用 WORKSPACE 中的名字，依赖外部 target
-● WORKSPACE 文件中的语法和BUILD类似，但是还允许其他的规则
-● repository rules（workspace rules）
-	○ 内置规则：https://docs.bazel.build/versions/main/be/workspace.html
-		■ local_repository
-		■ new_local_repository
-	○ starlark 中内嵌的 repository 规则（git or http）：https://docs.bazel.build/versions/main/repo/index.html
-	○ 用户自定义 repository 规则：https://docs.bazel.build/versions/main/skylark/repository_rules.html
-外部依赖定义方式
-详细见：https://docs.bazel.build/versions/main/external.html
-建议 http_archive > git_repository > new_git_repository
-依赖其他 Bazel 项目
-可以使用 local_repository，git_repository, http_archive，分别代表：从本地文件系统软连接，引用 git 仓库，从网上下载。
-● WORKSPACE 中写法：
-local_repository(
-    name = "coworkers_project",
-    path = "/path/to/coworkers-project", 
-)
-
-● BUILD 中写法：@coworkers_project//foo:bar 。外部项目的命名必须是合法的workspace名字，即用 xx_xx，而不是 xx-xx。
-依赖其他非 Bazel 项目
-new_local_repository，new_git_repository， http_archive
-依赖外部包
-比如maven项目
-
-
-
-
-
-## 认识.bazelrc文件 xxxx
-bazel在编译时可以指定编译选项，包括gcc的选项以及 bazel 自身的选项。否则，每次使用bazel build xxxx命令进行编译时，你都需要指定编译选项，比如c++17。
-
-
-
 ### Packages
 
 Repository 中主要的代码组织单元是 package。package 包含相关文件的集合，以及这些文件如何产出输出的说明。
 
 - 包含 BUILD/BUILD.bazel 文件的目录是一个 package。
-- 一个 package 中包含这个目录/子目录下的所有文件（包含 BUILD 文件的子目录除外，这样就没有文件/目录会成为两个不同 package 的成员 ）。
 
+- 一个 package 中包含这个目录/子目录下的所有文件，subpackage 除外，这样就没有文件/目录会成为两个不同 package 的成员 。
 
+  - 包含 BUILD 文件的子目录称作 subpackage。
+
+  
 
 [package groups](https://bazel.build/reference/be/functions#package_group) 是 packages 的集合，其目的是限制特定 rules 的可访问性。
 
@@ -210,7 +173,8 @@ Package 是 targets 的容器，targets 定义在 package 的 BUILD 文件中。
   - 比如有 package `my/app` 和 package `my/app/testdata`，后者包含了文件` testdepot.zip`，那么在` //my/app:BUILD` 中引用 后者时：
     - 正确做法是：`//my/app/testdata:testdepot.zip` ；
     - 而不是 `testdata/testdepot.zip`  # Wrong: testdata is a different package。
-
+    - 如果是同一个 package，应该可以用相对 label 吧？
+  
 - *以 `@//` 开头的 labels 是引用 main repo，从外部 repo 引用时也可以用这种形式。*
   - `@//a/b/c`  和 `//a/b/c` 从外部 repo 引用时是不同的：
     - 前者引用 main repo；
@@ -243,7 +207,7 @@ Package 是 targets 的容器，targets 定义在 package 的 BUILD 文件中。
 
 - package 的名字是包含 BUILD 文件的目录，相对于 main repository 的目录名。如 `my/app`。
 - package 名可包含大小写和数字，以及标点符号 `/, -, ., @,_`。不可以以 `/` 开始或者结束，也不要包含 `//`。
-- Bazel 支持在 workspace 的根 package 下声明 target，如`//:foo`，但是尽量让这个 package 为空，这样每个 package 都有可描述的名字。
+- Bazel 支持在 workspace 的根 package 下声明 target，如`//:foo`，但是尽量让这个 package 不为空，这样每个 package 都有可描述的名字。
 
 
 
@@ -283,92 +247,302 @@ target 组成的有向无环图称作  *target graph* or *build dependency graph
 
 ## BUILD文件
 
-https://docs.bazel.build/versions/main/be/overview.html
 build文件就是真正定义编译规则的文件了，每个目录下都有一个，每个源文件都要在BUILD中定义它的编译规则。
-在cc_binary中定义可执行程序的编译规则，在cc_library中定义库的编译规则（即.o文件），在trpc_proto_library中定义pb文件的编译规则。
 
 
 
-### 编写 BUILD 文件
+`BUILD` files are evaluated using an imperative language, [Starlark](https://github.com/bazelbuild/starlark/)。文件中的 rules 被解释为顺序的 statements。
 
-● 使用 Starlark （domain-specific language：DSL）声明编译目标
-● 编译目标：具体说明了编译的 输入和依赖，编译规则，以及编译规则的可配置选项
-● 编译规则：具体说明了Bazel 使用的编译工具（如编译器和链接方法及对应的配置）
+- 一般来说， 变量的声明要在使用之前，顺序很重要，但是 BUILD 文件中只包含构建 rules 的声明，所以顺序不是很重要。只需要保证用到的 rules 被声明过了。
+- 为了鼓励代码和数据的分离，BUILD 文件中： 不允许有函数的定义，`for` statements，或者 `if` statements（但是 list comprehensions and `if` expressions  是可以的），不支持 `*args` and `**kwargs` 参数，参数必须明确支持。
+- 可以在 `.bzl` 文件中定义函数。 
 
-Starlark
-● 语法和python3类似，支持 None，bool，dict，function，int，list，string，文件为.bzl 后缀。
-● 偏好不变性，只有 lists 和 dicts 是可变数据结构，但是对可变数据的修改只对当前上下文下创建的对象有效。
-	○ 因为Bazel 编译是并行执行，当前文件定义的 list 一旦脱离当前环境，比如被其他文件饮用，则无法再编辑修改。
+
+Starlark 中的程序不可以执行任意的 I/O，因此输入都是定的，使得构建都是可再现的，即 [Hermeticity](https://bazel.build/concepts/hermeticity)。
 
 
 
-### BUILD 和 .bzl 文件的区别
+### Loading an extension
 
-● BUILD 文件通过调用规则注册目标；.bal 文件提供了常量，规则，宏和函数的定义。
-● 原生函数（native functions）和规则（native rules）在 BUILD 文件中是全局符号；而.bal 文件需要通过 native 模块加载这些函数和规则。
-BUILD 文件中的限制：1）不可声明函数；2）不可使用*args和**kwarg参数。
+Bazel extensions 是以 `.bzl` 结尾的文件，可使用 `load` statement 从 extension 导入符号。
 
-BUILD 文件
-大部分 BUILD 文件中只包含编译 rule 的声明，所以顺序是无关的。
-BUILD 中不能包含函数的定义（为了将 code 和 data 分离，但是list comprehension 和 if 表达式是可以的）。函数可以在 .bzl 文件中声明；不允许有 *args 和 **kwargs 参数，需要显示列出所有的参数。
-Starlark 的程序不可以执行任意的IO，因此对 BUILD 文件的解释不受外界影响（只依赖已知的输入，因此输出是可复制的）。
+`.bzl` 文件中以`_` 开头的符号不会被导出，也不会被其他文件加载。文件可见性不会影响加载：因此不需要使用 `exports_files` 让 `.bzl` 文件可见。？？
 
-load
+```python
+load("//foo/bar:file.bzl", "some_library")
+```
 
-Bazel 的扩展是以 .bzl 结尾的文件。通过 load 声明从扩展中导入符号。
-load("//foo/bar:file.bzl", "some_library") ：加载 foo/bar/file.bzl 并将符号 some_library 添加到环境中。这样可以使用新的 rule，function，或者常量（如 string，list 等）。
-● load 必须在最外层，不可以写在 function 内。
-● load 的第一个参数表示 .bzl 文件，如果是一个相对的 label，则根据包含当前 bzl 文件的 package 来解析，而不是目录，且此 label 用前置 ：来表示。
-● load 支持别名，可以给导入的符号分配不同的名字。load("//foo/bar:file.bzl", library_alias = "some_library") 
-● 可以在 load 中同时定义别名和符号：load(":my_rules.bzl", "some_rule", nice_alias = "some_other_rule") 
+- 从 `//foo/bar:file.bzl` 加载代码，并把 `some_library` 符号加入环境。
+- 此方式可用来加载 新的 rules，函数，或常量（string，list等）
+- 可以在 `load` 中新增其他的参数，导入更多的符号。参数必须是字符串常量，不可以是变量。
+- `load` statement 必须在顶层，不可以在函数体内。
+- `load` 的第一个参数是标识 `.bzl` 的 label，如果是相对的 label，则解析为包含当前 `.bzl` 文件所在的 package（不是目录） ，load statements 中的相对 label 需要有前导 `:` 。
 
-.bzl 文件中，对于_开头的符号不会被导入，并且不能从其他文件中加载，目前，可见性不影响加载。
 
-编译 rule 的类型
-● *_binary：编译可执行程序
-● *_test：可依赖其他 libraries。
-● *_library：指定单独编译的模块。可以依赖其他 libraries，binaries。
+
+```python
+load("//foo/bar:file.bzl", library_alias = "some_library")
+```
+
+- load 支持别名，因此可以给导入的符号赋不同的名字。
+
+
+
+```python
+load(":my_rules.bzl", "some_rule", nice_alias = "some_other_rule")
+```
+
+- 可以在一个 load statement 中定义多个别名。
+
+
+
+
+
+### 构建规则的类型
+
+The majority of build rules come in families, grouped together by language. 
+
+
+
+- `*_binary` rules构建给定语言的可执行程序。如 label `//my:program` 的结果存放在    `$(BINDIR)/my/program`。
+  - 有的语言，会将 rule 的 data 属性下的文件（以及依赖rule的这种文件），放到 runfiles 目录，便于部署到生产。
+- `*_test` rules 是 `*_binary` rule 的特化，用于自动化测试。
+  - 和 二进制文件一样，tests 也有 runfiles 树，其中只包含测试运行时必要的文件。比如 `cc_test(name='x', data=['//foo:bar'])` may open and read `$TEST_SRCDIR/workspace/foo/bar` during execution. （每种语言都有自己的函数去获得`$TEST_SRCDIR` 的值，但是都等同于直接使用环境变量）
+- *_library rules 声明了每个模块的构建规则，可以依赖其他 libraries，binaries 和 tests 可以依赖 libraries。
+
+
+
+*在 cc_binary 中定义可执行程序的编译规则，在cc_library中定义库的编译规则（即.o文件），在trpc_proto_library中定义pb文件的编译规则。*
+
 
 
 ## 依赖
 
-如果 A 在编译或者执行时，需要 B，那么 target A 依赖 target B。依赖图是DAG，直接依赖的是一跳，可传递依赖。
-编译时，存在两种依赖图：实际（ actual ）依赖，声明（declared）依赖。
+如果 A 在构建或者执行时，需要 B，那么 target A 依赖 target B。这种 依赖关系构成 [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph)，称作 **依赖图**。
 
-target X 实际依赖 target Y，当切仅当为了 X  编译成功， Y 必须存在，builr 且是最新的。“built” 代表：generated, processed, compiled, linked, archived, compressed, executed等在构建过程中经常发生的其他类型的任务。
-target X 声明依赖 target Y，当且仅当 package X 中，从 X 到 Y 有一条依赖边。
-为了正确编译，实际依赖的图 A 必须是声明依赖图 B 的子图 。也就是说，A 中直接相连的节点 x--> y. 在 D 中也必须直接相连，称作  D 是 A 的overapproximation。
-overapproximation不会太过度，否则冗余的声明依赖会使得编译很慢，二进制文件很大。
-因此，写 BUILD 文件时，每条 rule 都必须显示声明所有实际的直接依赖。不要试图列出所有的非直接依赖。
-很重要的规则，否则可能会因为之前的操作，或者传递声明以来等原因，发生未知错误。
+直接依赖：在依赖图中一跳可到达。
+
+可传递依赖：依赖图中多跳到达。
+
+构建时，存在两种依赖图：实际（ actual ）依赖，声明（declared）依赖。
+
+
+
+### 实际依赖和声明依赖
+
+target X 实际依赖 target Y，当且仅当为了 X  编译成功， Y 必须存在，且是最新的。**在代码中实际用了的。**
+
+“built” 代表：generated, processed,compiled, linked, archived, compressed, executed等在构建过程中经常发生的任务。
+
+target X 声明依赖 target Y，当且仅当 X 所在的  package 中，有一条  X 到 Y 的依赖边。**在rule 规则中写了的。**
+
+
+
+*为了正确编译，实际依赖的图 A 必须是声明依赖图 D 的子图 。也就是说，A 中直接相连的节点 x--> y. 在 D 中也必须直接相连，称作  D 是 A 的 overapproximation。overapproximation不要太过度，否则冗余的声明依赖会使得编译很慢，二进制文件很大。*
+
+> For correct builds, the graph of actual dependencies *A* must be a subgraph of the graph of declared dependencies *D*. That is, every pair of directly-connected nodes `x --> y` in *A* must also be directly connected in *D*. It can be said that *D* is an *overapproximation* of *A*.
+>
+> **Important:** *D* should not be too much of an overapproximation of *A* because redundant declared dependencies can make builds slower and binaries larger.
+
+
+
+**写 BUILD 文件时，每条 rule 都必须显示声明所有实际的直接依赖。不要试图列出所有的非直接依赖。**
+
+这是一条很重要的规则，否则构建可能会依赖之前的一些操作，或者会依赖到一些传递声明的 target，导致未知错误。虽然 bazel 会做检查并报告错误，但是有时候并不全面。
+
+
+
+传递依赖带来的常见问题：一个文件中的代码可能会使用非直接依赖中提供的代码，非直接依赖不会写在 BUILD 文件中，因此无法追踪这些文件的修改，比如文件的依赖，a 声明依赖b，b 声明依赖 c，a 中实际依赖 b，实际依赖 c，那么当 b 中没有实际依赖 c 时，会影响到 a 的 构建。
 
 
 
 ### 依赖的类型
 
-所有 rule 都通用的属性 ：https://docs.bazel.build/versions/main/be/common-definitions.html
-● src：
-● deps
-● data：测试时候输入文件等
+大部分构建 rule 在声明不同的依赖时，有都[通用的属性](https://bazel.build/reference/be/common-definitions)，以及 [rule 特定的依赖](https://bazel.build/reference/be)，例如 `compiler` / `resources`。
 
-使用 label 引用目录时，以/. 或者 / 结尾的方式很不可取，如 data = ["//data/regression:unittest/."],data = ["testdata/."], data = ["testdata/"] 
+- 通用属性
+  - `src`
+  - `deps`
+  - `data`：有的构建 target 运行时需要数据文件，数据文件不是源文件，所以不会影响 target 如何被构建。比如 单元测试需要比对函数的输出和文件的内容，构建单元测试 target 时不需要数据文件，但是运行时需要。The same applies to tools that are launched during execution.
+    - 构建系统在单独的目录运行测试，只有列举在 data 中的文件时可用的。
 
-当执行重新编译时，对于这种直接包含整个目录的方式，编译系统只检查目录有没有变化（是否有增删文件），不会探测对单个文件的内部修改。因此，不要直接把目录作为编译系统的输入，应该将目录内的文件列举出来：明确说明，或者用 glob() 函数（用**强制glob函数递归），如 data = glob(["testdata/**"])  # use this instead 
 
-directory label 只对 data 依赖有效。
 
-Bazel 中 funciton 的BUILD 百科
+These files are available using the relative path `path/to/data/file`. In tests, you can refer to these files by joining the paths of the test's source directory and the workspace-relative path, for example, `${TEST_SRCDIR}/workspace/path/to/data/file`.
+
+
+
+### 使用 labels 引用目录
+
+- `data` labels 引用目录，最好不要以/. 或者 / 结尾的方式。不推荐示例：
+  -  `data = ["//data/regression:unittest/."]`
+  - `data = ["testdata/."]`
+  - `data = ["testdata/"]`
+
+这种直接写目录的方式看起来很方便，直接能用目录下的所有文件，但是不要这样用：
+
+- 为了确保正确的增量构建，以及测试的重新执行，构建系统必须要知道所有的输入文件。
+- 对于直接包含整个目录的方式，编译系统只检查目录有没有变化（是否有增删文件），不会探测对单个文件的内部修改。
+- 因此，不要直接把目录作为编译系统的输入，应该将目录内的文件列举出来，明确说明。或者用 `glob()` 函数，如 `data = glob(["testdata/**"])`，用 `** `强制 glob 函数递归。
+
+
+
+当一些场景必须使用目录 labels（即以目录结尾），而其名称不符合 label 语法，那么遍历文件，或者使用 glob 函数会导致非法 label 错误，则必须使用目录 label。此时，对于父 package，不可以用相对的 `../` 路径，应该使用绝对路径如`//data/regression:unittest/`
+
+
+
+注意：**directory label** 只对 data 依赖有效。
+
+
+
+当外部 rule，比如 test ，需要使用多个文件时，需要显示声明对所有文件的依赖，可以在 BUILD 文件中用 `filegroup` 将文件打包在一起。即可在test 中引用 label `my_data`。
+
+```python
+filegroup(
+        name = 'my_data',
+        srcs = glob(['my_unittest_data/*'])
+)
+```
+
+
+
+
+
+~~Bazel 中 funciton 的BUILD 百科
 Rules
 推荐的 rules ：https://docs.bazel.build/versions/main/rules.html#recommended-rules
-Bazel binary 中配备的 native rule 不需要用 load 声明，native rules 对于 BUILD 文件是全局可用的，可在 .bzl 文件的 native 模块找到。
-
-
+Bazel binary 中配备的 native rule 不需要用 load 声明，native rules 对于 BUILD 文件是全局可用的，可在 .bzl 文件的 native 模块找到。~~
 
 
 
 ## Visibility
 
+package and subpackages 的信息，详见[概念和术语](https://bazel.build/concepts/build-ref)。
 
+Visibility 控制了当前的 target 是否可以被其他 package 中的 target 依赖。从而区分 library API 以及实现细节。关闭可见性检查： `--check_visibility=false`。
+
+
+
+### Visibility specifications
+
+rule target 的 `visibility` 属性中包含多个 labels，表示此 target 对这些 labes 可见。同一个 package 中的 target 是互相可见的。
+
+labels 的形式：
+
+- `"//visibility:public"`：任何人都可以使用此 target。
+- `"//visibility:private"`：只有此 package 可以使用此 target。
+- `"//foo/bar:__pkg__"`：`//foo/bar`（不包含其 subpackage） 下定义的 targets 可以使用此 target。`__pkg__` 是 package 中所有 targets 的特殊句法。
+- `"//foo/bar:__subpackages__"`：`//foo/bar`下定义的（包括直接或间接 package 的）所有 targets，可以使用此 target。
+- `"//foo/bar:my_package_group"`：[package group](https://bazel.build/reference/be/functions#package_group) 中的所有 package 可访问。
+
+
+
+example
+
+```python
+//some/package
+
+cc_library (
+  name = "mytarget",
+  src = ["xx",],
+  visibiliry = [
+    ":__subpackages__",
+    "//tests:__pkg__"
+  ]
+)
+
+# mytarget 可以被 //some/package/... 下的所有 target 以及 //tests/BUILD 中定义的 target 使用，但是不能被 //tests/integration/BUILD 中的 target 使用。
+```
+
+
+
+`package_group`  targets 本身没有 visibility 属性，总是 publicly visible。
+
+Visibility cannot be set to specific non-package_group targets. That triggers a "Label does not refer to a package group" or "Cycle in dependency graph" error.
+
+
+
+### Visibility of a rule target/generated file target
+
+
+
+rule target 中没有设置 visibility 属性，则可见性由BUILD 文件中的 package statement 设定，key 是  [`default_visibility`](https://bazel.build/reference/be/functions#package.default_visibility) 。 没有声明 default_visibility 时，默认是 `//visibility:private`。
+
+
+
+config_setting 可见性默认不强制生效。
+
+`--incompatible_enforce_config_setting_visibility` and `--incompatible_config_setting_private_default_visibility` provide migration logic for converging with other rules.
+
+
+
+- If `--incompatible_enforce_config_setting_visibility=false`, every `config_setting` is unconditionally visible to all targets.
+
+- Else if `--incompatible_config_setting_private_default_visibility=false`, any `config_setting` that doesn't explicitly set visibility is `//visibility:public` (ignoring package [`default_visibility`](https://bazel.build/reference/be/functions#package.default_visibility)).
+- Else if `--incompatible_config_setting_private_default_visibility=true`, `config_setting` uses the same visibility logic as all other rules.
+
+Best practice is to treat all like other rules: explicitly set `visibility` on any `config_setting` used anywhere outside its package.
+
+最佳实践：
+
+- 将  `config_setting` targets 和其他 rules 一样对待：为每个用到 `config_setting` 的package，显示设置  `visibility` 。
+
+
+
+### Visibility of a source file target
+
+默认情况下，源文件 targets 只在同一个 package 中可见，如果其他 package 也想访问此源文件，使用 [`exports_files`](https://bazel.build/reference/be/functions#exports_files)。使用此方法时，如果设置了 visibility 属性，则应用；否则文件就是 public 的， `default_visibility` 设置被忽略。
+
+如果可以，推荐将文件包裹成 library 或者其他类型的 rule，而不是直接用源文件。
+
+example：
+
+File `//frobber/data/BUILD`：
+
+```python
+exports_files(["readme.txt"])
+```
+
+File `//frobber/bin/BUILD`：
+
+```python
+cc_binary(
+  name = "my-program",
+  data = ["//frobber/data::readme.txt"],
+)
+```
+
+
+
+
+
+If the flag [`--incompatible_no_implicit_file_export`](https://github.com/bazelbuild/bazel/issues/10225) is not set, a legacy behavior applies instead.
+
+With the legacy behavior, files used by at least one rule target in the package are implicitly exported using the `default_visibility` specification. See the [design proposal](https://github.com/bazelbuild/proposals/blob/master/designs/2019-10-24-file-visibility.md#example-and-description-of-the-problem) for more details.
+
+
+
+### Visibility of bzl files
+
+load statement 暂时不应用 visibility，因此可以在 workspace 的任意地方加载 bzl 文件。
+
+
+
+However, users may choose to run the Buildifier linter. The [bzl-visibility](https://github.com/bazelbuild/buildtools/blob/master/WARNINGS.md#bzl-visibility) check provides a warning if users `load` from beneath a subdirectory named `internal` or `private`.
+
+
+
+### Visibility of implicit dependencies 
+
+有的 rules 有隐式依赖。如 c++ 的 rule 可能隐式依赖 c++ 编译器。当前的隐式依赖和一般依赖的处理方式一致，需要对 rule 的所有实例可见，通过 using [`--incompatible_visibility_private_attributes_at_definition`](https://github.com/bazelbuild/proposals/blob/master/designs/2019-10-15-tool-visibility.md). 修改此行为。
+
+
+
+### 最佳实践
+
+- 避免将 default visibility 设置为 public
+- 使用  `package_group` 在多个 targets 中共享 vidibility 声明。当多个 BUILD 中的 targets 需要暴露给同一个 package 的集合时，此方法很有用。
+- 当 deprecating 一个 target 时，使用更细粒度的可见性说明，只将 visibillity 限制给当前的用户，避免新的依赖。
 
 
 
@@ -428,5 +602,339 @@ bazel clean
 
 
 
+#### [Wrokspace Rules](https://bazel.build/reference/be/workspace)。xxxx
 
+当你使用bazel build xxxx命令进行编译时，bazel 会以 WORKSPACE 文件所在目录作为根目录（寻找输入和BUILD文件）进行编译，并存储编译结果。
+WORKAPCE 文件里定义了bazel项目的一些基本信息，和项目需要的外部依赖（比如当前项目依赖外部项目中的目标，或者从网上下载项目）
+● 主项目的BUILD文件可以使用 WORKSPACE 中的名字，依赖外部 target
+● WORKSPACE 文件中的语法和BUILD类似，但是还允许其他的规则
+● repository rules（workspace rules）
+	○ 内置规则：https://docs.bazel.build/versions/main/be/workspace.html
+		■ local_repository
+		■ new_local_repository
+	○ starlark 中内嵌的 repository 规则（git or http）：https://docs.bazel.build/versions/main/repo/index.html
+	○ 用户自定义 repository 规则：https://docs.bazel.build/versions/main/skylark/repository_rules.html
+外部依赖定义方式
+详细见：https://docs.bazel.build/versions/main/external.html
+建议 http_archive > git_repository > new_git_repository
+依赖其他 Bazel 项目
+可以使用 local_repository，git_repository, http_archive，分别代表：从本地文件系统软连接，引用 git 仓库，从网上下载。
+● WORKSPACE 中写法：
+local_repository(
+    name = "coworkers_project",
+    path = "/path/to/coworkers-project", 
+)
+
+● BUILD 中写法：@coworkers_project//foo:bar 。外部项目的命名必须是合法的workspace名字，即用 xx_xx，而不是 xx-xx。
+依赖其他非 Bazel 项目
+new_local_repository，new_git_repository， http_archive
+依赖外部包
+比如maven项目
+
+
+
+
+
+## 认识.bazelrc文件 xxxx
+
+bazel在编译时可以指定编译选项，包括gcc的选项以及 bazel 自身的选项。否则，每次使用bazel build xxxx命令进行编译时，你都需要指定编译选项，比如c++17。
+
+
+
+
+
+
+
+# 编写 BUILD 文件
+
+
+
+## BUILD 文件的风格
+
+使用 [Buildifier](https://github.com/bazelbuild/buildifier) 格式化 BUILD 文件。
+
+- 文件的结构：
+
+  - 描述/注释
+    - 单独的注释下面用空行隔开
+    - 某个元素的注释紧挨着
+
+  - load
+
+  - package
+
+  - 对 rules/macros 的调用
+
+- 引用当前package的 targets：
+
+  - 使用相对于package 的路径，不要用`..` 
+  - 生成的文件，引用时以 `:` 开头，标识其不是源文件
+
+  - 源文件不要以 `:` 开头
+
+  - rules 需要以`:`  开头
+
+    ```python
+    cc_library(
+        name = "lib",
+        srcs = ["x.cc"],
+        hdrs = [":gen_header"],
+    )
+    
+    genrule(
+        name = "gen_header",
+        srcs = [],
+        outs = ["x.h"],
+        cmd = "echo 'int x();' > $@",
+    )
+    ```
+
+- target 命名
+  - 命名需要有描述性
+    - 如果 target 包含源文件，target name 需要和 源文件名一致。
+    - 与 package 同名的 target 在最后一层目录，其名字需要具有描述性，如果描述和target不一致，不要用同名 target。
+    - 当使用 eponymous target 时，建议用 短名字：(`//x` instead of `//x:x`)。
+    - 如果在同一个 package 中，建议用局部引用： (`:x` instead of `//x`)。
+    - 不要使用保留的关键字。如 all，`__pkg__`等。
+  - google 的推荐命名做法
+
+- visibility
+  - 尽量使用准确的可见性，只有对外暴露的才使用 public。
+- dependencies
+  - 尽量限制为直接依赖。代码中有的依赖中也写。
+  - 本 package 的依赖优先写，不要用绝对 package 名。
+  - 将通用的依赖放在一个变量中。
+- Globs
+  - 使用 `[]` 标识没有 targets，不要使用 glob 去匹配 nothing。
+  - 不要用递归的 globs 匹配源文件，如 `glob(["**/*.java"])`)。
+  - 建议每个文件夹下都放一个 BUILD 文件，生成依赖图。
+  - 非递归的 globs 是可接受的。
+- 其他惯例
+  - 使用大写和下划线声明常量（如  `GLOBAL_CONSTANT`），使用小写和下划线声明变量（如  `my_variable`）。
+  - labels 不要切分，便于替换等操作。
+  - name 属性的名字需要是 常量字符串。
+  - 设置布尔值属性时，使用 true/false 而不是 0/1。
+
+
+
+## 共享变量
+
+- 当一条内容会被多次使用，可以在当前 BUILD 文件中定义变量（全局常量一般用大写字母），如 `COPTS = ["-DVERSION=5"]` 。
+
+- 在多个 BUILD 文件间共享变量，需要放在 .bzl 文件中。
+
+  - .bzl 文件中的定义（变量和函数）可以用在 BUILD 文件中。
+
+  In `path/to/variables.bzl`, write:
+
+  ```python
+  COPTS = ["-DVERSION=5"]
+  ```
+
+  Then, you can update your `BUILD` files to access the variable:
+
+  ```python
+  load("//path/to:variables.bzl", "COPTS")
+  
+  cc_library(
+    name = "foo",
+    copts = COPTS,
+    srcs = ["foo.cc"],
+  )
+  ```
+
+
+
+
+
+## 外部依赖
+
+
+
+bazel 可以依赖其他项目的 targets，其他项目的依赖叫做外部依赖（*external dependencies*）。
+
+`WORKSPACE/WORKSPACE.bazel` 文件描述了 bazel 如何获取其他项目的源文件，称作 *repository rules* /*workspace rules*
+
+- 其他项目也包含了多个 BUILD 文件描述自己的 targets。
+- mian 项目中的 BUILD 文件可以使用 WORKSPACE 中定义的名字，来引用外部的 targets。
+
+
+
+Bazel comes with a few [built-in repository rules](https://bazel.build/reference/be/workspace) and a set of [embedded Starlark repository rules](https://bazel.build/rules/lib/repo). Users can also write [custom repository rules](https://bazel.build/rules/repository_rules) to get more complex behavior.
+
+
+
+### bazel 支持的外部依赖类型
+
+1. Depending on other Bazel projects
+   - 可以用 [`local_repository`](https://bazel.build/reference/be/workspace#local_repository), [`git_repository`](https://bazel.build/rules/lib/repo/git#git_repository) or [`http_archive`](https://bazel.build/rules/lib/repo/http#http_archive) ，从本地文件系统软链，或者引用 git repository，或者下载。
+2. Depending on non-Bazel projects
+   - 为此项目的依赖写 BUILD 文件。build_file 
+3. Depending on external packages
+   - 
+
+
+
+- 获取依赖：
+
+  - 一般通过 `bazel build`
+
+  - 要为一些 targets 预拉取，使用 `bazel fetch`
+
+  - 无条件拉取所有依赖，使用 `bazel sync`
+
+  - As fetched repositories are [stored in the output base](https://bazel.build/docs/external#layout), fetching happens per workspace
+
+- Shadowing dependencies
+  - 尽可能在自己的项目中只依赖一种版本
+  - xxx
+- 通过命令行覆写 repositories
+  - 设置 [`--override_repository`](https://bazel.build/reference/command-line-reference#flag--override_repository) flag. 使用此flag，只改变外部 repository 的内容，而不改变源码。
+  - to override `@foo` to the local directory `/path/to/local/foo`, pass the `--override_repository=foo=/path/to/local/foo` flag。
+  - 用途
+    - debugging，不去拉远端，而改本地，让调试更方便。
+    - Vendoring，没法发起网络调用的环境下，使用本地 repository。
+- Transitive dependencies
+  - Bazel only reads dependencies listed in your `WORKSPACE` file. If your project (`A`) depends on another project (`B`) which lists a dependency on a third project (`C`) in its `WORKSPACE` file, you'll have to add both `B` and `C` to your project's `WORKSPACE` file. This requirement can balloon the `WORKSPACE` file size, but limits the chances of having one library include `C` at version 1.0 and another include `C` at 2.0.
+- 缓存外部依赖
+  - Bazel 默认只会对修改的部分重新下载。如果强制重新下载，使用  `bazel sync`。
+- 布局
+  - 外部依赖下载到 external 文件夹。
+  - `bazel clean` 只清除了软链，而 `bazel clean --expunge` 清除了所有外部 artifacts。
+
+- 线下构建
+  - xxx
+
+### 最佳实践
+
+- A repository rule should generally be responsible for:
+
+  - Detecting system settings and writing them to files.
+
+  - Finding resources elsewhere on the system.
+
+  - Downloading resources from URLs.
+
+  - Generating or symlinking BUILD files into the external repository directory.
+
+- 尽量避免使用 `repository_ctx.execute` 
+
+  - 当使用非bazel 化的 c++ library，优先推荐使用 `repository_ctx.download()` ，之后写 BUILD 文件构建它，而不是运行   `ctx.execute(["make"])`。
+
+- Prefer [`http_archive`](https://bazel.build/rules/lib/repo/http#http_archive) to `git_repository` and `new_git_repository`：
+
+  - Git repository 依赖于系统中的 git，而 HTTP 下载器是集成在 bazel 中的，没有系统依赖。
+  - `http_archive` 支持 `urls` 列表作为 mirrors, 而  `git_repository` 只支持单个的 `remote`。
+
+
+
+
+
+## 通过 Bzlmod 管理依赖 new
+
+
+
+
+
+使用 Starlark （domain-specific language：DSL）声明编译目标
+
+编译目标：具体说明了编译的 输入和依赖，编译规则，以及编译规则的可配置选项
+
+编译规则：具体说明了Bazel 使用的编译工具（如编译器和链接方法及对应的配置）
+
+Starlark
+
+语法和python3类似，支持 None，bool，dict，function，int，list，string，文件为.bzl 后缀。
+
+偏好不变性，只有 lists 和 dicts 是可变数据结构，但是对可变数据的修改只对当前上下文下创建的对象有效。
+
+因为Bazel 编译是并行执行，当前文件定义的 list 一旦脱离当前环境，比如被其他文件饮用，则无法再编辑修改。
+
+
+
+### BUILD 和 .bzl 文件的区别
+
+BUILD 文件通过调用规则注册目标；.bal 文件提供了常量，规则，宏和函数的定义。
+
+原生函数（native functions）和规则（native rules）在 BUILD 文件中是全局符号；而.bal 文件需要通过 native 模块加载这些函数和规则。
+
+BUILD 文件中的限制：1）不可声明函数；2）不可使用*args和**kwarg参数。
+
+BUILD 文件
+
+大部分 BUILD 文件中只包含编译 rule 的声明，所以顺序是无关的。
+
+BUILD 中不能包含函数的定义（为了将 code 和 data 分离，但是list comprehension 和 if 表达式是可以的）。函数可以在 .bzl 文件中声明；不允许有 *args 和 **kwargs 参数，需要显示列出所有的参数。
+
+Starlark 的程序不可以执行任意的IO，因此对 BUILD 文件的解释不受外界影响（只依赖已知的输入，因此输出是可复制的）。
+
+load
+
+
+
+Bazel 的扩展是以 .bzl 结尾的文件。通过 load 声明从扩展中导入符号。
+load("//foo/bar:file.bzl", "some_library") ：加载 foo/bar/file.bzl 并将符号 some_library 添加到环境中。这样可以使用新的 rule，function，或者常量（如 string，list 等）。
+● load 必须在最外层，不可以写在 function 内。
+● load 的第一个参数表示 .bzl 文件，如果是一个相对的 label，则根据包含当前 bzl 文件的 package 来解析，而不是目录，且此 label 用前置 ：来表示。
+● load 支持别名，可以给导入的符号分配不同的名字。load("//foo/bar:file.bzl", library_alias = "some_library") 
+● 可以在 load 中同时定义别名和符号：load(":my_rules.bzl", "some_rule", nice_alias = "some_other_rule") 
+
+.bzl 文件中，对于_开头的符号不会被导入，并且不能从其他文件中加载，目前，可见性不影响加载。
+
+编译 rule 的类型
+● *_binary：编译可执行程序
+● *_test：可依赖其他 libraries。
+● *_library：指定单独编译的模块。可以依赖其他 libraries，binaries。
+
+
+
+
+
+# 运行 bazel 
+
+
+
+## 构建 
+
+
+
+## commands 和 options
+
+
+
+
+
+## 编写 bazelrc 文件
+
+
+
+## 通过脚本调用 Bazel
+
+
+
+## 客户端和服务端的实现
+
+
+
+
+
+# 配置构建
+
+## 可配置的属性
+
+
+
+## 与 c++ 规则集成
+
+
+
+
+
+## Toolchain Resolution Implementation Details？no need
+
+
+
+
+
+## 代码覆盖率
 
