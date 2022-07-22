@@ -560,7 +560,7 @@ However, users may choose to run the Buildifier linter. The [bzl-visibility](htt
 
 
 
-## cc_library
+## cc_libraryxxxx
 
 头文件的包含检查。=》只适用于直接包含。
 ● 在编译中用到的头文件，必须在cc_* rule 的 hdrs 或者 srcs 中被声明。=》强制
@@ -576,7 +576,8 @@ cc_binary 和 cc_test rule 没有对外的接口，因此没有 hdrs 属性，�
 
 
 
-# Output Directory Layout
+# Output Directory Layout xxx
+
 https://bazel.build/docs/output_directories
 条件
 当前布局
@@ -771,7 +772,7 @@ Bazel comes with a few [built-in repository rules](https://bazel.build/reference
 2. Depending on non-Bazel projects
    - 为此项目的依赖写 BUILD 文件。build_file 
 3. Depending on external packages
-   - 
+   - Maven artifacts and repositories
 
 
 
@@ -830,7 +831,227 @@ Bazel comes with a few [built-in repository rules](https://bazel.build/reference
 
 
 
-## 通过 Bzlmod 管理依赖 new
+## 通过 Bzlmod 管理依赖 new xxx
+
+
+
+
+
+
+
+# 运行 bazel 
+
+
+
+## 用 bazel 构建 
+
+### 可用的 bazel 命令
+
+- [`analyze-profile`](https://bazel.build/docs/user-manual#analyze-profile): Analyzes build profile data.
+- [`aquery`](https://bazel.build/docs/user-manual#aquery): Executes a query on the [post-analysis](https://bazel.build/docs/build#analysis) action graph.
+- [`build`](https://bazel.build/docs/build#bazel-build): 构建特定目标
+- [`canonicalize-flags`](https://bazel.build/docs/user-manual#canonicalize-flags): Canonicalize Bazel flags.
+- [`clean`](https://bazel.build/docs/user-manual#clean): 移除输出文件，并停止 server
+- [`cquery`](https://bazel.build/docs/cquery): Executes a [post-analysis](https://bazel.build/docs/build#analysis) dependency graph query.
+- [`dump`](https://bazel.build/docs/user-manual#dump): Dumps the internal state of the Bazel server process.
+- [`help`](https://bazel.build/docs/user-manual#help): 打印命令的 help 信息，或者索引
+- [`info`](https://bazel.build/docs/user-manual#info): 打印 bazel server 的运行时信息
+- [`fetch`](https://bazel.build/docs/build#fetching-external-dependencies): 拉取 target 的所有外部依赖
+- [`mobile-install`](https://bazel.build/docs/user-manual#mobile-install): 在 mobile 设备上安装apps
+- [`query`](https://bazel.build/docs/query-how-to): 执行依赖图的查询
+- [`run`](https://bazel.build/docs/user-manual#running-executables): 运行特定 target
+- [`shutdown`](https://bazel.build/docs/user-manual#shutdown): 停止 bazel server
+- [`test`](https://bazel.build/docs/user-manual#running-tests): 构建和运行特定的 test target
+- [`version`](https://bazel.build/docs/user-manual#version): 打印 bazel 的 version 信息
+
+
+
+### 获取帮助
+
+- `bazel help command`: 打印 command 的 help 和 options
+- `bazel help`[`startup_options`](https://bazel.build/docs/user-manual#startup-options): Options for the JVM hosting Bazel.
+- `bazel help`[`target-syntax`](https://bazel.build/docs/build#specifying-build-targets): 解释特定 target 的句法
+- `bazel help info-keys`: info 命令中使用的 keys
+
+
+
+command：bazel tool 执行的许多函数。`bazel build` 和 `bazel test` 用的比较多。
+
+### 构建单个 target
+
+用 label 标识要构建的 target。
+
+- loads
+- analyzes
+- execute
+
+
+
+### 构建多个 target
+
+bazel 允许多种方法，去声明要构建的 target，叫做 target patterns（Target patterns are a generalization of the label syntax for *sets* of targets, using wildcards. 单个targe也是一种通配 target 的特例），用于 `build`, `test`,   `query` commands。
+
+- foo/... 表示 所有 package 的通配符
+- :all 表示某个 package 中所有的 targets
+- :* 是 :all 的超集，包含了 file 和 rule
+
+| `//foo/bar:wiz`         | Just the single target `//foo/bar:wiz`.                      |
+| ----------------------- | ------------------------------------------------------------ |
+| `//foo/bar`             | Equivalent to `//foo/bar:bar`.                               |
+| `//foo/bar:all`         | **All rule targets** in the package `foo/bar`.               |
+| `//foo/...`             | **All rule targets** in **all packages** beneath the directory `foo`. |
+| `//foo/...:all`         | **All rule targets** in **all packages** beneath the directory `foo`. |
+| `//foo/...:*`           | **All targets (rules and files)** in **all packages** beneath the directory `foo`. |
+| `//foo/...:all-targets` | **All targets (rules and files)** in **all packages** beneath the directory `foo`. |
+| `//...`                 | **All targets** in packages **in the workspace**. This does not include targets from [external repositories](https://bazel.build/docs/external). |
+| `//:all`                | **All targets** in the **top-level package**, if there is a `BUILD` file at the root of the workspace. |
+
+
+
+不以 // 开头的 target pattern，以相对于 working 目录的方式解析，下述例子假设有一个 working 目录：foo:
+
+| `:foo`        | Equivalent to `//foo:foo`.                                   |
+| ------------- | ------------------------------------------------------------ |
+| `bar:wiz`     | Equivalent to `//foo/bar:wiz`.                               |
+| `bar/wiz`     | Equivalent to:`//foo/bar/wiz:wiz` if `foo/bar/wiz` is a package`//foo/bar:wiz` if `foo/bar` is a package`//foo:bar/wiz` otherwise |
+| `bar:all`     | Equivalent to `//foo/bar:all`.                               |
+| `:all`        | Equivalent to `//foo:all`.                                   |
+| `...:all`     | Equivalent to `//foo/...:all`.                               |
+| `...`         | Equivalent to `//foo/...:all`.                               |
+| `bar/...:all` | Equivalent to `//foo/bar/...:all`.                           |
+
+
+
+- bazel 允许 target 部分使用 / 而不是只有 :，在 bash finelname expansion 中很方便。
+  - 例如 ：`foo/bar/wiz` is equivalent to `//foo/bar:wiz` (if there is a package `foo/bar`) or to `//foo:bar/wiz` (if there is a package `foo`).
+
+- bazel 支持一次命令中有多个 target pattern
+  - `bazel build foo/... bar/...`：构建 foo 目录和 bar 目录下的所有 target。
+  - `bazel build -- foo/... -foo/bar/...`：构建 foo 目录下 除了 foo/bar 下的所有 targets
+    - `--` 是必要的，防止后续以 `-` 开头的参数，被解释为额外的 options 
+    -  这种方式并不能真正保证 /foo/bar 的 targets 不被构建，因为其target可能被其他部分依赖了，作为依赖被构建了
+- target 中带有  `tags = ["manual"]`  的 target，在执行 build / test 的命令时（query 命令不做此过滤），不会被包含在 target pattern（..., :*, :all 等） 中。必须明确指定。
+
+
+
+### 拉取外部依赖
+
+默认情况下，bazel 在构建时下载和链接外部依赖。但我们有例外时 ：
+
+- 想知道何时加入了新的外部依赖
+
+- 无网前，提前拉取依赖
+
+
+
+可以指定 `--fetch=false` flag 防止自动拉取。
+
+- 对于本地文件系统中文件的使用，不管这个 flag 是否设置，都会去拉取。
+- 当关闭此 flag，但是构建过程中又需要外部的依赖，构建则会失败。
+- 当需要运行 bazel fetch 时，此 flag 需要开启。
+  - fetch 发生在第一次构建前
+  - 加入新的外部依赖后
+- 拉取好外部依赖后， WORKSPACE 文件不修改时，fetch 不必再运行。
+- `bazel fetch //foo:bar //bar:baz` 拉取这俩 target  需要的外部依赖。
+- `bazel fetch //...` 拉取 workspace 需要的所有外部依赖。
+
+
+
+#### repository cache
+
+bazel 试图避免多次拉取同一个文件，将所有下载的文件缓存在 `~/.cache/bazel/_bazel_$USER/cache/repos/v1/`. （此位置可以通过  `--repository_cache` option 修改 ），供所有 workspaces 和 installed versions 共享。
+
+- 如果下载请求的文件有 sha256，而 cache 中有文件有相同的 sha256，则可以直接使用，不仅安全，且避免非必要下载。
+- 每次命中缓存，cache 中的文件的修改时间都被更新，最后一次使用 cache 目录中文件的时间很容易确定。for example to manually clean up the cache. The cache is never cleaned up automatically, as it might contain a copy of a file that is no longer available upstream.
+
+
+
+#### Distribution files directories
+
+和 repository cache 类似，用于避免重复下载。两者的主要差别是distribution directory  需要人工准备。
+
+bazel 在搜索 repository cache之前，先在 分布式目录中搜寻。
+
+使用  [`--distdir=/path/to-directory`](https://bazel.build/reference/command-line-reference#flag--distdir) option，可以指定额外的目录去寻找文件，指定目录下的文件都可用（可能使得目录很大）。如果 WORKSPACE 文件中指定了sha256，那么只有匹配的文件会被用。
+
+
+
+#### 隔离环境中运行 bazel
+
+为了保证 bazel 二进制的尺寸较小，Bazel 的隐式依赖在首次运行时，通过网络连接拉取。这些隐式的依赖包含的 toolchains 和 rules 可能并不是对所有人都是有必要的。但在隔离环境中会有问题，尽管可能在
+
+- 可以在有网的情况下，准备一个包含这些依赖的 distribution directory，通过线下的方式传输到隔离环境中。
+
+- 对于每个新的 Bazel 二进制，都需要准备这样的目录，因为每个 release 的隐式依赖，可能会不同。
+- 构建依赖，需要拉取 bazel 的仓库代码，并构建 @additional_distfiles//:archives.tar target，将生成的产物，解压到新的目录中。
+  - `tar xvf bazel-bin/external/additional_distfiles/archives.tar -C "$NEW_DIRECTORY" --strip-components=3`
+- 最后，在隔离环境中使用 bazel 时，`--distdir` flag 指向目录，或者在 .bazelrc 里面新增一条 `build --distdir=path/to/directory`
+
+
+
+### Build configurations and cross-compilation
+
+
+
+## commands 和 options
+
+--copts 等
+
+
+
+## 编写 bazelrc 文件
+
+
+
+## 通过脚本调用 Bazel
+
+
+
+## 客户端和服务端架构
+
+Bazel 系统是 long-lived server 进程。相比 batch-oriented  （A technique that uses a single program loading to process many individual jobs, tasks, or requests for service.） 实现，可以做诸多优化，如缓存 BUILD 文件，依赖图等，从而加速增量的构建，允许不同的命令共享相同的 packages 缓存，使得 queries 也很快。
+
+- 当运行 bazel 时，启动了一个 client。
+- client 基于output base（默认是 base workspace 目录和 uderid）寻找 server。base workspace 和 urserid 的不同使得并发执行成为可能，因为会启动不同的server。
+  - 如果同一个用户在多个 workspace 中构建，则有多个 Bazel server 进程。
+  - 多个用户可以在同一个 workstation 并行构建，因为基于不同的 userids，output base 不同。
+  - 如果client 找不到运行中的 server 实例，则新建一个。
+  - server 进程空闲一段时间（默认 3h）后会停止。可以通过  startup option `--max_idle_secs`) 修改这一选项。
+    - 不要同时留下太多空闲的 server，可以在执行完成后显示地关闭，或者设置小一点的过期时间。
+- 使用 ps x/ ps -e f，Bazel server 进程的名字是 bazel(dirname)。
+  - dirname 是包含 workspace 目录根的目录。
+  - 如果用 ps 的其他选项，server 进程名可能只显示 java。
+  - 可以使用 shutdown 命令停止进程：
+    - 停止前会先检查任务是否完成
+    - 一般没什么用，但是在脚本中很有用，当知道某个构建在特定的workspace 不会再发生。
+    - 接受  `--iff_heap_size_greater_than _n_`  option，需要输入一个整形的参数（MB）则根据已用内存量设定关闭。
+  - 运行 `bazel` 时，client 首先检查 server 是否是适当的版本；
+    - 停止旧的 server，启动新 server。
+    - 确保使用长时间运行的 server 进程，不会影响正确的版本。
+
+
+
+
+
+# 配置构建
+
+## 可配置的属性
+
+
+
+## 与 c++ 规则集成
+
+
+
+
+
+## Toolchain Resolution Implementation Details？no need
+
+
+
+
+
+## 代码覆盖率
 
 
 
@@ -887,54 +1108,4 @@ load("//foo/bar:file.bzl", "some_library") ：加载 foo/bar/file.bzl 并将符�
 ● *_library：指定单独编译的模块。可以依赖其他 libraries，binaries。
 
 
-
-
-
-# 运行 bazel 
-
-
-
-## 构建 
-
-
-
-## commands 和 options
-
-
-
-
-
-## 编写 bazelrc 文件
-
-
-
-## 通过脚本调用 Bazel
-
-
-
-## 客户端和服务端的实现
-
-
-
-
-
-# 配置构建
-
-## 可配置的属性
-
-
-
-## 与 c++ 规则集成
-
-
-
-
-
-## Toolchain Resolution Implementation Details？no need
-
-
-
-
-
-## 代码覆盖率
 
