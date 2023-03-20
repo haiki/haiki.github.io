@@ -23,7 +23,7 @@ ps：还是要找靠谱的博客，非常感谢开源和分享知识的大家！
 
 - 配置都写在 _config.yml 中。hexo init 后的文件夹称作 hexo 项目的根目录；各个 theme 目录下也有一个当前主题的 _config.yml。
 
-- 参考 [洪卫的博客](https://www.cnblogs.com/shwee/p/11421156.html)： 1. 安装必要的软件，如 git, npm, nodejs, hexo 等；2. 生成 hexo 框架的必要代码；3. 启动本地服务器查看效果。此时的效果是 themes 文件夹下默认的 landscape 展示。
+- 参考 [洪卫的博客](https://www.cnblogs.com/shwee/p/11421156.html)： 1. 安装必要的软件，如 git, npm, nodejs, hexo 等；2. 生成 hexo 框架的必要代码；3. 启动本地服务器查看效果。此时的效果是 themes 文件夹下默认的 landscape 展示。4. 安装 hexo：`npm install -g hexo-cli`
 
 - 参考[开源的 3-hexo](https://github.com/yelog/hexo-theme-3-hexo)，将 3-hexo clone 到 themes 文件夹下，再次启动本地服务器查看效果。此时的效果都是demo，里面涉及了很多原作者的个人配置，如用户名等。
 
@@ -43,6 +43,8 @@ ps：还是要找靠谱的博客，非常感谢开源和分享知识的大家！
 #### 功能测试
 - 对于一些配置，需要在最上面标识，包括 categories，tags等
 	- 比如公式的使用，在每篇文档开头设置mathjax： $v_i$
+
+- 上传图片，用图床,sm.ms，国内网络原因，可以使用https://smms.app/
 
 ```C++
 #include<iostream>
