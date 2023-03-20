@@ -59,8 +59,9 @@ makefile带来的好处就是——“自动化编译”，一旦写好，只需
 
 - cmake 使用方法：
 cmake 可执行文件是 CMake 命令行的接口，可在命令行中用 -D 选项配置项目；-i 选项允许用户以交互的方式配置。
-cmake [options] <path-to-source>
-cmake [options] <path-to-existing-build>
+`cmake [options] <path-to-source>`
+
+`cmake [options] <path-to-existing-build>`
 
 ![截屏2023-03-12 21.46.17.png](https://s2.loli.net/2023/03/12/qbKAyuTLVz5rn6d.png)
 
@@ -69,8 +70,7 @@ reference：
 
 - <https://www.hahack.com/codes/cmake/>
 
-tutorial：
-makefile
+tutorial：makefile
 
 - <https://www.zhaixue.cc/makefile/makefile-rule.html>
 

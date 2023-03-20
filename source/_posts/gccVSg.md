@@ -93,14 +93,18 @@ cpp 后缀
 
 因为gcc命令不能自动和C++程序使用的库联接，所以通常使用g++来完成联接。但在编译阶段，g++会自动调用gcc，**g++ is equivalent to gcc -xc++ -lstdc++ -shared-libgcc** [参考](https://stackoverflow.com/questions/172587/what-is-the-difference-between-g-and-gcc)
 
-## 误区四:extern "C"与gcc/g++有关系
+## 误区四:extern "C"与gcc/g++有关系 TODO
+
 实际上并无关系，无论是gcc还是g++，用extern "c"时，都是以C的命名方式来为symbol命名，否则，都以c++方式命名。试验如下：
 me.h：
-extern "C" void CppPrintf(void);
 
- 
+```CPP
+extern "C" void CppPrintf(void);
+```
 
 me.cpp:
+
+```CPP
 #include <iostream>
 #include "me.h"
 using namespace std;
@@ -108,10 +112,11 @@ void CppPrintf(void)
 {
      cout << "Hello\n";
 }
-
- 
+```
 
 test.cpp:
+
+```CPP
 #include <stdlib.h>
 #include <stdio.h>
 #include "me.h"        
@@ -120,10 +125,11 @@ int main(void)
     CppPrintf();
     return 0;
 }
+```
 
- 
+- 先给me.h加上extern "C"，看用gcc和g++命名有什么不同
 
-1. 先给me.h加上extern "C"，看用gcc和g++命名有什么不同
+```bash
 [root@root G++]# g++ -S me.cpp     //g++的参数-S： 是指把文件编译成为汇编代码
 [root@root G++]# less me.s
 .globl _Z9CppPrintfv        //注意此函数的命名
@@ -134,8 +140,11 @@ int main(void)
 .globl _Z9CppPrintfv        //注意此函数的命名
         .type   CppPrintf, @function
 完全相同！
-               
-2. 去掉me.h中extern "C"，看用gcc和g++命名有什么不同
+```
+
+- 去掉me.h中extern "C"，看用gcc和g++命名有什么不同
+
+```bash
 [root@root GCC]# gcc -S me.cpp
 [root@root GCC]# less me.s
 .globl _Z9CppPrintfv        //注意此函数的命名
@@ -146,6 +155,7 @@ int main(void)
 .globl _Z9CppPrintfv        //注意此函数的命名
         .type   _Z9CppPrintfv, @function
 完全相同！
+```
 
 【结论】完全相同，可见extern "C"与采用gcc/g++并无关系，以上的试验还间接的印证了前面的说法：在编译阶段，g++是调用gcc的。
 
