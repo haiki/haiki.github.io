@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>go语言圣经学习笔记 | haiki</title>
+  <meta name="keywords" content=" golang , 笔记 ">
+  <meta name="description" content="go语言圣经学习笔记 | haiki">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Oops～，我崩溃了！找不到你想要的页面 :(">
+<meta property="og:type" content="website">
+<meta property="og:title" content="404">
+<meta property="og:url" content="https://github.com/haiki/haiki.github.io/404.html">
+<meta property="og:site_name" content="haiki">
+<meta property="og:description" content="Oops～，我崩溃了！找不到你想要的页面 :(">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-10-03T12:16:10.000Z">
+<meta property="article:modified_time" content="2022-01-03T11:20:49.316Z">
+<meta property="article:author" content="haiki">
+<meta property="article:tag" content="computer science,blockchain,leetcode,record life">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/darcula.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>haiki</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="http://haiki.github.io"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/haiki"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="csdn"
+               href="https://blog.csdn.net/haiki66"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-csdn"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:peiqi66@163.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(37)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="编程语言">
+                        
+                        编程语言
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="读书">
+                        
+                        读书
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        
+                        工具
+                        <small>(10)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="框架">
+                        
+                        框架
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="区块链">
+                        
+                        区块链
+                        <small>(7)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运维">
+                        
+                        运维
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CPP">
+                        
+                        CPP
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="leetcode">
+                        
+                        leetcode
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="37">
+<input type="hidden" id="yelog_site_word_count" value="90.2k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>笔记</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>编译</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>工具成长类</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>基础</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>零碎</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>命令</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>私链</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>以太坊</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>智能合约</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>API</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>bash</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>bazel</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>DApp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>easy</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ethereum</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>geth</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>go环境配置</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>golang</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>IDEA</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Javascript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linkedList</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>problem</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>shell</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>solidity</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>stack</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>string</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>token</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>transaction</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="全部文章 工具 "
+           href="/2019/10/03/my-first-article/"
+           data-tag="hexo,problem"
+           data-author="" >
+            <span class="post-title" title="my first article">my first article</span>
+            <span class="post-date" title="2019-10-03 16:03:38">2019/10/03</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/2023/03/12/cmake/"
+           data-tag="编译,基础"
+           data-author="" >
+            <span class="post-title" title="cmake">cmake</span>
+            <span class="post-date" title="2023-03-12 21:24:37">2023/03/12</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2023/01/15/mysql/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="mysql">mysql</span>
+            <span class="post-date" title="2023-01-15 09:00:25">2023/01/15</span>
+        </a>
+        
+        <a  class="全部文章 编程语言 "
+           href="/2022/08/12/go%E8%AF%AD%E8%A8%80%E5%9C%A3%E7%BB%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+           data-tag="golang,笔记"
+           data-author="" >
+            <span class="post-title" title="go语言圣经学习笔记">go语言圣经学习笔记</span>
+            <span class="post-date" title="2022-08-12 17:06:52">2022/08/12</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2022/06/19/bazel-backup/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="bazel-backup">bazel-backup</span>
+            <span class="post-date" title="2022-06-19 09:08:59">2022/06/19</span>
+        </a>
+        
+        <a  class="全部文章 框架 "
+           href="/2022/06/03/rpc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="rpc">rpc</span>
+            <span class="post-date" title="2022-06-03 09:44:30">2022/06/03</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/06/03/bazel-usage/"
+           data-tag="bazel"
+           data-author="" >
+            <span class="post-title" title="bazel_usage">bazel_usage</span>
+            <span class="post-date" title="2022-06-03 09:31:09">2022/06/03</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/04/25/bash-base/"
+           data-tag="bash"
+           data-author="" >
+            <span class="post-title" title="bash_base">bash_base</span>
+            <span class="post-date" title="2022-04-25 09:53:36">2022/04/25</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/04/23/bash-function/"
+           data-tag="bash"
+           data-author="" >
+            <span class="post-title" title="bash_function">bash_function</span>
+            <span class="post-date" title="2022-04-23 22:21:56">2022/04/23</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/04/23/bash-if/"
+           data-tag="bash"
+           data-author="" >
+            <span class="post-title" title="bash_if">bash_if</span>
+            <span class="post-date" title="2022-04-23 21:06:06">2022/04/23</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/2022/02/19/generic-algorithm/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="generic_algorithm">generic_algorithm</span>
+            <span class="post-date" title="2022-02-19 11:01:59">2022/02/19</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/2022/02/15/lambda/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="lambda">lambda</span>
+            <span class="post-date" title="2022-02-15 10:07:26">2022/02/15</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2022/02/15/smart-ptr/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="smart_ptr">smart_ptr</span>
+            <span class="post-date" title="2022-02-15 10:06:52">2022/02/15</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2022/02/15/namespace/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="namespace">namespace</span>
+            <span class="post-date" title="2022-02-15 10:06:25">2022/02/15</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/2022/02/14/gccVSg/"
+           data-tag="编译,基础"
+           data-author="" >
+            <span class="post-title" title="gccVSg++">gccVSg++</span>
+            <span class="post-date" title="2022-02-14 19:44:47">2022/02/14</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/02/13/regex/"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="regex">regex</span>
+            <span class="post-date" title="2022-02-13 10:31:34">2022/02/13</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2022/02/08/chore/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="chore">chore</span>
+            <span class="post-date" title="2022-02-08 15:24:56">2022/02/08</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/01/10/sed/"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="sed">sed</span>
+            <span class="post-date" title="2022-01-10 09:44:13">2022/01/10</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/01/10/awk/"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="awk">awk</span>
+            <span class="post-date" title="2022-01-10 09:42:10">2022/01/10</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2022/01/06/grep/"
+           data-tag="linux,shell"
+           data-author="" >
+            <span class="post-title" title="grep">grep</span>
+            <span class="post-date" title="2022-01-06 09:22:20">2022/01/06</span>
+        </a>
+        
+        <a  class="全部文章 编程语言 "
+           href="/2021/08/22/go%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/"
+           data-tag="golang,笔记"
+           data-author="" >
+            <span class="post-title" title="golang 学习">golang 学习</span>
+            <span class="post-date" title="2021-08-22 15:39:24">2021/08/22</span>
+        </a>
+        
+        <a  class="全部文章 区块链 "
+           href="/2019/12/23/%E4%BB%A5%E5%A4%AA%E5%9D%8AERC20/"
+           data-tag="以太坊,solidity,智能合约,token"
+           data-author="" >
+            <span class="post-title" title="以太坊ERC20">以太坊ERC20</span>
+            <span class="post-date" title="2019-12-23 10:13:29">2019/12/23</span>
+        </a>
+        
+        <a  class="全部文章 区块链 "
+           href="/2019/12/22/%E4%BB%A5%E5%A4%AA%E5%9D%8A-Transaction/"
+           data-tag="以太坊,transaction"
+           data-author="" >
+            <span class="post-title" title="以太坊-Transaction">以太坊-Transaction</span>
+            <span class="post-date" title="2019-12-22 10:55:27">2019/12/22</span>
+        </a>
+        
+        <a  class="全部文章 CPP "
+           href="/2019/11/29/C-%E9%9A%8F%E8%AE%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Cpp debug">Cpp debug</span>
+            <span class="post-date" title="2019-11-29 09:58:19">2019/11/29</span>
+        </a>
+        
+        <a  class="全部文章 区块链 "
+           href="/2019/11/05/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9B%B8%E5%85%B3%E6%8A%80%E6%9C%AF%E5%89%8D%E6%B2%BF%E6%B4%9E%E5%AF%9F/"
+           data-tag="零碎"
+           data-author="" >
+            <span class="post-title" title="区块链相关技术前沿洞察">区块链相关技术前沿洞察</span>
+            <span class="post-date" title="2019-11-05 14:54:48">2019/11/05</span>
+        </a>
+        
+        <a  class="全部文章 leetcode "
+           href="/2019/11/03/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E5%BF%85%E5%A4%87/"
+           data-tag="算法"
+           data-author="" >
+            <span class="post-title" title="算法与数据结构学习必备">算法与数据结构学习必备</span>
+            <span class="post-date" title="2019-11-03 09:34:47">2019/11/03</span>
+        </a>
+        
+        <a  class="全部文章 区块链 "
+           href="/2019/10/26/%E4%BB%A5%E5%A4%AA%E5%9D%8ADApp/"
+           data-tag="ethereum,DApp"
+           data-author="" >
+            <span class="post-title" title="以太坊DApp">以太坊DApp</span>
+            <span class="post-date" title="2019-10-26 18:55:09">2019/10/26</span>
+        </a>
+        
+        <a  class="全部文章 区块链 "
+           href="/2019/10/25/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%AE%9E%E8%B7%B5/"
+           data-tag="以太坊,solidity,智能合约"
+           data-author="" >
+            <span class="post-title" title="以太坊智能合约实践">以太坊智能合约实践</span>
+            <span class="post-date" title="2019-10-25 10:15:12">2019/10/25</span>
+        </a>
+        
+        <a  class="全部文章 区块链 "
+           href="/2019/10/22/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%A6%82%E5%BF%B5%E5%8F%8AAPI%E7%9A%84%E6%95%B4%E5%90%88%E4%B8%8E%E7%90%86%E8%A7%A3/"
+           data-tag="以太坊,API,Javascript"
+           data-author="" >
+            <span class="post-title" title="以太坊概念及API的整合与理解">以太坊概念及API的整合与理解</span>
+            <span class="post-date" title="2019-10-22 17:21:16">2019/10/22</span>
+        </a>
+        
+        <a  class="全部文章 区块链 "
+           href="/2019/10/19/%E4%BB%8E%E5%A4%B4%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%A7%81%E9%93%BE/"
+           data-tag="以太坊,私链,geth,go环境配置"
+           data-author="" >
+            <span class="post-title" title="从头搭建以太坊私链">从头搭建以太坊私链</span>
+            <span class="post-date" title="2019-10-19 16:15:54">2019/10/19</span>
+        </a>
+        
+        <a  class="全部文章 运维 "
+           href="/2019/10/10/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag="linux,命令"
+           data-author="" >
+            <span class="post-title" title="linux常用命令">linux常用命令</span>
+            <span class="post-date" title="2019-10-10 16:32:59">2019/10/10</span>
+        </a>
+        
+        <a  class="全部文章 编程语言 "
+           href="/2019/10/10/java/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="java">java</span>
+            <span class="post-date" title="2019-10-10 14:04:57">2019/10/10</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/2019/10/09/IDEA%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD/"
+           data-tag="IDEA,java"
+           data-author="" >
+            <span class="post-title" title="IDEA的使用：提升看源码效率">IDEA的使用：提升看源码效率</span>
+            <span class="post-date" title="2019-10-09 20:21:52">2019/10/09</span>
+        </a>
+        
+        <a  class="全部文章 读书 "
+           href="/2019/10/06/%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A%E6%91%98%E5%BD%95%E5%8F%8A%E8%A7%82%E5%90%8E%E6%84%9F/"
+           data-tag="工具成长类"
+           data-author="" >
+            <span class="post-title" title="非暴力沟通摘录及观后感">非暴力沟通摘录及观后感</span>
+            <span class="post-date" title="2019-10-06 18:41:57">2019/10/06</span>
+        </a>
+        
+        <a  class="全部文章 leetcode "
+           href="/2019/10/05/string-problems-easy/"
+           data-tag="easy,string"
+           data-author="" >
+            <span class="post-title" title="string-problems-easy">string-problems-easy</span>
+            <span class="post-date" title="2019-10-05 10:30:38">2019/10/05</span>
+        </a>
+        
+        <a  class="全部文章 leetcode "
+           href="/2019/08/28/LinkedList-problems-easy/"
+           data-tag="linkedList,easy"
+           data-author="" >
+            <span class="post-title" title="LinkedList-problems-easy">LinkedList-problems-easy</span>
+            <span class="post-date" title="2019-08-28 21:40:38">2019/08/28</span>
+        </a>
+        
+        <a  class="全部文章 leetcode "
+           href="/2019/08/23/stack-problems-easy/"
+           data-tag="easy,stack"
+           data-author="" >
+            <span class="post-title" title="stack-problems-easy">stack-problems-easy</span>
+            <span class="post-date" title="2019-08-23 21:40:38">2019/08/23</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-go语言圣经学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">go语言圣经学习笔记</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="编程语言">编程语言</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">golang</a>
+            
+            <a class="color3">笔记</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2022-08-12 17:02:15'>2022-08-12 17:06</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:21.2k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-%E5%89%8D%E8%A8%80"><span class="toc-text">0 前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-1-Go%E8%AF%AD%E8%A8%80%E9%A1%B9%E7%9B%AE"><span class="toc-text">0.1 Go语言项目</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Go%E5%85%A5%E9%97%A8"><span class="toc-text">1 Go入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-Hello%EF%BC%8CWorld"><span class="toc-text">1.1 Hello，World</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0"><span class="toc-text">1.2 命令行参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="toc-text">1.2 程序结构</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-4 i,
+    .toc-level-4 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Go学习</strong></p>
+<p>具体参见：<a target="_blank" rel="noopener" href="https://yar999.gitbooks.io/gopl-zh/content/ch0/ch0-01.html"><strong>go语言圣经</strong></a></p>
+<h1 id="0-前言"><a href="#0-前言" class="headerlink" title="0 前言"></a>0 前言</h1><h2 id="0-1-Go语言项目"><a href="#0-1-Go语言项目" class="headerlink" title="0.1 Go语言项目"></a>0.1 Go语言项目</h2><ul>
+<li>Go项目包括编程语言本身，附带了相关的工具和标准库，简洁编程哲学。Go语言的这些地方都做的还不错：<ul>
+<li>拥有自动垃圾回收、一个包系统、函数作为一等公民、词法作用域、系统调用接口、只读的UTF8字符串等</li>
+</ul>
+</li>
+<li>Go语言本身只有很少的特性，也不太可能添加太多的特性：<ul>
+<li>它没有隐式的数值转换，没有构造函数和析构函数，没有运算符重载，没有默认参数，也没有继承，没有泛型，没有异常，没有宏，没有函数修饰，更没有线程局部存储。</li>
+</ul>
+</li>
+<li>语言本身是成熟和稳定的，而且承诺保证向后兼容：<ul>
+<li>用之前的Go语言编写程序可以用新版本的Go语言编译器和标准库直接构建而不需要修改代码。</li>
+<li>Go语言有足够的类型系统以避免动态语言中那些粗心的类型错误，不需要像C++或Haskell程序员那样纠结于具体类型的安全属性。</li>
+</ul>
+</li>
+<li>Go语言鼓励当代计算机系统设计的原则，特别是局部的重要性：<ul>
+<li>内置数据类型和大多数的标准库数据结构都经过精心设计而避免显式的初始化或隐式的构造函数</li>
+<li>Go语言的聚合类型（结构体和数组）可以直接操作它们的元素，只需要更少的存储空间、更少的内存分配，而且指针操作比其他间接操作的语言也更有效率</li>
+</ul>
+</li>
+<li>Go语言提供了基于CSP的并发特性支持</li>
+<li>Go语言的动态栈使得轻量级线程goroutine的初始栈可以很小，因此创建一个goroutine的代价很小，创建百万级的goroutine完全是可行的</li>
+<li>Go语言的标准库（通常被称为语言自带的电池），提供了清晰的构建模块和公共接口，包含I/O操作、文本处理、图像、密码学、网络和分布式应用程序等，并支持许多标准化的文件格式和编解码协议。</li>
+<li>Go语言源代码本身就包含了构建规范。</li>
+</ul>
+<h1 id="1-Go入门"><a href="#1-Go入门" class="headerlink" title="1 Go入门"></a>1 Go入门</h1><h2 id="1-1-Hello，World"><a href="#1-1-Hello，World" class="headerlink" title="1.1 Hello，World"></a>1.1 Hello，World</h2><ul>
+<li><p>Go是一门<strong>编译型语言</strong>，Go语言的工具链将源代码及其依赖转换成计算机的机器指令。</p>
+</li>
+<li><p>Go语言原生支持Unicode，它可以处理全世界任何语言的文本。</p>
+</li>
+<li><p>Go语言的代码通过<strong>包</strong>（package）组织。</p>
+<ul>
+<li>包类似于其它语言里的库（libraries）或者模块（modules）</li>
+<li>一个包由位于单个目录下的一个或多个.go源代码文件组成，目录定义包的作用。</li>
+<li>Go的标准库提供了100多个包，以支持常见功能，如输入、输出、排序以及文本处理。<a target="_blank" rel="noopener" href="https://golang.org/pkg/">go packages-ch</a>，<a target="_blank" rel="noopener" href="https://studygolang.com/pkgdoc">go语言中文网-go提供的包</a>。</li>
+</ul>
+</li>
+<li><p>每个源文件都以一条package声明语句开始，<strong>表示该文件属于哪个包</strong>。</p>
+<ul>
+<li>import声明必须跟在文件的package声明之后，<strong>告诉编译器，源文件需要哪些包</strong>。</li>
+<li>必须恰当导入需要的包，缺少了必要的包或者导入了不需要的包，程序都无法编译通过。</li>
+</ul>
+</li>
+<li><p>存储在源文件里的程序语句，函数、变量、常量、类型的声明语句（分别由关键字func, var, const, type定义）。</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() &#123;
+    fmt.Println(&quot;Hello, 世界&quot;)
+&#125;
+</code></pre>
+<ul>
+<li>main包比较特殊。<strong>它定义了一个独立可执行的程序，而不是一个库。</strong></li>
+<li>在 main包 里的 main函数 也很特殊，<strong>它是整个程序执行时的入口</strong>。main函数一般调用其它包里的函数完成很多工作, 比如fmt.Println。</li>
+<li>一个函数的声明由func关键字、函数名、参数列表、返回值列表以及包含在大括号里的函数体组成。</li>
+<li>Go语言不需要在语句或者声明的末尾添加分号，除非一行上有多条语句。实际上，编译器会主动把特定符号后的换行符转换为分号, 因此换行符添加的位置会影响Go代码的正确解析。<ul>
+<li>函数的左括号{必须和func函数声明在同一行上, 且位于末尾，不能独占一行。</li>
+<li>表达式x + y中，可在+后换行，不能在+前换行。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>对于大多数用户来说，下载、编译包、运行测试用例、查看Go语言的文档等等常用功能都可以用go的工具完成。10.7节详细介绍这些知识。</p>
+<ul>
+<li>go build helloworld.go 生成一个名为helloworld的可执行的二进制文件，之后你可以随时运行(./helloworld)它，不需任何处理。</li>
+<li>go run helloworld.go 编译一个或多个以.go结尾的源文件，链接库文件，并运行最终生成的可执行文件</li>
+<li>Go语言在代码格式上采取了很强硬的态度：gofmt工具把代码格式化为标准格式，go工具中的fmt子命令会对指定包, 或默认为当前目录中所有go源文件应用gofmt命令。</li>
+<li>goimports，可以根据代码需要, 自动地添加或删除import声明（这个工具不包含在分发包里，需要自己安装）。</li>
+<li>执行 go get gopl.io/ch1/helloworld 命令，就会从网上获取代码，并放到对应目录中（需要先安装Git或Hg之类的版本管理工具，并将对应的命令添加到PATH环境变量中。</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-2-命令行参数"><a href="#1-2-命令行参数" class="headerlink" title="1.2 命令行参数"></a>1.2 命令行参数</h2><p><strong>读写文件&amp;文本格式化</strong></p>
+<ul>
+<li><p>“计算”的定义：处理输入，产生输出。程序获取输入数据：</p>
+<ul>
+<li> 一些程序生成自己的数据</li>
+<li> 通常情况下，<strong>输入来自于程序外部：文件、网络连接、其它程序的输出、敲键盘的用户、命令行参数或其它类似输入源</strong></li>
+</ul>
+</li>
+<li><p>os包以跨平台的方式，提供了一些与操作系统交互的函数和变量。</p>
+<ul>
+<li>程序的命令行参数可从os包的Args变量获取；os包外部使用os.Args访问该变量。？</li>
+<li>os.Args变量是一个字符串（string）的切片（slice）<ul>
+<li>s[m:n]形式的切片表达式，产生从第m个元素到第n-1个元素的切片，左闭右开</li>
+</ul>
+</li>
+<li>os.Args的第一个元素，os.Args[0], 是命令本身的名字；其它的元素则是程序启动时传给它的参数</li>
+<li>元素一般包含在 os.Args[1:len(os.Args)] 切片中。如果省略切片表达式的m或n，会默认传入0或len(s)，因此前面的切片可以简写成os.Args[1:]</li>
+</ul>
+</li>
+<li><p>自增语句i++给i加1，和i += 1（赋值运算符：*=/+=/-=等）以及i = i + 1都是等价的。**++和–都只能放在变量名后面**，因此–/++i是非法的。</p>
+<ul>
+<li>自增和自减是语句，而不是表达式，因此x = i++之类的表达式是错误的。</li>
+</ul>
+</li>
+</ul>
+<p><strong>For循环</strong></p>
+<ul>
+<li><p>Go语言只有for循环这一种循环语句。</p>
+<ul>
+<li><p>for循环三个部分不需括号包围。大括号强制要求, 左大括号必须和for语句在同一行。</p>
+</li>
+<li><p>initialization 语句是可选的，在循环开始前执行。如果存在，必须是一条简单语句（simple statement），即：短变量声明、自增语句、赋值语句或函数调用。</p>
+</li>
+<li><p>condition是一个布尔表达式（boolean expression），其值在每次循环迭代开始时计算。如果为true则执行循环体语句。</p>
+</li>
+<li><p>post语句在循环体执行结束后执行，之后再次对conditon求值。condition值为false时，循环结束。</p>
+<pre><code>//1. 完整形式
+for initialization; condition; post &#123;
+    // zero or more statements
+    //for i := 1; i &lt; len(os.Args); i++
+&#125;
+
+//2. a traditional &quot;while&quot; loop
+for condition &#123;
+
+&#125;
+
+//3. a traditional infinite loop
+for &#123;
+//break或return语句终止循环
+&#125;
+
+//4. 在某种数据类型的区间（range）上遍历，如字符串或切片
+for _, arg := range os.Args[1:] &#123;
+    //每次循环迭代，range产生一对值：索引以及在该索引处的元素值
+    //Go语言不允许使用无用的局部变量（local variables），因为这会导致编译错误。
+    //空标识符（blank identifier），即_（也就是下划线）。空标识符可用于任何语法需要变量名但程序逻辑不需要的时候。
+
+&#125;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>变量声明</strong></p>
+<ul>
+<li><p>声明一个变量有好几种方式，下面这些都等价：</p>
+<pre><code>s := &quot;&quot; //短变量声明，最简洁，但只能用在函数内部，而不能用于包变量
+var s string  //依赖于字符串的默认初始化零值机制，被初始化为&quot;&quot;
+var s = &quot;&quot;  //用得很少，除非同时声明多个变量？
+var s string = &quot;&quot;  //显式地标明变量的类型，当变量类型与初值类型相同时，类型冗余，但如果两者类型不同，变量类型就必须了？
+</code></pre>
+<ul>
+<li>实践中一般使用前两种形式中的某个，初始值重要的话就显式地指定变量的类型，否则使用隐式初始化？</li>
+</ul>
+</li>
+<li><p>如果连接涉及的数据量很大，str1 += str2 这种方式代价高昂。一种简单且高效的解决方案是使用strings包的Join函数：<br><code>fmt.Println(strings.Join(os.Args[1:], &quot; &quot;))</code>。</p>
+</li>
+<li><p>如果不关心输出格式，只想看看输出值，或许只是为了调试，可以用Println为我们格式化输出：<code>fmt.Println(os.Args[1:])</code> </p>
+<ul>
+<li>输出结果跟strings.Join得到的结果很像，只是被放到了一对方括号里。切片都会被打印成这种格式</li>
+</ul>
+</li>
+</ul>
+<p><strong>从标准输入中读取数据</strong></p>
+<p><strong>if语句</strong></p>
+<ul>
+<li>正如for循环一样，if语句条件两边也不加括号，但是主体部分需要加。if语句的else部分是可选的，在if的条件为false时执行。</li>
+</ul>
+<p><strong>map数据类型</strong></p>
+<ul>
+<li>内置函数make创建空map<ul>
+<li>键可以是任意类型，只要其值能用==运算符比较，最常见的例子是字符串；</li>
+<li>值则可以是任意类型；</li>
+<li>某个新键的初值会初始化；</li>
+<li>每次迭代得到两个结果，键和其在map中对应的值；</li>
+<li>map的迭代顺序并不确定，从实践来看，该顺序随机，每次运行都会变化。这种设计是有意为之的，因为能防止程序依赖特定遍历顺序，而这是无法保证的。</li>
+<li>map作为参数传递给某函数时，该函数接收这个引用的一份拷贝（copy，或译为副本），被调用函数对map底层数据结构的任何修改，调用者函数都可以通过持有的map引用看到。</li>
+</ul>
+</li>
+</ul>
+<p>• bufio包</p>
+<p>￮ Scanner类型</p>
+<p>▪ Scanner.Text()</p>
+<p>• fmt.Printf函数对一些表达式产生格式化输出</p>
+<p>￮ 该函数的首个参数是个格式字符串，指定后续参数被如何格式化</p>
+<p>￮ 各个参数的格式取决于“转换字符”（conversion character），形式为百分号后跟一个字母。<a target="_blank" rel="noopener" href="https://studygolang.com/pkgdoc">package fmt</a></p>
+<p>￮ 不可见字符的<strong>转义字符（<strong><strong>escap sequences</strong></strong>）**</strong>:\n,\t**<strong>等</strong></p>
+<p>￮ 默认情况下，Printf不会换行。按照惯例，以字母f结尾的格式化函数，如log.Printf和fmt.Errorf，都采用fmt.Printf的格式化准则。而以ln结尾的格式化函数，则遵循Println的方式，以跟%v差不多的方式格式化参数，并在最后添加一个换行符。（译注：后缀f指fomart，ln指line。）</p>
+<p><strong>从一系列具名文件中读取数据。</strong></p>
+<p>• 使用os.Open打开各个具名文件，并操作它们。</p>
+<p>￮ 返回两个值。第一个值是被打开的文件(*os.File），其后被Scanner读取。第二个值是内置error类型的值。如果err等于内置值nil，那么文件被成功打开。</p>
+<p><strong>输入数据读到内存中，一次分割为多行</strong></p>
+<p>• ReadFile函数（来自于io/ioutil包），其读取指定文件的全部内容，此函数需要文件名作为参数，因此只读指定文件，不读标准输入。</p>
+<p>• ReadFile函数返回一个字节切片（byte slice），必须把它转换为string，才能用strings.Split分割。</p>
+<p>• strings.Split函数把字符串分割成子串的切片。（Split的作用与前文提到的strings.Join相反。）</p>
+<p>□ <strong>创建图像</strong></p>
+<p>package image</p>
+<p><strong>const****声明，</strong></p>
+<p>• 常量是指在程序编译后运行时始终都不会变化的值</p>
+<p>• 目前常量声明的值必须是一个数字值、字符串或者一个固定的boolean值。</p>
+<p><strong>struct****结构体类型，</strong></p>
+<p><strong>复合声明</strong></p>
+<h2 id="1-2-程序结构"><a href="#1-2-程序结构" class="headerlink" title="1.2 程序结构"></a>1.2 程序结构</h2><p>Go语言程序的</p>
+<p>• 基本元素结构、</p>
+<p>• 变量、</p>
+<p>• 新类型定义、</p>
+<p>• 包和文件、</p>
+<p>• 作用域</p>
+<p>变量保存<strong>值</strong>，简单的加法和减法运算被组合成较复杂的<strong>表达式</strong>。基础类型被聚合为数组或结构体等更复杂的数据结构。然后使用if和for之类的控制语句来组织和控制表达式的执行流程。然后多个语句被组织到一个个函数中，以便代码的隔离和复用。函数以源文件和包的方式被组织。</p>
+<p><strong>命名</strong></p>
+<p>Go语言中的<strong>函数名、变量名、常量名、类型名、语句标号和包名</strong>等所有的命名，都遵循一个简单的命名规则：一个名字必须以一个字母（Unicode字母）或下划线开头，后面可以跟任意数量的字母、数字或下划线。大写字母和小写字母是不同的。长度无限制。</p>
+<p>• 关键字 25 个</p>
+<p>\1. break   default    func   interface  select</p>
+<p>\2. case    defer     go    map     struct</p>
+<p>\3. chan    else     goto   package   switch</p>
+<p>\4. const   fallthrough  if    range    type</p>
+<p>\5. continue  for      import  return   var</p>
+<p>• 预定义的名字：主要对应内建的常量、类型和函数。</p>
+<p>￮ 这些内部预先定义的名字并不是关键字，你可以再定义，重新使用它们。</p>
+<p>￮ 以将new名字重新定义为别的类型。即作为一种变量名，那么函数内部是无法使用被重定义的内置函数。</p>
+<p>\1. 内建常量: true false iota nil</p>
+<p>\2.  </p>
+<p>\3. 内建类型: int int8 int16 int32 int64</p>
+<p>\4.      uint uint8 uint16 uint32 uint64 uintptr</p>
+<p>\5.      float32 float64 complex128 complex64</p>
+<p>\6.      bool byte rune string error</p>
+<p>\7.  </p>
+<p>\8. 内建函数: make len cap new append copy close delete</p>
+<p>\9.      complex real imag</p>
+<p>\10.      panic recover</p>
+<p>• 如果一个名字是在函数内部定义，那么它的就只在函数内部有效。</p>
+<p>• 如果是在函数外部定义，那么将在当前包的所有文件中都可以访问。</p>
+<p>• <strong>名字的开头字母的大小写决定了名字在包外的可见性。</strong></p>
+<p>￮ 如果一个名字是大写字母开头的（译注：必须是在函数外部定义的包级名字；包级函数名本身也是包级名字），那么它将是导出的，也就是说可以被外部的包访问，例如fmt包的Printf函数就是导出的，可以在fmt包外部访问。</p>
+<p>￮ 包本身的名字一般总是用小写字母。</p>
+<p>• Go语言程序员推荐使用 <strong>驼峰式</strong> 命名，当名字有几个单词组成的时优先使用大小写分隔，而不是优先用下划线分隔。</p>
+<p>• 像ASCII和HTML这样的缩略词则避免使用大小写混合的写法</p>
+<p><strong>声明</strong></p>
+<p>声明语句定义了程序的各种实体对象以及部分或全部的属性。Go语言主要有四种类型的声明语句：<strong>var<strong><strong>、</strong></strong>const<strong><strong>、</strong></strong>type<strong><strong>和</strong></strong>func****，分别对应变量、常量、类型和函数实体对象的声明。</strong></p>
+<p><strong>包一级声明语句声明的名字可在整个包对应的每个源文件中访问，而不是仅仅在其声明语句所在的源文件中访问。</strong>相比之下，局部声明的名字就只能在函数内部很小的范围被访问。</p>
+<p><strong>变量</strong></p>
+<p>var声明语句可以创建一个特定类型的变量，然后给变量附加一个名字，并且设置变量的初始值。变量声明的一般语法如下：</p>
+<p>\1. var 变量名字 类型 = 表达式</p>
+<p>• <strong>“<strong><strong>类型</strong></strong>”</strong>或<strong>“=</strong> <strong>表达式****”</strong>两个部分可以省略其中的一个。</p>
+<p>￮ 如果省略的是类型信息，那么将根据初始化表达式来推导变量的类型信息。</p>
+<p>￮ 如果初始化表达式被省略，那么将用零值初始化该变量。</p>
+<p>▪  数值类型变量对应的零值是0，</p>
+<p>▪ 布尔类型变量对应的零值是false，</p>
+<p>▪ 字符串类型对应的零值是空字符串，</p>
+<p>▪ 接口或引用类型（包括slice、map、chan和函数）变量对应的零值是nil。</p>
+<p>▪ 数组或结构体等聚合类型对应的零值是每个元素或字段都是对应该类型的零值。</p>
+<p>￮ 零值初始化机制可以确保每个声明的变量总是有一个良好定义的值，因此在<strong>Go****语言中不存在未初始化的变量</strong>。</p>
+<p>￮ Go语言程序员应该让一些聚合类型的零值也具有意义，这样可以保证不管任何类型的变量总是有一个合理有效的零值状态。</p>
+<p>• 可以在一个声明语句中<strong>同时声明一组变量</strong>，或<strong>用一组初始化表达式声明并初始化一组变量</strong>。</p>
+<p>￮ 如果省略每个变量的类型，类型由初始化表达式推导</p>
+<p>￮ 一组变量也可以通过调用一个函数，由函数返回的多个返回值初始化</p>
+<p>• <strong>包级别声明的变量会在<strong><strong>main</strong></strong>入口函数执行前完成初始化，局部变量将在声明语句被执行到的时候完成初始化</strong>。</p>
+<p><strong>简短变量声明</strong></p>
+<p><strong>函数内部</strong>，有一种称为简短变量声明语句的形式可用于<strong>声明和初始化局部变量</strong>。它以<strong>“****名字</strong> <strong>:=</strong> <strong>表达式****”</strong> 形式声明变量，变量的类型根据表达式来自动推导。</p>
+<p>• 简短变量声明被广泛用于大部分的局部变量的声明和初始化。也可以用来声明和初始化一组变量：i, j := 0, 1</p>
+<p>￮ “:=”是一个变量声明语句，而“=‘是一个变量赋值操作</p>
+<p>￮ 区分：元组的多重赋值：i, j = j, i // 交换 i 和 j 的值</p>
+<p>• var形式的声明语句往往是用于需要显式指定变量类型地方，或者因为变量稍后会被重新赋值而初始值无关紧要的地方。</p>
+<p>• 简短变量声明语句中必须至少要声明一个新的变量</p>
+<p>• 简短变量声明语句只有对已经在同级词法域声明过的变量才和赋值操作语句等价，如果变量是在外部词法域声明的，那么简短变量声明语句将会在当前词法域重新声明一个新的变量</p>
+<p><strong>指针</strong></p>
+<p>• 如果用“var x int”声明语句声明一个x变量，那么&amp;x表达式（取x变量的内存地址）将产生一个指向该整数变量的指针，指针对应的数据类型是<em>int，指针被称之为“指向int类型的指针”。</em>p表达式对应p指针指向的变量的值。</p>
+<p>• 在Go语言中，返回函数中局部变量的地址也是安全的。在局部变量地址被返回之后依然有效，因为指针p依然引用这个变量。但是返回的地址应该都不一样。</p>
+<p>• 每次我们对一个变量取地址，或者复制指针，我们都是为原变量创建了新的别名。【有点类似C++ 引用？】</p>
+<p>￮ 不仅仅是指针会创建别名，很多其他引用类型也会创建别名，例如slice、map和chan，甚至结构体、数组和接口都会创建所引用变量的别名。</p>
+<p>￮ 指针特别有价值的地方在于我们可以不用名字而访问一个变量，但是这是一把双刃剑：要找到一个变量的所有访问者并不容易，我们必须知道变量全部的别名（译注：这是Go语言的垃圾回收器所做的工作）</p>
+<p><strong>new****函数</strong></p>
+<p>表达式new(T)将创建一个T类型的匿名变量，初始化为T类型的零值，然后<strong>返回变量地址，返回的指针类型为</strong>*<strong>T</strong>。p := new(int)  // p, *int 类型, 指向匿名的 int 变量。</p>
+<p><strong>变量的生命周期</strong></p>
+<p>变量的生命周期指的是在程序运行期间变量有效存在的时间间隔。</p>
+<p>• 对于在包一级声明的变量来说，它们的生命周期和整个程序的运行周期是一致的。</p>
+<p>• 而相比之下，在局部变量的声明周期则是动态的：从每次<strong>创建一个新变量的声明语句开始，直到该变量不再被引用为止，然后变量的存储空间可能被回收</strong>。</p>
+<p>￮ 函数的参数变量和返回值变量都是局部变量。它们在函数每次被调用的时候创建。</p>
+<p>• Go语言的自动圾收集器是如何知道一个变量是何时可以被回收的呢？</p>
+<p>￮ 基本的实现思路是，从每个包级的变量和每个当前运行函数的每一个局部变量开始，通过指针或引用的访问路径遍历，是否可以找到该变量。如果不存在这样的访问路径，那么说明该变量是不可达的，也就是说它是否存在并不会影响程序后续的计算结果。</p>
+<p>￮ 因为一个变量的有效周期只取决于是否可达，因此一个循环迭代内部的局部变量的生命周期可能超出其局部作用域。同时，局部变量可能在函数返回之后依然存在。【所以意味着变量名不可以一样？】</p>
+<p>￮ 编译器会自动选择在栈上还是在堆上分配局部变量的存储空间，这个选择并不是由用var还是new声明变量的方式决定的。</p>
+<p>▪ 变量的逃逸行为</p>
+<p>• 虽然变量在函数内部定义，但函数退出后依然可以通过包一级的global变量找到，因此这个函数内的变量必须在堆上分配。</p>
+<p>• 逃逸的变量需要额外分配内存，同时对性能的优化可能会产生细微的影响</p>
+<p>￮ 虽然不需要显式地分配和释放内存，但是要编写高效的程序你依然需要了解变量的生命周期。</p>
+<p>▪ 例如，如果将指向短生命周期对象的指针保存到具有长生命周期的对象中，特别是保存到全局变量时，会阻止对短生命周期对象的垃圾回收（从而可能影响程序的性能）。</p>
+<p> <strong>赋值</strong></p>
+<p>使用赋值语句可以更新一个变量的值。</p>
+<p>数值变量也可以支持++递增和–递减语句（译注：自增和自减是语句，而不是表达式，因此x = i++之类的表达式是错误的）</p>
+<p><strong>元组赋值</strong></p>
+<p>另一种形式的赋值语句，它允许同时更新多个变量的值。</p>
+<p>在<strong>赋值之前，赋值语句右边的所有表达式将会先进行求值，然后再统一更新左边对应变量的值。</strong>这对于处理有些同时出现在元组赋值语句左右两边的变量很有帮助</p>
+<p><strong>可赋值性</strong></p>
+<p>赋值语句是显式的赋值形式，但是程序中还有很多地方会发生隐式的赋值行为：函数调用会隐式地将调用参数的值赋值给函数的参数变量，一个返回语句将隐式地将返回操作的值赋值给结果变量。</p>
+<p>不管是隐式还是显式地赋值，在赋值语句左边的变量和右边最终的求到的值必须有相同的数据类型。即只有右边的值对于左边的变量是可赋值的，赋值语句才是允许的。</p>
+<p>可赋值性的规则对于不同类型有着不同要求。基本的是：<strong>类型必须完全匹配，<strong><strong>nil</strong></strong>可以赋值给任何指针或引用类型的变量</strong>。常量（§3.6）则有更灵活的赋值规则，因为这样可以避免不必要的显式的类型转换。</p>
+<p>对于两个值是否可以用==或!=进行相等比较的能力也和可赋值能力有关系：对于任何类型的值的相等比较，第二个值必须是对第一个值类型对应的变量是可赋值的【即类型匹配】，反之依然。</p>
+<p>□ <strong>类型</strong></p>
+<p><strong>包和文件</strong></p>
+<p>• Go语言中的包和其他语言的库或模块的概念类似，目的都是为了支持模块化、封装、单独编译和代码重用。</p>
+<p>• 通常一个包所在目录路径的后缀是包的导入路径；例如包gopl.io/ch1/helloworld对应的目录路径是$GOPATH/src/gopl.io/ch1/helloworld。</p>
+<p>￮ 每个包都是有一个全局唯一的导入路径。</p>
+<p>￮ 当使用Go语言自带的go工具箱时（第十章），一个导入路径代表一个目录中的一个或多个Go源文件。</p>
+<p>￮ 如果导入了一个包，但是又没有使用该包将被当作一个编译错误处理。</p>
+<p>▪ 我们可以使用golang.org/x/tools/cmd/goimports导入工具，它可以根据需要自动添加或删除导入的包；</p>
+<p>▪ 类似的还有gofmt工具，可以用来格式化Go源文件。</p>
+<p>• 每个包都对应一个独立的名字空间。</p>
+<p>• 包还可以让我们通过控制哪些名字是外部可见的来隐藏内部实现信息。</p>
+<p>￮ 在Go语言中，一个简单的规则是：<strong>如果一个名字是大写字母开头的，那么该名字是导出的</strong>（译注：因为汉字不区分大小写，因此汉字开头的名字是没有导的）。</p>
+<p>• 包级别的名字，例如在一个文件声明的类型和常量，在同一个包的其他源文件也是可以直接访问的，就好像所有代码都在一个文件一样。包级别的常量名都是以大写字母开头，它们可以像tempconv.AbsoluteZeroC这样被外部代码访问</p>
+<p>• 在每个源文件的包声明前仅跟着的注释是包注释（§10.7.4）。通常，包注释的第一句应该先是包的功能概要说明。一个包通常只有一个源文件有包注释（译注：如果有多个包注释，目前的文档工具会根据源文件名的先后顺序将它们链接为一个包注释）。如果包注释很大，通常会放到一个独立的doc.go文件中。</p>
+<p>□ <strong>包的初始化</strong></p>
+<p>• 包的初始化<strong>首先是解决包级变量的依赖顺序，然后安照包级变量声明出现的顺序依次初始化</strong></p>
+<p>• 如果包中含有多个.go源文件，它们将按照发给编译器的顺序进行初始化，Go语言的构建工具首先会将.go文件根据文件名排序，然后依次调用编译器编译。</p>
+<p>• 包级别声明的变量，如果有初始化表达式则用表达式初始化，还有一些没有初始化表达式的，用一个特殊的<strong>init****初始化函数</strong>来简化初始化工作。</p>
+<p>￮ 每个文件都可以包含多个init初始化函数。</p>
+<p>￮ init初始化函数除了不能被调用或引用外，其他行为和普通函数类似。</p>
+<p>￮ 在每个文件中的init初始化函数，在程序开始执行时按照它们声明的顺序被自动调用。</p>
+<p>• 每个包在解决依赖的前提下，以导入声明的顺序初始化，每个包只会被初始化一次。</p>
+<p>• 初始化工作是自下而上进行的，main包最后被初始化。以这种方式，可以确保在main函数执行之前，所有依然的包都已经完成初始化工作了。</p>
+<p><strong>作用域</strong></p>
+<p>声明语句的作用域是指源代码中可以有效使用这个名字的范围。</p>
+<p>• 不要将作用域和生命周期混为一谈。</p>
+<p>￮ 声明语句的作用域对应的是一个源代码的文本区域；它是一个编译时的属性。</p>
+<p>￮ 一个变量的生命周期是指程序运行时变量存在的有效时间段，在此时间区域内它可以被程序的其他部分引用；是一个运行时的概念。</p>
+<p>• 语法块：花括弧所包含的一系列语句</p>
+<p>• 声明语句对应的词法域决定了作用域范围的大小。</p>
+<p>￮ 对于内置的类型、函数和常量，比如int、len和true等是在<strong>全局作用域</strong>的，因此可以在整个程序中直接使用。</p>
+<p>￮ 任何在在函数外部（也就是<strong>包级语法域</strong>）声明的名字可以在同一个包的任何源文件中访问的。</p>
+<p>￮ 对于导入的包，例如tempconv导入的fmt包，则是对应<strong>源文件级的作用域</strong>，因此只能在当前的文件中访问导入的fmt包，当前包的其它源文件无法访问在当前源文件导入的包。</p>
+<p>￮ 还有许多声明语句，比如tempconv.CToF函数中的变量c，则是<strong>局部作用域</strong>的，它只能在函数内部（甚至只能是局部的某些部分）访问。</p>
+<p>￮ 控制流标号，就是break、continue或goto语句后面跟着的那种标号，则是<strong>函数级的作用域。</strong></p>
+<p>• 当编译器遇到一个名字引用时，如果它看起来像一个声明，它首先从最内层的词法域向全局的作用域查找。</p>
+<p>￮ 如果查找失败，则报告“未声明的名字”这样的错误。</p>
+<p>￮ 如果该名字在内部和外部的块分别声明过，则内部块的声明首先被找到。在这种情况下，<strong>内部声明屏蔽了外部同名的声明，让外部的声明的名字无法被访问。</strong></p>
+<p>￮ </p>
+<p>\3. <strong>基础数据类型</strong></p>
+<p>数字、布尔值、字符串和常量，并演示了如何显示和处理Unicode字符</p>
+<p>Go语言将数据类型分为四类：<strong>基础类型、复合类型、引用类型和接口类型</strong>。</p>
+<p>本章介绍基础类型，包括：数字、字符串和布尔型。</p>
+<p>• 两个相同类型的值可以用==和!=进行比较。此外，整数、浮点数和字符串可以根据比较结果排序。许多其它类型的值可能是不可比较的，因此也就可能是不可排序的。</p>
+<p>Go语言的数值类型包括几种不同大小的整形数、浮点数和复数。每种数值类型都决定了对应的大小范围和是否支持正负符号。</p>
+<p><strong>整型</strong></p>
+<p><strong>数字</strong></p>
+<p>• i<strong>nt8<strong><strong>、</strong></strong>int16<strong><strong>、</strong></strong>int32<strong><strong>和</strong></strong>int64</strong>四种截然不同大小的有符号整形数类型</p>
+<p>• <strong>uint8<strong><strong>、</strong></strong>uint16<strong><strong>、</strong></strong>uint32<strong><strong>和</strong></strong>uint64</strong>四种无符号整形数类型</p>
+<p>• 一般对应特定CPU平台机器字大小的<strong>有符号和无符号整数<strong><strong>int</strong></strong>和****uint</strong>；32或64位</p>
+<p>￮ <strong>Unicode<strong><strong>字符</strong></strong>rune<strong><strong>类型是和</strong></strong>int32****等价的类型</strong>，通常用于表示一个Unicode码点。这两个名称可以互换使用。</p>
+<p>￮ <strong>byte<strong><strong>也是</strong></strong>uint8****类型的等价类型</strong>，byte类型一般用于强调数值是一个原始的数据而不是一个小的整数。</p>
+<p>• <strong>无符号的整数类型<strong><strong>uintptr</strong></strong>，没有指定具体的<strong><strong>bit</strong></strong>大小但是足以容纳指针。</strong>uintptr类型只有在底层编程是才需要，特别是Go语言和C语言函数库或操作系统接口相交互的地方。</p>
+<p>• int、uint和uintptr是不同类型的兄弟类型。其中int和int32也是不同的类型，即使int的大小也是32bit，在需要将int当作int32类型的地方需要一个显式的类型转换操作，反之亦然</p>
+<p>• <strong>有符号整数采用<strong><strong>2</strong></strong>的补码形式表示</strong>，也就是最高bit位用作表示符号位，一个n-bit的有符号数的值域是从-2^{n-1}−2<em>n</em>−1到2^{n-1}-12<em>n</em>−1−1。<strong>无符号整数的所有<strong><strong>bit</strong></strong>位都用于表示非负数</strong>，值域是0到2^n-12<em>n</em>−1。</p>
+<p>￮ 例如，int8类型整数的值域是从-128到127，而uint8类型整数的值域是从0到255</p>
+<p><strong>运算符</strong></p>
+<p>Go语言中关于算术运算、逻辑运算和比较运算的二元运算符，它们按照先级递减的顺序的排列：</p>
+<p>\1. *   /   %   &lt;&lt;    &gt;&gt;   &amp;    &amp;^</p>
+<p>\2. +   -   |   ^</p>
+<p>\3. ==   !=   &lt;   &lt;=    &gt;   &gt;=</p>
+<p>\4. &amp;&amp;</p>
+<p>\5. ||</p>
+<p>• 二元运算符有<strong>五种优先级。在同一个优先级，使用左优先结合规则，</strong>但是使用括号可以明确优先顺序，使用括号也可以用于提升优先级。</p>
+<p>• 算术运算符+、-、<em>和/可以适用与于整数、浮点数和复数，但是<strong>取模运算符</strong></em>*%**<strong>仅用于整数间的运算。</strong></p>
+<p>￮ 对于不同编程语言，%取模运算的行为可能并不相同。<strong>在<strong><strong>Go</strong></strong>语言中，**</strong>%**<strong>取模运算符的符号和被取模数的符号总是一致的</strong>，因此-5%3和-5%-3结果都是-2。</p>
+<p>￮ 除法运算符/的行为则依赖于操作数是否为全为整数，比如5.0/4.0的结果是1.25，但是5/4的结果是1，因为整数除法会向着0方向截断余数。</p>
+<p>• 位操作运算符^作为二元运算符时是按位异或（XOR），当用作一元运算符时表示按位取反；也就是说，它返回一个每个bit位都取反的数。位操作运算符&amp;^用于按位置零（AND NOT）：功能同a&amp;(^b)相同</p>
+<p>￮ 如果右侧是0，则左侧数保持不变</p>
+<p>￮ 如果右侧是1，则左侧数一定清零</p>
+<p>• 在x&lt;&lt;n和x&gt;&gt;n移位运算中，决定了移位操作bit数部分必须是无符号数；被操作的x数可以是有符号或无符号数。算术上，一个x&lt;&lt;n左移运算等价于乘以2^n，一个x&gt;&gt;n右移运算等价于除以2^n。</p>
+<p>￮ 左移运算用零填充右边空缺的bit位，无符号数的右移运算也是用0填充左边空缺的bit位，但是有符号数的右移运算会用符号位的值填充左边空缺的bit位。因为这个原因，最好用无符号运算，这样你可以将整数完全当作一个bit位模式处理。</p>
+<p>• 尽管Go语言提供了无符号数和运算，即使数值本身不可能出现负数我们还是倾向于使用有符号的int类型。</p>
+<p>￮ 无符号数往往只有在位运算或其它特殊的运算场景才会使用，就像bit集合、分析二进制文件格式或者是哈希和加密操作等。它们通常并不用于仅仅是表达非负数量的场合。</p>
+<p>• 对于每种类型T，如果转换允许的话，*<em>类型转换操作</em><em>*<em>T(x)<strong><strong>将</strong></strong>x</em>*</em><em>转换为</em><em><strong>T</strong></em>*类型**。许多整形数之间的相互转换并不会改变数值；它们只是告诉编译器如何解释这个值。但是对于将一个大尺寸的整数类型转为一个小尺寸的整数类型，或者是将一个浮点数转为整数，可能会改变数值或丢失精度。</p>
+<p><strong>fmt****的两个使用技巧</strong></p>
+<p>￮ 通常Printf格式化字符串包含多个%参数时将会包含对应相同数量的额外操作数，</p>
+<p>￮ 但是%之后的[1]副词告诉Printf函数再次使用第一个操作数。</p>
+<p>￮ 第二，%后的#副词告诉Printf在用%o、%x或%X输出时生成0、0x或0X前缀。</p>
+<p>a. o := 0666</p>
+<p>b. fmt.Printf(“%d %[1]o %#[1]o\n”, o) // “438 666 0666”</p>
+<p>c. x := int64(0xdeadbeef)</p>
+<p>d. fmt.Printf(“%d %[1]x %#[1]x %#[1]X\n”, x)</p>
+<p>e. // Output:</p>
+<p>f. // 3735928559 deadbeef 0xdeadbeef 0XDEADBEEF</p>
+<p><strong>字符面值</strong></p>
+<p>• 通过一对单引号直接包含对应字符。字符使用%c参数打印，或者是用%q参数打印带单引号的字符</p>
+<p><strong>浮点数</strong></p>
+<p>Go语言提供了两种精度的浮点数，float32和float64。</p>
+<p>• 这些浮点数类型的取值范围可以从很微小到很巨大。</p>
+<p>￮ 浮点数的范围极限值可以在math包找到。常量math.MaxFloat32表示float32能表示的最大数值，大约是 3.4e38；对应的math.MaxFloat64常量大约是1.8e308。</p>
+<p>￮ 它们分别能表示的最小值近似为1.4e-45和4.9e-324。</p>
+<p>• 通常应该优先使用float64类型，因为float32类型的累计计算误差很容易扩散，并且float32能精确表示的正整数并不是很大（译注：因为float32的有效bit位只有23个，其它的bit位用于指数和符号；当整数大于23bit能表达的范围时，float32的表示将出现误差）</p>
+<p>• math包中除了提供大量常用的数学函数外，还提供了IEEE754浮点数标准中定义的特殊值的创建和测试：正无穷大和负无穷大，分别用于表示太大溢出的数字和除零的结果；还有NaN非数，一般用于表示无效的除法操作结果0/0或Sqrt(-1).</p>
+<p>\1. var z float64</p>
+<p>\2. fmt.Println(z, -z, 1/z, -1/z, z/z) // “0 -0 +Inf -Inf NaN”</p>
+<p>• 函数math.IsNaN用于测试一个数是否是非数NaN，math.NaN则返回非数对应的值。虽然可以用math.NaN来表示一个非法的结果，但是测试一个结果是否是非数NaN则是充满风险的，因为NaN和任何数都是不相等的</p>
+<p><strong>复数</strong></p>
+<p><strong>布尔型</strong></p>
+<p>• 布尔值可以和&amp;&amp;（AND）和||（OR）操作符结合，并且可能会有短路行为：如果运算符左边值已经可以确定整个布尔表达式的值，那么运算符右边的值将不在被求值。</p>
+<p>• &amp;&amp;的优先级比||高</p>
+<p>• 布尔值并不会隐式转换为数字值0或1，反之亦然</p>
+<p>￮ 可以包装 btoi 和 itob 的函数</p>
+<p><strong>字符串</strong></p>
+<p>• 一个字符串是一个不可改变的字节序列。</p>
+<p>￮ 字符串的值是不可变的：一个字符串包含的字节序列永远不会被改变，我们可以将一个字符串追加到另一个字符串，给一个字符串变量分配一个新字符串值。</p>
+<p>￮ 因为字符串是不可修改的，因此尝试修改字符串内部数据的操作也是被禁止的。</p>
+<p>￮ 不变性意味如果两个字符串共享相同的底层数据的话也是安全的，这使得复制任何长度的字符串代价是低廉的。</p>
+<p>￮ 字符串切片操作代价也是低廉的。</p>
+<p>• <strong>内置的<strong><strong>len</strong></strong>函数可以返回一个字符串中的字节数目（不是<strong><strong>rune</strong></strong>字符数目：<strong><strong>unicode</strong></strong>字符）</strong>，索引操作s[i]返回第i个字节的字节值，i必须满足0 ≤ i&lt; len(s)条件约束。</p>
+<p>• <strong>第<strong><strong>i</strong></strong>个字节并不一定是字符串的第<strong><strong>i</strong></strong>个字符</strong>，因为对于非ASCII字符的UTF8编码会要两个或多个字节。比如 “hello,世界”得到的字节数是12，而rune长度是8，因为世界两个字各占3个字节，但是是一个rune字符。</p>
+<p>• 子字符串操作*<em>s[i:j]<strong><strong>，基于原始的</strong></strong>s</em><em><strong>字符串的第</strong></em><em>i</em><em><strong>个字节开始到第</strong></em><em>j</em><em><strong>个字节（并不包含</strong></em><em>j</em>*<strong>本身）生成一个新字符串</strong>。生成的新字符串将包含j-i个字节。</p>
+<p>￮ 不管i还是j都可能被忽略，当它们被忽略时将采用0作为开始位置，采用len(s)作为结束的位置。</p>
+<p><strong>字符串面值</strong></p>
+<p><strong>原生字符串面值</strong></p>
+<p>一个原生的字符串面值形式是…，使用反引号代替双引号。在原生的字符串面值中，没有转义操作；全部的内容都是字面的意思，包含退格和换行，因此一个程序中的原生字符串面值可能跨越多行（译注：在原生字符串面值内部是无法直接写字符的，可以用八进制或十六进制转义或+”```”链接字符串常量完成）。【原生的则不用转转义】</p>
+<p>原生字符串面值用于编写正则表达式会很方便，因为正则表达式往往会包含很多反斜杠。原生字符串面值同时被广泛应用于HTML模板、JSON面值、命令行提示信息以及那些需要扩展到多行的场景。</p>
+<p>□ <strong>Unicode</strong></p>
+<p>（ <a target="_blank" rel="noopener" href="http://unicode.org/">http://unicode.org</a> ），它收集了这个世界上所有的符号系统，包括重音符号和其它变音符号，制表符和回车符，还有很多神秘的符号，每个符号都分配一个唯一的Unicode码点，Unicode码点对应Go语言中的rune【<strong>神秘的或有魔力的符号；</strong>】整数类型。【unicode是一种编码表示的方式】</p>
+<p><strong>UTF8</strong></p>
+<p>• 是一个将Unicode码点编码为<strong>字节序列的变长编码</strong>。是unicode中不同字符的编码存储方式。</p>
+<p>• 对于UTF8编码后文本的处理和原始的字节处理逻辑是一样的。但是对应很多其它编码则并不是这样的。</p>
+<p>Go语言的源文件采用UTF8编码，并且Go语言处理UTF8编码的文本也很出色。<strong>unicode****包</strong>提供了诸多处理rune字符相关功能的函数（比如区分字母和数组，或者是字母的大写和小写转换等），<strong>unicode/utf8****包</strong>则提供了用于rune字符序列的UTF8编码和解码的功能。</p>
+<p><strong>字符串和<strong><strong>Byte</strong></strong>切片</strong></p>
+<p>标准库中有四个包对字符串处理尤为重要：bytes、strings、strconv和unicode包。</p>
+<p>• strings包提供了许多如字符串的查询、替换、比较、截断、拆分和合并等功能。</p>
+<p>• bytes包也提供了很多类似功能的函数，但是针对和字符串有着相同结构的[]byte类型。因为字符串是只读的，因此逐步构建字符串会导致很多分配和复制。在这种情况下，使用bytes.Buffer类型将会更有效，稍后我们将展示。</p>
+<p>• strconv包提供了布尔型、整型数、浮点数和对应字符串的相互转换，还提供了双引号转义相关的转换。</p>
+<p>• unicode包提供了IsDigit、IsLetter、IsUpper和IsLower等类似功能，它们用于给字符分类。每个函数有一个单一的rune类型的参数，然后返回一个布尔值。而像ToUpper和ToLower之类的转换函数将用于rune字符的大小写转换。所有的这些函数都是遵循Unicode标准定义的字母、数字等分类规范。strings包也有类似的函数，它们是ToUpper和ToLower，将原始字符串的每个字符都做相应的转换，然后返回新的字符串</p>
+<p>• path和path/filepath包提供了关于文件路径名更一般的函数操作。</p>
+<p>一个字符串是包含的只读字节数组，一旦创建，是不可变的。相比之下，一个字节slice的元素则可以自由地修改。</p>
+<p>字符串和字节slice之间可以相互转换：</p>
+<p>\1. s := “abc”</p>
+<p>\2. b := []byte(s)</p>
+<p>\3. s2 := string(b)</p>
+<p>• 一个[]byte(s)转换是分配了一个新的字节数组用于保存字符串数据的拷贝，然后引用这个底层的字节数组。编译器的优化可以避免在一些场景下分配和复制字符串数据，但总的来说需要确保在变量b被修改的情况下，原始的s字符串也不会改变。将一个字节slice转到字符串的string(b)操作则是构造一个字符串拷贝，以确保s2字符串是只读的。</p>
+<p><strong>字符串和数字的转换</strong></p>
+<p>• 将一个整数转为字符串，</p>
+<p>￮ 一种方法是用fmt.Sprintf返回一个格式化的字符串；</p>
+<p>￮ 另一个方法是用strconv.Itoa(“整数到ASCII”)：</p>
+<p>strconv的FormatInt和FormatUint函数可以用不同的进制来格式化数字。fmt.Printf函数的%b、%d、%o和%x等参数提供功能往往比strconv包的Format函数方便很多，特别是在需要包含附加额外信息的时候</p>
+<p>\1. fmt.Println(strconv.FormatInt(int64(x), 2)) // “1111011”</p>
+<p>• 将一个字符串解析为整数，</p>
+<p>￮ 可以使用strconv包的Atoi或ParseInt函数，还有用于解析无符号整数的ParseUint函数</p>
+<p>有时候也会使用<strong>fmt.Scanf****来解析输入的字符串和数字，特别是当字符串和数字混合在一行的时候，它可以灵活处理不完整或不规则的输入</strong>。</p>
+<p><strong>常量</strong></p>
+<p>• 常量表达式的值在编译期计算，而不是在运行期。</p>
+<p>￮ 这样可以减少运行时的工作，也方便其他编译优化。</p>
+<p>￮ 当操作数是常量时，一些运行时的错误也可以在编译时被发现，例如整数除零、字符串索引越界、任何导致无效浮点数的操作等。</p>
+<p>• 每种常量的潜在类型都是基础类型：boolean、string或数字。</p>
+<p>• 常量间的所有算术运算、逻辑运算和比较运算的结果也是常量，对常量的类型转换操作或以下函数调用都是返回常量结果：len、cap、real、imag、complex和unsafe.Sizeof</p>
+<p>• 如果是批量声明的常量，除了第一个外其它的常量右边的初始化表达式都可以省略，如果省略初始化表达式则表示使用前面常量的初始化表达式写法，对应的常量类型也一样的。</p>
+<p>\1. const (</p>
+<p>\2.   a = 1</p>
+<p>\3.   b</p>
+<p>\4.   c = 2</p>
+<p>\5.   d</p>
+<p>\6. )</p>
+<p>\7. fmt.Println(a, b, c, d) // “1 1 2 2”</p>
+<p> <strong>iota</strong> <strong>常量生成器</strong></p>
+<p>常量声明可以使用iota常量生成器初始化，它用于生成一组以相似规则初始化的常量，但是不用每行都写一遍初始化表达式。在一个const声明语句中，在第一个声明的常量所在的行，iota将会被置为0，然后在每一个有常量声明的行加一。</p>
+<p>\1. const (</p>
+<p>\2.   _ = 1 &lt;&lt; (10 * iota)</p>
+<p>\3.   KiB // 1024</p>
+<p>\4.   MiB // 1048576</p>
+<p>\5.   GiB // 1073741824</p>
+<p>\6.   TiB // 1099511627776       (exceeds 1 &lt;&lt; 32)</p>
+<p>\7.   PiB // 1125899906842624</p>
+<p>\8.   EiB // 1152921504606846976</p>
+<p>\9.   ZiB // 1180591620717411303424  (exceeds 1 &lt;&lt; 64)</p>
+<p>\10.   YiB // 1208925819614629174706176</p>
+<p>\11. )</p>
+<p><strong>无类型常量</strong></p>
+<p>• 这里有六种未明确类型的常量类型，分别是无类型的布尔型、无类型的整数、无类型的字符、无类型的浮点数、无类型的复数、无类型的字符串。</p>
+<p>• 通过延迟明确常量的具体类型，无类型的常量不仅可以提供更高的运算精度，而且可以直接用于更多的表达式而不需要显式的类型转换。</p>
+<p>• 只有常量可以是无类型的。使用时会被隐式转换为对应的类型，如果转换合法的话。</p>
+<p>• 注意默认类型是规则的：无类型的整数常量默认转换为int，对应不确定的内存大小，但是浮点数和复数常量则默认转换为float64和complex128。</p>
+<p>\4. <strong>复合数据类型</strong></p>
+<p>• 数组和结构体是聚合类型；它们的值由许多元素或成员字段的值组成。</p>
+<p>￮ 数组是由同构的元素组成——每个数组元素都是完全相同的类型</p>
+<p>￮ 结构体则是由异构的元素组成的。</p>
+<p>￮ 数组和结构体都是有固定内存大小的数据结构。</p>
+<p>￮ 相比之下，slice和map则是动态的数据结构，它们将根据需要动态增长。</p>
+<p><strong>简单的数组</strong></p>
+<p>• 在数组字面值中，如果在数组的长度位置出现的是“…”省略号，则表示数组的长度是根据初始化值的个数来计算。</p>
+<p>• <strong>数组的长度是数组类型的一个组成部分，因此</strong><strong>[3]int**<strong>和</strong></strong>[4]int**<strong>是两种不同的数组类型。</strong>数组的长度必须是常量表达式，因为数组的长度需要在编译阶段确定。</p>
+<p>• Go 中数组的传递并不是直接根据数组名传指针，只有显示传递指针时才是。</p>
+<p>￮ 虽然通过指针来传递数组参数是高效的，而且也允许在函数内部修改数组的值，但是数组依然是僵化的类型，因为数组的类型包含了僵化的长度信息。上面的zero函数并不能接收指向[16]byte类型数组的指针，而且也没有任何添加或删除数组元素的方法。</p>
+<p>￮ 除了像SHA256这类需要处理特定大小数组的特例外，数组依然很少用作函数参数；相反，我们一般使用slice来替代数组。</p>
+<p><strong>切片（<strong><strong>slice</strong></strong>）</strong></p>
+<p>Slice（切片）代表变长的序列，序列中每个元素都有相同的类型。一个slice类型一般写作[]T，其中T代表slice中元素的类型；slice的语法和数组很像，只是没有固定长度而已。</p>
+<p>• 数组和slice之间有着紧密的联系。</p>
+<p>￮ 一个slice是一个轻量级的数据结构，提供了访问数组子序列（或者全部）元素的功能，而且slice的底层确实引用一个数组对象。</p>
+<p>￮ 一个slice由三个部分构成：指针、长度和容量。</p>
+<p>▪ 指针指向第一个slice元素对应的底层数组元素的地址，要注意的是<strong>slice****的第一个元素并不一定就是数组的第一个元素</strong>。</p>
+<p>• 因为slice值包含指向第一个slice元素的指针，因此向函数传递slice将允许在函数内部修改底层数组的元素。换句话说，复制一个slice只是对底层的数组创建了一个新的slice别名。</p>
+<p>▪ 长度对应slice中元素的数目；长度不能超过容量，<strong>容量一般是从<strong><strong>slice</strong></strong>的开始位置到底层数据的结尾位置</strong>。</p>
+<p>▪ 内置的len和cap函数分别返回slice的长度和容量。</p>
+<p>▪ 多个slice之间可以共享底层的数据，并且引用的数组部分区间可能重叠。</p>
+<p>￮ slice的字面值也可以按顺序指定初始化值序列，或者是通过索引和元素值指定，或者的两种风格的混合语法初始化。</p>
+<p>• 和数组不同的是，<strong>slice****之间不能比较</strong>，因此我们不能使用==操作符来判断两个slice是否含有全部相等元素。不过标准库提供了高度优化的bytes.Equal函数来判断两个字节型slice是否相等（[]byte），但是对于其他类型的slice，我们必须自己展开每个元素进行比较。</p>
+<p>￮ 第一个原因，一个slice的元素是间接引用的，一个slice甚至可以包含自身。</p>
+<p>￮ 第二个原因，因为slice的元素是间接引用的，一个固定值的slice在不同的时间可能包含不同的元素，因为底层数组的元素可能会被修改。</p>
+<p>￮ slice和数组不同的相等测试行为会让人困惑。因此，安全的做法是直接禁止slice之间的比较操作。</p>
+<p>• slice唯一合法的比较操作是和nil比较，例如：</p>
+<p>\1. if summer == nil { /* … */ }</p>
+<p>• 一个零值的slice等于nil。一个nil值的slice并没有底层数组。一个nil值的slice的长度和容量都是0，但是也有非nil值的slice的长度和容量也是0的，例如[]int{}或make([]int, 3)[3:]</p>
+<p>￮ 如果你需要测试一个slice是否是空的，使用len(s) == 0来判断，而不应该用s == nil来判断。</p>
+<p>￮ 除了和nil相等比较外，一个nil值的slice的行为和其它任意0长度的slice一样</p>
+<p>\1. var s []int  // len(s) == 0, s == nil</p>
+<p>\2. s = nil    // len(s) == 0, s == nil</p>
+<p>\3. s = []int(nil) // len(s) == 0, s == nil</p>
+<p>\4. s = []int{}  // len(s) == 0, s != nil</p>
+<p><strong>make****函数</strong></p>
+<p>创建一个指定元素类型、长度和容量的slice。容量部分可以省略，在这种情况下，容量将等于长度。</p>
+<p>\1. make([]T, len)</p>
+<p>\2. make([]T, len, cap) // same as make([]T, cap)[:len]</p>
+<p>在底层，make创建了一个匿名的数组变量，然后返回一个slice；只有通过返回的slice才能引用底层匿名的数组变量。在第一种语句中，slice是整个数组的view。在第二个语句中，slice只引用了底层数组的前len个元素，但是容量将包含整个的数组。额外的元素是留给未来的增长用的。</p>
+<p><strong>append****函数</strong></p>
+<p>内置的append函数用于向slice追加元素。</p>
+<p>• 要正确地使用slice，需要记住尽管底层数组的元素是间接访问的，但是slice对应结构体本身的指针、长度和容量部分是直接访问的。要更新这些信息需要像上面例子那样一个显式的赋值操作。从这个角度看，slice并不是一个纯粹的引用类型，它实际上是一个类似下面结构体的聚合类型：</p>
+<p>\1. type IntSlice struct {</p>
+<p>\2.   ptr   *int</p>
+<p>\3.   len, cap int</p>
+<p>\4. }</p>
+<p>内置的append函数则可以追加多个元素，甚至追加一个slice。</p>
+<p>\1. var x []int</p>
+<p>\2. x = append(x, 1)</p>
+<p>\3. x = append(x, 2, 3)</p>
+<p>\4. x = append(x, 4, 5, 6)</p>
+<p>\5. x = append(x, x…) // append the slice x</p>
+<p>\6. fmt.Println(x)   // “[1 2 3 4 5 6 1 2 3 4 5 6]”</p>
+<p><strong>字典（<strong><strong>map</strong></strong>）</strong></p>
+<p>一个map就是一个哈希表的引用，map类型可以写为map[K]V，其中K和V分别对应key和value。map中所有的key都有相同的类型，所有的value也有着相同的类型，但是key和value之间可以是不同的数据类型。其中K对应的key必须是支持==比较运算符的数据类型，所以map可以通过测试key是否相等来判断是否已经存在。</p>
+<p>• 创建map：在向map存数据前必须先创建map</p>
+<p>￮ 内置的make函数可以创建一个map: ages := make(map[string]int)</p>
+<p>￮ 另一种创建空的map的表达式是map[string]int{}</p>
+<p>• 使用内置的delete函数可以删除元素：delete(ages, “alice”) </p>
+<p>\1. if age, ok := ages[“bob”]; !ok { /* … */ }</p>
+<p>在这种场景下，map的下标语法将产生两个值；第二个是一个布尔值，用于报告元素是否真的存在。布尔变量一般命名为ok，特别适合马上用于if条件判断部分。</p>
+<p>• 和slice一样，map之间也不能进行相等比较；唯一的例外是和nil进行比较。要判断两个map是否包含相同的key和value，我们必须通过一个循环实现。</p>
+<p>• Go语言中并没有提供一个set类型，但是map中的key也是不相同的，可以用map实现类似set的功能。为</p>
+<p><strong>结构体</strong></p>
+<p>• 结构体是一种聚合的数据类型，是由零个或多个任意类型的值聚合成的实体。每个值称为结构体的成员。</p>
+<p>• 结构体成员的输入顺序也有重要的意义。</p>
+<p>• 如果结构体成员名字是以大写字母开头的，那么该成员就是导出的；这是Go语言导出规则决定的。一个结构体可能同时包含导出和未导出的成员。</p>
+<p>• 一个命名为S的结构体类型将不能再包含S类型的成员：因为一个聚合的值不能包含它自身。（该限制同样适应于数组。）但是S类型的结构体可以包含*S指针类型的成员，这可以让我们创建递归的数据结构，比如链表和树结构等。</p>
+<p>• 结构体类型的零值是每个成员都对是零值。通常会将零值作为最合理的默认值。例如，对于bytes.Buffer类型，结构体初始值就是一个随时可用的空缓存，还有在第9章将会讲到的sync.Mutex的零值也是有效的未锁定状态。</p>
+<p><strong>结构体面值</strong></p>
+<p>\1. type Point struct{ X, Y int }</p>
+<p>\2.  </p>
+<p>\3. p := Point{1, 2}</p>
+<p>\1. 要求以结构体成员定义的顺序为每个结构体成员指定一个面值。它要求写代码和读代码的人要记住结构体的每个成员的类型和顺序，不过结构体成员有细微的调整就可能导致上述代码不能编译。</p>
+<p>\1. anim := gif.GIF{LoopCount: nframes}</p>
+<p>\2. 第二种写法，以成员名字和相应的值来初始化，可以包含部分或全部的成员.在这种形式的结构体面值写法中，如果成员被忽略的话将默认用零值。因为，提供了成员的名字，所有成员出现的顺序并不重要。</p>
+<p>两种不同形式的写法不能混合使用。而且，你不能企图在外部包中用第一种顺序赋值的技巧来偷偷地初始化结构体中未导出的成员.</p>
+<p>• 结构体可以作为函数的参数和返回值。</p>
+<p>￮ 如果考虑效率的话，较大的结构体通常会用指针的方式传入和返回</p>
+<p><strong>结构体比较</strong></p>
+<p>如果结构体的全部成员都是可以比较的，那么结构体也是可以比较的，那样的话两个结构体将可以使用==或!=运算符进行比较。相等比较运算符==将比较两个结构体的每个成员。<strong>可比较的结构体类型和其他可比较的类型一样，可以用于<strong><strong>map</strong></strong>的<strong><strong>key</strong></strong>类型。</strong></p>
+<p><strong>结构体嵌入和匿名成员</strong></p>
+<p>• Go语言有一个特性让我们只声明一个成员对应的数据类型而不指名成员的名字；这类成员就叫匿名成员。<strong>匿名成员的数据类型必须是命名的类型或指向一个命名的类型的指针</strong>。</p>
+<p>￮ 得意于匿名嵌入的特性，我们可以直接访问叶子属性而不需要给出完整的路径</p>
+<p>￮ 不幸的是，结构体字面值并没有简短表示匿名成员的语法</p>
+<p>￮ 不能同时包含两个类型相同的匿名成员，这会导致名字冲突</p>
+<p><strong>JSON</strong></p>
+<p>JavaScript对象表示法（JSON）是一种用于发送和接收结构化信息的标准协议。XML（§7.14）、ASN.1和Google的Protocol Buffers都是类似的协议，并且有各自的特色。</p>
+<p>• 将一个Go语言中类似movies的结构体slice转为JSON的过程叫编组（marshaling）</p>
+<p>￮ 在编码时，默认使用Go语言结构体的成员名字作为JSON的对象（通过reflect反射技术，我们将在12.6节讨论）。只有导出的结构体成员才会被编码，这也就是我们为什么选择用大写字母开头的成员名称。</p>
+<p>• 编码的逆操作是解码，对应将JSON数据解码为Go语言的数据结构，Go语言中一般叫unmarshaling，通过json.Unmarshal函数完成。</p>
+<p>\1. data, err := json.Marshal(movies)</p>
+<p>\2. data, err := json.MarshalIndent(movies, “”, “  “)</p>
+<p>\3. err := json.Unmarshal(data, &amp;titles)</p>
+<p>\4. </p>
+<p>□ <strong>xml</strong>**</p>
+<p>**</p>
+<p>\5. <strong>函数</strong></p>
+<p><strong>函数声明</strong></p>
+<p>函数声明包括函数名、形式参数列表、返回值列表（可省略）以及函数体。</p>
+<p>\1. func name(parameter-list) (result-list) {</p>
+<p>\2.   body</p>
+<p>\3. }</p>
+<p>函数的类型被称为函数的标识符。形参和返回值的变量名不影响函数标识符也不影响它们是否可以以省略参数类型的形式表示。</p>
+<p>你可能会偶尔遇到没有函数体的函数声明，这表示该函数不是以Go实现的。这样的声明定义了函数标识符。</p>
+<p>□ <strong>递归</strong></p>
+<p>大部分编程语言使用固定大小的函数调用栈，常见的大小从64KB到2MB不等。固定大小栈会限制递归的深度，当你用递归处理大量数据时，需要避免栈溢出；除此之外，还会导致安全性问题。与相反,<strong>Go**<strong>语言使用可变栈，栈的大小按需增加</strong></strong>(<strong><strong>初始时很小</strong></strong>)<strong><strong>。这使得我们使用递归时不必考虑溢出和安全问题。</strong></strong>var stack []string stack = append(stack,s)**</p>
+<p><strong>多返回值</strong></p>
+<p>虽然Go的垃圾回收机制会回收不被使用的内存，但是这不包括操作系统层面的资源，比如打开的文件、网络连接。因此我们必须显式的释放这些资源。</p>
+<p>如果一个函数中所有的返回值都有显示的变量名，那么该函数的return语句可以省略操作数。这称之为<strong>bare return</strong>。</p>
+<p><strong>错误</strong></p>
+<p>在Go的错误处理中，错误是软件包API和应用程序用户界面的一个重要组成部分，程序运行失败仅被认为是几个预期的结果之一。</p>
+<p>• 对于那些将运行失败看作是预期结果的函数，它们会返回一个额外的返回值，通常是最后一个，来传递错误信息。</p>
+<p>￮ 如果导致失败的原因只有一个，额外的返回值可以是一个布尔值，通常被命名为ok。</p>
+<p>￮ 通常，导致失败的原因不止一种，尤其是对I/O操作而言，用户需要了解更多的错误信息。因此，额外的返回值不再是简单的布尔类型，而是error类型。</p>
+<p>▪ 内置的error是接口类型。</p>
+<p>▪ error类型可能是nil或者non-nil。nil意味着函数运行成功，non-nil表示失败。对于non-nil的error类型,我们可以通过调用error的Error函数或者输出函数获得字符串类型的错误信息。</p>
+<p>￮ 通常，当函数返回non-nil的error时，其他的返回值是未定义的(undefined),这些未定义的返回值应该被忽略。然而，有少部分函数在发生错误时，仍然会返回一些有用的返回值。比如，当读取文件发生错误时，Read函数会返回可以读取的字节数以及错误信息。对于这种情况，正确的处理方式应该是先处理这些不完整的数据，再处理错误。</p>
+<p>• 在Go中，<strong>函数运行失败时会返回错误信息，这些错误信息被认为是一种预期的值而非异常（<strong><strong>exception</strong></strong>）</strong>，这使得Go有别于那些将函数运行失败看作是异常的语言。</p>
+<p>￮ 虽然Go有各种异常机制，但这些机制仅被使用在处理那些未被预料到的错误，即bug，而不是那些在健壮程序中应该被避免的程序错误。</p>
+<p><strong>错误处理策略</strong></p>
+<p>fmt.Errorf函数使用fmt.Sprintf格式化错误信息并返回。我们使用该函数前缀添加额外的上下文信息到原始错误信息。当错误最终由main函数处理时，错误信息应提供清晰的从原因到后果的因果链。</p>
+<p>fmt.Fprintf函数，用 os.Exit(1) 退出</p>
+<p>调用log.Fatalf可以更简洁的代码达到与上文相同的效果。log中的所有函数，都默认会在错误信息之前输出时间信息。</p>
+<p>• 当一次函数调用返回错误时，调用者有应该选择何时的方式处理错误。根据情况的不同，有很多处理方式：</p>
+<p>￮ 传播错误。这意味着函数中某个子程序的失败，会变成该函数的失败。</p>
+<p>￮ 如果错误的发生是偶然性的，或由不可预知的问题导致的。一个明智的选择是重新尝试失败的操作。在重试时，我们需要限制重试的时间间隔或重试的次数，防止无限制的重试。</p>
+<p>￮ 如果错误发生后，程序无法继续运行，我们就可以采用第三种策略：输出错误信息并结束程序。需要注意的是，这种策略只应在main中执行。对库函数而言，应仅向上传播错误，除非该错误意味着程序内部包含不一致性，即遇到了bug，才能在库函数中结束程序。</p>
+<p>￮ 有时，我们只需要输出错误信息就足够了，不需要中断程序的运行。我们可以通过log包提供函数：log.Printf</p>
+<p>▪ 或者标准错误流输出错误信息：fmt.Fprintf(os.Stderr,..)</p>
+<p>▪ log包中的所有函数会为没有换行符的字符串增加换行符。</p>
+<p>￮ 我们可以直接忽略掉错误。</p>
+<p>在Go中，错误处理有一套独特的编码风格。检查某个子函数是否失败后，我们通常将处理失败的逻辑代码放在处理成功的代码之前。如果某个错误会导致函数返回，那么成功时的逻辑代码不应放在else语句块中，而应直接放在函数体中。Go中大部分函数的代码结构几乎相同，首先是一系列的初始检查，防止错误发生，之后是函数的实际逻辑。</p>
+<p><strong>文件结尾错误（<strong><strong>EOF</strong></strong>）</strong></p>
+<p>因为文件结束这种错误不需要更多的描述，所以io.EOF有固定的错误信息——“EOF”。对于其他错误，我们可能需要在错误信息中描述错误的类型和数量，这使得我们不能像io.EOF一样采用固定的错误信息。</p>
+<p><strong>函数值</strong></p>
+<p>在Go中，函数被看作第一类值（first-class values）：函数像其他值一样，拥有类型，可以被赋值给其他变量，传递给函数，从函数返回。对函数值（function value）的调用类似函数调用。</p>
+<p>• 函数类型的零值是nil。调用值为nil的函数值会引起panic错误</p>
+<p>• 函数值可以与nil比较</p>
+<p>• 但是函数值之间是不可比较的，也不能用函数值作为map的key。</p>
+<p>• 函数值使得我们不仅仅可以通过数据来参数化函数，亦可通过行为。</p>
+<p><strong>Go<strong><strong>使用闭包（</strong></strong>closures<strong><strong>）技术实现函数值，</strong></strong>Go****程序员也把函数值叫做闭包。</strong></p>
+<p><strong>匿名函数</strong></p>
+<p>拥有函数名的函数只能在包级语法块中被声明，通过函数字面量（function literal），我们可绕过这一限制，在任何表达式中表示一个函数值。函数字面量的语法和函数声明相似，区别在于<strong>func<strong><strong>关键字后没有函数名。函数值字面量是一种表达式，它的值被称为匿名函数（</strong></strong>anonymous function****）。</strong>函数字面量允许我们在使用函数时，再定义它。通过这种方式定义的函数可以访问完整的词法环境（lexical environment），这意味着在函数中定义的内部函数可以引用该函数的变量</p>
+<p><strong>警告：捕获迭代变量</strong></p>
+<p><strong>可变参数</strong></p>
+<p>参数数量可变的函数称为为可变参数函数。典型的例子就是fmt.Printf和类似函数。Printf首先接收一个的必备参数，之后接收任意个数的后续参数。</p>
+<p>在声明可变参数函数时，需要在参数列表的最后一个参数类型之前加上省略符号“…”，这表示该函数会接收任意数量的该类型参数：func sum(vals…int) int</p>
+<p>虽然在可变参数函数内部，…int 型参数的行为看起来很像切片类型，但实际上，可变参数函数和以切片作为参数的函数是不同的。</p>
+<p><strong>Deferred****函数</strong></p>
+<p>你只需要在<strong>调用普通函数或方法前加上关键字<strong><strong>defer</strong></strong>，就完成了<strong><strong>defer</strong></strong>所需要的语法</strong>。</p>
+<p>• 当defer语句被执行时，跟在defer后面的函数会被延迟执行。直到包含该defer语句的函数执行完毕时，defer后的函数才会被执行，不论包含defer语句的函数是通过return正常结束，还是由于panic导致的异常结束。</p>
+<p>• <strong>你可以在一个函数中执行多条<strong><strong>defer</strong></strong>语句，它们的执行顺序与声明顺序相反</strong>。</p>
+<p>• defer语句经常被用于处理成对的操作，如打开、关闭、连接、断开连接、加锁、释放锁。通过defer机制，不论函数逻辑多复杂，都能保证在任何执行路径下，资源被释放。释放资源的defer应该直接跟在请求资源的语句后。</p>
+<p>• 调试复杂程序时，<strong>defer****机制也常被用于记录何时进入和退出函数</strong>。</p>
+<p>• defer语句中的函数会在return语句更新返回值变量后再执行，又因为在函数中定义的匿名函数可以访问该函数包括返回值变量在内的所有变量，所以，对匿名函数采用defer机制，可以使其观察函数的返回值。</p>
+<p><strong>Panic****异常</strong></p>
+<p>Go的类型系统会在编译时捕获很多错误，但有些错误只能在运行时检查，如数组访问越界、空指针引用等。这些运行时错误会引起painc异常。</p>
+<p>一般而言，当panic异常发生时，程序会中断运行，并立即执行在该goroutine（可以先理解成线程，在第8章会详细介绍）中被延迟的函数（defer 机制）。随后，程序崩溃并输出日志信息。日志信息包括panic value和函数调用的堆栈跟踪信息。panic value通常是某种错误信息。对于每个goroutine，日志信息中都会有与之相对的，发生panic时的函数调用堆栈跟踪信息。</p>
+<p>不是所有的panic异常都来自运行时，直接调用内置的panic函数也会引发panic异常；panic函数接受任何值作为参数。当某些不应该发生的场景发生时，我们就应该调用panic。</p>
+<p>错误处理和异常？？到底啥区别</p>
+<p>□ <strong>Recover****捕获异常</strong></p>
+<p><strong>方法</strong></p>
+<p>OOP编程的两个关键点，封装和组合。</p>
+<p><strong>方法声明</strong></p>
+<p>• 在函数声明时，在其名字之前放上一个变量，即是一个方法。这个附加的参数会将该函数附加到这种类型上，即相当于为这种类型定义了一个独占的方法。</p>
+<p>• 能够给任意类型定义方法这一点上，Go和很多其它的面向对象的语言不太一样。因此在Go语言里，我们为一些简单的数值、字符串、slice、map来定义一些附加行为很方便。方法可以被声明到任意类型，只要不是一个指针或者一个interface。</p>
+<p>• 对于一个给定的类型，其内部的方法都必须有唯一的方法名，但是不同的类型却可以有同样的方法名</p>
+<p><strong>基于指针对象的方法</strong></p>
+<p>在现实的程序里，一般会约定如果Point这个类有一个指针作为接收器的方法，那么所有Point的方法都必须有一个指针接收器，即使是那些并不需要这个指针接收器的函数。</p>
+<p>在每一个合法的方法调用表达式中，也就是下面三种情况里的任意一种情况都是可以的：</p>
+<p>• 不论是接收器的实际参数和其接收器的形式参数相同，比如两者都是类型T或者都是类型*T</p>
+<p>• 接收器形参是类型T，但接收器实参是类型*T，这种情况下编译器会隐式地为我们取变量的地址</p>
+<p>• 接收器形参是类型*T，实参是类型T。编译器会隐式地为我们解引用，取到指针指向的实际变量</p>
+<p>作者这里说的比较绕，其实有两点：</p>
+<p>\1. 不管你的method的receiver是指针类型还是非指针类型，都是可以通过指针/非指针类型进行调用的，编译器会帮你做类型转换。</p>
+<p>\2. 在声明一个method的receiver该是指针还是非指针类型时，你需要考虑两方面的内部，第一方面是这个对象本身是不是特别大，如果声明为非指针变量时，调用会产生一次拷贝；第二方面是如果你用指针类型作为receiver，那么你一定要注意，这种指针类型指向的始终是一块内存地址，就算你对其进行了拷贝。熟悉C或者C艹的人这里应该很快能明白。</p>
+<p><strong>Nil****也是一个合法的接收器类型</strong></p>
+<p><strong>封装</strong></p>
+<p>一个对象的变量或者方法如果对调用方是不可见的话，一般就被定义为“封装”。封装有时候也被叫做信息隐藏，同时也是面向对象编程最关键的一个方面。</p>
+<p>Go语言只有一种控制可见性的手段：大写首字母的标识符会从定义它们的包中被导出，小写字母的则不会。这种限制包内成员的方式同样适用于struct或者一个类型的方法。</p>
+<p>• 如果我们想要封装一个对象，我们必须将其定义为一个struct。</p>
+<p>￮ 这种基于名字的手段使得在语言中最小的封装单元是package，而不是像其它语言一样的类型。一个struct类型的字段对同一个包的所有代码都有可见性，无论你的代码是写在一个函数还是一个方法里。</p>
+<p>• 封装提供了三方面的优点。</p>
+<p>￮ 首先，因为调用方不能直接修改对象的变量值，其只需要关注少量的语句并且只要弄懂少量变量的可能的值即可。</p>
+<p>￮ 第二，隐藏实现的细节，可以防止调用方依赖那些可能变化的具体实现，这样使设计包的程序员在不破坏对外的api情况下能得到更大的自由。</p>
+<p>￮ 封装的第三个优点也是最重要的优点，是阻止了外部调用方对对象内部的值任意地进行修改。</p>
+<p><strong>接口</strong></p>
+<p><a target="_blank" rel="noopener" href="https://jordanorelli.com/post/32665860244/how-to-use-interfaces-in-go">How to use interfaces in Go</a></p>
+<p>接口指：1）方法的集合，2）类型</p>
+<p>\1. 集合指interface定义一系列的函数（行为），在具体的类型中实现。比如animal接口，里面有speak（）函数，那么在方法内用不同的类型实现，比如定义结构体Dog（其实是一种类/对象），然后定义Dog 的（函数前面的接收器）Speak（）实现。</p>
+<p>\2. interface{}类型，表明没有任何方法。所有的烈性都能满足一个空的接口。接口值在是实现中占 2 个字，一个word 指向方法表，表明值的底层类型。另一个指向值实际的数据。</p>
+<p>指针接收器 or 值接收器</p>
+<p><strong>接口类型是一种抽象的类型。它不会暴露出它所代表的对象的内部值的结构和这个对象支持的基础操作的集合；它们只会展示出它们自己的方法。</strong>也就是说当你有看到一个接口类型的值时，你不知道它是什么，唯一知道的就是可以通过它的方法来做什么。</p>
+<p><strong>接口类型</strong></p>
+<p>接口类型具体描述了一系列方法的集合，一个实现了这些方法的具体类型是这个接口类型的实例。</p>
+<p><strong>实现接口的条件</strong></p>
+<p>• 一个类型如果拥有一个接口需要的所有方法，那么这个类型就实现了这个接口。</p>
+<p>• interface{}被称为空接口类型是不可或缺的。因为空接口类型对实现它的类型没有要求，所以我们可以将任意一个值赋给空接口类型。</p>
+<p>\8. <strong>Goroutines<strong><strong>和</strong></strong>Channels</strong></p>
+<p>当一个程序启动时，其主函数即在一个单独的goroutine中运行，我们叫它main goroutine。新的goroutine会用go语句来创建。</p>
+<p>在语法上，go语句是一个普通的函数或方法调用前加上关键字go。go语句会使其语句中的函数在一个新创建的goroutine中运行。而go语句本身会迅速地完成。</p>
+<p>• goroutine中断</p>
+<p>￮ 主函数返回时，所有的goroutine都会被直接打断，程序退出。除了从主函数退出或者直接终止程序之外，没有其它的编程方法能够让一个goroutine来打断另一个的执行，。</p>
+<p>￮ 一种方式来实现这个目的，通过goroutine之间的通信来让一个goroutine请求其它的goroutine，并被请求的goroutine自行结束执行。</p>
+<p><strong>示例</strong><strong>:</strong> <strong>并发的<strong><strong>Clock</strong></strong>服务</strong></p>
+<p><strong>Channels</strong></p>
+<p>如果说goroutine是Go语音程序的并发体的话，那么<strong>channels****它们之间的通信机制</strong>。</p>
+<p>• 一个channels是一个通信机制，它可以让一个goroutine通过它给另一个goroutine发送值信息。</p>
+<p>• 每个channel都有一个特殊的类型，也就是channels可发送数据的类型。一个可以发送int类型数据的channel一般写为chan int。</p>
+<p>• 使用内置的make函数，我们可以创建一个channel.</p>
+<p>￮ 使用 make(chan val-type) 创建一个新的通道。通道类型就是他们需要传递值的类型。</p>
+<p>• 一个channel有发送和接受两个主要操作，都是通信行为。</p>
+<p>￮ 一个发送语句将一个值从一个goroutine通过channel发送到另一个执行接收操作的goroutine。</p>
+<p>￮ 发送和接收两个操作都是用&lt;-运算符。</p>
+<p>▪ 在发送语句中，&lt;-运算符分割channel和要发送的值。在接收语句中，&lt;-运算符写在channel对象之前。</p>
+<p>￮ 一个不使用接收结果的接收操作也是合法的。</p>
+<p>\1. ch &lt;- x // a send statement</p>
+<p>\2. x = &lt;-ch // a receive expression in an assignment statement</p>
+<p>\3. &lt;-ch   // a receive statement; result is discarded</p>
+<p>使用内置的close函数就可以关闭一个channel：</p>
+<p>\1. close(ch)</p>
+<p>以最简单方式调用make函数创建的时一个无缓冲的channel，但是我们也可以指定第二个整形参数，对应channel的容量。如果channel的容量大于零，那么该channel就是带缓冲的channel。</p>
+<p>\1. ch = make(chan int)  // unbuffered channel</p>
+<p>\2. ch = make(chan int, 0) // unbuffered channel</p>
+<p>\3. ch = make(chan int, 3) // buffered channel with capacity 3</p>
+<p><strong>不带缓存的****Channels</strong></p>
+<p>• 一个基于无缓存Channels的发送操作将导致发送者goroutine阻塞，直到另一个goroutine在相同的Channels上执行接收操作，当发送的值通过Channels成功传输之后，两个goroutine可以继续执行后面的语句。</p>
+<p>• 反之，如果接收操作先发生，那么接收者goroutine也将阻塞，直到有另一个goroutine在相同的Channels上执行发送操作。</p>
+<p>基于无缓存Channels的发送和接收操作将导致两个goroutine做一次同步操作。因为这个原因，无缓存Channels有时候也被称为<strong>同步****Channels</strong>。当通过一个无缓存Channels发送数据时，接收者收到数据发生在唤醒发送者goroutine之前（译注：***happens before***，这是Go语言并发内存模型的一个关键术语！）。</p>
+<p>• 并发编程时，当我们说x事件在y事件之前发生（<em>happens before</em>），我们并不是说x事件在时间上比y时间更早；我们要表达的意思是<strong>要保证在此之前的事件都已经完成了，</strong>例如在此之前的更新某些变量的操作已经完成，你可以放心依赖这些已完成的事件了。</p>
+<p>• 当我们说x事件既不是在y事件之前发生也不是在y事件之后发生，我们就说x事件和y事件是并发的。这并不是意味着x事件和y事件就一定是同时发生的，我们只是不能确定这两个事件发生的先后顺序。</p>
+<p>并发程序指同时进行多个任务的程序。</p>
+<p>• Go语言中的并发程序可以用两种手段来实现。</p>
+<p>￮ 本章讲解goroutine和channel，其支持“顺序通信进程”(communicating sequential processes)或被简称为CSP。CSP是一种现代的并发编程模型，在这种编程模型中值会在不同的运行实例(goroutine)中传递。</p>
+<p>￮ 第9章覆盖更为传统的并发模型：多线程共享内存</p>
+<p>\6. <strong>函数</strong></p>
+<p>￮ 错误处理、</p>
+<p>￮ panic</p>
+<p>￮ Recover</p>
+<p>￮ defer语句</p>
+<p>其余章节是Go语言特有的语言特性。方法、接口、并发、包、测试和反射等语言特性。</p>
+<p>Go语言的面向对象机制与一般语言不同。它没有类层次结构，甚至可以说没有类；仅仅通过组合（而不是继承）简单的对象来构建复杂的对象。方法不仅可以定义在结构体上, 而且可以定义在任何用户自定义的类型上；并且具体类型和抽象类型（接口）之间的关系是隐式的，所以很多类型的设计者可能并不知道该类型到底实现了哪些接口。</p>
+<p>\6. 方法</p>
+<p>\7. 接口</p>
+<p>\8. 基于顺序通信进程(CSP)概念的并发编程</p>
+<p>a. 使用goroutines和channels处理并发编程</p>
+<p>\9. 基于共享变量的并发编程</p>
+<p>\10. 包机制和包的组织结构</p>
+<p>a. 如何有效的利用Go自带的工具，使用单个命令完成编译、测试、基准测试、代码格式化、文档以及其他诸多任务。</p>
+<p>\11. <strong>测试</strong></p>
+<p>go test命令是一个按照一定的约定和组织的测试代码的驱动程序。在包目录内，所有以_test.go为后缀名的源文件并不是go build构建包的一部分，它们是go test测试的一部分。</p>
+<p>go test命令会遍历所有的*_test.go文件中符合上述命名规则的函数，然后生成一个临时的main包用于调用相应的测试函数，然后构建并运行、报告测试结果，最后清理测试中生成的临时文件。</p>
+<p>• 在*_test.go文件中，有三种类型的函数</p>
+<p>￮ 测试函数</p>
+<p>▪ <strong>以<strong><strong>Test</strong></strong>为函数名前缀</strong>的函数，用于测试程序的一些逻辑行为是否正确；</p>
+<p>▪ go test命令会调用这些测试函数并报告测试结果是PASS或FAIL。</p>
+<p>￮ 基准测试函数</p>
+<p>▪ <strong>以<strong><strong>Benchmark</strong></strong>为函数名前缀</strong>的函数，它们用于<strong>衡量一些函数的性能</strong>；</p>
+<p>▪ go test命令会多次运行基准函数以计算一个平均的执行时间。</p>
+<p>￮ 示例函数</p>
+<p>▪ <strong>以<strong><strong>Example</strong></strong>为函数名前缀</strong>的函数，提供一个由编译器保证正确性的示例文档。</p>
+<p><strong>测试函数</strong></p>
+<p>• 测试函数的名字必须以Test开头，<strong>可选的后缀名必须以大写字母开头</strong></p>
+<p>• 其中t参数用于报告测试失败和附加的日志信息</p>
+<p>\1. import “testing”</p>
+<p>\2. func TestName(t *testing.T) {</p>
+<p>\3.   // …</p>
+<p>\4. }</p>
+<p>• go test命令如果没有参数指定包那么将默认采用当前目录对应的包（和go build命令一样）；</p>
+<p>• 如果测试都通过，程序是不会退出的，但是如果有fail的，有了BUG报告，则会退出；</p>
+<p>• 后面加参数-v可用于打印每个测试函数的名字和运行时间；</p>
+<p>• 参数-run对应一个正则表达式，只有测试函数名被它正确匹配的测试函数才会被go test测试命令运行：</p>
+<p><strong>基准测试</strong></p>
+<p>**</p>
+<p>**</p>
+<p>a. Go语言的工具和标准库中集成了轻量级的测试功能，避免了强大但复杂的测试框架。</p>
+<p>b. 测试库提供了一些基本构件，必要时可以用来构建复杂的测试构件</p>
+<p>\12. 反射：一种程序在运行期间审视自己的能力</p>
+<p>\13. 底层编程的细节</p>
+<p>a. 在必要时，可以使用unsafe包绕过Go语言安全的类型系统</p>
+<p><a target="_blank" rel="noopener" href="https://tour.golang.org/"><strong>基于</strong> <strong>Playground</strong> <strong>构建的</strong> <strong>Go Tour</strong></a></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 peiqi66@163.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: 'e4ca5dce21ab7d76162a',
+            clientSecret: 'c4abdc319f5a4eeaa72e2ffecfa8a99fc48f0c8f',
+            repo: 'haiki.github.io',
+            owner: 'haiki',
+            admin: ['haiki'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2021 haiki
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("http://www.xiaoxintuku.com/uploads/allimg/150603/1F32110a-0.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
