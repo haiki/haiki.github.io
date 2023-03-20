@@ -291,7 +291,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="37">
-<input type="hidden" id="yelog_site_word_count" value="90.2k">
+<input type="hidden" id="yelog_site_word_count" value="90.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -818,7 +818,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-03-12 22:58:07'>2022-02-14 19:44</time>
+            发布时间 : <time class="date" title='最后更新: 2023-03-20 08:24:26'>2022-02-14 19:44</time>
         
     </div>
     <div class="article-meta">
@@ -853,7 +853,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%8C%BA%E4%B8%80-gcc%E5%8F%AA%E8%83%BD%E7%BC%96%E8%AF%91c%E4%BB%A3%E7%A0%81-g-%E5%8F%AA%E8%83%BD%E7%BC%96%E8%AF%91c-%E4%BB%A3%E7%A0%81"><span class="toc-text">误区一:gcc只能编译c代码,g++只能编译c++代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%8C%BA%E4%BA%8C-gcc%E4%B8%8D%E4%BC%9A%E5%AE%9A%E4%B9%89-cplusplus%E5%AE%8F%EF%BC%8C%E8%80%8Cg-%E4%BC%9A"><span class="toc-text">误区二:gcc不会定义__cplusplus宏，而g++会</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%8C%BA%E4%B8%89-%E7%BC%96%E8%AF%91%E5%8F%AA%E8%83%BD%E7%94%A8gcc%EF%BC%8C%E9%93%BE%E6%8E%A5%E5%8F%AA%E8%83%BD%E7%94%A8g"><span class="toc-text">误区三:编译只能用gcc，链接只能用g++</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%8C%BA%E5%9B%9B-extern-%E2%80%9CC%E2%80%9D%E4%B8%8Egcc-g-%E6%9C%89%E5%85%B3%E7%B3%BB"><span class="toc-text">误区四:extern “C”与gcc&#x2F;g++有关系</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%8C%BA%E4%B8%80-gcc%E5%8F%AA%E8%83%BD%E7%BC%96%E8%AF%91c%E4%BB%A3%E7%A0%81-g-%E5%8F%AA%E8%83%BD%E7%BC%96%E8%AF%91c-%E4%BB%A3%E7%A0%81"><span class="toc-text">误区一:gcc只能编译c代码,g++只能编译c++代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%8C%BA%E4%BA%8C-gcc%E4%B8%8D%E4%BC%9A%E5%AE%9A%E4%B9%89-cplusplus%E5%AE%8F%EF%BC%8C%E8%80%8Cg-%E4%BC%9A"><span class="toc-text">误区二:gcc不会定义__cplusplus宏，而g++会</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%8C%BA%E4%B8%89-%E7%BC%96%E8%AF%91%E5%8F%AA%E8%83%BD%E7%94%A8gcc%EF%BC%8C%E9%93%BE%E6%8E%A5%E5%8F%AA%E8%83%BD%E7%94%A8g"><span class="toc-text">误区三:编译只能用gcc，链接只能用g++</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%8C%BA%E5%9B%9B-extern-%E2%80%9CC%E2%80%9D%E4%B8%8Egcc-g-%E6%9C%89%E5%85%B3%E7%B3%BB-TODO"><span class="toc-text">误区四:extern “C”与gcc&#x2F;g++有关系 TODO</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -869,7 +869,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%8C%BA%E4%B8%80-gcc%E5%8F%AA%E8%83%BD%E7%BC%96%E8%AF%91c%E4%BB%A3%E7%A0%81-g-%E5%8F%AA%E8%83%BD%E7%BC%96%E8%AF%91c-%E4%BB%A3%E7%A0%81"><span class="toc-text">误区一:gcc只能编译c代码,g++只能编译c++代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%8C%BA%E4%BA%8C-gcc%E4%B8%8D%E4%BC%9A%E5%AE%9A%E4%B9%89-cplusplus%E5%AE%8F%EF%BC%8C%E8%80%8Cg-%E4%BC%9A"><span class="toc-text">误区二:gcc不会定义__cplusplus宏，而g++会</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%8C%BA%E4%B8%89-%E7%BC%96%E8%AF%91%E5%8F%AA%E8%83%BD%E7%94%A8gcc%EF%BC%8C%E9%93%BE%E6%8E%A5%E5%8F%AA%E8%83%BD%E7%94%A8g"><span class="toc-text">误区三:编译只能用gcc，链接只能用g++</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%8C%BA%E5%9B%9B-extern-%E2%80%9CC%E2%80%9D%E4%B8%8Egcc-g-%E6%9C%89%E5%85%B3%E7%B3%BB"><span class="toc-text">误区四:extern “C”与gcc&#x2F;g++有关系</span></a></li></ol></div></p>
+        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%8C%BA%E4%B8%80-gcc%E5%8F%AA%E8%83%BD%E7%BC%96%E8%AF%91c%E4%BB%A3%E7%A0%81-g-%E5%8F%AA%E8%83%BD%E7%BC%96%E8%AF%91c-%E4%BB%A3%E7%A0%81"><span class="toc-text">误区一:gcc只能编译c代码,g++只能编译c++代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%8C%BA%E4%BA%8C-gcc%E4%B8%8D%E4%BC%9A%E5%AE%9A%E4%B9%89-cplusplus%E5%AE%8F%EF%BC%8C%E8%80%8Cg-%E4%BC%9A"><span class="toc-text">误区二:gcc不会定义__cplusplus宏，而g++会</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%8C%BA%E4%B8%89-%E7%BC%96%E8%AF%91%E5%8F%AA%E8%83%BD%E7%94%A8gcc%EF%BC%8C%E9%93%BE%E6%8E%A5%E5%8F%AA%E8%83%BD%E7%94%A8g"><span class="toc-text">误区三:编译只能用gcc，链接只能用g++</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%8C%BA%E5%9B%9B-extern-%E2%80%9CC%E2%80%9D%E4%B8%8Egcc-g-%E6%9C%89%E5%85%B3%E7%B3%BB-TODO"><span class="toc-text">误区四:extern “C”与gcc&#x2F;g++有关系 TODO</span></a></li></ol></div></p>
 <p>我们在编译c/c++代码的时候，有人用gcc，有人用g++，于是各种说法都来了，譬如c代码用gcc，而c++代码用g++，或者说编译用gcc，链接用g++，一时也不知哪个说法正确，如果再遇上个extern “C”，分歧就更多了，这里我想作个了结，毕竟知识的目的是令人更清醒，而不是更糊涂。</p>
 <p>gcc and g++ are compiler-drivers of the <strong>GNU Compiler Collection</strong> (which was once upon a time just the GNU C Compiler).</p>
 <p>GNU Compiler Collection： Referrers to all the different languages that are supported by the GNU compiler.</p>
@@ -924,21 +924,56 @@ int printString(char* string) &#123;
 <h2 id="误区二-gcc不会定义-cplusplus宏，而g-会"><a href="#误区二-gcc不会定义-cplusplus宏，而g-会" class="headerlink" title="误区二:gcc不会定义__cplusplus宏，而g++会"></a>误区二:gcc不会定义__cplusplus宏，而g++会</h2><p>实际上，这个宏只是标志着编译器将会把代码按C还是C++语法来解释，如上所述，如果后缀为.c，并且采用gcc编译器，则该宏就是未定义的，否则，就是已定义。</p>
 <h2 id="误区三-编译只能用gcc，链接只能用g"><a href="#误区三-编译只能用gcc，链接只能用g" class="headerlink" title="误区三:编译只能用gcc，链接只能用g++"></a>误区三:编译只能用gcc，链接只能用g++</h2><p>严格来说，这句话不算错误，但是它混淆了概念，应该这样说：编译可以用gcc/g++，而链接可以用g++或者gcc -lstdc++。</p>
 <p>因为gcc命令不能自动和C++程序使用的库联接，所以通常使用g++来完成联接。但在编译阶段，g++会自动调用gcc，<strong>g++ is equivalent to gcc -xc++ -lstdc++ -shared-libgcc</strong> <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/172587/what-is-the-difference-between-g-and-gcc">参考</a></p>
-<h2 id="误区四-extern-“C”与gcc-g-有关系"><a href="#误区四-extern-“C”与gcc-g-有关系" class="headerlink" title="误区四:extern “C”与gcc/g++有关系"></a>误区四:extern “C”与gcc/g++有关系</h2><p>实际上并无关系，无论是gcc还是g++，用extern “c”时，都是以C的命名方式来为symbol命名，否则，都以c++方式命名。试验如下：<br>me.h：<br>extern “C” void CppPrintf(void);</p>
-<p>me.cpp:<br>#include <iostream><br>#include “me.h”<br>using namespace std;<br>void CppPrintf(void)<br>{<br>     cout &lt;&lt; “Hello\n”;<br>}</p>
-<p>test.cpp:<br>#include &lt;stdlib.h&gt;<br>#include &lt;stdio.h&gt;<br>#include “me.h”<br>int main(void)<br>{<br>    CppPrintf();<br>    return 0;<br>}</p>
-<ol>
-<li>先给me.h加上extern “C”，看用gcc和g++命名有什么不同<br>[root@root G++]# g++ -S me.cpp     //g++的参数-S： 是指把文件编译成为汇编代码<br>[root@root G++]# less me.s<br>.globl _Z9CppPrintfv        //注意此函数的命名<pre><code> .type   CppPrintf, @function
+<h2 id="误区四-extern-“C”与gcc-g-有关系-TODO"><a href="#误区四-extern-“C”与gcc-g-有关系-TODO" class="headerlink" title="误区四:extern “C”与gcc/g++有关系 TODO"></a>误区四:extern “C”与gcc/g++有关系 TODO</h2><p>实际上并无关系，无论是gcc还是g++，用extern “c”时，都是以C的命名方式来为symbol命名，否则，都以c++方式命名。试验如下：<br>me.h：</p>
+<pre><code class="CPP">extern &quot;C&quot; void CppPrintf(void);
 </code></pre>
-</li>
-</ol>
-<p>[root@root GCC]# gcc -S me.cpp<br>[root@root GCC]# less me.s<br>.globl _Z9CppPrintfv        //注意此函数的命名<br>        .type   CppPrintf, @function<br>完全相同！</p>
-<ol start="2">
-<li>去掉me.h中extern “C”，看用gcc和g++命名有什么不同<br>[root@root GCC]# gcc -S me.cpp<br>[root@root GCC]# less me.s<br>.globl _Z9CppPrintfv        //注意此函数的命名<pre><code> .type   _Z9CppPrintfv, @function
+<p>me.cpp:</p>
+<pre><code class="CPP">#include &lt;iostream&gt;
+#include &quot;me.h&quot;
+using namespace std;
+void CppPrintf(void)
+&#123;
+     cout &lt;&lt; &quot;Hello\n&quot;;
+&#125;
 </code></pre>
-</li>
-</ol>
-<p>[root@root G++]# g++ -S me.cpp<br>[root@root G++]# less me.s<br>.globl _Z9CppPrintfv        //注意此函数的命名<br>        .type   _Z9CppPrintfv, @function<br>完全相同！</p>
+<p>test.cpp:</p>
+<pre><code class="CPP">#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &quot;me.h&quot;        
+int main(void)
+&#123;
+    CppPrintf();
+    return 0;
+&#125;
+</code></pre>
+<ul>
+<li>先给me.h加上extern “C”，看用gcc和g++命名有什么不同</li>
+</ul>
+<pre><code class="bash">[root@root G++]# g++ -S me.cpp     //g++的参数-S： 是指把文件编译成为汇编代码
+[root@root G++]# less me.s
+.globl _Z9CppPrintfv        //注意此函数的命名
+        .type   CppPrintf, @function
+
+[root@root GCC]# gcc -S me.cpp
+[root@root GCC]# less me.s
+.globl _Z9CppPrintfv        //注意此函数的命名
+        .type   CppPrintf, @function
+完全相同！
+</code></pre>
+<ul>
+<li>去掉me.h中extern “C”，看用gcc和g++命名有什么不同</li>
+</ul>
+<pre><code class="bash">[root@root GCC]# gcc -S me.cpp
+[root@root GCC]# less me.s
+.globl _Z9CppPrintfv        //注意此函数的命名
+        .type   _Z9CppPrintfv, @function
+
+[root@root G++]# g++ -S me.cpp
+[root@root G++]# less me.s
+.globl _Z9CppPrintfv        //注意此函数的命名
+        .type   _Z9CppPrintfv, @function
+完全相同！
+</code></pre>
 <p>【结论】完全相同，可见extern “C”与采用gcc/g++并无关系，以上的试验还间接的印证了前面的说法：在编译阶段，g++是调用gcc的。</p>
 <blockquote>
 <p>摘自 <a target="_blank" rel="noopener" href="https://blog.csdn.net/tjcwt2011/article/details/103410446">https://blog.csdn.net/tjcwt2011/article/details/103410446</a><br>部分参考 <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/172587/what-is-the-difference-between-g-and-gcc">stackoverflow</a> 上的回答</p>
